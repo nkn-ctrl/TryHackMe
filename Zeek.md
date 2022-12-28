@@ -1,4 +1,5 @@
 # Zeek
+
 ## Network Security Monitoring and Zeek
 ### The default log path
 ```/opt/zeek/logs/```
@@ -6,12 +7,15 @@
 ```zeek -v```
 ### ZeekControl mode
 ```zeekctl```
-status
-start 
-stop
+- status
+- start 
+- stop
 ### PCAP processing mode
 ```zeek -C -r sample.pcap```
 - -r    Reading option, read/process a pcap file.
 - -C    Ignoring checksum errors.
 
+## Zeek Logs
+[Zeek's official documentation](https://docs.zeek.org/en/current/script-reference/log-files.html) and [Corelight log cheat sheet](https://corelight.com/about-zeek/zeek-data)
+### 
 
