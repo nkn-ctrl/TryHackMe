@@ -29,12 +29,12 @@ Zeek-cut	Cut specific columns from zeek logs.
 | Read File |Read sample.txt file:```ubuntu@ubuntu$ cat sample.txt```|
 ||Read the first 10 lines of the file:```ubuntu@ubuntu$ head sample.txt```|
 ||Read the last 10 lines of the file:```ubuntu@ubuntu$ tail sample.txt```|
-| Find&Filter |Cut the 1st field:```ubuntu@ubuntu$ cat test.txt | cut -f 1```|
-||Cut the 1st column:```ubuntu@ubuntu$ cat test.txt | cut -c1```|
-||Filter specific keywords:```ubuntu@ubuntu$ cat test.txt | grep 'keywords'```|
-||Sort outputs alphabetically:```ubuntu@ubuntu$ cat test.txt | sort```|
-||Sort outputs numerically:```ubuntu@ubuntu$ cat test.txt | sort -n```|
-||Eliminate duplicate lines:```ubuntu@ubuntu$ cat test.txt | uniq```|
+| Find&Filter |Cut the 1st field:```ubuntu@ubuntu$ cat test.txt \| cut -f 1```|
+||Cut the 1st column:```ubuntu@ubuntu$ cat test.txt \| cut -c1```|
+||Filter specific keywords:```ubuntu@ubuntu$ cat test.txt \| grep 'keywords'```|
+||Sort outputs alphabetically:```ubuntu@ubuntu$ cat test.txt \| sort```|
+||Sort outputs numerically:```ubuntu@ubuntu$ cat test.txt \| sort -n```|
+||Eliminate duplicate lines:```ubuntu@ubuntu$ cat test.txt \| uniq```|
 
 Count line numbers:
 ubuntu@ubuntu$ cat test.txt | wc -l
