@@ -12,8 +12,8 @@
 - stop
 ### PCAP processing mode
 ```zeek -C -r sample.pcap```
-- -r    Reading option, read/process a pcap file.
-- -C    Ignoring checksum errors.
+- -r:   Reading option, read/process a pcap file.
+- -C:   Ignoring checksum errors.
 
 ## Zeek Logs
 [Zeek's official documentation](https://docs.zeek.org/en/current/script-reference/log-files.html) and [Corelight log cheat sheet](https://corelight.com/about-zeek/zeek-data)
