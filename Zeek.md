@@ -58,7 +58,7 @@ Zeek-cut	Cut specific columns from zeek logs.
 
 ## Zeek Signatures
 Run Zeek with signature file
-```zeek -C -r sample.pcap -s sample.sig```
+```zeek -C -r sample.pcap -s sample.sig```  
 Zeek signatures use the ".sig" extension.
 - -C: Ignore checksum errors.
 - -r: Read pcap file.
