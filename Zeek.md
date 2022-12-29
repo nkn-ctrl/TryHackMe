@@ -21,10 +21,10 @@
 Zeek-cut	Cut specific columns from zeek logs.
 ```$ cat conn.log | zeek-cut uid proto id.orig_h```
 
-| Category | Command Purpose and Usage | Category | Command Purpose and Usage |
-|----------|---------------------------|----------|---------------------------|
+| Category | Command Purpose and Usage |
+|----------|---------------------------|
 | Basics | View the command history:```ubuntu@ubuntu$ history``` 
-Execute the 10th command in history:```ubuntu@ubuntu$ !10``` |
+||Execute the 10th command in history:```ubuntu@ubuntu$ !10``` |
 
 Execute the previous command:
 ubuntu@ubuntu$ !!
