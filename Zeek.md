@@ -56,5 +56,10 @@ Zeek-cut	Cut specific columns from zeek logs.
 |```file```|View file information.|
 |```grep -rin Testvalue1 * \| column -t \| less -S```|Search the "Testvalue1" string everywhere, organise column spaces and view the output with less.|
 
-
+## Zeek Signatures
+Run Zeek with signature file
+```zeek -C -r sample.pcap -s sample.sig```
+- -C: Ignore checksum errors.
+- -r: Read pcap file.
+- -s: Use signature file. 
 
