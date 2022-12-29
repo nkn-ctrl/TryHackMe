@@ -47,6 +47,7 @@ Zeek-cut	Cut specific columns from zeek logs.
 |----------|-------------|
 |```sort \| uniq```|Remove duplicate values.|
 |```sort \| uniq -c```| Remove duplicates and count the number of occurrences for each value.|
+|```sort \| uniq \| nl```| Nmbering. |
 |```sort -nr```|Sort values numerically and recursively.|
 |```rev```|Reverse string characters.|
 |```cut -f 1```|Cut field 1.|
