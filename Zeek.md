@@ -35,41 +35,19 @@ Zeek-cut	Cut specific columns from zeek logs.
 ||Sort outputs alphabetically:```ubuntu@ubuntu$ cat test.txt \| sort```|
 ||Sort outputs numerically:```ubuntu@ubuntu$ cat test.txt \| sort -n```|
 ||Eliminate duplicate lines:```ubuntu@ubuntu$ cat test.txt \| uniq```|
+||Count line numbers:```ubuntu@ubuntu$ cat test.txt \| wc -l```|
+||Show line numbers```ubuntu@ubuntu$ cat test.txt \| nl```|
+| Advanced |Print line 11:```ubuntu@ubuntu$ cat test.txt \| sed -n '11p'```|
+||Print lines between 10-15:```ubuntu@ubuntu$ cat test.txt \| sed -n '10,15p'```|
+||Print lines below 11:```ubuntu@ubuntu$ cat test.txt \| awk 'NR < 11 {print $0}'```|
+||Print line 11:```ubuntu@ubuntu$ cat test.txt \| awk 'NR == 11 {print $0}'```|
+| SpecialFilter |specific fields of Zeek logs:```ubuntu@ubuntu$ cat signatures.log \| zeek-cut uid src_addr dst_addr```|
 
-Count line numbers:
-ubuntu@ubuntu$ cat test.txt | wc -l
-
-Show line numbers
-ubuntu@ubuntu$ cat test.txt | nl
-
-Advanced
-
-
-Print line 11:
-ubuntu@ubuntu$ cat test.txt | sed -n '11p'
-
-Print lines between 10-15:
-ubuntu@ubuntu$ cat test.txt | sed -n '10,15p'
-
-Print lines below 11:
-ubuntu@ubuntu$ cat test.txt | awk 'NR < 11 {print $0}'
-
-Print line 11:
-ubuntu@ubuntu$ cat test.txt | awk 'NR == 11 {print $0}'
-
-Special	
-Filter specific fields of Zeek logs:
-ubuntu@ubuntu$ cat signatures.log | zeek-cut uid src_addr dst_addr
-Use Case	Description
-sort | uniq
-
-Remove duplicate values.
-sort | uniq -c 
-
-Remove duplicates and count the number of occurrences for each value.
-sort -nr
-
-Sort values numerically and recursively.
+| Use Case | Description |
+|----------|-------------|
+|```sort \| uniq```|Remove duplicate values.|
+|```sort \| uniq -c```| Remove duplicates and count the number of occurrences for each value.|
+|```sort -nr```|Sort values numerically and recursively.|
 rev
 
 Reverse string characters.
