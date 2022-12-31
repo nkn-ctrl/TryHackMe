@@ -14,6 +14,15 @@
 ```zeek -C -r sample.pcap```
 - -r:   Reading option, read/process a pcap file.
 - -C:   Ignoring checksum errors.
+```
+root@ubuntu$ zeek -C -r sample.pcap 
+
+root@ubuntu$ ls -l
+-rw-r--r-- 1 ubuntu ubuntu  11366 Mar 13 20:45 conn.log
+-rw-r--r-- 1 ubuntu ubuntu    763 Mar 13 20:45 dhcp.log
+-rw-r--r-- 1 ubuntu ubuntu   2918 Mar 13 20:45 dns.log
+-rw-r--r-- 1 ubuntu ubuntu    254 Mar 13 20:45 packet_filter.log 
+```
 
 ## Zeek Logs
 [Zeek's official documentation](https://docs.zeek.org/en/current/script-reference/log-files.html) and [Corelight log cheat sheet](https://corelight.com/about-zeek/zeek-data)
@@ -64,4 +73,7 @@ Zeek signatures use the ".sig" extension.
 - -C: Ignore checksum errors.
 - -r: Read pcap file.
 - -s: Use signature file. 
+
+## Zeek Scripts
+
 
