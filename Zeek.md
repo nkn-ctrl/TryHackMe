@@ -80,5 +80,12 @@ Zeek signatures use the ".sig" extension.
 - -s: Use signature file. 
 
 ## Zeek Scripts
+```/opt/zeek/share/zeek/base``` :default, and these are not intended to be modified.
+```/opt/zeek/share/zeek/site``` :User-generated or modified scripts
+```/opt/zeek/share/zeek/policy```   :Policy scripts
+```/opt/zeek/share/zeek/site/local.zeek```  :Like Snort, to automatically load/use a script
+
+
+```zeek -C -r smallFlows.pcap dhcp-hostname.zeek```
 
 
