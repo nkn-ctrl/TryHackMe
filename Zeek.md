@@ -29,6 +29,11 @@ root@ubuntu$ ls -l
 ### extracting specific columns from log files
 Zeek-cut	Cut specific columns from zeek logs.
 ```$ cat conn.log | zeek-cut uid proto id.orig_h```
+```
+root@ubuntu$ cat conn.log | zeek-cut uid proto id.orig_h id.orig_p id.resp_h id.resp_p 
+CTMFXm1AcIsSnq2Ric	udp	192.168.121.2	51153	192.168.120.22	53
+CLsSsA3HLB2N6uJwW	udp	192.168.121.10	50080	192.168.120.10	514
+```
 ### Processing Zeek Logs
 | Category | Command Purpose and Usage |
 |----------|---------------------------|
