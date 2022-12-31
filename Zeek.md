@@ -80,8 +80,8 @@ Zeek signatures use the ".sig" extension.
 - -s: Use signature file. 
 
 ## Zeek Scripts
-### running Zeek with signature
-```zeek -C -r sample.pcap -s sample.sig```  
+### Running Zeek with Scripts
+```zeek -C -r smallFlows.pcap dhcp-hostname.zeek```  
 ```
 ubuntu@ubuntu$ zeek -C -r smallFlows.pcap dhcp-hostname.zeek 
 student01-PC
