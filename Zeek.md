@@ -62,6 +62,7 @@ CLsSsA3HLB2N6uJwW	udp	192.168.121.10	50080	192.168.120.10	514
 |```sort \| uniq```|Remove duplicate values.|
 |```sort \| uniq -c```| Remove duplicates and count the number of occurrences for each value.|
 |```sort \| uniq \| nl```| Nmbering. |
+|```wc -l```|Count lines|
 |```sort -nr```|Sort values numerically and recursively.|
 |```rev```|Reverse string characters.|
 |```cut -f 1```|Cut field 1.|
@@ -87,13 +88,12 @@ ubuntu@ubuntu$ zeek -C -r smallFlows.pcap dhcp-hostname.zeek
 student01-PC
 vinlap01
 ```
-Scripts are located in a specific path.
+Scripts are located in a specific path.  
 ```/opt/zeek/share/zeek/base``` :default, and these are not intended to be modified.  
 ```/opt/zeek/share/zeek/site``` :User-generated or modified scripts  
 ```/opt/zeek/share/zeek/policy```   :Policy scripts  
 ```/opt/zeek/share/zeek/site/local.zeek```  :Like Snort, to automatically load/use a script  
 
 
-```zeek -C -r smallFlows.pcap dhcp-hostname.zeek```
 
 
