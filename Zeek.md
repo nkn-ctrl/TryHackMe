@@ -94,6 +94,7 @@ Scripts are located in a specific path.
 ```/opt/zeek/share/zeek/policy```   :Policy scripts  
 ```/opt/zeek/share/zeek/site/local.zeek```  :Like Snort, to automatically load/use a script  
 
-
+### Run Zeek with signature and script
+```zeek -C -r ftp.pcap -s ftp-admin.sig 201.zeek```
 
 
