@@ -97,4 +97,9 @@ Scripts are located in a specific path.
 ### Run Zeek with signature and script
 ```zeek -C -r ftp.pcap -s ftp-admin.sig 201.zeek```
 
+### Load Local Scripts
+```zeek -C -r ftp.pcap local```
+
+
+
 
