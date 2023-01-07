@@ -102,6 +102,11 @@ Scripts are located in a specific path.
 
 ### Load Frameworks
 #### File Framework | Hashes
-
+```zeek -C -r case1.pcap hash-demo.zeek```
+```
+ubuntu@ubuntu$ cat hash-demo.zeek 
+# Enable MD5, SHA1 and SHA256 hashing for all files.
+@load /opt/zeek/share/zeek/policy/frameworks/files/hash-all-files.zeek
+```
 
 
