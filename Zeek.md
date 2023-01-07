@@ -100,6 +100,8 @@ Scripts are located in a specific path.
 ### Load Local Scripts
 ```zeek -C -r ftp.pcap local```
 
+### Load Frameworks
+#### File Framework | Hashes
 
 
 
