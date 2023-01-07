@@ -141,4 +141,22 @@ ubuntu@ubuntu$ grep -rin CZruIO2cqspVhLuAO9 * | column -t | nl | less -S
 ```
 #### Notice Framework | Intelligence
 Intelligence source location: ```/opt/zeek/intel/zeek_intel.txt```  
+```zeek -C -r case1.pcap intelligence-demo.zeek```
+```
+ubuntu@ubuntu$ cat /opt/zeek/intel/zeek_intel.txt 
+#fields	indicator	indicator_type	meta.source	meta.desc
+smart-fax.com	Intel::DOMAIN	zeek-intel-test	Zeek-Intelligence-Framework-Test
+
+ubuntu@ubuntu$ cat intelligence-demo.zeek 
+# Load intelligence framework!
+@load policy/frameworks/intel/seen
+@load policy/frameworks/intel/do_notice
+redef Intel::read_files += { "/opt/zeek/intel/zeek_intel.txt" }; 
+
+ubuntu@ubuntu$ zeek -C -r case1.pcap intelligence-demo.zeek 
+
+ubuntu@ubuntu$ cat intel.log | zeek-cut uid id.orig_h id.resp_h seen.indicator matched
+CZ1jLe2nHENdGQX377	10.6.27.102	10.6.27.1	smart-fax.com	Intel::DOMAIN	
+C044Ot1OxBt8qCk7f2	10.6.27.102	107.180.50.162	smart-fax.com	Intel::DOMAIN 
+```
 
