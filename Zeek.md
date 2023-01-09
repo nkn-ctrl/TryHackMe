@@ -71,7 +71,7 @@ CLsSsA3HLB2N6uJwW	udp	192.168.121.10	50080	192.168.120.10	514
 |```grep -v -e 'test1' -e 'test2'```|Display lines that don't match one or both "test1" and "test2" strings.|
 |```file```|View file information.|
 |```grep -rin Testvalue1 * \| column -t \| less -S```|Search the "Testvalue1" string everywhere, organise column spaces and view the output with less.|
-|```cat [domain list].txt \| rev \| cut -d '.' -f 1-2 \| rev```|Display the Domain name.|
+|```cat [domain list].txt \| rev \| cut -d '.' -f 1-2 \| rev```|Pick and Display unique domains from a large list.|
 
 ## Zeek Signatures
 Run Zeek with signature file
