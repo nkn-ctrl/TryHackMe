@@ -160,3 +160,13 @@ CZ1jLe2nHENdGQX377	10.6.27.102	10.6.27.1	smart-fax.com	Intel::DOMAIN
 C044Ot1OxBt8qCk7f2	10.6.27.102	107.180.50.162	smart-fax.com	Intel::DOMAIN 
 ```
 
+### Package Manager
+Zeek Package Manager is installed with Zeek and available with the ```zkg``` command.  
+| Command	| Description |
+|---------|-------------|
+|```zkg install package_path```|Install a package. Example (zkg install zeek/j-gras/zeek-af_packet-plugin).|
+|```zkg install git_url```|Install package. Example (zkg install https://github.com/corelight/ztest).|
+|```zkg list```|List installed package.|
+|```zkg remove```|Remove installed package.|
+|```zkg refresh```|Check version updates for installed packages.|
+|```zkg upgrade```|Update installed packages.|
