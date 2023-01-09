@@ -102,14 +102,14 @@ Scripts are located in a specific path.
 
 ### Load Frameworks
 #### File Framework
-- Hashes
+- Hashes  
 ```zeek -C -r case1.pcap hash-demo.zeek```
 ```
 ubuntu@ubuntu$ cat hash-demo.zeek 
 # Enable MD5, SHA1 and SHA256 hashing for all files.
 @load /opt/zeek/share/zeek/policy/frameworks/files/hash-all-files.zeek
 ```
-- Extract Files
+- Extract Files  
 ```zeek -C -r case1.pcap /opt/zeek/share/zeek/policy/frameworks/files/extract-all-files.zeek```
 ```
 ubuntu@ubuntu$ zeek -C -r case1.pcap /opt/zeek/share/zeek/policy/frameworks/files/extract-all-files.zeek
@@ -141,7 +141,7 @@ ubuntu@ubuntu$ grep -rin CZruIO2cqspVhLuAO9 * | column -t | nl | less -S
      3	http.log:11:1561667898.911759   CZruIO2cqspVhLuAO9  10.6.27.102     49162        107.180.50.162      80    1    GET    
 ```
 #### Notice Framework
-- Intelligence
+- Intelligence  
 Intelligence source location: ```/opt/zeek/intel/zeek_intel.txt```  
 ```zeek -C -r case1.pcap intelligence-demo.zeek```
 ```
