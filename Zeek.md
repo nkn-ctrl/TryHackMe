@@ -170,3 +170,33 @@ Zeek Package Manager is installed with Zeek and available with the ```zkg``` com
 |```zkg remove```|Remove installed package.|
 |```zkg refresh```|Check version updates for installed packages.|
 |```zkg upgrade```|Update installed packages.|
+
+#### Packages
+- Cleartext Submission of Password
+```
+ubuntu@ubuntu$ zkg install zeek/cybera/zeek-sniffpass
+ubuntu@ubuntu$ zkg list
+zeek/cybera/zeek-sniffpass (installed: master) - Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
+
+### Calling with script
+ubuntu@ubuntu$ zeek -Cr http.pcap sniff-demo.zeek 
+
+### View script contents
+ubuntu@ubuntu$ cat sniff-demo.zeek 
+@load /opt/zeek/share/zeek/site/zeek-sniffpass
+
+### Calling from path
+ubuntu@ubuntu$ zeek -Cr http.pcap /opt/zeek/share/zeek/site/zeek-sniffpass
+
+### Calling with package name
+ubuntu@ubuntu$ zeek -Cr http.pcap zeek-sniffpass 
+```
+
+- Geolocation Data
+```
+ubuntu@ubuntu$ zeek -Cr case1.pcap geoip-conn
+
+ubuntu@ubuntu$ cat conn.log | zeek-cut uid id.orig_h id.resp_h geo.orig.country_code geo.orig.region geo.orig.city geo.orig.latitude geo.orig.longitude geo.resp.country_code geo.resp.region geo.resp.city                                                  
+Cbk46G2zXi2i73FOU6	10.6.27.102	23.63.254.163	-	-	-	-	-	US	CA	Los Angeles
+```
+
