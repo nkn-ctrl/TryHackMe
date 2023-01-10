@@ -109,6 +109,11 @@ Scripts are located in a specific path.
 ubuntu@ubuntu$ cat hash-demo.zeek 
 # Enable MD5, SHA1 and SHA256 hashing for all files.
 @load /opt/zeek/share/zeek/policy/frameworks/files/hash-all-files.zeek
+
+ubuntu@ubuntu$ cat files.log | zeek-cut md5 sha1 sha256
+cd5a4d3fdd5bffc16bf959ef75cf37bc	33bf88d5b82df3723d5863c7d23445e345828904	6137f8db2192e638e13610f75e73b9247c05f4706f0afd1fdb132d86de6b4012
+b5243ec1df7d1d5304189e7db2744128	a66bd2557016377dfb95a87c21180e52b23d2e4e	f808229aa516ba134889f81cd699b8d246d46d796b55e13bee87435889a054fb
+cc28e40b46237ab6d5282199ef78c464	0d5c820002cf93384016bd4a2628dcc5101211f4	749e161661290e8a2d190b1a66469744127bc25bf46e5d0c6f2e835f4b92db18
 ```
 - Extract Files  
 ```zeek -C -r case1.pcap /opt/zeek/share/zeek/policy/frameworks/files/extract-all-files.zeek```
