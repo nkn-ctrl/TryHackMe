@@ -1,4 +1,5 @@
 # [Brim](https://www.brimdata.io/)
+![brim_logo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.brimdata.io%2F&psig=AOvVaw1DL7Qc4YriuWQ8M0tbzA6i&ust=1673439276797000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJD7-J79vPwCFQAAAAAdAAAAABAG)
 ### Brim Query Reference
 | Purpose |	Syntax | Example Query |
 |---------|--------|---------------|
