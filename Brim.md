@@ -11,4 +11,6 @@
 |Cut specific field from a log file|_path=="conn" \| cut "field name"|Cut the source IP, destination port and destination IP addresses from the conn log file.<br>```_path=="conn" \| cut id.orig_h, id.resp_p, id.resp_h```|
 |List unique values|uniq|Show the unique network connections.<br>```_path=="conn" \| cut id.orig_h, id.resp_p, id.resp_h \| sort \| uniq```|
 
+|Purpose|query|
+|-------|-----|
 |Communicated Hosts|Identifying the list of communicated hosts<br>```_path=="conn" | cut id.orig_h, id.resp_h | sort | uniq```|
