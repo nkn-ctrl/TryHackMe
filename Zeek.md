@@ -1,4 +1,4 @@
-# Zeek
+# [Zeek](https://zeek.org/)
 ![zeek_logo](https://docs.zeek.org/en/master/_images/zeek-logo-text.png)
 
 ## Network Security Monitoring and Zeek
