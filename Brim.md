@@ -14,3 +14,20 @@
 |Purpose|query|
 |-------|-----|
 |Communicated Hosts|Identifying the list of communicated hosts<br>```_path=="conn" \| cut id.orig_h, id.resp_h \| sort \| uniq```|
+|Frequently Communicated Hosts|Identify which hosts communicate with each other most frequently.<br>```_path=="conn" | cut id.orig_h, id.resp_h | sort | uniq -c | sort -r```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
+| | <br>``` ```|
