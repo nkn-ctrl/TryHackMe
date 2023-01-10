@@ -1,5 +1,5 @@
 # [Brim](https://www.brimdata.io/)
-![brim_logo](https://discord.com/channels/999068403555897515/1062344625681080360/1062344831801766018)
+![brim_logo](https://imgur.com/gallery/HYpO2zG)
 ### Brim Query Reference
 | Purpose |	Syntax | Example Query |
 |---------|--------|---------------|
