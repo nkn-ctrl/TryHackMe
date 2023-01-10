@@ -13,4 +13,4 @@
 
 |Purpose|query|
 |-------|-----|
-|Communicated Hosts|Identifying the list of communicated hosts<br>```_path=="conn" | cut id.orig_h, id.resp_h | sort | uniq```|
+|Communicated Hosts|Identifying the list of communicated hosts<br>```_path=="conn" \| cut id.orig_h, id.resp_h \| sort \| uniq```|
