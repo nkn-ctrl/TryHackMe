@@ -1,2 +1,1 @@
-# Brim
-[Brim](https://www.brimdata.io/)
+# [Brim](https://www.brimdata.io/)
