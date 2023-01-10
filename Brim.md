@@ -2,7 +2,7 @@
 
 | Purpose |	Syntax | Example Query |
 |---------|--------|---------------|
-| Basic search |You can search any string and numeric value.|Find logs containing an IP address or any value.  ```10.0.0.1```|
+| Basic search |You can search any string and numeric value.|Find logs containing an IP address or any value.<br>```10.0.0.1```|
 Logical operators 	Or, And, Not. 	
 Find logs contain three digits of an IP AND NTP keyword.
 192 and NTP
