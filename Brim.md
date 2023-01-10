@@ -15,7 +15,7 @@
 |-------|-----|
 |Communicated Hosts|Identifying the list of communicated hosts<br>```_path=="conn" \| cut id.orig_h, id.resp_h \| sort \| uniq```|
 |Frequently Communicated Hosts|Identify which hosts communicate with each other most frequently.<br>```_path=="conn" \| cut id.orig_h, id.resp_h \| sort \| uniq -c \| sort -r```|
-| Most Active Ports| Investigating the most active ports will help analysts to detect silent and well-hidden anomalies<br>```_path=="conn" | cut id.resp_p, service | sort | uniq -c | sort -r count```<br>``` _path=="conn" | cut id.orig_h, id.resp_h, id.resp_p, service | sort id.resp_p | uniq -c | sort -r ```|
+| Most Active Ports| Investigating the most active ports will help analysts to detect silent and well-hidden anomalies<br>```_path=="conn" \| cut id.resp_p, service \| sort \| uniq -c \| sort -r count```<br>``` _path=="conn" \| cut id.orig_h, id.resp_h, id.resp_p, service \| sort id.resp_p \| uniq -c \| sort -r ```|
 | | <br>``` ```|
 | | <br>``` ```|
 | | <br>``` ```|
