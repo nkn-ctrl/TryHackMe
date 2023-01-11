@@ -1,6 +1,6 @@
 # [Brim](https://www.brimdata.io/)
 <imag src="https://github.com/nkn-ctrl/pushtest/blob/main/brim-social-square.jpg" width="500">
-![brim_logo](https://github.com/nkn-ctrl/pushtest/blob/main/brim-social-square.jpg)
+
 ### Brim Query Reference
 | Purpose |	Syntax | Example Query |
 |---------|--------|---------------|
