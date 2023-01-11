@@ -17,11 +17,11 @@
 |-------|-----|
 |Communicated Hosts|Identifying the list of communicated hosts.<br>```_path=="conn" \| cut id.orig_h, id.resp_h \| sort \| uniq```|
 |Frequently Communicated Hosts|Identify which hosts communicate with each other most frequently.<br>```_path=="conn" \| cut id.orig_h, id.resp_h \| sort \| uniq -c \| sort -r```|
-| Most Active Ports| Investigating the most active ports will help analysts to detect silent and well-hidden anomalies.<br>```_path=="conn" \| cut id.resp_p, service \| sort \| uniq -c \| sort -r count```<br>``` _path=="conn" \| cut id.orig_h, id.resp_h, id.resp_p, service \| sort id.resp_p \| uniq -c \| sort -r```|
+| Most Active Ports| Investigating the most active ports will help analysts to detect silent and well-hidden anomalies.<br>```_path=="conn" \| cut id.resp_p, service \| sort \| uniq -c \| sort -r count```<br>```_path=="conn" \| cut id.orig_h, id.resp_h, id.resp_p, service \| sort id.resp_p \| uniq -c \| sort -r```|
 | Long Connections| The long connections could be the first anomaly indicator like backdoors.<br>```_path=="conn" \| cut id.orig_h, id.resp_p, id.resp_h, duration \| sort -r duration```|
 | Transferred Data| Investigate the total bytes for each connection.(malware downloading and spreading)<br>```_path=="conn" \| put total_bytes := orig_bytes + resp_bytes \| sort -r total_bytes \| cut uid, id, orig_bytes, resp_bytes, total_bytes```|
 | DNS and HTTP Queries| Identifying suspicious and out of ordinary domain connections and requests like C2.<br>```_path=="dns" \| count () by query \| sort -r ```<br>```_path=="http" \| count () by uri \| sort -r ```|
-| Suspicious Hostnames| Identifying suspicious and out of ordinary hostnames.<br>``` _path=="dhcp" \| cut host_name, domain```|
+| Suspicious Hostnames| Identifying suspicious and out of ordinary hostnames.<br>```_path=="dhcp" \| cut host_name, domain```|
 | Suspicious IP Addresses| Identifying suspicious and out of ordinary IP addresses.Since the connection logs are stored in one single log file (conn).<br>```_path=="conn" \| put classnet := network_of(id.resp_h) \| cut classnet \| count() by classnet \| sort -r```|
 | Detect Files| Investigating transferred files.<br>```filename!=null```|
 | SMB Activity| Investigating the malcious SMB activity like exploitation, lateral movement and malicious file sharing.<br>```_path=="dce_rpc" OR _path=="smb_mapping" OR _path=="smb_files" ```|
