@@ -1,5 +1,5 @@
 # [Brim](https://www.brimdata.io/)
-<img src="https://github.com/nkn-ctrl/pushtest/blob/main/brim-social-square.jpg" width="500">
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/brim-social-square.jpg" width="250">
 
 ### Brim Query Reference
 | Purpose |	Syntax | Example Query |
