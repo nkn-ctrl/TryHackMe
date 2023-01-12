@@ -129,7 +129,7 @@ Edit --> Configuration Profiles
   - TCP connect scans
   - SYN scans
   - UDP scans
-    
+
 It is essential to know how Nmap scans work to spot scan activity on the network.  
 TCP flags  
 |Notes|	Wireshark Filters|
@@ -141,3 +141,10 @@ TCP flags
 |Only RST flag.<br>RST flag is set. The rest of the bits are not important.|tcp.flags == 4<br>tcp.flags.reset == 1|
 |Only RST, ACK flags.<br>RST and ACK are set. The rest of the bits are not important.|tcp.flags == 20<br>(tcp.flags.reset == 1) and (tcp.flags.ack == 1)|
 |Only FIN flag<br>FIN flag is set. The rest of the bits are not important.|tcp.flags == 1<br>tcp.flags.fin == 1|
+
+#### TCP Connect Scans
+Usually conducted with ```nmap -sT``` command.  
+Usually has a windows size larger than 1024 bytes.
+```
+tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024 
+```
