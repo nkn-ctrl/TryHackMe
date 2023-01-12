@@ -145,6 +145,5 @@ TCP flags
 #### TCP Connect Scans
 Usually conducted with ```nmap -sT``` command.  
 Usually has a windows size larger than 1024 bytes.
-```
-tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024 
-```
+```tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024 ```
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_scan_tcpconnect.png" width="700">
