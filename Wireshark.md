@@ -21,11 +21,11 @@ Menu Bar -> \[Statistics\]
   <img src="https://miro.medium.com/max/1400/0*DPyYVChVECsjLwbQ.webp" width="600">
 
 ### Statistics Protocol Details
-- IPv4 and IPv6
-  <img src="" width="">
+- IPv4 and IPv6  
+  <img src="https://miro.medium.com/max/1400/0*D-7xdfvv7sxgMUXj.webp" width="600">
 
-- DNS
-  <img src="" width="">
+- DNS  
+  <img src="https://miro.medium.com/max/1400/0*t9sFS5gsGoC4CT8k.webp" width="600">
 
-- HTTP
-  <img src="" width="">
+- HTTP  
+  <img src="https://miro.medium.com/max/1400/0*tfVda1YuPVuAM1gJ.webp" width="600">
