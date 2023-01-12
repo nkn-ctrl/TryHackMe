@@ -4,8 +4,8 @@
 ## Statistics
 Menu Bar -> \[Statistics\]
 - Resolved Addresses
-- Protocol Hierarchy
+- Protocol Hierarchy  
   right-click and filter the event of interest.
-- Conversations
+- Conversations  
   Conversation represents traffic between two specific endpoints.
 - 
