@@ -85,35 +85,38 @@ Analyse --> Display Filter Expression
 ### Advanced Filtering
 #### Fileter: "contains"
 ```http.server contains "Apache"```  
- Search a value inside packets.   
- Find all "Apache" servers. List all HTTP packets where packets' "server" field contains the "Apache" keyword.  
- <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_contain.png" width="700">
+  Search a value inside packets.   
+  Find all "Apache" servers. List all HTTP packets where packets' "server" field contains the "Apache" keyword.  
+  <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_contain.png" width="700">
 
 #### Filter: "matches"
 ```http.host matches "\.(php|html)"```  
- Search a pattern of a regular expression.   
- Find all .php and .html pages. List all HTTP packets where packets' "host" fields match keywords ".php" or ".html".  
- <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_match.png" width="700">  
+  Search a pattern of a regular expression.   
+  Find all .php and .html pages. List all HTTP packets where packets' "host" fields match keywords ".php" or ".html".  
+  <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_match.png" width="700">  
 
 #### Filter: "in"
 ```tcp.port in {80 443 8080}```  
- Search a value or field inside of a specific scope/range.  
- Find all packets that use ports 80, 443 or 8080. List all TCP packets where packets' "port" fields have values 80, 443 or 8080.  
- <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_in.png" width="700">
+  Search a value or field inside of a specific scope/range.  
+  Find all packets that use ports 80, 443 or 8080. List all TCP packets 
+  where packets' "port" fields have values 80, 443 or 8080.  
+  <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_in.png" width="700">
 
 #### Filter: "upper"
 ```upper(http.server) contains "APACHE"```  
- Convert a string value to uppercase.  
- Find all "APACHE" servers. Convert all HTTP packets' "server" fields to uppercase and list packets that contain the "APACHE" keyword.  
- <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_upper.png" width="700">
+  Convert a string value to uppercase.  
+  Find all "APACHE" servers. Convert all HTTP packets' "server" fields to uppercase and list packets that contain the "APACHE" keyword.  
+  <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_upper.png" width="700">
 
 #### Filter: "lower"
- Convert a string value to lowercase.  
- Find all "apache" servers. Convert all HTTP packets' "server" fields info to lowercase and list packets that contain the "apache" keyword.
- <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_lower.png" width="700">
+```lower(http.server) contains "apache"```  
+  Convert a string value to lowercase.  
+  Find all "apache" servers. Convert all HTTP packets' "server" fields info to lowercase and list packets that contain the "apache" keyword.
+  <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_lower.png" width="700">
 
 #### Filter: "string"
- Convert a non-string value to a string.  
- Find all frames with odd numbers.Convert all "frame number" fields to string values, and list frames end with odd values.  
- <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_string.png" width="700">
+```string(frame.number) matches "[13579]$"```  
+  Convert a non-string value to a string.  
+  Find all frames with odd numbers.Convert all "frame number" fields to string values, and list frames end with odd values.  
+  <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_string.png" width="700">
 
