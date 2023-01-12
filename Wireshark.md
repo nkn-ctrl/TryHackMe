@@ -81,3 +81,9 @@ These filters filter application-specific information, like payload and linked d
 #### Display Filter Expressions
 Analyse --> Display Filter Expression  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_fileter.png" width="600">
+
+### Advanced Filtering
+#### Fileter: "contains"
+```http.server contains "Apache"```  
+List all HTTP packets where packets' "server" field contains the "Apache" keyword.  
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_contain.png" width="700">
