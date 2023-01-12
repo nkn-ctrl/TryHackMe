@@ -8,7 +8,7 @@ Menu Bar -> \[Statistics\]
 <img src="https://miro.medium.com/max/1400/0*gUDMUOL7UpGjkzj8.webp" width="500">
 
 - Protocol Hierarchy  
-  right-click and filter the event of interest.
+  right-click and filter the event of interest.  
   <img src="https://miro.medium.com/max/1400/0*-nIkphZ2R73fXfM0.webp" width="500">
 
 - Conversations  
