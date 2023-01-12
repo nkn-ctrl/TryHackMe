@@ -130,29 +130,10 @@ It is essential to know how Nmap scans work to spot scan activity on the network
 TCP flags
 |Notes|	Wireshark Filters|
 |-----|------------------|
-|Global search.|	- tcp<br> - udp|
-Only SYN flag.
-SYN flag is set. The rest of the bits are not important.
-tcp.flags == 2
-tcp.flags.syn == 1
-Only ACK flag.
-ACK flag is set. The rest of the bits are not important.
-tcp.flags == 16
-tcp.flags.ack == 1
-Only SYN, ACK flags.
-SYN and ACK are set. The rest of the bits are not important.
-tcp.flags == 18
-(tcp.flags.syn == 1) and (tcp.flags.ack == 1)
-Only RST flag.
-RST flag is set. The rest of the bits are not important.
-
-tcp.flags == 4
-tcp.flags.reset == 1
-Only RST, ACK flags.
-RST and ACK are set. The rest of the bits are not important.
-tcp.flags == 20
-(tcp.flags.reset == 1) and (tcp.flags.ack == 1)
-Only FIN flag
-FIN flag is set. The rest of the bits are not important.
-tcp.flags == 1
-tcp.flags.fin == 1
+|Global search.| tcp<br> udp|
+|Only SYN flag.<br>SYN flag is set. The rest of the bits are not important.|tcp.flags == 2<br>tcp.flags.syn == 1|
+|Only ACK flag.<br>ACK flag is set. The rest of the bits are not important.|tcp.flags == 16<br>tcp.flags.ack == 1|
+|Only SYN, ACK flags.<br>SYN and ACK are set. The rest of the bits are not important.|tcp.flags == 18<br>(tcp.flags.syn == 1) and (tcp.flags.ack == 1)|
+|Only RST flag.<br>RST flag is set. The rest of the bits are not important.|tcp.flags == 4<br>tcp.flags.reset == 1|
+|Only RST, ACK flags.<br>RST and ACK are set. The rest of the bits are not important.|tcp.flags == 20<br>(tcp.flags.reset == 1) and (tcp.flags.ack == 1)|
+|Only FIN flag<br>FIN flag is set. The rest of the bits are not important.|tcp.flags == 1<br>tcp.flags.fin == 1|
