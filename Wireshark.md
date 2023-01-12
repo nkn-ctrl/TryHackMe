@@ -87,3 +87,13 @@ Analyse --> Display Filter Expression
 ```http.server contains "Apache"```  
 List all HTTP packets where packets' "server" field contains the "Apache" keyword.  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_contain.png" width="700">
+
+#### Filter: "matches"
+```http.host matches "\.(php|html)"```  
+List all HTTP packets where packets' "host" fields match keywords ".php" or ".html".  
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_match.png" width="700">  
+
+#### Filter: "in"
+```tcp.port in {80 443 8080}```  
+List all TCP packets where packets' "port" fields have values 80, 443 or 8080.  
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_in.png" width="700">
