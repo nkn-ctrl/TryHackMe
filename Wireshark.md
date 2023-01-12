@@ -79,5 +79,5 @@ These filters filter application-specific information, like payload and linked d
 |```http.request.method == "POST"```|Show all HTTP POST requests|```dns.qry.type == 1```|Show all DNS "A" records|
 
 #### Display Filter Expressions
-Analyse --> Display Filter Expression
+Analyse --> Display Filter Expression  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_fileter.png" width="600">
