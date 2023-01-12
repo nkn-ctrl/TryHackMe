@@ -15,7 +15,7 @@ Menu Bar -> \[Statistics\]
   Conversation represents traffic between two specific endpoints.
   <img src="https://miro.medium.com/max/1400/0*5Qe3lMF4vWsqXI2Q.webp" width="600">
 
-- Endpoints
+- Endpoints  
   <img src="https://miro.medium.com/max/1400/0*QBJAIXb-QEhtB8RH.webp" width="600">  
   IP and port name resolution options  
   <img src="https://miro.medium.com/max/1400/0*DPyYVChVECsjLwbQ.webp" width="600">
