@@ -143,7 +143,19 @@ TCP flags
 |Only FIN flag<br>FIN flag is set. The rest of the bits are not important.|tcp.flags == 1<br>tcp.flags.fin == 1|
 
 #### TCP Connect Scans
-```tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024 ```  
-- Usually conducted with ```nmap -sT``` command.  
+```tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024```  
+- Usually conducted with ```nmap -sT``` command.(non-privileged users)  
 - Usually has a windows size larger than 1024 bytes.  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_scan_tcpconnect.png" width="700">
+
+#### SYN Scans
+```tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size <= 1024```  
+- Usually conducted with ```nmap -sS``` command.(privileged users)
+- Usually have a size less than or equal to 1024 bytes.
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_scan_syn.png" width="700">
+
+#### UDP Scans
+```icmp.type==3 and icmp.code==3```  
+- No prompt for open ports, ICMP error message for close ports
+- Usually conducted with ```nmap -sU``` command.  
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_scan_udp.png" width="700">
