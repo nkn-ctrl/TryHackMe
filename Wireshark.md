@@ -37,4 +37,13 @@ Menu Bar -> \[Statistics\]
 |Capture Filters|Save only. It is set before capturing traffic and not changeable during the capture.|```tcp port 80```|
 |Display Filters|Reducing the number of visible packets, and it is changeable during the capture.|```tcp.port == 80```|
 
-### Capture Filter Syntax
+### Comparison Operators
+|English|	C-Like|	Description|	Example|
+|-------|-------|------------|---------|
+|eq|==|Equal|```ip.src == 10.10.10.100```|
+|ne|!=|Not equal|```ip.src != 10.10.10.100```|
+|gt|>|Greater than|```ip.ttl > 250```|
+|lt|<|Less Than|```ip.ttl < 10```|
+|ge|>=|Greater than or equal to|```ip.ttl >= 0xFA```|
+|le|<=|Less than or equal to|```ip.ttl <= 0xA```|
+
