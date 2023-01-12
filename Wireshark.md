@@ -130,7 +130,7 @@ Edit --> Configuration Profiles
 - SYN scans
 - UDP scans  
 It is essential to know how Nmap scans work to spot scan activity on the network.  
-- TCP flags  
+TCP flags  
 |Notes|	Wireshark Filters|
 |-----|------------------|
 |Global search.| tcp<br> udp|
