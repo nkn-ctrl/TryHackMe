@@ -159,3 +159,20 @@ TCP flags
 - No prompt for open ports, ICMP error message for close ports
 - Usually conducted with ```nmap -sU``` command.  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_scan_udp.png" width="700">
+
+### ARP Poisoning/Spoofing (A.K.A. Man In The Middle Attack)
+
+|Notes|	Wireshark filter|
+|-----|-----------------|
+|Global search	|```arp```|
+|"ARP" options for grabbing the low-hanging fruits:<br>
+Opcode 1: ARP requests.<br>
+Opcode 2: ARP responses.<br>
+Hunt: Arp scanning<br>
+Hunt: Possible ARP poisoning detection<br>
+Hunt: Possible ARP flooding from detection:|
+```arp.opcode == 1```<br>
+```arp.opcode == 2```<br>
+```arp.dst.hw_mac==00:00:00:00:00:00```<br>
+```arp.duplicate-address-detected or arp.duplicate-address-frame```<br>
+```((arp) && (arp.opcode == 1)) && (arp.src.hw_mac == target-mac-address)```|
