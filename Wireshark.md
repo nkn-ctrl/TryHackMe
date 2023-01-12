@@ -51,7 +51,7 @@ Menu Bar -> \[Statistics\]
 |not|!|Logical NOT|```!(ip.src == 10.10.10.222)```|
 
 ### Protocol Filters
-#### IP Filters
+#### IP Filters(Network Layer)
 These filters filter network-level information like IP addresses, version, time to live, type of service, flags, and checksum values.
 |Filter|	Description|
 |:----:|-------------|
@@ -61,10 +61,21 @@ These filters filter network-level information like IP addresses, version, time 
 |```ip.src == 10.10.10.111```|Show all packets originated from 10.10.10.111|
 |```ip.dst == 10.10.10.111```|Show all packets sent to 10.10.10.111|
 
-#### TCP and UDP Filters
+#### TCP and UDP Filters(TransPort Layer)
 These filters filter transport protocol level information like source and destination ports, sequence number, acknowledgement number, windows size, timestamps, flags, length and protocol errors.
-|Filter|	Description|Filter|	Expression|
-|:----:|-------------|:----:|-----------|
+|Filter|	Description|Filter|	Description|
+|:----:|-------------|:----:|------------|
 |```tcp.port == 80```|Show all TCP packets with port 80 	|```udp.port == 53```|Show all UDP packets with port 53|
 |```tcp.srcport == 1234```|Show all TCP packets originating from port 1234	|```udp.srcport == 1234```|Show all UDP packets originating from port 1234|
 |```tcp.dstport == 80```|Show all TCP packets sent to port 80	|```udp.dstport == 5353```|Show all UDP packets sent to port 5353|
+
+#### HTTP and DNS(Application Layer)
+These filters filter application-specific information, like payload and linked data, depending on the protocol type.
+|Filter|	Description|Filter|	Description|
+|:----:|-------------|:----:|------------|
+|```http```|Show all HTTP packets	|```dns```|Show all DNS packets|
+|```http.response.code == 200```|Show all packets with HTTP response code "200"	|```dns.flags.response == 0```|Show all DNS requests|
+|```http.request.method == "GET"```|Show all HTTP GET requests	
+|```dns.flags.response == 1```|Show all DNS responses|
+|```http.request.method == "POST"```|Show all HTTP POST requests	
+|```dns.qry.type == 1```|Show all DNS "A" records|
