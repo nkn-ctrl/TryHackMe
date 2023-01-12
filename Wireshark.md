@@ -4,7 +4,7 @@
 ## Statistics
 Menu Bar -> \[Statistics\]
 ### Statistics Summary
-- Resolved Addresses
+- Resolved Addresses  
   <img src="https://miro.medium.com/max/1400/0*gUDMUOL7UpGjkzj8.webp" width="500">
 
 - Protocol Hierarchy  
