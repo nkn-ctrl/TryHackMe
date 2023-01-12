@@ -126,9 +126,9 @@ Edit --> Configuration Profiles
 ## Traffic Analysis
 
 ### Nmap Scans
-- TCP connect scans
-- SYN scans
-- UDP scans  
+  - TCP connect scans
+  - SYN scans
+  - UDP scans  
 It is essential to know how Nmap scans work to spot scan activity on the network.  
 TCP flags  
 |Notes|	Wireshark Filters|
