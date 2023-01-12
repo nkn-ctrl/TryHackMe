@@ -77,3 +77,7 @@ These filters filter application-specific information, like payload and linked d
 |```http.response.code == 200```|Show all packets with HTTP response code "200"	|```dns.flags.response == 0```|Show all DNS requests|
 |```http.request.method == "GET"```|Show all HTTP GET requests|```dns.flags.response == 1```|Show all DNS responses|
 |```http.request.method == "POST"```|Show all HTTP POST requests|```dns.qry.type == 1```|Show all DNS "A" records|
+
+#### Display Filter Expressions
+Analyse --> Display Filter Expression
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_fileter.png" width="600">
