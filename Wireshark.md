@@ -5,7 +5,7 @@
 Menu Bar -> \[Statistics\]
 ### Statistics Summary
 - Resolved Addresses
-![1](https://miro.medium.com/max/1400/0*gUDMUOL7UpGjkzj8.webp)
+<img src="https://miro.medium.com/max/1400/0*gUDMUOL7UpGjkzj8.webp" width="500">
 - Protocol Hierarchy  
   right-click and filter the event of interest.
 - Conversations  
