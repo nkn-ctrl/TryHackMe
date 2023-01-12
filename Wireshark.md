@@ -52,3 +52,11 @@ Menu Bar -> \[Statistics\]
 
 ### Protocol Filters
 #### IP Filters
+These filters filter network-level information like IP addresses, version, time to live, type of service, flags, and checksum values.
+|Filter|	Description|
+|------|-------------|
+|```ip```|Show all IP packets.|
+|```ip.addr == 10.10.10.111```|Show all packets containing IP address 10.10.10.111.|
+|```ip.addr == 10.10.10.0/24```|Show all packets containing IP addresses from 10.10.10.0/24 subnet.|
+|```ip.src == 10.10.10.111```|Show all packets originated from 10.10.10.111|
+|```ip.dst == 10.10.10.111```|Show all packets sent to 10.10.10.111|
