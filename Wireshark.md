@@ -32,7 +32,9 @@ Menu Bar -> \[Statistics\]
 
 ## Packet Filtering
 ### Packet Filtering
-| Filtering Types | Description |
-|-----------------|-------------|
-|Capture Filters|This type of filter is used to save only a specific part of the traffic. It is set before capturing traffic and not changeable during the capture.|
-|Display Filters|This type of filter is used to investigate packets by reducing the number of visible packets, and it is changeable during the capture.|
+| Filtering Types | Description | Syntax |
+|-----------------|-------------|--------|
+|Capture Filters|Save only. It is set before capturing traffic and not changeable during the capture.|```tcp port 80```|
+|Display Filters|Reducing the number of visible packets, and it is changeable during the capture.|```tcp.port == 80```|
+
+### Capture Filter Syntax
