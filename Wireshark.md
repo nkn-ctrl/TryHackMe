@@ -46,6 +46,6 @@ Menu Bar -> \[Statistics\]
 |lt|<|Less Than|```ip.ttl < 10```|
 |ge|>=|Greater than or equal to|```ip.ttl >= 0xFA```|
 |le|<=|Less than or equal to|```ip.ttl <= 0xA```|
-|and|&& Logical AND|```(ip.src == 10.10.10.100) AND (ip.src == 10.10.10.111)```|
-|or|\|\| Logical OR|```(ip.src == 10.10.10.100) OR (ip.src == 10.10.10.111)```|
-|not|! Logical NOT|```!(ip.src == 10.10.10.222)```|
+|and|&&|Logical AND|```(ip.src == 10.10.10.100) AND (ip.src == 10.10.10.111)```|
+|or|\|\||Logical OR|```(ip.src == 10.10.10.100) OR (ip.src == 10.10.10.111)```|
+|not|!|Logical NOT|```!(ip.src == 10.10.10.222)```|
