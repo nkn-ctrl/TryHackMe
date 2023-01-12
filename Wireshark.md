@@ -143,7 +143,7 @@ TCP flags
 |Only FIN flag<br>FIN flag is set. The rest of the bits are not important.|tcp.flags == 1<br>tcp.flags.fin == 1|
 
 #### TCP Connect Scans
+```tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024 ```  
 Usually conducted with ```nmap -sT``` command.  
-Usually has a windows size larger than 1024 bytes.
-```tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024 ```
+Usually has a windows size larger than 1024 bytes.  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_scan_tcpconnect.png" width="700">
