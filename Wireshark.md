@@ -39,7 +39,7 @@ Menu Bar -> \[Statistics\]
 
 ### Comparison Operators
 |English|	C-Like|	Description|	Example|
-|-------|-------|------------|---------|
+|:-----:|:-----:|------------|---------|
 |eq|==|Equal|```ip.src == 10.10.10.100```|
 |ne|!=|Not equal|```ip.src != 10.10.10.100```|
 |gt|>|Greater than|```ip.ttl > 250```|
@@ -60,3 +60,11 @@ These filters filter network-level information like IP addresses, version, time 
 |```ip.addr == 10.10.10.0/24```|Show all packets containing IP addresses from 10.10.10.0/24 subnet.|
 |```ip.src == 10.10.10.111```|Show all packets originated from 10.10.10.111|
 |```ip.dst == 10.10.10.111```|Show all packets sent to 10.10.10.111|
+
+#### TCP and UDP Filters
+These filters filter transport protocol level information like source and destination ports, sequence number, acknowledgement number, windows size, timestamps, flags, length and protocol errors.
+|Filter|	Description|Filter|	Expression|
+|:----:|-------------|:----:|-----------|
+|```tcp.port == 80```|Show all TCP packets with port 80 	|```udp.port == 53```|Show all UDP packets with port 53|
+|```tcp.srcport == 1234```|Show all TCP packets originating from port 1234	|```udp.srcport == 1234```|Show all UDP packets originating from port 1234|
+|```tcp.dstport == 80```|Show all TCP packets sent to port 80	|```udp.dstport == 5353```|Show all UDP packets sent to port 5353|
