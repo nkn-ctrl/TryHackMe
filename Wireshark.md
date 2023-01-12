@@ -120,3 +120,6 @@ Analyse --> Display Filter Expression
   Find all frames with odd numbers.Convert all "frame number" fields to string values, and list frames end with odd values.  
   <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_string.png" width="700">
 
+## Profiles
+Edit --> Configuration Profiles
+
