@@ -181,9 +181,9 @@ Dynamic Host Configuration Protocol (DHCP)
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search.|```dhcp``` or ```bootp```|
-|"DHCP Request" packets contain the hostname information<br>"DHCP ACK" packets represent the accepted requests<br>"DHCP NAK" packets represent denied requests|Request: dhcp.option.dhcp == 3<br>ACK: dhcp.option.dhcp == 5<br>NAK: dhcp.option.dhcp == 6|
+|"DHCP Request" packets contain the hostname information<br>"DHCP ACK" packets represent the accepted requests<br>"DHCP NAK" packets represent denied requests|Request: ```dhcp.option.dhcp == 3```<br>ACK: ```dhcp.option.dhcp == 5```<br>NAK: ```dhcp.option.dhcp == 6```|
 |"DHCP Request" options<br>Option 12: Hostname.<br>Option 50: Requested IP address.<br>Option 51: Requested IP lease time.<br>Option 61: Client's MAC address.|```dhcp.option.hostname contains "keyword"```|
 |"DHCP ACK" options<br> Option 15: Domain name.<br> Option 51: Assigned IP lease time.|```dhcp.option.domain_name contains "keyword"```|
-|"DHCP NAK" options<br> Option 56: Message (rejection details/reason).|As the message could be unique according to the case/situation, It is suggested to read the message instead of filtering it. |
+|"DHCP NAK" options<br> Option 56: Message (rejection details/reason).|As the message could be unique according to the case/situation.|
 
 
