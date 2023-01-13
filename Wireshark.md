@@ -186,4 +186,17 @@ Dynamic Host Configuration Protocol (DHCP)
 |"DHCP ACK" options<br> Option 15: Domain name.<br> Option 51: Assigned IP lease time.|```dhcp.option.domain_name contains "keyword"```|
 |"DHCP NAK" options<br> Option 56: Message (rejection details/reason).|As the message could be unique according to the case/situation.|
 
+#### NetBIOS (NBNS) Analysis
+Network Basic Input/Output System  
+|Notes|	Wireshark Filter|
+|-----|-----------------|
+|Global search.|```nbns```|
+|"NBNS" options<br>Queries: Query details.<br>Query details could contain "name, Time to live (TTL) and IP address details"|```nbns.name contains "keyword"```|
+
+#### Kerberos Analysis
+|Notes|	Wireshark Filter|
+|-----|-----------------|
+|Global search.	|```kerberos```|
+|User account search:<br>CNameString: The username.<br>The values end with ```$``` are hostnames, and the ones without it are user names.|```kerberos.CNameString contains "keyword"```<br>```kerberos.CNameString and !(kerberos.CNameString contains "$" )```|
+|"Kerberos" options<br>*pvno*: Protocol version.<br>realm: Domain name for the generated ticket.<br>sname: Service and domain name for the generated ticket.<br>addresses: Client IP address and NetBIOS name.|
 
