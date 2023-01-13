@@ -198,5 +198,5 @@ Network Basic Input/Output System
 |-----|-----------------|
 |Global search.	|```kerberos```|
 |User account search:<br>CNameString: The username.<br>The values end with ```$``` are hostnames, and the ones without it are user names.|```kerberos.CNameString contains "keyword"```<br>```kerberos.CNameString and !(kerberos.CNameString contains "$" )```|
-|"Kerberos" options<br>*pvno*: Protocol version.<br>realm: Domain name for the generated ticket.<br>sname: Service and domain name for the generated ticket.<br>addresses: Client IP address and NetBIOS name.|
+|"Kerberos" options<br>**pvno**: Protocol version.<br>realm: Domain name for the generated ticket.<br>sname: Service and domain name for the generated ticket.<br>addresses: Client IP address and NetBIOS name.|
 
