@@ -111,7 +111,7 @@ Analyse --> Display Filter Expression
 #### Filter: "lower"
 ```lower(http.server) contains "apache"```  
   Convert a string value to lowercase.  
-  Find all "apache" servers. Convert all HTTP packets' "server" fields info to lowercase and list packets that contain the "apache" keyword.
+  Find all "apache" servers. Convert all HTTP packets' "server" fields info to lowercase and list packets that contain the "apache" keyword.  
   <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_lower.png" width="700">
 
 #### Filter: "string"
@@ -169,3 +169,5 @@ TCP flags
 
 A possible IP spoofing case  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wiresirk_arpspoofing.png" width="800">
+
+###  Identifying Hosts: DHCP, NetBIOS and Kerberos
