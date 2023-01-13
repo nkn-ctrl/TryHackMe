@@ -200,4 +200,4 @@ Network Basic Input/Output System
 |User account search:<br>**CNameString**: The username.<br>The values end with ```$``` are hostnames, and the ones without it are user names.|```kerberos.CNameString contains "keyword"```<br>```kerberos.CNameString and !(kerberos.CNameString contains "$" )```|
 |"Kerberos" options<br>**pvno**: Protocol version.<br>**realm**: Domain name for the generated ticket.<br>**sname**: Service and domain name for the generated ticket.<br>**addresses**: Client IP address and NetBIOS name|```kerberos.pvno == 5```<br>```kerberos.realm contains ".org"```<br>```kerberos.SNameString == "krbtg"```|
 
-
+### Tunnelling Traffic: ICMP and DNS 
