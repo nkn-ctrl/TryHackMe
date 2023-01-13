@@ -170,7 +170,7 @@ TCP flags
 A possible IP spoofing case  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wiresirk_arpspoofing.png" width="800">
 
-###  Identifying Hosts: <span style="color: red; ">DHCP, NetBIOS and Kerberos</span>
+###  Identifying Hosts: DHCP, NetBIOS and Kerberos
 Protocols that can be used in Host and User identification:
 - Dynamic Host Configuration Protocol (DHCP) traffic
 - NetBIOS (NBNS) traffic 
