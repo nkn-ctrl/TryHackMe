@@ -201,3 +201,13 @@ Network Basic Input/Output System
 |"Kerberos" options<br>**pvno**: Protocol version.<br>**realm**: Domain name for the generated ticket.<br>**sname**: Service and domain name for the generated ticket.<br>**addresses**: Client IP address and NetBIOS name|```kerberos.pvno == 5```<br>```kerberos.realm contains ".org"```<br>```kerberos.SNameString == "krbtg"```|
 
 ### Tunnelling Traffic: ICMP and DNS 
+Traffic tunnelling is (also known as "port forwarding") transferring the data/resources in a secure method to network segments and zones.
+
+#### ICMP Analysis
+|Notes|	Wireshark Filter|
+|-----|-----------------|
+|Global search|```icmp```|
+|"ICMP" options<br>Packet length.<br>ICMP destination addresses.<br>Encapsulated protocol signs in ICMP payload.|```data.len > 64 and icmp```|
+
+#### DNS Analysis
+
