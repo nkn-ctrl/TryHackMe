@@ -181,24 +181,24 @@ Dynamic Host Configuration Protocol (DHCP)
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search.|```dhcp``` or ```bootp```|
-|- **"DHCP Request"** packets contain the hostname information<br> - **"DHCP ACK"** packets represent the accepted requests<br> - **"DHCP NAK"** packets represent denied requests|Request: ```dhcp.option.dhcp == 3```<br>ACK: ```dhcp.option.dhcp == 5```<br>NAK: ```dhcp.option.dhcp == 6```|
-|"DHCP Request" options for grabbing the low-hanging fruits:<br>**Option 12**: Hostname.<br> - **Option 50**: Requested IP address.<br> - **Option 51**: Requested IP lease time.<br> - **Option 61**: Client's MAC address.|```dhcp.option.hostname contains "keyword"```<br>```dhcp.option.requested_ip_address == "ip_address"```|
-|"DHCP ACK" options for grabbing the low-hanging fruits:<br> - **Option 15**: Domain name.<br> -  **Option 51**: Assigned IP lease time.|```dhcp.option.domain_name contains "keyword"```|
-|"DHCP NAK" options for grabbing the low-hanging fruits:<br> - **Option 56**: Message (rejection details/reason).|As the message could be unique according to the case/situation.|
+|- **"DHCP Request"** packets contain the hostname information<br>- **"DHCP ACK"** packets represent the accepted requests<br>- **"DHCP NAK"** packets represent denied requests|Request: ```dhcp.option.dhcp == 3```<br>ACK: ```dhcp.option.dhcp == 5```<br>NAK: ```dhcp.option.dhcp == 6```|
+|"DHCP Request" options for grabbing the low-hanging fruits:<br>**Option 12**: Hostname.<br>- **Option 50**: Requested IP address.<br>- **Option 51**: Requested IP lease time.<br>- **Option 61**: Client's MAC address.|```dhcp.option.hostname contains "keyword"```<br>```dhcp.option.requested_ip_address == "ip_address"```|
+|"DHCP ACK" options for grabbing the low-hanging fruits:<br>- **Option 15**: Domain name.<br>-  **Option 51**: Assigned IP lease time.|```dhcp.option.domain_name contains "keyword"```|
+|"DHCP NAK" options for grabbing the low-hanging fruits:<br>- **Option 56**: Message (rejection details/reason).|As the message could be unique according to the case/situation.|
 
 #### NetBIOS (NBNS) Analysis
 Network Basic Input/Output System  
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search.|```nbns```|
-|"NBNS" options for grabbing the low-hanging fruits:<br> - **Queries**: Query details.<br>Query details could contain **"name, Time to live (TTL) and IP address details"**|```nbns.name contains "keyword"```|
+|"NBNS" options for grabbing the low-hanging fruits:<br>- **Queries**: Query details.<br>Query details could contain **"name, Time to live (TTL) and IP address details"**|```nbns.name contains "keyword"```|
 
 #### Kerberos Analysis
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search.	|```kerberos```|
 |User account search:<br>**CNameString**: The username.<br>The values end with ```$``` are hostnames, and the ones without it are user names.|```kerberos.CNameString contains "keyword"```<br>```kerberos.CNameString and !(kerberos.CNameString contains "$" )```|
-|"Kerberos" options for grabbing the low-hanging fruits:<br> - **pvno**: Protocol version.<br> - **realm**: Domain name for the generated ticket.<br> - **sname**: Service and domain name for the generated ticket.<br> - **addresses**: Client IP address and NetBIOS name|```kerberos.pvno == 5```<br>```kerberos.realm contains ".org"```<br>```kerberos.SNameString == "krbtg"```|
+|"Kerberos" options for grabbing the low-hanging fruits:<br>- **pvno**: Protocol version.<br>- **realm**: Domain name for the generated ticket.<br>- **sname**: Service and domain name for the generated ticket.<br>- **addresses**: Client IP address and NetBIOS name|```kerberos.pvno == 5```<br>```kerberos.realm contains ".org"```<br>```kerberos.SNameString == "krbtg"```|
 
 ### Tunnelling Traffic: ICMP and DNS 
 Traffic tunnelling is (also known as "port forwarding") transferring the data/resources in a secure method to network segments and zones.
@@ -207,13 +207,13 @@ Traffic tunnelling is (also known as "port forwarding") transferring the data/re
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search|```icmp```|
-|"ICMP" optionsfor grabbing the low-hanging fruits:<br> - Packet length.<br> - ICMP destination addresses.<br> - Encapsulated protocol signs in ICMP payload.|```data.len > 64 and icmp```|
+|"ICMP" optionsfor grabbing the low-hanging fruits:<br>- Packet length.<br>- ICMP destination addresses.<br>- Encapsulated protocol signs in ICMP payload.|```data.len > 64 and icmp```|
 
 #### DNS Analysis
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search|```dns```|
-|"DNS" options for grabbing the low-hanging fruits:<br> - Query length.<br> - Anomalous and non-regular names in DNS addresses.<br> - Long DNS addresses with encoded subdomain addresses.<br> - Known patterns like dnscat and dns2tcp.<br> - Statistical analysis like the anomalous volume of DNS requests for a particular target.<br>!mdns: Disable local link device queries.|```dns contains "dnscat"```<br>```dns.qry.name.len > 15 and !mdns```|
+|"DNS" options for grabbing the low-hanging fruits:<br>- Query length.<br>- Anomalous and non-regular names in DNS addresses.<br>- Long DNS addresses with encoded subdomain addresses.<br>- Known patterns like dnscat and dns2tcp.<br>- Statistical analysis like the anomalous volume of DNS requests for a particular target.<br>!mdns: Disable local link device queries.|```dns contains "dnscat"```<br>```dns.qry.name.len > 15 and !mdns```|
 
 ### Cleartext Protocol Analysis: FTP and HTTP
 
@@ -221,46 +221,45 @@ Traffic tunnelling is (also known as "port forwarding") transferring the data/re
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search|```ftp```|
-|"FTP" options for grabbing the low-hanging fruits:<br> - x1x series: Information request responses.<br> - x2x series: Connection messages.<br> - x3x series: Authentication messages.<br>Note: "200" means command successful.|--|
-|"x1x" series options for grabbing the low-hanging fruits:<br> - 211: System status.<br> - 212: Directory status.<br> - 213: File status|```ftp.response.code == 211```|
-|"x2x" series options for grabbing the low-hanging fruits:<br> - 220: Service ready.<br> - 227: Entering passive mode.<br> - 228: Long passive mode.<br> - 229: Extended passive mode.|```ftp.response.code == 227```|
-|"x3x" series options for grabbing the low-hanging fruits:<br> - 230: User login.<br> - 231: User logout.<br> - 331: Valid username.<br> - 430: Invalid username or password<br> - 530: No login, invalid password.|```ftp.response.code == 230```|
-|"FTP" commands for grabbing the low-hanging fruits:<br> - USER: Username.<br> - PASS: Password.<br> - CWD: Current work directory.<br> - LIST: List.|```ftp.request.command == "USER"```<br>```ftp.request.command == "PASS"```<br>```ftp.request.arg == "password"```|
-|Advanced usages examples for grabbing low-hanging fruits:<br> - Bruteforce signal: List failed login attempts.<br> - Bruteforce signal: List target username.<br> - Password spray signal: List targets for a static password.|```ftp.response.code == 530```<br>```(ftp.response.code == 530) and (ftp.response.arg contains "username")```<br>```(ftp.request.command == "PASS" ) and (ftp.request.arg == "password")```|
+|"FTP" options for grabbing the low-hanging fruits:<br>- x1x series: Information request responses.<br>- x2x series: Connection messages.<br>- x3x series: Authentication messages.<br>Note: "200" means command successful.|--|
+|"x1x" series options for grabbing the low-hanging fruits:<br>- 211: System status.<br>- 212: Directory status.<br>- 213: File status|```ftp.response.code == 211```|
+|"x2x" series options for grabbing the low-hanging fruits:<br>- 220: Service ready.<br>- 227: Entering passive mode.<br>- 228: Long passive mode.<br>- 229: Extended passive mode.|```ftp.response.code == 227```|
+|"x3x" series options for grabbing the low-hanging fruits:<br>- 230: User login.<br>- 231: User logout.<br>- 331: Valid username.<br>- 430: Invalid username or password<br>- 530: No login, invalid password.|```ftp.response.code == 230```|
+|"FTP" commands for grabbing the low-hanging fruits:<br>- USER: Username.<br>- PASS: Password.<br>- CWD: Current work directory.<br>- LIST: List.|```ftp.request.command == "USER"```<br>```ftp.request.command == "PASS"```<br>```ftp.request.arg == "password"```|
+|Advanced usages examples for grabbing low-hanging fruits:<br>- Bruteforce signal: List failed login attempts.<br>- Bruteforce signal: List target username.<br>- Password spray signal: List targets for a static password.|```ftp.response.code == 530```<br>```(ftp.response.code == 530) and (ftp.response.arg contains "username")```<br>```(ftp.request.command == "PASS" ) and (ftp.request.arg == "password")```|
 
 #### HTTP Analysis
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search|```http```<br>```http2```|
-|"HTTP Request Methods" for grabbing the low-hanging fruits:<br> - GET<br> - POST<br> - Request: Listing all requests|```http.request.method == "GET"```<br>```http.request.method == "POST"```<br>```http.request```|
-|"HTTP Response Status Codes" for grabbing the low-hanging fruits:<br> - 200 OK: Request successful<br> - 301 Moved Permanently: Resource is moved to a new URL/path (permanently).<br> - 302 Moved Temporarily: Resource is moved to a new URL/path (temporarily).<br> - 400 Bad Request: Server didn't understand the request.<br> - 401 Unauthorised: URL needs authorisation (login, etc.).<br> - 403 Forbidden: No access to the requested URL. <br> - 404 Not Found: Server can't find the requested URL.<br> - 405 Method Not Allowed: Used method is not suitable or blocked.<br> - 408 Request Timeout:  Request look longer than server wait time.<br> - 500 Internal Server Error: Request not completed, unexpected error.<br> - 503 Service Unavailable: Request not completed server or service is down.|```http.response.code == 200```<br>```http.response.code == 401```<br>```http.response.code == 403```<br>```http.response.code == 404```<br>```http.response.code == 405```<br>```http.response.code == 503```|
-|"HTTP Parameters" for grabbing the low-hanging fruits:<br> - User agent: Browser and operating system identification to a web server application.<br> - Request URI: Points the requested resource from the server.<br> - Full URI: Complete URI information.|```http.user_agent contains "nmap"```<br>```http.request.uri contains "admin"```<br>```http.request.full_uri contains "admin"```|
-|"HTTP Parameters" for grabbing the low-hanging fruits:<br> - Server: Server service name.<br> - Host: Hostname of the server<br> - Connection: Connection status.<br> - Line-based text data: Cleartext data provided by the server.<br> - HTML Form URL Encoded: Web form information.|```http.server contains "apache"```<br>```http.host contains "keyword"```<br>```http.host == "keyword"```<br>```http.connection == "Keep-Alive"```<br>```data-text-lines contains "keyword"```|
+|"HTTP Request Methods" for grabbing the low-hanging fruits:<br>- GET<br>- POST<br>- Request: Listing all requests|```http.request.method == "GET"```<br>```http.request.method == "POST"```<br>```http.request```|
+|"HTTP Response Status Codes" for grabbing the low-hanging fruits:<br>- 200 OK: Request successful<br>- 301 Moved Permanently: Resource is moved to a new URL/path (permanently).<br>- 302 Moved Temporarily: Resource is moved to a new URL/path (temporarily).<br>- 400 Bad Request: Server didn't understand the request.<br>- 401 Unauthorised: URL needs authorisation (login, etc.).<br>- 403 Forbidden: No access to the requested URL. <br>- 404 Not Found: Server can't find the requested URL.<br>- 405 Method Not Allowed: Used method is not suitable or blocked.<br>- 408 Request Timeout:  Request look longer than server wait time.<br>- 500 Internal Server Error: Request not completed, unexpected error.<br>- 503 Service Unavailable: Request not completed server or service is down.|```http.response.code == 200```<br>```http.response.code == 401```<br>```http.response.code == 403```<br>```http.response.code == 404```<br>```http.response.code == 405```<br>```http.response.code == 503```|
+|"HTTP Parameters" for grabbing the low-hanging fruits:<br>- User agent: Browser and operating system identification to a web server application.<br>- Request URI: Points the requested resource from the server.<br>- Full URI: Complete URI information.|```http.user_agent contains "nmap"```<br>```http.request.uri contains "admin"```<br>```http.request.full_uri contains "admin"```|
+|"HTTP Parameters" for grabbing the low-hanging fruits:<br>- Server: Server service name.<br>- Host: Hostname of the server<br>- Connection: Connection status.<br>- Line-based text data: Cleartext data provided by the server.<br>- HTML Form URL Encoded: Web form information.|```http.server contains "apache"```<br>```http.host contains "keyword"```<br>```http.host == "keyword"```<br>```http.connection == "Keep-Alive"```<br>```data-text-lines contains "keyword"```|
 
 User Agent Analysis  
 [User Agents - Parser and API - Easily decode any user agent](https://developers.whatismybrowser.com/useragents/explore/)<br>
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search|```http.user_agent```|
-|Research outcomes for grabbing the low-hanging fruits:<br> - Different user agent information from the same host in a short time notice.<br> - Non-standard and custom user agent info.<br> - Subtle spelling differences. ("Mozilla" is not the same as  "Mozlilla" or "Mozlila")<br> - Audit tools info like Nmap, Nikto, Wfuzz and sqlmap in the user agent field.<br> - Payload data in the user agent field.|```(http.user_agent contains "sqlmap") or (http.user_agent contains "Nmap") or (http.user_agent contains "Wfuzz") or (http.user_agent contains "Nikto")```|
+|Research outcomes for grabbing the low-hanging fruits:<br>- Different user agent information from the same host in a short time notice.<br>- Non-standard and custom user agent info.<br>- Subtle spelling differences. ("Mozilla" is not the same as  "Mozlilla" or "Mozlila")<br>- Audit tools info like Nmap, Nikto, Wfuzz and sqlmap in the user agent field.<br>- Payload data in the user agent field.|```(http.user_agent contains "sqlmap") or (http.user_agent contains "Nmap") or (http.user_agent contains "Wfuzz") or (http.user_agent contains "Nikto")```|
 
 Log4j Analysis<br>
 |Notes|	Wireshark Filter|
 |-----|-----------------|
-|Research outcomes for grabbing the low-hanging fruits:<br> - The attack starts with a "POST" request<br> - There are known cleartext patterns:```jndi:ldap``` and ```Exploit.class```.|```http.request.method == "POST"```<br>```(ip contains "jndi") or ( ip contains "Exploit")(frame contains "jndi") or ( frame contains "Exploit")```<br>```(http.user_agent contains "$") or (http.user_agent contains "==")```|
+|Research outcomes for grabbing the low-hanging fruits:<br>- The attack starts with a "POST" request<br>- There are known cleartext patterns:```jndi:ldap``` and ```Exploit.class```.|```http.request.method == "POST"```<br>```(ip contains "jndi") or ( ip contains "Exploit")(frame contains "jndi") or ( frame contains "Exploit")```<br>```(http.user_agent contains "$") or (http.user_agent contains "==")```|
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_log4j.png" width="800">
 
 ### Encrypted Protocol Analysis: Decrypting HTTPS
 #### Decrypting HTTPS Traffic
 |Notes|	Wireshark Filter|
 |-----|-----------------|
-|"HTTPS Parameters" for grabbing the low-hanging fruits:<br> - Request: Listing all requests
-<br> - TLS: Global TLS search<br> - TLS Client Request<br> - TLS Server response<br> - Local Simple Service Discovery Protocol (SSDP)<br>Note: SSDP is a network protocol that provides advertisement and discovery of network services.
+|"HTTPS Parameters" for grabbing the low-hanging fruits:<br>- Request: Listing all requests<br>- TLS: Global TLS search<br>- TLS Client Request<br>- TLS Server response<br>- Local Simple Service Discovery Protocol (SSDP)<br>Note: SSDP is a network protocol that provides advertisement and discovery of network services.|```http.request```<br>```tls```<br>```tls.handshake.type == 1```<br>```tls.handshake.type == 2```<br>```ssdp```|
 
-http.request
-tls
-tls.handshake.type == 1
-tls.handshake.type == 2
-ssdp
+TLS protocol has its handshake process. The first two steps contain "Client Hello" and "Server Hello" messages. These filters are helpful to spot which IP addresses are involved in the TLS handshake.<br>
+Client Hello: ```(http.request or tls.handshake.type == 1) and !(ssdp)```<br>
+Server Hello: ```(http.request or tls.handshake.type == 2) and !(ssdp)```<br>
+
+
 
 
