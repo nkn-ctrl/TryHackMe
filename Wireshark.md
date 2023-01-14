@@ -234,7 +234,23 @@ Traffic tunnelling is (also known as "port forwarding") transferring the data/re
 |Global search|```http```<br>```http2```|
 |"HTTP Request Methods" for grabbing the low-hanging fruits:<br>- GET<br>- POST<br>- Request: Listing all requests|```http.request.method == "GET"```<br>```http.request.method == "POST"```<br>```http.request```|
 |"HTTP Response Status Codes" for grabbing the low-hanging fruits:<br>- 200 OK: Request successful<br>- 301 Moved Permanently: Resource is moved to a new URL/path (permanently).<br>- 302 Moved Temporarily: Resource is moved to a new URL/path (temporarily).<br>- 400 Bad Request: Server didn't understand the request.<br>- 401 Unauthorised: URL needs authorisation (login, etc.).<br>- 403 Forbidden: No access to the requested URL. <br>- 404 Not Found: Server can't find the requested URL.<br>- 405 Method Not Allowed: Used method is not suitable or blocked.<br>- 408 Request Timeout:  Request look longer than server wait time.<br>- 500 Internal Server Error: Request not completed, unexpected error.<br>- 503 Service Unavailable: Request not completed server or service is down.|```http.response.code == 200```<br>```http.response.code == 401```<br>```http.response.code == 403```<br>```http.response.code == 404```<br>```http.response.code == 405```<br>```http.response.code == 503```|
-|"HTTP Parameters" for grabbing the low-hanging fruits:<br>- User agent: Browser and operating system identification to a web server application.<br>- Request URI: Points the requested resource from the server.<br>- Full URI: Complete URI information.|```http.user_agent contains "nmap"```<br>```http.request.uri contains "admin"```<br>```http.request.full_uri contains "admin"|
+|"HTTP Parameters" for grabbing the low-hanging fruits:<br>- User agent: Browser and operating system identification to a web server application.<br>- Request URI: Points the requested resource from the server.<br>- Full URI: Complete URI information.|```http.user_agent contains "nmap"```<br>```http.request.uri contains "admin"```<br>```http.request.full_uri contains "admin"```|
 |"HTTP Parameters" for grabbing the low-hanging fruits:<br>- Server: Server service name.<br>- Host: Hostname of the server<br>- Connection: Connection status.<br>- Line-based text data: Cleartext data provided by the server.<br>- HTML Form URL Encoded: Web form information.|```http.server contains "apache"```<br>```http.host contains "keyword"```<br>```http.host == "keyword"```<br>```http.connection == "Keep-Alive"```<br>```data-text-lines contains "keyword"```|
 
+User Agent Analysis  
+|Notes|	Wireshark Filter|
+|-----|-----------------|
+|Global search|```http.user_agent```|
+|Research outcomes for grabbing the low-hanging fruits:<br>- Different user agent information from the same host in a short time notice.<br>- Non-standard and custom user agent info.<br>- Subtle spelling differences. ("Mozilla" is not the same as  "Mozlilla" or "Mozlila")<br>- Audit tools info like Nmap, Nikto, Wfuzz and sqlmap in the user agent field.<br>- Payload data in the user agent field.|```(http.user_agent contains "sqlmap") or (http.user_agent contains "Nmap") or (http.user_agent contains "Wfuzz") or (http.user_agent contains "Nikto")```|
 
+Log4j Analysis<br>
+|Notes|	Wireshark Filter|
+|-----|-----------------|
+|Research outcomes for grabbing the low-hanging fruits:<br>- The attack starts with a "POST" request
+<br>- There are known cleartext patterns: "jndi:ldap" and "Exploit.class".|
+```http.request.method == "POST"```
+(ip contains "jndi") or ( ip contains "Exploit")(frame contains "jndi") or ( frame contains "Exploit")
+(http.user_agent contains "$") or (http.user_agent contains "==")
+
+``` ```
+```<br>```
