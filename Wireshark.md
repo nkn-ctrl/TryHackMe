@@ -238,6 +238,7 @@ Traffic tunnelling is (also known as "port forwarding") transferring the data/re
 |"HTTP Parameters" for grabbing the low-hanging fruits:<br>- Server: Server service name.<br>- Host: Hostname of the server<br>- Connection: Connection status.<br>- Line-based text data: Cleartext data provided by the server.<br>- HTML Form URL Encoded: Web form information.|```http.server contains "apache"```<br>```http.host contains "keyword"```<br>```http.host == "keyword"```<br>```http.connection == "Keep-Alive"```<br>```data-text-lines contains "keyword"```|
 
 User Agent Analysis  
+(User Agents - Parser and API - Easily decode any user agent)[https://developers.whatismybrowser.com/useragents/explore/]<br>
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search|```http.user_agent```|
