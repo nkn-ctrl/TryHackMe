@@ -213,4 +213,19 @@ Traffic tunnelling is (also known as "port forwarding") transferring the data/re
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search|```dns```|
-|"DNS" options for grabbing the low-hanging fruits:<br>- Query length.<br>- Anomalous and non-regular names in DNS addresses.<br>- Long DNS addresses with encoded subdomain addresses.<br>- Known patterns like dnscat and dns2tcp.<br>- Statistical analysis like the anomalous volume of DNS requests for a particular target.|```dns contains "dnscat"```<br>```dns.qry.name.len > 15 and !mdns```|
+|"DNS" options for grabbing the low-hanging fruits:<br>- Query length.<br>- Anomalous and non-regular names in DNS addresses.<br>- Long DNS addresses with encoded subdomain addresses.<br>- Known patterns like dnscat and dns2tcp.<br>- Statistical analysis like the anomalous volume of DNS requests for a particular target.<br>!mdns: Disable local link device queries.|```dns contains "dnscat"```<br>```dns.qry.name.len > 15 and !mdns```|
+
+### Cleartext Protocol Analysis: FTP
+
+#### FTP Analysis
+|Notes|	Wireshark Filter|
+|-----|-----------------|
+|Global search|```ftp```|
+|"FTP" options for grabbing the low-hanging fruits:<br>- x1x series: Information request responses.<br>- x2x series: Connection messages.<br>- x3x series: Authentication messages.<br>Note: "200" means command successful.|--|
+|"x1x" series options for grabbing the low-hanging fruits:<br>- 211: System status.<br>- 212: Directory status.<br>- 213: File status|```ftp.response.code == 211```|
+|"x2x" series options for grabbing the low-hanging fruits:<br>- 220: Service ready.<br>- 227: Entering passive mode.<br>- 228: Long passive mode.<br>- 229: Extended passive mode.|```ftp.response.code == 227```|
+|"x3x" series options for grabbing the low-hanging fruits:<br>- 230: User login.<br>- 231: User logout.<br>- 331: Valid username.<br>- 430: Invalid username or password<br>- 530: No login, invalid password.|```ftp.response.code == 230```|
+|"FTP" commands for grabbing the low-hanging fruits:<br>- USER: Username.<br>- PASS: Password.<br>- CWD: Current work directory.<br>- LIST: List.|```ftp.request.command == "USER"```<br>```ftp.request.command == "PASS"```<br>```ftp.request.arg == "password"```|
+|Advanced usages examples for grabbing low-hanging fruits:<br>- Bruteforce signal: List failed login attempts.<br>- Bruteforce signal: List target username.<br>- Password spray signal: List targets for a static password.|```ftp.response.code == 530```<br>```(ftp.response.code == 530) and (ftp.response.arg contains "username")```<br>```(ftp.request.command == "PASS" ) and (ftp.request.arg == "password")```|
+
+
