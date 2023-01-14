@@ -215,7 +215,7 @@ Traffic tunnelling is (also known as "port forwarding") transferring the data/re
 |Global search|```dns```|
 |"DNS" options for grabbing the low-hanging fruits:<br>- Query length.<br>- Anomalous and non-regular names in DNS addresses.<br>- Long DNS addresses with encoded subdomain addresses.<br>- Known patterns like dnscat and dns2tcp.<br>- Statistical analysis like the anomalous volume of DNS requests for a particular target.<br>!mdns: Disable local link device queries.|```dns contains "dnscat"```<br>```dns.qry.name.len > 15 and !mdns```|
 
-### Cleartext Protocol Analysis: FTP
+### Cleartext Protocol Analysis: FTP and HTTP
 
 #### FTP Analysis
 |Notes|	Wireshark Filter|
@@ -228,4 +228,10 @@ Traffic tunnelling is (also known as "port forwarding") transferring the data/re
 |"FTP" commands for grabbing the low-hanging fruits:<br>- USER: Username.<br>- PASS: Password.<br>- CWD: Current work directory.<br>- LIST: List.|```ftp.request.command == "USER"```<br>```ftp.request.command == "PASS"```<br>```ftp.request.arg == "password"```|
 |Advanced usages examples for grabbing low-hanging fruits:<br>- Bruteforce signal: List failed login attempts.<br>- Bruteforce signal: List target username.<br>- Password spray signal: List targets for a static password.|```ftp.response.code == 530```<br>```(ftp.response.code == 530) and (ftp.response.arg contains "username")```<br>```(ftp.request.command == "PASS" ) and (ftp.request.arg == "password")```|
 
+#### HTTP Analysis
+|Notes|	Wireshark Filter|
+|-----|-----------------|
+|Global search|```http```<br>```http2```|
+|"HTTP Request Methods" for grabbing the low-hanging fruits:<br>- GET<br>- POST<br>- Request: Listing all requests|```http.request.method == "GET"```<br>```http.request.method == "POST"```<br>```http.request```|
+|"HTTP Response Status Codes" for grabbing the low-hanging fruits:<br>- 200 OK: Request successful<br>- 301 Moved Permanently: Resource is moved to a new URL/path (permanently).<br>- 302 Moved Temporarily: Resource is moved to a new URL/path (temporarily).<br>- 400 Bad Request: Server didn't understand the request.<br>- 401 Unauthorised: URL needs authorisation (login, etc.).<br>- 403 Forbidden: No access to the requested URL. <br>- 404 Not Found: Server can't find the requested URL.<br>- 405 Method Not Allowed: Used method is not suitable or blocked.<br>- 408 Request Timeout:  Request look longer than server wait time.<br>- 500 Internal Server Error: Request not completed, unexpected error.<br>- 503 Service Unavailable: Request not completed server or service is down.|```http.response.code == 200```<br>```http.response.code == 401```<br>```http.response.code == 403```<br>```http.response.code == 404```<br>```http.response.code == 405```<br>```http.response.code == 503|
 
