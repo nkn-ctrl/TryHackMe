@@ -181,24 +181,24 @@ Dynamic Host Configuration Protocol (DHCP)
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search.|```dhcp``` or ```bootp```|
-|**"DHCP Request"** packets contain the hostname information<br>**"DHCP ACK"** packets represent the accepted requests<br>**"DHCP NAK"** packets represent denied requests|Request: ```dhcp.option.dhcp == 3```<br>ACK: ```dhcp.option.dhcp == 5```<br>NAK: ```dhcp.option.dhcp == 6```|
-|"DHCP Request" options for grabbing the low-hanging fruits:<br>**Option 12**: Hostname.<br>**Option 50**: Requested IP address.<br>**Option 51**: Requested IP lease time.<br>**Option 61**: Client's MAC address.|```dhcp.option.hostname contains "keyword"```<br>```dhcp.option.requested_ip_address == "ip_address"```|
-|"DHCP ACK" options for grabbing the low-hanging fruits:<br> **Option 15**: Domain name.<br> **Option 51**: Assigned IP lease time.|```dhcp.option.domain_name contains "keyword"```|
-|"DHCP NAK" options for grabbing the low-hanging fruits:<br> **Option 56**: Message (rejection details/reason).|As the message could be unique according to the case/situation.|
+|- **"DHCP Request"** packets contain the hostname information<br>- **"DHCP ACK"** packets represent the accepted requests<br>- **"DHCP NAK"** packets represent denied requests|Request: ```dhcp.option.dhcp == 3```<br>ACK: ```dhcp.option.dhcp == 5```<br>NAK: ```dhcp.option.dhcp == 6```|
+|"DHCP Request" options for grabbing the low-hanging fruits:<br>**Option 12**: Hostname.<br>- **Option 50**: Requested IP address.<br>- **Option 51**: Requested IP lease time.<br>- **Option 61**: Client's MAC address.|```dhcp.option.hostname contains "keyword"```<br>```dhcp.option.requested_ip_address == "ip_address"```|
+|"DHCP ACK" options for grabbing the low-hanging fruits:<br>- **Option 15**: Domain name.<br>-  **Option 51**: Assigned IP lease time.|```dhcp.option.domain_name contains "keyword"```|
+|"DHCP NAK" options for grabbing the low-hanging fruits:<br>- **Option 56**: Message (rejection details/reason).|As the message could be unique according to the case/situation.|
 
 #### NetBIOS (NBNS) Analysis
 Network Basic Input/Output System  
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search.|```nbns```|
-|"NBNS" options for grabbing the low-hanging fruits:<br>**Queries**: Query details.<br>Query details could contain **"name, Time to live (TTL) and IP address details"**|```nbns.name contains "keyword"```|
+|"NBNS" options for grabbing the low-hanging fruits:<br>- **Queries**: Query details.<br>Query details could contain **"name, Time to live (TTL) and IP address details"**|```nbns.name contains "keyword"```|
 
 #### Kerberos Analysis
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search.	|```kerberos```|
 |User account search:<br>**CNameString**: The username.<br>The values end with ```$``` are hostnames, and the ones without it are user names.|```kerberos.CNameString contains "keyword"```<br>```kerberos.CNameString and !(kerberos.CNameString contains "$" )```|
-|"Kerberos" options for grabbing the low-hanging fruits:<br>**pvno**: Protocol version.<br>**realm**: Domain name for the generated ticket.<br>**sname**: Service and domain name for the generated ticket.<br>**addresses**: Client IP address and NetBIOS name|```kerberos.pvno == 5```<br>```kerberos.realm contains ".org"```<br>```kerberos.SNameString == "krbtg"```|
+|"Kerberos" options for grabbing the low-hanging fruits:<br>- **pvno**: Protocol version.<br>- **realm**: Domain name for the generated ticket.<br>- **sname**: Service and domain name for the generated ticket.<br>- **addresses**: Client IP address and NetBIOS name|```kerberos.pvno == 5```<br>```kerberos.realm contains ".org"```<br>```kerberos.SNameString == "krbtg"```|
 
 ### Tunnelling Traffic: ICMP and DNS 
 Traffic tunnelling is (also known as "port forwarding") transferring the data/resources in a secure method to network segments and zones.
@@ -207,7 +207,7 @@ Traffic tunnelling is (also known as "port forwarding") transferring the data/re
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search|```icmp```|
-|"ICMP" optionsfor grabbing the low-hanging fruits:<br>Packet length.<br>ICMP destination addresses.<br>Encapsulated protocol signs in ICMP payload.|```data.len > 64 and icmp```|
+|"ICMP" optionsfor grabbing the low-hanging fruits:<br>- Packet length.<br>- ICMP destination addresses.<br>- Encapsulated protocol signs in ICMP payload.|```data.len > 64 and icmp```|
 
 #### DNS Analysis
 |Notes|	Wireshark Filter|
