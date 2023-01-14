@@ -247,5 +247,5 @@ Log4j Analysis<br>
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Research outcomes for grabbing the low-hanging fruits:<br>- The attack starts with a "POST" request<br>- There are known cleartext patterns:```jndi:ldap``` and ```Exploit.class```.|```http.request.method == "POST"```<br>```(ip contains "jndi") or ( ip contains "Exploit")(frame contains "jndi") or ( frame contains "Exploit")```<br>```(http.user_agent contains "$") or (http.user_agent contains "==")```|
-
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_log4j.png" width="800">
 
