@@ -213,4 +213,4 @@ Traffic tunnelling is (also known as "port forwarding") transferring the data/re
 |Notes|	Wireshark Filter|
 |-----|-----------------|
 |Global search|```dns```|
-|"DNS" options for grabbing the low-hanging fruits:<br>Query length.<br>Anomalous and non-regular names in DNS addresses.<br>Long DNS addresses with encoded subdomain addresses.<br>Known patterns like dnscat and dns2tcp.<br>Statistical analysis like the anomalous volume of DNS requests for a particular target.|```dns contains "dnscat"```<br>```dns.qry.name.len > 15 and !mdns```|
+|"DNS" options for grabbing the low-hanging fruits:<br>- Query length.<br>- Anomalous and non-regular names in DNS addresses.<br>- Long DNS addresses with encoded subdomain addresses.<br>- Known patterns like dnscat and dns2tcp.<br>- Statistical analysis like the anomalous volume of DNS requests for a particular target.|```dns contains "dnscat"```<br>```dns.qry.name.len > 15 and !mdns```|
