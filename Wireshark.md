@@ -261,7 +261,7 @@ Client Hello: ```(http.request or tls.handshake.type == 1) and !(ssdp)```<br>
 Server Hello: ```(http.request or tls.handshake.type == 2) and !(ssdp)```<br>
 
 Encription key log file. SSL/TLS key pairs are created per session at the connection time, so it is important to dump the keys during the traffic capture. "right-click" menu or "Edit --> Preferences --> Protocols --> TLS" menu can add/remove key log files.<br>
-<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_keylog.png" width="700"><br>
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_keylog.png" width="800"><br>
 Viewing the traffic with/without the key log files:<br>
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_keylog2.png" width="800">
 
