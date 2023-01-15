@@ -273,9 +273,9 @@ Some Wireshark dissectors (FTP, HTTP, IMAP, pop and SMTP) are programmed to extr
 ### Actionable Results!
 You can create firewall rules by using the "Tools --> Firewall ACL Rules" menu.<br>
 Currently, Wireshark can create rules for:<br>
-    - Netfilter (iptables)
-    - Cisco IOS (standard/extended)
-    - IP Filter (ipfilter)
+  - Netfilter (iptables)
+  - Cisco IOS (standard/extended)
+  - IP Filter (ipfilter)
     - IPFirewall (ipfw)
     - Packet filter (pf)
     - Windows Firewall (netsh new/old format)
