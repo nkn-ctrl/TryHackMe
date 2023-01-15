@@ -4,30 +4,30 @@
 ## Statistics
 Menu Bar -> \[Statistics\]
 ### Statistics Summary
-- Resolved Addresses  
+  - Resolved Addresses  
   <img src="https://miro.medium.com/max/1400/0*gUDMUOL7UpGjkzj8.webp" width="500">
 
-- Protocol Hierarchy  
+  - Protocol Hierarchy  
   right-click and filter the event of interest.  
   <img src="https://miro.medium.com/max/1400/0*-nIkphZ2R73fXfM0.webp" width="600">
 
-- Conversations  
+  - Conversations  
   Conversation represents traffic between two specific endpoints.
   <img src="https://miro.medium.com/max/1400/0*5Qe3lMF4vWsqXI2Q.webp" width="600">
 
-- Endpoints  
+  - Endpoints  
   <img src="https://miro.medium.com/max/1400/0*QBJAIXb-QEhtB8RH.webp" width="600">  
   IP and port name resolution options  
   <img src="https://miro.medium.com/max/1400/0*DPyYVChVECsjLwbQ.webp" width="600">
 
 ### Statistics Protocol Details
-- IPv4 and IPv6  
+  - IPv4 and IPv6  
   <img src="https://miro.medium.com/max/1400/0*D-7xdfvv7sxgMUXj.webp" width="600">
 
-- DNS  
+  - DNS  
   <img src="https://miro.medium.com/max/1400/0*t9sFS5gsGoC4CT8k.webp" width="600">
 
-- HTTP  
+  - HTTP  
   <img src="https://miro.medium.com/max/1400/0*tfVda1YuPVuAM1gJ.webp" width="600">
 
 ## Packet Filtering
@@ -144,20 +144,20 @@ TCP flags
 
 #### TCP Connect Scans
 ```tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024```  
-- Usually conducted with ```nmap -sT``` command.(non-privileged users)  
-- Usually has a windows size larger than 1024 bytes.  
+  - Usually conducted with ```nmap -sT``` command.(non-privileged users)  
+  - Usually has a windows size larger than 1024 bytes.  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_scan_tcpconnect.png" width="700">
 
 #### SYN Scans
 ```tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size <= 1024```  
-- Usually conducted with ```nmap -sS``` command.(privileged users)
-- Usually have a size less than or equal to 1024 bytes.
+  - Usually conducted with ```nmap -sS``` command.(privileged users)
+  - Usually have a size less than or equal to 1024 bytes.
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_scan_syn.png" width="700">
 
 #### UDP Scans
 ```icmp.type==3 and icmp.code==3```  
-- No prompt for open ports, ICMP error message for close ports
-- Usually conducted with ```nmap -sU``` command.  
+  - No prompt for open ports, ICMP error message for close ports
+  - Usually conducted with ```nmap -sU``` command.  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_scan_udp.png" width="700">
 
 ### ARP Poisoning/Spoofing (A.K.A. Man In The Middle Attack)
@@ -172,9 +172,9 @@ A possible IP spoofing case
 
 ###  Identifying Hosts: DHCP, NetBIOS and Kerberos
 Protocols that can be used in Host and User identification:
-- Dynamic Host Configuration Protocol (DHCP) traffic
-- NetBIOS (NBNS) traffic 
-- Kerberos traffic  
+  - Dynamic Host Configuration Protocol (DHCP) traffic
+  - NetBIOS (NBNS) traffic 
+  - Kerberos traffic  
 
 #### DHCP Analysis
 Dynamic Host Configuration Protocol (DHCP)  
@@ -257,8 +257,8 @@ Log4j Analysis<br>
 |"HTTPS Parameters" for grabbing the low-hanging fruits:<br>- Request: Listing all requests<br>- TLS: Global TLS search<br>- TLS Client Request<br>- TLS Server response<br>- Local Simple Service Discovery Protocol (SSDP)<br>Note: SSDP is a network protocol that provides advertisement and discovery of network services.|```http.request```<br>```tls```<br>```tls.handshake.type == 1```<br>```tls.handshake.type == 2```<br>```ssdp```|
 
 TLS protocol has its handshake process. The first two steps contain "Client Hello" and "Server Hello" messages. These filters are helpful to spot which IP addresses are involved in the TLS handshake.<br>
-Client Hello: ```(http.request or tls.handshake.type == 1) and !(ssdp)```<br>
-Server Hello: ```(http.request or tls.handshake.type == 2) and !(ssdp)```<br>
+  - Client Hello: ```(http.request or tls.handshake.type == 1) and !(ssdp)```<br>
+  - Server Hello: ```(http.request or tls.handshake.type == 2) and !(ssdp)```<br>
 
 Encription key log file. SSL/TLS key pairs are created per session at the connection time, so it is important to dump the keys during the traffic capture. "right-click" menu or "Edit --> Preferences --> Protocols --> TLS" menu can add/remove key log files.<br>
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_keylog.png" width="800"><br>
@@ -276,9 +276,9 @@ Currently, Wireshark can create rules for:<br>
   - Netfilter (iptables)
   - Cisco IOS (standard/extended)
   - IP Filter (ipfilter)
-    - IPFirewall (ipfw)
-    - Packet filter (pf)
-    - Windows Firewall (netsh new/old format)
+  - IPFirewall (ipfw)
+  - Packet filter (pf)
+  - Windows Firewall (netsh new/old format)
 
 
 
