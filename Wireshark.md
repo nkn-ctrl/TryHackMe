@@ -1,5 +1,9 @@
 # Wireshark
-<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshark-logo.png" width="300">
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshark-logo.png" width="300"><br>
+
+## View
+- Time Display Format: "View --> Time Dsiplay Format"
+- Change IP address to domain name: "View --> Name Resolution --> Resolve Network Address" 
 
 ## Statistics
 Menu Bar -> \[Statistics\]
