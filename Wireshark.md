@@ -268,7 +268,7 @@ Viewing the traffic with/without the key log files:<br>
 ### Hunt Cleartext Credentials!
 Some Wireshark dissectors (FTP, HTTP, IMAP, pop and SMTP) are programmed to extract cleartext passwords from the capture file.<br>
 "Tools --> Credentials" menu<br>
-<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_credentials.png" width="700">
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_credentials.png" width="500">
 
 ### Actionable Results!
 You can create firewall rules by using the "Tools --> Firewall ACL Rules" menu.<br>
@@ -279,7 +279,7 @@ Currently, Wireshark can create rules for:<br>
   - IPFirewall (ipfw)
   - Packet filter (pf)
   - Windows Firewall (netsh new/old format)
-
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_firewallrule.png" width="500">
 
 
 
