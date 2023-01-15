@@ -265,6 +265,11 @@ Encription key log file. SSL/TLS key pairs are created per session at the connec
 Viewing the traffic with/without the key log files:<br>
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_keylog2.png" width="800">
 
+### Hunt Cleartext Credentials!
+Some Wireshark dissectors (FTP, HTTP, IMAP, pop and SMTP) are programmed to extract cleartext passwords from the capture file.<br>
+"Tools --> Credentials" menu<br>
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshirk_credentials.png" width="700">
+
 
 
 
