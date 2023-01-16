@@ -19,13 +19,22 @@ What is unusual behaviour for this process?
 ## System > smss.exe
 This process, also known as the Windows *Session Manager Subsystem*, is responsible for creating new sessions.It is the first user-mode process started by the kernel.<br>
 <img src="https://assets.tryhackme.com/additional/windows-processes/smss.png" width="600"><br>
-smss.exe --> csrss.exe wininit.exe (session 0, Windows session)<br>
+**smss.exe** --> csrss.exe, wininit.exe (session 0, Windows session)<br>
 <img src="https://assets.tryhackme.com/additional/windows-processes/smss-session0b.png"><br>
-smss.exe --> csrss.exe winlogon.exe (session 1, User session)<br>
+**smss.exe** --> csrss.exe, winlogon.exe (session 1, User session)<br>
 <img src="https://assets.tryhackme.com/additional/windows-processes/smss-session1b.png"><br>
 
 Subsystem list<br>
  ```Required``` value of ```HKLM\System\CurrentControlSet\Control\Session Manager\Subsystems```<br>
+What is unusual?
+- A different parent process other than System (4)
+- The image path is different from C:\Windows\System32
+- More than one running process. (children self-terminate and exit after each new session)
+- The running User is not the SYSTEM user
+- Unexpected registry entries for Subsystem<br>
+
+## csrss.exe
+ **csrss.exe (Client Server Runtime Process)** is the user-mode side of the Windows subsystem. 
 
 
 
