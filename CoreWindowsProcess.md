@@ -18,7 +18,7 @@ What is unusual behaviour for this process?
 
 ## System > smss.exe
 This process, also known as the Windows *Session Manager Subsystem*, is responsible for creating new sessions.It is the first user-mode process started by the kernel.<br>
-<img src="https://assets.tryhackme.com/additional/windows-processes/smss.png">
+<img src="https://assets.tryhackme.com/additional/windows-processes/smss.png" width="500"><br>
 smss.exe --> csrss.exe wininit.exe (session 0, Windows session)<br>
 <img src="https://assets.tryhackme.com/additional/windows-processes/smss-session0b.png"><br>
 smss.exe --> csrss.exe winlogon.exe (session 1, User session)<br>
