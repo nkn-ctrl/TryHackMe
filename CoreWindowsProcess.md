@@ -68,8 +68,11 @@ What is unusual?
 - A parent process other than wininit.exe
 - Image file path other than C:\Windows\System32
 - Subtle misspellings to hide rogue processes in plain sight
-- Multiple running instances
+- Multiple running instances (Number of instances is ONE)
 - Not running as SYSTEM
+
+## wininit.exe > services.exe > svchost.exe
+The **Service Host** (Host Process for Windows Services), or **svchost.exe**, is responsible for hosting and managing Windows services. The services running in this process are implemented as DLLs. The DLL to implement is stored in the registry for the service under the ```Parameters``` subkey in ```ServiceDLL```. The full path is ```HKLM\SYSTEM\CurrentControlSet\Services\SERVICE NAME\Parameters```.<br>
 
 
 
