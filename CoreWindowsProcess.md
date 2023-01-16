@@ -6,11 +6,14 @@ Add some additional columns to see more information about these processes. Good 
 - running processes on a Windows system:<br>
     ```tasklist```, ```Get-Process``` or ```ps``` (PowerShell), and ```wmic```.<br>
 
-# System
+## System
 The PID for System is always 4.<br>
 *The System process (process ID 4) is the home for a special kind of thread that runs only in kernel mode a kernel-mode system thread.*<br>
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/CWP_system2.png">
 What is unusual behaviour for this process?
 - A parent process (aside from System Idle Process (0))
 - Multiple instances of System. (Should only be one instance) 
 - A different PID. (Remember that the PID will always be PID 4)
 - Not running in Session 0
+
+## 
