@@ -34,7 +34,21 @@ What is unusual?
 - Unexpected registry entries for Subsystem<br>
 
 ## csrss.exe
- **csrss.exe (Client Server Runtime Process)** is the user-mode side of the Windows subsystem. 
+**csrss.exe (Client Server Runtime Process)** is the user-mode side of the Windows subsystem. This process is responsible for the Win32 console window and process thread creation and deletion, making the Windows API available to other processes, mapping drive letters, and handling the Windows shutdown process.<br>
+Session 0(PID 392)<br>
+<img src="https://assets.tryhackme.com/additional/windows-processes/csrss-session0.png" width="600"><br>
+<br>
+Session 1(PID 512)<br>
+<img src="https://assets.tryhackme.com/additional/windows-processes/csrss-session1.png" width="600"><br>
+<br>
+What is unusual?
+- An actual parent process. (smss.exe calls this process and self-terminates)
+- Image file path other than C:\Windows\System32
+- Subtle misspellings to hide rogue processes masquerading as csrss.exe in plain sight
+- The user is not the SYSTEM user.
+
+
+
 
 
 
