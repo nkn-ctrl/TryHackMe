@@ -50,7 +50,7 @@ What is unusual?
 
 ## wininit.exe
 The **Windows Initialization Process, wininit.exe**, is responsible for launching services.exe (Service Control Manager), lsass.exe (Local Security Authority), and lsaiso.exe within Session 0. <br>
-<img src="https://assets.tryhackme.com/additional/windows-processes/wininit.png" width="600">
+<img src="https://assets.tryhackme.com/additional/windows-processes/wininit.png" width="600"><br>
 <br>
 What is unusual?
 - An actual parent process. (smss.exe calls this process and self-terminates)
@@ -59,8 +59,17 @@ What is unusual?
 - Multiple running instances
 - Not running as SYSTEM
 
-
-
+## wininit.exe > services.exe
+**Service Control Manager** (SCM) or **services.exe** has responsibility to handle system services: loading services, interacting with services and starting or ending services.Information regarding services is stored in the registry, ```HKLM\System\CurrentControlSet\Services```. <br>
+This process also loads device drivers marked as auto-start into memory. When a user logs into a machine successfully, this process is responsible for setting the value of the Last Known Good control set (Last Known Good Configuration), ```HKLM\System\Select\LastKnownGood```, to that of the CurrentControlSet. <br>
+<img src="https://assets.tryhackme.com/additional/windows-processes/services.png" width="600"><br>
+<br>
+What is unusual?
+- A parent process other than wininit.exe
+- Image file path other than C:\Windows\System32
+- Subtle misspellings to hide rogue processes in plain sight
+- Multiple running instances
+- Not running as SYSTEM
 
 
 
