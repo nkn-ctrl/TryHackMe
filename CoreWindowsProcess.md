@@ -26,6 +26,7 @@ This process, also known as the Windows *Session Manager Subsystem*, is responsi
 
 Subsystem list<br>
  ```Required``` value of ```HKLM\System\CurrentControlSet\Control\Session Manager\Subsystems```<br>
+ <br>
 What is unusual?
 - A different parent process other than System (4)
 - The image path is different from C:\Windows\System32
@@ -37,7 +38,6 @@ What is unusual?
 **csrss.exe (Client Server Runtime Process)** is the user-mode side of the Windows subsystem. This process is responsible for the Win32 console window and process thread creation and deletion, making the Windows API available to other processes, mapping drive letters, and handling the Windows shutdown process.<br>
 Session 0(PID 392)<br>
 <img src="https://assets.tryhackme.com/additional/windows-processes/csrss-session0.png" width="600"><br>
-<br>
 Session 1(PID 512)<br>
 <img src="https://assets.tryhackme.com/additional/windows-processes/csrss-session1.png" width="600"><br>
 <br>
