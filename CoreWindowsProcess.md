@@ -5,7 +5,12 @@
 Add some additional columns to see more information about these processes. Good columns to add are ```Image path name``` and ```Command line```.<br>
 - running processes on a Windows system:<br>
     ```tasklist```, ```Get-Process``` or ```ps``` (PowerShell), and ```wmic```.<br>
+- Process Hackdr
+<img src="https://assets.tryhackme.com/additional/windows-processes/processhacker.png" width="700"><br>
 
+- Process Explore
+<img src="https://assets.tryhackme.com/additional/windows-processes/processhacker.png" width="700"><br>
+ 
 ## System
 The PID for System is always 4.<br>
 *The System process (process ID 4) is the home for a special kind of thread that runs only in kernel mode a kernel-mode system thread.*<br>
