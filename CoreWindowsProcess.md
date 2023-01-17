@@ -84,6 +84,18 @@ What is unusual?
 - Subtle misspellings to hide rogue processes in plain sight
 - The absence of the -k parameter
 
+## lsass.exe
+"Local Security Authority Subsystem Service (LSASS) is a process that is responsible for enforcing the security policy on the system. It creates security tokens for SAM (Security Account Manager), AD (Active Directory), and NETLOGON. It uses authentication packages specified in ```HKLM\System\CurrentControlSet\Control\Lsa```. <br>
+Common tools such as mimikatz are used to dump credentials.<br>
+<br>
+<img src="https://assets.tryhackme.com/additional/windows-processes/lsass.png" width="600"><br>
+<br>
+What is unusual?
+- A parent process other than wininit.exe
+- Image file path other than C:\Windows\System32
+- Subtle misspellings to hide rogue processes in plain sight
+- Multiple running instances (Number of Instances: One)
+- Not running as SYSTEM
 
 
 
