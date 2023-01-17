@@ -18,6 +18,8 @@ Reveal NTFS alternate streams.<br>
  - Example: A file downloaded from the Internet.<br>
     <img src="https://assets.tryhackme.com/additional/sysinternals/streams2.png" width="500"><br>
 
+Use `notepad .\file.txt:example.txt` to open the stream file.
+
 ### [SDelete](https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete)
 SDelete is a command line utility that takes a number of options. In any given use, it allows you to delete one or more files and/or directories, or to cleanse the free space on a logical disk. SDelete accepts wild card characters as part of the directory or file specifier.<br>
 
