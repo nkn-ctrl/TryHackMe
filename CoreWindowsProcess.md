@@ -74,6 +74,7 @@ What is unusual?
 ## wininit.exe > services.exe > svchost.exe
 The **Service Host** (Host Process for Windows Services), or **svchost.exe**, is responsible for hosting and managing Windows services. The services running in this process are implemented as DLLs. The DLL to implement is stored in the registry for the service under the ```Parameters``` subkey in ```ServiceDLL```. The full path is ```HKLM\SYSTEM\CurrentControlSet\Services\SERVICE NAME\Parameters```.  
 There is a key identifier in the binary path, and that identifier is ```-k``` . This is how a legitimate svchost.exe process is called.<br>
+<img src="https://assets.tryhackme.com/additional/windows-processes/shared-process.png" width="700">
 <br>
 <img src="https://assets.tryhackme.com/additional/windows-processes/svchost.png" width="400"><br>
 <br>
