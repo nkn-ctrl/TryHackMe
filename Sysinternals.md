@@ -1,4 +1,5 @@
 # Sysinternals
+
 ## Using Sysinternals Live
 Simply enter a tool's Sysinternals Live path into Windows Explorer or a command prompt as live.```sysinternals.com/<toolname>``` or ```\\live.sysinternals.com\tools\<toolname>```.
 
@@ -22,6 +23,19 @@ Use `notepad .\file.txt:example.txt` to open the stream file.
 
 ### [SDelete](https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete)
 SDelete is a command line utility that takes a number of options. In any given use, it allows you to delete one or more files and/or directories, or to cleanse the free space on a logical disk. SDelete accepts wild card characters as part of the directory or file specifier.<br>
+
+## [Networking Utilities](https://docs.microsoft.com/en-us/sysinternals/downloads/networking-utilities)
+### [TCPView](https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview)
+<img src="https://assets.tryhackme.com/additional/sysinternals/tcpview.png"><br>
+
+## Process Utilities
+
+### Autoruns
+
+### ProcDump
+ProcDump is a command-line utility whose primary purpose is monitoring an application for CPU spikes and generating crash dumps during a spike that an administrator or developer can use to determine the cause of the spike." (official definition)
+
+### Process Explorer
 
 
 
