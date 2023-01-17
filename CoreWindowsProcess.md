@@ -89,7 +89,7 @@ What is unusual?
 - Subtle misspellings to hide rogue processes in plain sight
 - The absence of the -k parameter
 
-## lsass.exe
+## wininit.exe > lsass.exe
 "Local Security Authority Subsystem Service (LSASS) is a process that is responsible for enforcing the security policy on the system. It creates security tokens for SAM (Security Account Manager), AD (Active Directory), and NETLOGON. It uses authentication packages specified in ```HKLM\System\CurrentControlSet\Control\Lsa```. <br>
 Common tools such as mimikatz are used to dump credentials.<br>
 <br>
@@ -101,6 +101,19 @@ What is unusual?
 - Subtle misspellings to hide rogue processes in plain sight
 - Multiple running instances (Number of Instances: One)
 - Not running as SYSTEM
+
+## winlogon.exe
+The Windows Logon, winlogon.exe, is responsible for handling the Secure Attention Sequence (SAS). It is the ALT+CTRL+DELETE key combination users press to enter their username & password. This process is also responsible for loading the user profile. It loads the user's NTUSER.DAT into HKCU, and userinit.exe loads the user's shell.<br>
+<img src="https://assets.tryhackme.com/additional/windows-processes/winlogon-registry.png" width="700">
+<img src="https://assets.tryhackme.com/additional/windows-processes/winlogon1.png" width="500"><br>
+<img src="https://assets.tryhackme.com/additional/windows-processes/winlogon2.png" width="300"><br>
+<br>
+What is unusual?
+- An actual parent process. (smss.exe calls this process and self-terminates)
+- Image file path other than C:\Windows\System32
+- Subtle misspellings to hide rogue processes in plain sight
+- Not running as SYSTEM
+- Shell value in the registry other than explorer.exe
 
 
 
