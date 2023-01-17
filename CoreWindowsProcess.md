@@ -117,7 +117,7 @@ What is unusual?
 
 ## explore.exe
 Windows Explorer, explorer.exe gives the user access to their folders and files. It also provides functionality for other features, such as the Start Menu and Taskbar.<br>
-<img src="https://assets.tryhackme.com/additional/windows-processes/explorer.png" width="300"><br>
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/CWP_explore.png" width="300"><br>
 <br>
 What is unusual?
 - An actual parent process. (userinit.exe calls this process and exits)
