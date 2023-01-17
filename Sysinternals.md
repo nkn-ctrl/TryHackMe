@@ -34,12 +34,16 @@ SDelete is a command line utility that takes a number of options. In any given u
 
 ### ProcDump
 ProcDump is a command-line utility whose primary purpose is monitoring an application for CPU spikes and generating crash dumps during a spike that an administrator or developer can use to determine the cause of the spike."<br>
-Alternatively, you can use ***Process Explorer*** to do the same.
-Right-click on the process to *create a Minidump* or *Full Dump* of the process.<br>
+Alternatively, you can use ***Process Explorer*** to do the same.<br>Right-click on the process to *create a Minidump* or *Full Dump* of the process.<br>
 
 ### Process Explorer
-
 [CoreWindowsProcess.md](https://github.com/nkn-ctrl/TryHackMe/blob/main/CoreWindowsProcess.md#core-windows-process)
+
+### Process Monitor
+Process Monitor is an advanced monitoring tool for Windows that shows real-time file system, Registry and process/thread activity.<br>
+[The Ultimate Guide to Procmon](https://adamtheautomator.com/procmon/)<br>
+
+
 
 
 
