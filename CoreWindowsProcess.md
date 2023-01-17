@@ -120,10 +120,10 @@ Windows Explorer, explorer.exe gives the user access to their folders and files.
 <img src="https://assets.tryhackme.com/additional/windows-processes/explorer.png" width="300"><br>
 <br>
 What is unusual?
-    - An actual parent process. (userinit.exe calls this process and exits)
-    - Image file path other than C:\Windows
-    - Running as an unknown user
-    - Subtle misspellings to hide rogue processes in plain sight
-    - Outbound TCP/IP connections
+- An actual parent process. (userinit.exe calls this process and exits)
+- Image file path other than C:\Windows
+- Running as an unknown user
+- Subtle misspellings to hide rogue processes in plain sight
+- Outbound TCP/IP connections
 
 
