@@ -9,3 +9,4 @@
 
 ### Endpoint Security Monitoring
 - [Core_Windows_Processes](https://github.com/nkn-ctrl/TryHackMe/blob/main/CoreWindowsProcesses.md)
+- [Sysinternals](https://github.com/nkn-ctrl/TryHackMe/blob/main/Sysinternals.md)
