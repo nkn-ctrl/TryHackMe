@@ -56,8 +56,9 @@ It automatically displays relevant information about a Windows computer on the d
 `C:> bginfo -accepteula`<br>
 
 ### RegJump
-Using Regjump will open the Registry Editor and automatically open the editor directly at the path, so one doesn't need to navigate it manually.
-<img src="https://assets.tryhackme.com/additional/sysinternals/regjump2.png" width="700>
+Using Regjump will open the Registry Editor and automatically open the editor directly at the path, so one doesn't need to navigate it manually.<br>
+
+<img src="https://assets.tryhackme.com/additional/sysinternals/regjump2.png" width="700">
 
 
 
