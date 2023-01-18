@@ -1,5 +1,5 @@
 # [Zeek](https://zeek.org/)
-![zeek_logo](https://docs.zeek.org/en/master/_images/zeek-logo-text.png)
+<img src="https://docs.zeek.org/en/master/_images/zeek-logo-text.png" width="800">
 
 ## Network Security Monitoring and Zeek
 ### The default log path

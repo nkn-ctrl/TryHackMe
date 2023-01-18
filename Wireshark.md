@@ -1,5 +1,5 @@
 # Wireshark
-<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshark-logo.png" width="300"><br>
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshark-logo.png" width="800"><br>
 
 ## View
 - Time Display Format: "View --> Time Dsiplay Format"
