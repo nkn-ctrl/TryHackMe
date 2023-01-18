@@ -31,7 +31,8 @@ SDelete is a command line utility that takes a number of options. In any given u
 ## Process Utilities
 
 ### Autoruns
-<img src="https://tryhackme-images.s3.amazonaws.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/fbecf1fad44c2d53a07ef911b2803ff3.png" width="300">
+`C:\Users\Administrator> autoruns`
+
 ### ProcDump
 ProcDump is a command-line utility whose primary purpose is monitoring an application for CPU spikes and generating crash dumps during a spike that an administrator or developer can use to determine the cause of the spike."<br>
 Alternatively, you can use ***Process Explorer*** to do the same.<br>Right-click on the process to *create a Minidump* or *Full Dump* of the process.<br>
