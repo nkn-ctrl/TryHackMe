@@ -31,7 +31,7 @@ SDelete is a command line utility that takes a number of options. In any given u
 ## Process Utilities
 
 ### Autoruns
-`C:\Users\Administrator> autoruns`
+`C:\Users\Administrator> autoruns -accepteula`
 
 ### ProcDump
 ProcDump is a command-line utility whose primary purpose is monitoring an application for CPU spikes and generating crash dumps during a spike that an administrator or developer can use to determine the cause of the spike."<br>
@@ -47,6 +47,17 @@ Process Monitor is an advanced monitoring tool for Windows that shows real-time 
 ### [PsExec](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec)
 PsExec is a light-weight telnet-replacement that lets you execute processes on other systems, complete with full interactivity for console applications, without having to manually install client software. <br>
 
+## Security Utilities
+### Sysmon
+
+## Miscellaneous
+### BgInfo
+It automatically displays relevant information about a Windows computer on the desktop's background, such as the computer name, IP address, service pack version, and more.<br>
+`C:> bginfo -accepteula`<br>
+
+### RegJump
+Using Regjump will open the Registry Editor and automatically open the editor directly at the path, so one doesn't need to navigate it manually.
+<img src="https://assets.tryhackme.com/additional/sysinternals/regjump2.png" width="700>
 
 
 
