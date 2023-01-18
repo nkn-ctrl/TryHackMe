@@ -43,6 +43,8 @@ Alternatively, you can use ***Process Explorer*** to do the same.<br>Right-click
 Process Monitor is an advanced monitoring tool for Windows that shows real-time file system, Registry and process/thread activity.<br>
 [The Ultimate Guide to Procmon](https://adamtheautomator.com/procmon/)<br>
 
+### [PsExec](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec)
+PsExec is a light-weight telnet-replacement that lets you execute processes on other systems, complete with full interactivity for console applications, without having to manually install client software. <br>
 
 
 
