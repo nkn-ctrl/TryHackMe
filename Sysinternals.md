@@ -58,7 +58,7 @@ It automatically displays relevant information about a Windows computer on the d
 ### RegJump
 Using Regjump will open the Registry Editor and automatically open the editor directly at the path, so one doesn't need to navigate it manually.<br>
 
-<img src="https://assets.tryhackme.com/additional/sysinternals/regjump2.png" width="700">
+<img src="https://assets.tryhackme.com/additional/sysinternals/regjump2.png" width="800">
 
 
 
