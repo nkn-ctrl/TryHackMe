@@ -60,7 +60,8 @@ Using Regjump will open the Registry Editor and automatically open the editor di
 
 <img src="https://assets.tryhackme.com/additional/sysinternals/regjump2.png" width="800">
 
-
+### Strings
+<img src="https://assets.tryhackme.com/additional/sysinternals/strings.png" width="700">
 
 
 
