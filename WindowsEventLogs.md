@@ -11,6 +11,9 @@
 - File Replication Service Events:
 - DNS Event Logs: DNS servers use these logs to record domain events and to map out
 - Custom Logs: Events are logged by applications that require custom data storage. This allows applications to control the log size or attach other parameters, such as ACLs, for security purposes.<br>
+<b>
+Event Types<br>
+
 
 Event Viewer can be launched by typing `C:\ eventvwr.msc`. <br>
 
