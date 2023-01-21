@@ -13,6 +13,7 @@
 - Custom Logs: Events are logged by applications that require custom data storage. This allows applications to control the log size or attach other parameters, such as ACLs, for security purposes.<br>
 <br>
 Event Types<br>
+
 |Event type|Description|
 |:--------:|-----------|
 |Error|	An event that indicates a significant problem such as loss of data or loss of functionality. For example, if a service fails to load during startup, an Error event is logged.|
