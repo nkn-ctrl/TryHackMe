@@ -114,12 +114,18 @@ Get-WinEvent -FilterHashtable @{
   ProviderName='WLMS' 
 }
 ```
-Syntax of a [hash table](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.3&viewFallbackFrom=powershell-7.1)<br>
+Syntax of a [hash table](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.3&viewFallbackFrom=powershell-7.1) <br>
 `@{ <name> = <value>; [<name> = <value> ] ...}`
 <br>
 <img src="https://assets.tryhackme.com/additional/win-event-logs/filter-hashtable.png" width="700"><br>
 <br>
-<img src="https://assets.tryhackme.com/additional/win-event-logs/build-hash-table.png" width="600"> <img src="https://assets.tryhackme.com/additional/win-event-logs/msi-installer.png">
+<img src="https://assets.tryhackme.com/additional/win-event-logs/build-hash-table.png" width="600"> <img src="https://assets.tryhackme.com/additional/win-event-logs/msi-installer.png"> <br>
+<br>
+Powershell - Get-WinEvent Filters<br>
+
+`Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-PowerShell/Operational'; ID=4104} | Select-Object -Property Message | Select-String -Pattern 'SecureString'`
+
+
 
 
 
