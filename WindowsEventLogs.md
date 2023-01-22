@@ -65,4 +65,15 @@ cl  | clear-log              Clear a log.
 The Get-WinEvent cmdlet gets events from event logs, including classic logs, such as the System and Application logs.<br>
 
 ### Example 1: Get all the logs from a local computer
+```
+Get-WinEvent -ListLog *
+
+LogMode   MaximumSizeInBytes RecordCount LogName
+-------   ------------------ ----------- -------
+Circular            15532032       14500 Application
+Circular             1052672         117 Azure Information Protection
+Circular             1052672        3015 CxAudioSvcLog
+Circular            20971520             ForwardedEvents
+Circular            20971520           0 HardwareEvents
+```
 
