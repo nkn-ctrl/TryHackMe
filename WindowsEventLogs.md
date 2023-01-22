@@ -126,6 +126,10 @@ Powershell - Get-WinEvent Filters<br>
 Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-PowerShell/Operational'; ID=4104} | Select-Object -Property Message | Select-String -Pattern 'SecureString'
 ```
 
+## XPath Query
+
+
+
 
 
 
