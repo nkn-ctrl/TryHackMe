@@ -108,7 +108,6 @@ TimeCreated                     Id LevelDisplayName Message
 ```
 <br>
 The use of the Get-WinEvent cmdlet's FilterHashtable parameter is recommended to filter event logs.<br>
-
 ```
 Get-WinEvent -FilterHashtable @{
   LogName='Application' 
@@ -116,5 +115,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 <br>
+
 Syntax of a hash table<br>
+
 `@{ <name> = <value>; [<name> = <value> ] ...}`
