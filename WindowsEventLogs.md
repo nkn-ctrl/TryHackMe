@@ -117,4 +117,11 @@ Get-WinEvent -FilterHashtable @{
 Syntax of a hash table<br>
 `@{ <name> = <value>; [<name> = <value> ] ...}`
 <br>
+
+[about_Hash_Tables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.3&viewFallbackFrom=powershell-7.1)
+<br>
 <img src="https://assets.tryhackme.com/additional/win-event-logs/filter-hashtable.png" width="700">
+
+
+
+
