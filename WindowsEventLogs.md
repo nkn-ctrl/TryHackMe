@@ -77,3 +77,35 @@ Circular            20971520             ForwardedEvents
 Circular            20971520           0 HardwareEvents
 ```
 
+### Example 2: Get event log providers and log names
+```
+Get-WinEvent -ListProvider *
+
+Name     : .NET Runtime
+LogLinks : {Application}
+Opcodes  : {}
+Tasks    : {}
+
+Name     : .NET Runtime Optimization Service
+LogLinks : {Application}
+Opcodes  : {}
+Tasks    : {}
+```
+
+### Example 3: Log filtering
+Log filtering allows you to select events from an event log. We can filter event logs using the Where-Object cmdlet as follows:<br>
+```
+Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'WLMS' }
+
+   ProviderName: WLMS
+
+TimeCreated                     Id LevelDisplayName Message
+-----------                     -- ---------------- -------
+12/21/2020 4:23:47 AM          100 Information
+12/18/2020 3:18:57 PM          100 Information
+12/15/2020 8:50:22 AM          100 Information
+12/15/2020 8:18:34 AM          100 Information
+```
+
+## 
+
