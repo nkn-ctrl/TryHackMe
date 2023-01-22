@@ -131,6 +131,21 @@ Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-PowerShell/Operationa
 // The following query selects all events from the channel or log file where the severity level is less than or equal to 3 and the event occurred in the last 24 hour period. 
 XPath Query: *[System[(Level <= 3) and TimeCreated[timediff(@SystemTime) <= 86400000]]]
 ```
+```
+PS C:\Users\Administrator> Get-WinEvent -Logname Application -FilterXPath '*[System[(Level <= 3) and TimeCreated[timediff(@SystemTime) <= 86400000]]]'
+
+
+   ProviderName: Microsoft-Windows-Security-SPP
+
+TimeCreated                     Id LevelDisplayName Message
+-----------                     -- ---------------- -------
+1/21/2023 11:02:46 PM          903 Information      The Software Protection service has stopped....
+1/21/2023 11:01:05 PM          902 Information      The Software Protection service has started....
+1/21/2023 11:01:03 PM         8225 Warning          The existing scheduler data does not match the expected data.  T...
+```
+
+<br>
+
 
 
 
