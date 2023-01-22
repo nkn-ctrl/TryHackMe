@@ -116,3 +116,4 @@ Get-WinEvent -FilterHashtable @{
 ```
 Syntax of a hash table<br>
 `@{ <name> = <value>; [<name> = <value> ] ...}`
+<img src="https://assets.tryhackme.com/additional/win-event-logs/filter-hashtable.png" width="500">
