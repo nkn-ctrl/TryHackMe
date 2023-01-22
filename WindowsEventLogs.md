@@ -27,7 +27,9 @@ Event Types<br>
 <br>
 Event Viewer can be launched by typing `C:\ eventvwr.msc`. <br>
 
+## wevtutil.exe
 
-
+`C:\ wevtutil.exe ` <br>
+<br>
 
 
