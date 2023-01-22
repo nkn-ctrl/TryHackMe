@@ -31,5 +31,32 @@ Event Viewer can be launched by typing `C:\ eventvwr.msc`. <br>
 
 `C:\ wevtutil.exe ` <br>
 <br>
+```
+PS> C:\Users\Administrator> wevtutil.exe /?
+Windows Events Commandline Utility.
+Enables you to retrieve information about event logs and publishers, install and uninstall event manifests, run queries, and export, archive and clear logs.
 
+Usage:
+
+You can use either the short (for example, ep /uni) or long (for example, enum-publishers /unicode) version of the command and option names. Commands, options and option values are not case-sensitive.
+
+Variables are noted in all upper-case.
+
+wevtutil COMMAND [ARGUMENT [ARGUMENT] ...] [/OPTION:VALUE [/OPTION:VALUE] ...]
+
+Commands:
+
+el  | enum-logs              List log names.
+gl  | get-log                Get log configuration information.
+sl  | set-log                Modify configuration of a log.
+ep  | enum-publishers        List event publishers.
+gp  | get-publisher          Get publisher configuration information.
+im  | install-manifest       Install event publishers and logs from manifest.
+um  | uninstall-manifest     Uninstall event publishers and logs from manifest.
+qe  | query-events           Query events from a log or log file.
+gli | get-log-info           Get log status information.
+epl | export-log             Export a log.
+al  | archive-log            Archive an exported log.
+cl  | clear-log              Clear a log.
+```
 
