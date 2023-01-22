@@ -174,9 +174,9 @@ TimeCreated                     Id LevelDisplayName Message
 ```
 <br>
 
-- find WLMS events with a System Time of 2020-12-15T01:09:08.940277500Z
+- find WLMS events with a System Time of 2020-12-15T01:09:08.940277500Z <br>
     `Get-WinEvent -LogName Application -FilterXPath '*/System/Provider[@Name="WLMS"] and */System/TimeCreated[@Name="SystemTime"]="2020-12-15T01:09:08.940277500Z"'`
-- find a user named Sam with an Logon Event ID of 4720
+- find a user named Sam with an Logon Event ID of 4720 <br>
     `Get-WinEvent -LogName Security -FilterXPath '*/EventData/Data[@Name="TargetUserName"]="Sam" and */System/EventID=4720'`
 
 
