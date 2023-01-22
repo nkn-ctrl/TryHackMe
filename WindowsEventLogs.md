@@ -61,4 +61,8 @@ al  | archive-log            Archive an exported log.
 cl  | clear-log              Clear a log.
 ```
 
-## Get-WinEvent
+## [Get-WinEvent](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-5.1)
+The Get-WinEvent cmdlet gets events from event logs, including classic logs, such as the System and Application logs.<br>
+
+### Example 1: Get all the logs from a local computer
+
