@@ -114,8 +114,5 @@ Get-WinEvent -FilterHashtable @{
   ProviderName='WLMS' 
 }
 ```
-<br>
-
 Syntax of a hash table<br>
-
 `@{ <name> = <value>; [<name> = <value> ] ...}`
