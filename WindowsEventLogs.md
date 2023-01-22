@@ -106,8 +106,8 @@ TimeCreated                     Id LevelDisplayName Message
 12/15/2020 8:50:22 AM          100 Information
 12/15/2020 8:18:34 AM          100 Information
 ```
-<br>
 The use of the Get-WinEvent cmdlet's FilterHashtable parameter is recommended to filter event logs.<br>
+
 ```
 Get-WinEvent -FilterHashtable @{
   LogName='Application' 
