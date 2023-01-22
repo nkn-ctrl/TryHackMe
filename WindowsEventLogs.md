@@ -23,7 +23,7 @@ Event Types<br>
 |Failure Audit|An event that records an audited security access attempt that fails. For example, if a user tries to access a network drive and fails, the attempt is logged as a Failure Audit event.|
 <br>
 <br>
-[Windows Event Log Resources | Event ID Lookup](https://www.myeventlog.com/)<br>
+[Windows Event Log Resources \| Event ID Lookup](https://www.myeventlog.com/)<br>
 <br>
 Event Viewer can be launched by typing `C:\ eventvwr.msc`. <br>
 
