@@ -109,3 +109,8 @@ TimeCreated                     Id LevelDisplayName Message
 
 ## 
 
+PS C:\Users\Administrator> Get-WinEvent -FilterHashtable @{
+>> Logname='Application'
+>> ProviderName='WLMS'
+>> }
+
