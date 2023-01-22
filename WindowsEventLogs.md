@@ -172,9 +172,15 @@ TimeCreated                     Id LevelDisplayName Message
 -----------                     -- ---------------- -------
 12/21/2020 10:50:26 AM         4624 Information     An account was successfully logged on...
 ```
+<br>
+
+- find WLMS events with a System Time of 2020-12-15T01:09:08.940277500Z
+    `Get-WinEvent -LogName Application -FilterXPath '*/System/Provider[@Name="WLMS"] and */System/TimeCreated[@Name="SystemTime"]="2020-12-15T01:09:08.940277500Z"'`
+- find a user named Sam with an Logon Event ID of 4720
+    `Get-WinEvent -LogName Security -FilterXPath '*/EventData/Data[@Name="TargetUserName"]="Sam" and */System/EventID=4720'`
 
 
-Get-WinEvent -LogName Application -FilterXPath '*/System/Provider[@Name="WLMS"] and */System/TimeCreated[@Name="SystemTime"]="2020-12-15T01:09:08.940277500Z"'
+
 
 
 
