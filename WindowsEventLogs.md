@@ -162,7 +162,16 @@ Get-WinEvent -LogName Application -FilterXPath '*/System/EventID=101 and */Syste
 ```
 <br>
 <img src="https://assets.tryhackme.com/additional/win-event-logs/xpath-7b.png" width="700"> <br>
-<br>
+```
+PS C:\Users\Administrator> Get-WinEvent -LogName Security -FilterXPath '*/EventData/Data[@Name="TargetUserName"]="System"' -MaxEvents 1
+
+   ProviderName: Microsoft-Windows-Security-Auditing
+
+TimeCreated                     Id LevelDisplayName Message
+-----------                     -- ---------------- -------
+12/21/2020 10:50:26 AM         4624 Information     An account was successfully logged on...
+```
+
 
 Get-WinEvent -LogName Application -FilterXPath '*/System/Provider[@Name="WLMS"] and */System/TimeCreated[@Name="SystemTime"]="2020-12-15T01:09:08.940277500Z"'
 
