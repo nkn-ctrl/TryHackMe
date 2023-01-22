@@ -122,9 +122,9 @@ Syntax of a [hash table](https://learn.microsoft.com/en-us/powershell/module/mic
 <img src="https://assets.tryhackme.com/additional/win-event-logs/build-hash-table.png" width="600"> <img src="https://assets.tryhackme.com/additional/win-event-logs/msi-installer.png"> <br>
 <br>
 Powershell - Get-WinEvent Filters<br>
-
-`Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-PowerShell/Operational'; ID=4104} | Select-Object -Property Message | Select-String -Pattern 'SecureString'`
-
+```
+Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-PowerShell/Operational'; ID=4104} | Select-Object -Property Message | Select-String -Pattern 'SecureString'
+```
 
 
 
