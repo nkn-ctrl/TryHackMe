@@ -114,11 +114,8 @@ Get-WinEvent -FilterHashtable @{
   ProviderName='WLMS' 
 }
 ```
-Syntax of a hash table<br>
+Syntax of a [hash table](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.3&viewFallbackFrom=powershell-7.1)<br>
 `@{ <name> = <value>; [<name> = <value> ] ...}`
-<br>
-
-[about_Hash_Tables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.3&viewFallbackFrom=powershell-7.1)
 <br>
 <img src="https://assets.tryhackme.com/additional/win-event-logs/filter-hashtable.png" width="700">
 
