@@ -162,6 +162,7 @@ Get-WinEvent -LogName Application -FilterXPath '*/System/EventID=101 and */Syste
 ```
 <br>
 <img src="https://assets.tryhackme.com/additional/win-event-logs/xpath-7b.png" width="700"> <br>
+
 ```
 PS C:\Users\Administrator> Get-WinEvent -LogName Security -FilterXPath '*/EventData/Data[@Name="TargetUserName"]="System"' -MaxEvents 1
 
