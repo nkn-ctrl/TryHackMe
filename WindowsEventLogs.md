@@ -27,10 +27,11 @@ Event Types<br>
 <br>
 Event Viewer can be launched by typing `C:\ eventvwr.msc`. <br>
 
-## wevtutil.exe
+## [wevtutil.exe](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/wevtutil)
 
 `C:\ wevtutil.exe ` <br>
 <br>
+
 ```
 PS> C:\Users\Administrator> wevtutil.exe /?
 Windows Events Commandline Utility.
@@ -59,4 +60,5 @@ epl | export-log             Export a log.
 al  | archive-log            Archive an exported log.
 cl  | clear-log              Clear a log.
 ```
-
+<br>
+## Get-WinEvent
