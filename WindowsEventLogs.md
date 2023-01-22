@@ -144,7 +144,6 @@ TimeCreated                     Id LevelDisplayName Message
 1/21/2023 11:01:03 PM         8225 Warning          The existing scheduler data does not match the expected data.  T...
 ```
 <img src="https://assets.tryhackme.com/additional/win-event-logs/xpath-3a.png" width="700"> <br>
-<br>
 
 ```
 PS C:\Users\Administrator> Get-WinEvent -LogName Application -FilterXPath '*/System/EventID=100'
@@ -157,6 +156,7 @@ TimeCreated                     Id LevelDisplayName Message
 12/18/2020 3:18:57 PM          100 Information
 12/15/2020 8:50:22 AM          100 Information
 ```
+
 ```
 Get-WinEvent -LogName Application -FilterXPath '*/System/EventID=101 and */System/Provider[@Name="WLMS"]'
 ```
