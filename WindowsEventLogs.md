@@ -61,6 +61,4 @@ al  | archive-log            Archive an exported log.
 cl  | clear-log              Clear a log.
 ```
 
-<br>
-
 ## Get-WinEvent
