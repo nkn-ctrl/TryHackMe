@@ -185,6 +185,17 @@ TimeCreated                     Id LevelDisplayName Message
 [Appendix L: Events to Monitor](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)  
 <br>
 [Windows Security Log Encyclopedia](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/)
+<br>
+
+- 400   Powershell downgrade attack  
+```
+Get-WinEvent -LogName "Windows PowerShell" |
+Where-Object Id -eq 400 |
+Foreach-Object {
+     $version = [Version] ($_.Message -replace '(?s).*EngineVersion=([\d\.]+)*.*','$1')
+     if($version -lt ([Version] "5.0")) { $_ }
+}
+```
 
 
 
