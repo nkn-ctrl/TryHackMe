@@ -23,3 +23,14 @@ The above code snippet is specifying the Event ID to pull from as well as what c
 	</NetworkConnect>
 </RuleGroup>
 ```
+The first way will identify files transmitted over open ports(nmap.exe).The second method identifies open ports and specifically port 4444 (Metasploit).   
+### Event ID 7: Image Loaded
+```
+<RuleGroup name="" groupRelation="or">
+	<ImageLoad onmatch="include">
+	 	<ImageLoaded condition="contains">\Temp\</ImageLoaded>
+	</ImageLoad>
+</RuleGroup>
+```
+This event will look for DLLs loaded by processes, which is useful when hunting for DLL Injection and DLL Hijacking attacks.The above code snippet will look for any DLLs that have been loaded within the \Temp\ directory  
+### Event ID 8: CreateRemoteThread
