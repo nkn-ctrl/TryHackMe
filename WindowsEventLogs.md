@@ -196,6 +196,6 @@ Foreach-Object {
      if($version -lt ([Version] "5.0")) { $_ }
 }
 ```
-
+- 1102   Audit event log clear
 
 
