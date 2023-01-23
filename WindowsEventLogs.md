@@ -184,7 +184,7 @@ TimeCreated                     Id LevelDisplayName Message
 <br>
 [Appendix L: Events to Monitor](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)  
 <br>
-[Windows Security Log Encyclopedia](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/)
+[Windows Security Log Encyclopedia](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/)  
 <br>
 [>Mapping MITRE ATT&amp;CK with Window Event Log IDs - Security Investigation](https://www.socinvestigation.com/mapping-mitre-attck-with-window-event-log-ids/)  
 <br>
