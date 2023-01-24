@@ -80,6 +80,40 @@ This event will look for any files created in an alternate data stream.
 The most common way to deal with these events is to exclude all trusted domains that you know will be very common "noise" in your environment. The above code snippet will get exclude any DNS events with the .microsoft.com query.   
 
 ## Hunting Metasploit
+By default, Metasploit uses port `4444`. The code snippet below will use event ID 3 along with the destination port to identify active connections specifically connections on port `4444` and `5555`.   
 ```
 Get-WinEvent -Path <Path to Log> -FilterXPath '*/System/EventID=3 and */EventData/Data[@Name="DestinationPort"] and */EventData/Data=4444'
 ```
+## Detecting Mimikatz
+Mimikatz is well known and commonly used to dump credentials from memory along with other Windows post-exploitation activity. Mimikatz is mainly known for dumping LSASS.  
+
+### Detecting File Creation
+```
+<RuleGroup name="" groupRelation="or">
+	<FileCreate onmatch="include">
+		<TargetFileName condition="contains">mimikatz</TargetFileName>
+	</FileCreate>
+</RuleGroup>
+```
+
+### Hunting Abnormal LSASS Behavior
+ProcessAccess event ID to hunt for abnormal LSASS behavior. If LSASS is accessed by a process other than `svchost.exe` it should be considered suspicious behavior. Below is to aid in looking for suspicious events you can use a filter to only look for processes besides svchost.exe.   
+```
+<RuleGroup name="" groupRelation="or">
+	<ProcessAccess onmatch="exclude">
+		<SourceImage condition="image">svchost.exe</SourceImage>
+	</ProcessAccess>
+	<ProcessAccess onmatch="include">
+		<TargetImage condition="image">lsass.exe</TargetImage>
+	</ProcessAccess>
+</RuleGroup>
+```  
+### Detecting LSASS Behavior with PowerShell
+```
+Get-WinEvent -Path <Path to Log> -FilterXPath '*/System/EventID=10 and */EventData/Data[@Name="TargetImage"] and */EventData/Data="C:\Windows\system32\lsass.exe"'
+```
+
+
+
+
+
