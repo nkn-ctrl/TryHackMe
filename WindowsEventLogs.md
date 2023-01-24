@@ -178,7 +178,11 @@ TimeCreated                     Id LevelDisplayName Message
 - find WLMS events with a System Time of 2020-12-15T01:09:08.940277500Z <br>
     `Get-WinEvent -LogName Application -FilterXPath '*/System/Provider[@Name="WLMS"] and */System/TimeCreated[@Name="SystemTime"]="2020-12-15T01:09:08.940277500Z"'`
 - find a user named Sam with an Logon Event ID of 4720 <br>
-    `Get-WinEvent -LogName Security -FilterXPath '*/EventData/Data[@Name="TargetUserName"]="Sam" and */System/EventID=4720'`
+    `Get-WinEvent -LogName Security -FilterXPath '*/EventData/Data[@Name="TargetUserName"]="Sam" and */System/EventID=4720'`  
+<br>
+
+`-Oldest -MaxEvents 1 | Format-List`
+
 
 ## Event IDs
 [The Windows Logging Cheat Sheet (Windows 7 - Windows 2012)](https://static1.squarespace.com/static/552092d5e4b0661088167e5c/t/580595db9f745688bc7477f6/1476761074992/Windows+Logging+Cheat+Sheet_ver_Oct_2016.pdf)  
