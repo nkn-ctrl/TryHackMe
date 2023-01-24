@@ -112,7 +112,22 @@ Get-WinEvent -Path <Path to Log> -FilterXPath '*/System/EventID=10 and */EventDa
 ```
 
 ## Hunting Malware
-
-
+### Hunting Rats and C2 Servers
+The code snippet below is from the Ion-Storm configuration file which will alert when specific ports like `1034` and `1604` as well as exclude common network connections like OneDrive, by excluding events we still see everything that we want without missing anything and cutting down on noise.   
+```
+<RuleGroup name="" groupRelation="or">
+	<NetworkConnect onmatch="include">
+		<DestinationPort condition="is">1034</DestinationPort>
+		<DestinationPort condition="is">1604</DestinationPort>
+	</NetworkConnect>
+	<NetworkConnect onmatch="exclude">
+		<Image condition="image">OneDrive.exe</Image>
+	</NetworkConnect>
+</RuleGroup>
+```
+### Hunting for Common Back Connect Ports with PowerShell
+```
+Get-WinEvent -Path <Path to Log> -FilterXPath '*/System/EventID=3 and */EventData/Data[@Name="DestinationPort"] and */EventData/Data=<Port>'
+```
 
 
