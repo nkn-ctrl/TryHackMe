@@ -79,4 +79,5 @@ This event will look for any files created in an alternate data stream.
 ```
 The most common way to deal with these events is to exclude all trusted domains that you know will be very common "noise" in your environment. The above code snippet will get exclude any DNS events with the .microsoft.com query.   
 
-## 
+## Hunting Metasploit
+
