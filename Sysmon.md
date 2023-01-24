@@ -86,7 +86,6 @@ Get-WinEvent -Path <Path to Log> -FilterXPath '*/System/EventID=3 and */EventDat
 ```
 ## Detecting Mimikatz
 Mimikatz is well known and commonly used to dump credentials from memory along with other Windows post-exploitation activity. Mimikatz is mainly known for dumping LSASS.  
-
 ### Detecting File Creation
 ```
 <RuleGroup name="" groupRelation="or">
@@ -95,7 +94,6 @@ Mimikatz is well known and commonly used to dump credentials from memory along w
 	</FileCreate>
 </RuleGroup>
 ```
-
 ### Hunting Abnormal LSASS Behavior
 ProcessAccess event ID to hunt for abnormal LSASS behavior. If LSASS is accessed by a process other than `svchost.exe` it should be considered suspicious behavior. Below is to aid in looking for suspicious events you can use a filter to only look for processes besides svchost.exe.   
 ```
@@ -113,6 +111,7 @@ ProcessAccess event ID to hunt for abnormal LSASS behavior. If LSASS is accessed
 Get-WinEvent -Path <Path to Log> -FilterXPath '*/System/EventID=10 and */EventData/Data[@Name="TargetImage"] and */EventData/Data="C:\Windows\system32\lsass.exe"'
 ```
 
+## Hunting Malware
 
 
 
