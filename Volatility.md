@@ -36,5 +36,13 @@ If we are still looking to get information about what the host is running from t
 
 ## Listing Processes and Connections
 ### `pslist`
+The most basic way of listing processes.this plugin will get the list of processes from the doubly-linked list that keeps track of processes in memory, equivalent to the process list in task manager.
+`python3 vol.py -f <file> windows.pslist`
+
+### `psscan`
+Some malware, typically rootkits, will, in an attempt to hide their processes, `psscan`  will locate processes by finding data structures that match `_EPROCESS`. But it can also cause false positives.
+`python3 vol.py -f <file> windows.psscan`  
+
+## 
 
 
