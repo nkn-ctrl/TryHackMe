@@ -1,4 +1,5 @@
 # Volatility 3
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/volatility_logo.jpg" width="500">
 
 ## Installing Volatility
 https://github.com/volatilityfoundation/volatility3  
@@ -51,7 +52,8 @@ Some malware, typically rootkits, will, in an attempt to hide their processes, `
 
 ### `netstat`
 netstat will attempt to identify all memory structures with a network connection.  
-`python3 vol.py -f <file> windows.netstat`
+`python3 vol.py -f <file> windows.netstat`  
+This command in the current state of volatility3 can be very unstable, particularly around old Windows builds. To combat this, you can utilize other tools like bulk_extractor to extract a PCAP file from the memory file. In some cases, this is preferred in network connections that you cannot identify from Volatility alone. https://tools.kali.org/forensics/bulk-extractor  
 
 ### `dlllist`
 This plugin will list all DLLs associated with processes at the time of extraction.  
