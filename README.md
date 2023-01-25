@@ -11,3 +11,6 @@
 - [Sysinternals](https://github.com/nkn-ctrl/TryHackMe/blob/main/Sysinternals.md)
 - [Windows Event Logs](https://github.com/nkn-ctrl/TryHackMe/blob/main/WindowsEventLogs.md)
 - [Sysmon](https://github.com/nkn-ctrl/TryHackMe/blob/main/Sysmon.md)
+
+### Digital Forensics and Incident Response
+- [Volatility](https://github.com/nkn-ctrl/TryHackMe/blob/main/Volatility.md)
