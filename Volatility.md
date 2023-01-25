@@ -66,4 +66,36 @@ Hunting for code injection. The plugin works by scanning the heap and identifyin
 `python3 vol.py -f <file> windows.vadyarascan.VadYaraScan --yara-file /path/to/yara/file.yara`  
 `python3 vol.py -f <file> windows.vadyarascan ‑‑yara-rules <string>`  
 
-## 
+## Advanced Memory Forensics
+Hooking; there are five methods of hooking employed by adversaries
+- SSDT Hooks
+- IRP Hooks
+- IAT Hooks
+- EAT Hooks
+- Inline Hooks  
+<br>
+
+The `ssdt` plugin will search for hooking and output its results. SSDT hooking is: *SSDT stands for System Service Descriptor Table; the Windows kernel uses this table to look up system functions.* An adversary can hook into this table and modify pointers to point to a location the rootkit controls.  
+There can be hundreds of table entries that ssdt will dump. A suggestion is to use this plugin after investigating the initial compromise and working off it as part of your lead investigation.  
+`python3 vol.py -f <file> windows.ssdt`  
+<br>
+
+Adversaries will also use malicious driver files as part of their evasion.   
+The `modules` plugin will dump a list of loaded kernel modules; this can be useful in identifying active malware. However, if a malicious file is idly waiting or hidden, this plugin may miss it.  
+This plugin is best used once you have further investigated and found potential indicators to use as input for searching and filtering.  
+`python3 vol.py -f <file> windows.modules`  
+<br>
+
+The `driverscan` plugin will scan for drivers present on the system at the time of extraction. This plugin can help to identify driver files in the kernel that the `modules` plugin might have missed or were hidden.  
+`python3 vol.py -f <file> windows.driverscan`  
+<br>
+
+There are also other plugins listed below that can be helpful when attempting to hunt for advanced malware in memory.
+- modscan
+- driverirp
+- callbacks
+- idt
+- apihooks
+- moddump
+- handles  
+
