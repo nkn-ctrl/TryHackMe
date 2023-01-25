@@ -19,13 +19,14 @@ Dump tool
 - DumpIt.exe
 - win32dd.exe / win64dd.exe
 - Memoryze
-- FastDump
+- FastDump  
+
 Out put `a .raw` file  
 For virtual machines, gathering a memory file can easily be done by collecting the virtual memory file from the host machine’s drive.  
-- VMWare - .vmem
-- Hyper-V - .bin
-- Parallels - .mem
-- VirtualBox - .sav file *this is only a partial memory file  
+- VMWare - `.vmem`
+- Hyper-V - `.bin`
+- Parallels - `.mem`
+- VirtualBox - `.sav` file *\*this is only a partial memory file*  
 
 ## Identifying Image Info and Profiles
 OS profiles have since been deprecated with Volatility3, so we will only need to worry about identifying the profile if using Volatility2; this makes life much easier for analyzing memory dumps.  
