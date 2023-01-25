@@ -130,4 +130,29 @@ The code snippet below is from the Ion-Storm configuration file which will alert
 Get-WinEvent -Path <Path to Log> -FilterXPath '*/System/EventID=3 and */EventData/Data[@Name="DestinationPort"] and */EventData/Data=<Port>'
 ```
 
+## Hunting Persistence
+### Hunting Startup Persistence
+Detections for a file being placed in the `\Startup\` or `\Start Menu` directories.  MITRE ATT&CK [T1547](https://attack.mitre.org/techniques/T1547/).  
+```
+<RuleGroup name="" groupRelation="or">
+	<FileCreate onmatch="include">
+		<TargetFilename name="T1023" condition="contains">\Start Menu</TargetFilename>
+		<TargetFilename name="T1165" condition="contains">\Startup\</TargetFilename>
+	</FileCreate>
+</RuleGroup>
+```  
+### Hunting Registry Key Persistence
+Registry modification that adjusts that places a script inside `CurrentVersion\Windows\Run` and other registry locations. MITRE ATT&CK [T1112](https://attack.mitre.org/techniques/T1112/)  
+```
+<RuleGroup name="" groupRelation="or">
+	<RegistryEvent onmatch="include">
+		<TargetObject name="T1060,RunKey" condition="contains">CurrentVersion\Run</TargetObject>
+		<TargetObject name="T1484" condition="contains">Group Policy\Scripts</TargetObject>
+		<TargetObject name="T1060" condition="contains">CurrentVersion\Windows\Run</TargetObject>
+	</RegistryEvent>
+</RuleGroup>
+```
+
+### Detecting Evasion Techniques
+
 
