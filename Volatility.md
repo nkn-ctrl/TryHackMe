@@ -58,6 +58,7 @@ This plugin will list all DLLs associated with processes at the time of extracti
 `python3 vol.py -f <file> windows.dlllist`  
 
 ### `memmap`
+ Once the dump is stored use, strings *.dmp | grep -i "user-agent"  
 `vol.py -f “/path/to/file” -o “/path/to/dir” windows.memmap ‑‑dump ‑‑pid <PID>`  
 
 ## Volatility Hunting and Detection Capabilities
