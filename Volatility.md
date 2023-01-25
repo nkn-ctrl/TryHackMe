@@ -35,5 +35,6 @@ If we are still looking to get information about what the host is running from t
 `python3 vol.py -f <file> windows.info`
 
 ## Listing Processes and Connections
+### `pslist`
 
 
