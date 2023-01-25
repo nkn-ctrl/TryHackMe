@@ -62,4 +62,8 @@ Hunting for code injection. The plugin works by scanning the heap and identifyin
 
 ### `yarascan`
 `yarascan` will search for strings, patterns, and compound rules against a rule set.  
-`python3 vol.py -f <file> yarascan.YaraScan --yara-file /path/to/yara/file.yara`
+`python3 vol.py -f <file> yarascan.YaraScan --yara-file /path/to/yara/file.yara`  
+`python3 vol.py -f <file> windows.vadyarascan.VadYaraScan --yara-file /path/to/yara/file.yara`  
+`python3 vol.py -f <file> windows.vadyarascan ‑‑yara-rules <string>`  
+
+## 
