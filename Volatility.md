@@ -44,6 +44,16 @@ The most basic way of listing processes.this plugin will get the list of process
 Some malware, typically rootkits, will, in an attempt to hide their processes, `psscan`  will locate processes by finding data structures that match `_EPROCESS`. But it can also cause false positives.
 `python3 vol.py -f <file> windows.psscan`  
 
-## 
+###  `pstree`
+`python3 vol.py -f <file> windows.pstree`
 
+### `netstat`
+netstat will attempt to identify all memory structures with a network connection.  
+`python3 vol.py -f <file> windows.netstat`
+
+### `dlllist`
+This plugin will list all DLLs associated with processes at the time of extraction.  
+`python3 vol.py -f <file> windows.dlllist`  
+
+## 
 
