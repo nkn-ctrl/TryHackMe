@@ -107,3 +107,13 @@ There are also other plugins listed below that can be helpful when attempting to
 - moddump
 - handles  
 
+
+## Concluesion
+There are also a number of wikis and various community resources that can be used for more information about Volatility techniques found below.
+
+- https://github.com/volatilityfoundation/volatility/wiki
+- https://github.com/volatilityfoundation/volatility/wiki/Volatility-Documentation-Projec
+- https://digital-forensics.sans.org/media/Poster-2015-Memory-Forensics.pdf
+- https://eforensicsmag.com/finding-advanced-malware-using-volatility/
+
+
