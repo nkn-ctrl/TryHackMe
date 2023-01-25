@@ -57,6 +57,9 @@ netstat will attempt to identify all memory structures with a network connection
 This plugin will list all DLLs associated with processes at the time of extraction.  
 `python3 vol.py -f <file> windows.dlllist`  
 
+### `memmap`
+`vol.py -f “/path/to/file” -o “/path/to/dir” windows.memmap ‑‑dump ‑‑pid <PID>`  
+
 ## Volatility Hunting and Detection Capabilities
 ### `malfind`
 Hunting for code injection. The plugin works by scanning the heap and identifying processes that have the executable bit set `RWE` or `RX` and/or no memory-mapped file on disk (file-less malware).  
