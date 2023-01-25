@@ -28,6 +28,8 @@ For virtual machines, gathering a memory file can easily be done by collecting t
 - Parallels - `.mem`
 - VirtualBox - `.sav` file *\*this is only a partial memory file*  
 
+## [Volatility 3 Cheetsheet](https://blog.onfvp.com/post/volatility-cheatsheet/)
+
 ## Identifying Image Info and Profiles
 OS profiles have since been deprecated with Volatility3, so we will only need to worry about identifying the profile if using Volatility2; this makes life much easier for analyzing memory dumps.  
 If we are still looking to get information about what the host is running from the memory dump, we can use the following three plugins `windows.info` `linux.info` `mac.info`.  
