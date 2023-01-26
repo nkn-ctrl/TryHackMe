@@ -153,6 +153,31 @@ Registry modification that adjusts that places a script inside `CurrentVersion\W
 </RuleGroup>
 ```
 
-### Detecting Evasion Techniques
+## Detecting Evasion Techniques
+### Hunting Alternate Data Streams
+Event ID 15 will hash and log any NTFS Streams that are included within the Sysmon configuration file.The code snippet below will hunt for files in the `Temp` and `Startup` folder as well as `.hta` and `.bat` extension.  
+```
+<RuleGroup name="" groupRelation="or">
+	<FileCreateStreamHash onmatch="include">
+		<TargetFilename condition="contains">Downloads</TargetFilename>
+		<TargetFilename condition="contains">Temp\7z</TargetFilename>
+		<TargetFilename condition="ends with">.hta</TargetFilename>
+		<TargetFilename condition="ends with">.bat</TargetFilename>
+	</FileCreateStreamHash>
+</RuleGroup>
+```
 
+### Detecting Remote Threads
+Remote threads is used to evade detections in combination with other techniques. Remote threads are created using the Windows API `CreateRemoteThread` and can be accessed using `OpenThread` and `ResumeThread`. Sysmon event ID 8 from the SwiftOnSecurity configuration file.  
+```
+<RuleGroup name="" groupRelation="or">
+	<CreateRemoteThread onmatch="exclude">
+		<SourceImage condition="is">C:\Windows\system32\svchost.exe</SourceImage>
+		<TargetImage condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</TargetImage>
+	</CreateRemoteThread>
+</RuleGroup>
+```
+
+### Detecting Evasion Techniques with PowerShell
+`Get-WinEvent -Path <Path to Log> -FilterXPath '*/System/EventID=8'`
 
