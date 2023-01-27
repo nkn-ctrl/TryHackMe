@@ -45,3 +45,8 @@ You are connected to a transient 'in-memory' virtual database.<br>
 .timer ON|OFF      Turn the CPU timer measurement on or off<br>
 </details>
 
+### List the tables
+`.tables` : List all the available tables that can be queried.
+`.tables process` : Tables are associated with processes.
+`.tables user` : Tables are associated with user.
+
