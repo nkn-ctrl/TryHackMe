@@ -10,7 +10,7 @@ run command
 - linux:    `osqueryi`  
 
 <details>
-<summury>ssss</summury>
+<summary>ssss</summary>
 aaa
 ffff
 ddddd
