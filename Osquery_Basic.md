@@ -10,37 +10,38 @@ run command
 - linux:    `osqueryi`  
 
 <details>
-<summary> .heip </summary>
-osquery> .help
-Welcome to the osquery shell. Please explore your OS!
-You are connected to a transient 'in-memory' virtual database.
+<summary> .help </summary>
+osquery> .help<br>
+Welcome to the osquery shell. Please explore your OS!<br>
+You are connected to a transient 'in-memory' virtual database.<br>
+<br>
 
-.all [TABLE]     Select all from a table
-.bail ON|OFF     Stop after hitting an error
-.connect PATH    Connect to an osquery extension socket
-.disconnect      Disconnect from a connected extension socket
-.echo ON|OFF     Turn command echo on or off
-.exit            Exit this program
-.features        List osquery's features and their statuses
-.headers ON|OFF  Turn display of headers on or off
-.help            Show this message
-.mode MODE       Set output mode where MODE is one of:
-                   csv      Comma-separated values
-                   column   Left-aligned columns see .width
-                   line     One value per line
-                   list     Values delimited by .separator string
-                   pretty   Pretty printed SQL results (default)
-.nullvalue STR   Use STRING in place of NULL values
-.print STR...    Print literal STRING
-.quit            Exit this program
-.schema [TABLE]  Show the CREATE statements
-.separator STR   Change separator used by output mode
-.socket          Show the local osquery extensions socket path
-.show            Show the current values for various settings
-.summary         Alias for the show meta command
-.tables [TABLE]  List names of tables
-.types [SQL]     Show result of getQueryColumns for the given query
-.width [NUM1]+   Set column widths for "column" mode
-.timer ON|OFF      Turn the CPU timer measurement on or off
+.all [TABLE]     Select all from a table<br>
+.bail ON|OFF     Stop after hitting an error<br>
+.connect PATH    Connect to an osquery extension socket<br>
+.disconnect      Disconnect from a connected extension socket<br>
+.echo ON|OFF     Turn command echo on or off<br>
+.exit            Exit this program<br>
+.features        List osquery's features and their statuses<br>
+.headers ON|OFF  Turn display of headers on or off<br>
+.help            Show this message<br>
+.mode MODE       Set output mode where MODE is one of:<br>
+                   csv      Comma-separated values<br>
+                   column   Left-aligned columns see .width<br>
+                   line     One value per line<br>
+                   list     Values delimited by .separator string<br>
+                   pretty   Pretty printed SQL results (default)<br>
+.nullvalue STR   Use STRING in place of NULL values<br>
+.print STR...    Print literal STRING<br>
+.quit            Exit this program<br>
+.schema [TABLE]  Show the CREATE statements<br>
+.separator STR   Change separator used by output mode<br>
+.socket          Show the local osquery extensions socket path<br>
+.show            Show the current values for various settings<br>
+.summary         Alias for the show meta command<br>
+.tables [TABLE]  List names of tables<br>
+.types [SQL]     Show result of getQueryColumns for the given query<br>
+.width [NUM1]+   Set column widths for "column" mode<br>
+.timer ON|OFF      Turn the CPU timer measurement on or off<br>
 </details>
 
