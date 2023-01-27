@@ -10,8 +10,7 @@ run command
 - linux:    `osqueryi`  
 
 <details>
-<summary>`.heip`</summary>
-```
+<summary> .heip </summary>
 osquery> .help
 Welcome to the osquery shell. Please explore your OS!
 You are connected to a transient 'in-memory' virtual database.
@@ -43,6 +42,5 @@ You are connected to a transient 'in-memory' virtual database.
 .types [SQL]     Show result of getQueryColumns for the given query
 .width [NUM1]+   Set column widths for "column" mode
 .timer ON|OFF      Turn the CPU timer measurement on or off
-```
 </details>
 
