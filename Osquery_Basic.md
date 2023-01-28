@@ -170,7 +170,8 @@ Below is a screenshot from the Osquery [documentation](https://osquery.readthedo
 - `/Users/%/Library/`: Monitor for changes to files within each Library folder, but not the contents of their subdirectories.
 - `/Users/%/Library/%`: Same, changes to files within each Library folder.
 - `/Users/%/Library/%%`: Monitor changes recursively within each Library.
-- `/bin/%sh`: Monitor the bin directory for changes ending in sh.
+- `/bin/%sh`: Monitor the `bin` directory for changes ending in `sh`.  
+Some tables require a **WHERE** clause, such as the file table, to return a value.
 
 
 
