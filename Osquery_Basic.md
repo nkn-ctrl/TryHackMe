@@ -111,7 +111,14 @@ osquery> SELECT * FROM programs LIMIT 1;
       install_date =
 identifying_number =
 ```
-
+Query: `SELECT name, version, install_location, install_date from programs limit 1;`  
+```
+osquery> select name, version, install_location, install_date from programs limit 1;
+            name = Windows Driver Package - Nuvoton Technology Corporation (Serial) Ports  (11/09/2011 1.0.2011.1109)
+         version = 11/09/2011 1.0.2011.1109
+install_location =
+    install_date =
+```
 
 
 
