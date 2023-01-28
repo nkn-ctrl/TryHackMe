@@ -110,7 +110,11 @@ osquery> SELECT * FROM programs LIMIT 1;
   uninstall_string = rundll32.exe C:\PROGRA~1\DIFX\04518C~1\DIFxAppA.dll, DIFxARPUninstallDriverPackage C:\Windows\System32\DriverStore\FileRepository\nuvserial.inf_amd64_394508c166981603\nuvserial.inf
       install_date =
 identifying_number =
-```
+```  
+In the above example `LIMIT` was used followed by the number to limit the results to display.  
+<br>
+
+
 Query: `SELECT name, version, install_location, install_date from programs limit 1;`  
 ```
 osquery> select name, version, install_location, install_date from programs limit 1;
