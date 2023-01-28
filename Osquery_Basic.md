@@ -114,7 +114,6 @@ identifying_number =
 In the above example `LIMIT` was used followed by the number to limit the results to display.  
 <br>
 
-
 Query: `SELECT name, version, install_location, install_date from programs limit 1;`  
 ```
 osquery> select name, version, install_location, install_date from programs limit 1;
@@ -123,6 +122,43 @@ osquery> select name, version, install_location, install_date from programs limi
 install_location =
     install_date =
 ```
+
+### Count
+To see how many programs or entries in any table are returned.  
+Query: `SELECT count(*) from programs;`  
+```
+osquery> select count(*) from programs;
+count(*) = 45
+```  
+<br>
+
+### WHERE Clause
+Optionally, you can use a WHERE clause to narrow down the list of results returned based on specified criteria.   
+Query: `SELECT * FROM users WHERE username='James';`
+```
+osquery>SELECT * FROM users WHERE username='James';
+        uid = 1002
+        gid = 544
+ uid_signed = 1002
+ gid_signed = 544
+   username = James
+description =
+  directory = C:\Users\James
+      shell = C:\Windows\system32\cmd.exe
+       uuid = S-1-5-21-605937711-2036809076-574958819-1002
+       type = local
+```  
+
+Filtering operators that can be used in a WHERE clause:
+- `=` [equal]
+- `<>`  [not equal]
+- `>`, `>=` [greater than, greater than, or equal to]
+- `<`, `<=` [less than or less than or equal to] 
+- `BETWEEN` [between a range]
+- `LIKE` [pattern wildcard searches]
+- `%` [wildcard, multiple characters]
+- `_` [wildcard, one character]  
+
 
 
 
