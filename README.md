@@ -11,6 +11,7 @@
 - [Sysinternals](https://github.com/nkn-ctrl/TryHackMe/blob/main/Sysinternals.md)
 - [Windows Event Logs](https://github.com/nkn-ctrl/TryHackMe/blob/main/WindowsEventLogs.md)
 - [Sysmon](https://github.com/nkn-ctrl/TryHackMe/blob/main/Sysmon.md)
-
+- [Osquery: Basic](https://github.com/nkn-ctrl/TryHackMe/blob/main/Osquery_Basic.md)
+- [Wazuh](https://github.com/nkn-ctrl/TryHackMe/blob/main/Wazuh.md)
 ### Digital Forensics and Incident Response
 - [Volatility](https://github.com/nkn-ctrl/TryHackMe/blob/main/Volatility.md)
