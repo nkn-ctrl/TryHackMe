@@ -158,7 +158,15 @@ Filtering operators that can be used in a WHERE clause:
 - `LIKE` [pattern wildcard searches]
 - `%` [wildcard, multiple characters]
 - `_` [wildcard, one character]  
-
+```
+osquery> select name from autoexec where name like '%bat';
++----------------+
+| name           |
++----------------+
+| batstartup.bat |
+| batstartup.bat |
++----------------+
+```
 ### Matching Wildcard Rules
 Below is a screenshot from the Osquery [documentation](https://osquery.readthedocs.io/en/stable/deployment/file-integrity-monitoring/) showing examples of using wildcards when used in folder structures:
 - `%`: Match all files and folders for one level.
@@ -202,5 +210,8 @@ osquery>select p.pid, p.name, p.path, u.username from processes p JOIN users u o
 Query: `select path, key, name from registry where key = 'HKEY_USERS';`  
 Query: `select * from ie_extensions;`  
 Query: `select name,install_location from programs where name LIKE '%wireshark%';`
+<br>
+
+`userassist`table : UserAssist Registry Key tracks when a user executes an application from Windows Explorer.  
 
 
