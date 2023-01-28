@@ -82,9 +82,9 @@ osquery>select gid, uid, description, username, directory from users;
 | 20  | 20   |                                                            | NETWORK SERVICE    | %systemroot%\ServiceProfiles\NetworkService |
 +-----+------+------------------------------------------------------------+--------------------+---------------------------------------------+
 ```  
-<br>
 
-.s
+## Schema [Documentation](https://osquery.io/schema/)
+
 
 
 
