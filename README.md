@@ -3,8 +3,8 @@
 ## SOC Level 1
 ### Network Security and Traffic Analysis
 - <img src="https://docs.zeek.org/en/master/_images/zeek-logo-text.png" width="100">[Zeek](https://github.com/nkn-ctrl/TryHackMe/blob/main/Zeek.md)
-- [Brim](https://github.com/nkn-ctrl/TryHackMe/blob/main/Brim.md)
-- [Wireshark](https://github.com/nkn-ctrl/TryHackMe/blob/main/Wireshark.md)
+- <img src="https://github.com/nkn-ctrl/pushtest/blob/main/brim-social-square.jpg" width="100">[Brim](https://github.com/nkn-ctrl/TryHackMe/blob/main/Brim.md)
+- <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshark-logo.png" width="100"><br>[Wireshark](https://github.com/nkn-ctrl/TryHackMe/blob/main/Wireshark.md)
 
 ### Endpoint Security Monitoring
 - [Core Windows Processes](https://github.com/nkn-ctrl/TryHackMe/blob/main/CoreWindowsProcesses.md)
