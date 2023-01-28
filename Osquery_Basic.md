@@ -159,7 +159,6 @@ Filtering operators that can be used in a WHERE clause:
 - `%` [wildcard, multiple characters]
 - `_` [wildcard, one character]  
 ```
-osquery> select name from autoexec where name like '%bat';
 osquery> select * from autoexec where name like '%bat';
 +---------------------------------------------------------------------------------------------+----------------+---------------+
 | path                                                                                        | name           | source        |
