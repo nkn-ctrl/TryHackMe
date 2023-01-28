@@ -98,6 +98,20 @@ osquery>select gid, uid, description, username, directory from users;
 ## Creating SQL queries
 ### Exploring Installed Programs
 Query: `SELECT * FROM programs LIMIT 1;`  
+```
+osquery> .mode line
+osquery> SELECT * FROM programs LIMIT 1;
+              name = Windows Driver Package - Nuvoton Technology Corporation (Serial) Ports  (11/09/2011 1.0.2011.1109)
+           version = 11/09/2011 1.0.2011.1109
+  install_location =
+    install_source =
+          language =
+         publisher = Nuvoton Technology Corporation
+  uninstall_string = rundll32.exe C:\PROGRA~1\DIFX\04518C~1\DIFxAppA.dll, DIFxARPUninstallDriverPackage C:\Windows\System32\DriverStore\FileRepository\nuvserial.inf_amd64_394508c166981603\nuvserial.inf
+      install_date =
+identifying_number =
+```
+
 
 
 
