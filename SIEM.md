@@ -30,4 +30,13 @@ Linux OS stores all the related logs, such as events, errors, warnings, etc.
 ### Web Server
 In Linux, common locations to write all apache related logs are `/var/log/apache` or `/var/log/httpd`.
 
-
+## Analysing Logs and Alerts
+### Dashboard
+Dashboards are the most important components of any SIEM. SIEM presents the data for analysis after being normalized and ingested. Some of the information that can be found in a dashboard are:  
+- Alert Highlights
+- System Notification
+- Health Alert
+- List of Failed Login Attempts
+- Events Ingested Count
+- Rules triggered
+- Top Domains Visited
