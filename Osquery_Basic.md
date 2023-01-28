@@ -198,5 +198,9 @@ osquery>select p.pid, p.name, p.path, u.username from processes p JOIN users u o
 +-------+-------------------+---------------------------------------+----------+
 ```
 
+## Query Example
+Query: `select path, key, name from registry where key = 'HKEY_USERS';`  
+Query: `select * from ie_extensions;`  
+Query: `select name,install_location from programs where name LIKE '%wireshark%';`
 
 
