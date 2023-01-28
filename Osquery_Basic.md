@@ -160,12 +160,13 @@ Filtering operators that can be used in a WHERE clause:
 - `_` [wildcard, one character]  
 ```
 osquery> select name from autoexec where name like '%bat';
-+----------------+
-| name           |
-+----------------+
-| batstartup.bat |
-| batstartup.bat |
-+----------------+
+osquery> select * from autoexec where name like '%bat';
++---------------------------------------------------------------------------------------------+----------------+---------------+
+| path                                                                                        | name           | source        |
++---------------------------------------------------------------------------------------------+----------------+---------------+
+| C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\batstartup.bat                 | batstartup.bat | startup_items |
+| C:\Users\James\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\batstartup.bat | batstartup.bat | startup_items |
++---------------------------------------------------------------------------------------------+----------------+---------------+
 ```
 ### Matching Wildcard Rules
 Below is a screenshot from the Osquery [documentation](https://osquery.readthedocs.io/en/stable/deployment/file-integrity-monitoring/) showing examples of using wildcards when used in folder structures:
