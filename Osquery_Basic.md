@@ -58,6 +58,7 @@ osquery> .table user
   => userassist
   => users
 ```
+
 ### Understanding the table Schema
 
 `.schema table_name` : List  of a table's schema  
@@ -82,8 +83,21 @@ osquery>select gid, uid, description, username, directory from users;
 | 20  | 20   |                                                            | NETWORK SERVICE    | %systemroot%\ServiceProfiles\NetworkService |
 +-----+------+------------------------------------------------------------+--------------------+---------------------------------------------+
 ```  
+### Disolay Mode
+```
+.mode MODE       Set output mode where MODE is one of:
+                   csv      Comma-separated values
+                   column   Left-aligned columns see .width
+                   line     One value per line
+                   list     Values delimited by .separator string
+                   pretty   Pretty printed SQL results (default)
+```
 
 ## Schema [Documentation](https://osquery.io/schema/)
+
+## Creating SQL queries
+### Exploring Installed Programs
+Query: `SELECT * FROM programs LIMIT 1;`  
 
 
 
