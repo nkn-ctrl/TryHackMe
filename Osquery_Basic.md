@@ -180,5 +180,23 @@ Some tables require a **WHERE** clause, such as the file table, to return a valu
 Query1: `select uid, pid, name, path from processes;`  
 Query2: `select uid, username, description from users;`  
 Joined Query: `select p.pid, p.name, p.path, u.username from processes p JOIN users u on u.uid=p.uid LIMIT 10;`  
+```
+osquery>select p.pid, p.name, p.path, u.username from processes p JOIN users u on u.uid=p.uid LIMIT 10;
++-------+-------------------+---------------------------------------+----------+
+| pid   | name              | path                                  | username |
++-------+-------------------+---------------------------------------+----------+
+| 7560  | sihost.exe        | C:\Windows\System32\sihost.exe        | James    |
+| 6984  | svchost.exe       | C:\Windows\System32\svchost.exe       | James    |
+| 7100  | svchost.exe       | C:\Windows\System32\svchost.exe       | James    |
+| 7144  | svchost.exe       | C:\Windows\System32\svchost.exe       | James    |
+| 8636  | ctfmon.exe        | C:\Windows\System32\ctfmon.exe        | James    |
+| 8712  | taskhostw.exe     | C:\Windows\System32\taskhostw.exe     | James    |
+| 9260  | svchost.exe       | C:\Windows\System32\svchost.exe       | James    |
+| 10168 | RuntimeBroker.exe | C:\Windows\System32\RuntimeBroker.exe | James    |
+| 10232 | RuntimeBroker.exe | C:\Windows\System32\RuntimeBroker.exe | James    |
+| 8924  | svchost.exe       | C:\Windows\System32\svchost.exe       | James    |
++-------+-------------------+---------------------------------------+----------+
+```
+
 
 
