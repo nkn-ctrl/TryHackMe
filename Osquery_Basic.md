@@ -174,6 +174,9 @@ Below is a screenshot from the Osquery [documentation](https://osquery.readthedo
 
     Some tables require a **WHERE** clause, such as the file table, to return a value.
 
-
+### Joining Tables using JOIN Function
+Query1: `select uid, pid, name, path from processes;`  
+Query2: `select uid, username, description from users;`  
+Joined Query: `select p.pid, p.name, p.path, u.username from processes p JOIN users u on u.uid=p.uid LIMIT 10;`  
 
 
