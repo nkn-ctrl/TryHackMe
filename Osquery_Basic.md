@@ -161,16 +161,16 @@ Filtering operators that can be used in a WHERE clause:
 
 ### Matching Wildcard Rules
 Below is a screenshot from the Osquery [documentation](https://osquery.readthedocs.io/en/stable/deployment/file-integrity-monitoring/) showing examples of using wildcards when used in folder structures:
-- %: Match all files and folders for one level.
-- %%: Match all files and folders recursively.
-- %abc: Match all within-level ending in "abc".
-- abc%: Match all within-level starting with "abc".
-Matching Examples
-- /Users/%/Library: Monitor for changes to every user's Library folder, but not the contents within.
-- /Users/%/Library/: Monitor for changes to files within each Library folder, but not the contents of their subdirectories.
-- /Users/%/Library/%: Same, changes to files within each Library folder.
-- /Users/%/Library/%%: Monitor changes recursively within each Library.
-- /bin/%sh: Monitor the bin directory for changes ending in sh.
+- `%`: Match all files and folders for one level.
+- `%%`: Match all files and folders recursively.
+- `%abc`: Match all within-level ending in "abc".
+- `abc%`: Match all within-level starting with "abc".
+### Matching Examples
+- `/Users/%/Library`: Monitor for changes to every user's Library folder, but not the contents within.
+- `/Users/%/Library/`: Monitor for changes to files within each Library folder, but not the contents of their subdirectories.
+- `/Users/%/Library/%`: Same, changes to files within each Library folder.
+- `/Users/%/Library/%%`: Monitor changes recursively within each Library.
+- `/bin/%sh`: Monitor the bin directory for changes ending in sh.
 
 
 
