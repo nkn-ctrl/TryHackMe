@@ -172,6 +172,7 @@ Below is a screenshot from the Osquery [documentation](https://osquery.readthedo
 - `/Users/%/Library/%%`: Monitor changes recursively within each Library.
 - `/bin/%sh`: Monitor the `bin` directory for changes ending in `sh`.  
 <br>
+
 Some tables require a **WHERE** clause, such as the file table, to return a value.
 
 ### Joining Tables using JOIN Function
