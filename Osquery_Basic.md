@@ -46,7 +46,45 @@ You are connected to a transient 'in-memory' virtual database.<br>
 </details>
 
 ### List the tables
-`.tables` : List all the available tables that can be queried.
-`.tables process` : Tables are associated with processes.
-`.tables user` : Tables are associated with user.
+`.tables` : List all the available tables that can be queried.  
+`.tables process` : Tables are associated with processes.  
+`.tables user` : Tables are associated with user.  
+```
+root@analyst$ osqueryi
+Using a virtual database. Need help, type '.help'
+osquery> .table user
+  => user_groups
+  => user_ssh_keys
+  => userassist
+  => users
+```
+### Understanding the table Schema
+
+`.schema table_name` : List  of a table's schema  
+```
+osquery> .schema users
+CREATE TABLE users(`uid` BIGINT, `gid` BIGINT, `uid_signed` BIGINT, `gid_signed` BIGINT, `username` TEXT, `description` TEXT, `directory` TEXT, `shell` TEXT, `uuid` TEXT, `type` TEXT, `is_hidden` INTEGER HIDDEN, `pid_with_namespace` INTEGER HIDDEN, PRIMARY KEY (`uid`, `username`, `uuid`, `pid_with_namespace`)) WITHOUT ROWID;
+```  
+<br>
+
+SQL QUERY SYNTAX: `select column1, column2, column3 from table;`  
+```
+osquery>select gid, uid, description, username, directory from users;
++-----+------+------------------------------------------------------------+----------------------+-------------------------------------------+
+| gid | uid  | description                                                | username           | directory                                   |
++-----+------+-------------------------------------------------------------------------------------------------------------------------------+
+| 544 | 500  | Built-in account for administering the computer/domain     | Administrator      |                                             |
+| 581 | 503  | A user account managed by the system.                      | DefaultAccount     |                                             |
+| 546 | 501  | Built-in account for guest access to the computer/domain   | Guest              |                                             |
+| 544 | 1002 |                                                            | James              | C:\Users\James                              |
+| 18  | 18   |                                                            | SYSTEM             | %systemroot%\system32\config\systemprofile  |
+| 19  | 19   |                                                            | LOCAL SERVICE      | %systemroot%\ServiceProfiles\LocalService   |
+| 20  | 20   |                                                            | NETWORK SERVICE    | %systemroot%\ServiceProfiles\NetworkService |
++-----+------+------------------------------------------------------------+--------------------+---------------------------------------------+
+```  
+<br>
+
+.s
+
+
 
