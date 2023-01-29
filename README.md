@@ -14,5 +14,8 @@
 - [Osquery: Basic](https://github.com/nkn-ctrl/TryHackMe/blob/main/Osquery_Basic.md)
 - [Wazuh](https://github.com/nkn-ctrl/TryHackMe/blob/main/Wazuh.md)
 
+### Security Information and Event Management
+- [SIEM](https://github.com/nkn-ctrl/TryHackMe/blob/main/SIEM.md)
+
 ### Digital Forensics and Incident Response
 - [Volatility](https://github.com/nkn-ctrl/TryHackMe/blob/main/Volatility.md)

@@ -55,3 +55,9 @@ Elastic stack is the collection of different open source components linked toget
 ### KQL (Kibana Query Language)
 https://www.elastic.co/guide/en/kibana/7.17/kuery-query.html
 
+## Splunk: Basics
+Splunk is one of the leading SIEM solutions in the market that provides the ability to collect, analyze and correlate the network and machine logs in real-time.   
+- Navigating Splunk https://docs.splunk.com/Documentation/Splunk/8.1.2/SearchTutorial/NavigatingSplunk  
+
+
+
