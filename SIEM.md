@@ -42,7 +42,16 @@ Dashboards are the most important components of any SIEM. SIEM presents the data
 - Top Domains Visited
 
 ## ELK
+Investigate VPN logs through ELK.  
 ### Elastic stack
 Elastic stack is the collection of different open source components linked together to help users take the data from any source and in any format and perform a search, analyze and visualize the data in real-time.  
 <img src="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/ed8750288e179609301f57c45bdfda43.png" width="700">  
+
+### Logstash
+- Input plugins https://www.elastic.co/guide/en/logstash/8.1/input-plugins.html
+- Filter plugins https://www.elastic.co/guide/en/logstash/8.1/filter-plugins.html
+- Output plugins https://www.elastic.co/guide/en/logstash/8.1/filter-plugins.html
+
+### KQL (Kibana Query Language)
+https://www.elastic.co/guide/en/kibana/7.17/kuery-query.html
 
