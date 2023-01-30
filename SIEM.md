@@ -69,3 +69,6 @@ This phase covers getting alerts from the security controls like SIEM/EDR invest
 This phase covers the actions needed to prevent the incident from spreading and securing the network.
 4. Post-Incident Activity / Lessons Learnt  
 This phase includes identifying the loopholes in the organization's security posture, which led to an intrusion, and improving so that the attack does not happen next time. 
+
+## Reconnaissance Phase
+
