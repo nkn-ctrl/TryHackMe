@@ -62,7 +62,7 @@ Splunk is one of the leading SIEM solutions in the market that provides the abil
 # Incident handling with Splunk
 ## Incident Handling Life Cycle
 1. Preparation
-Readiness of an organization against an attack. Documenting the requirements, defining the policies, incorporating the security controls to monitor like EDR / SIEM / IDS / IPS, etc. and also hiring/training the staff.
+Readiness of an organization against an attack.   Documenting the requirements, defining the policies, incorporating the security controls to monitor like EDR / SIEM / IDS / IPS, etc. and also hiring/training the staff.
 2. Detection and Analysis
 3. Containment, Eradication, and Recovery
 4. Post-Incident Activity / Lessons Learnt
