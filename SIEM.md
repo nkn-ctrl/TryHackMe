@@ -59,5 +59,10 @@ https://www.elastic.co/guide/en/kibana/7.17/kuery-query.html
 Splunk is one of the leading SIEM solutions in the market that provides the ability to collect, analyze and correlate the network and machine logs in real-time.   
 - Navigating Splunk https://docs.splunk.com/Documentation/Splunk/8.1.2/SearchTutorial/NavigatingSplunk  
 
-
+# Incident handling with Splunk
+## Incident Handling Life Cycle
+1. Preparation
+2. Detection and Analysis
+3. Containment, Eradication, and Recovery
+4. Post-Incident Activity / Lessons Learnt
 
