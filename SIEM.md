@@ -70,5 +70,8 @@ This phase covers the actions needed to prevent the incident from spreading and 
 4. Post-Incident Activity / Lessons Learnt  
 This phase includes identifying the loopholes in the organization's security posture, which led to an intrusion, and improving so that the attack does not happen next time. 
 
+## Cyber Kill Chain
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/CyberKillChain.png" width="700">
+
 ## Reconnaissance Phase
 
