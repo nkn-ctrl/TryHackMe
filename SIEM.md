@@ -95,6 +95,8 @@ During our investigation, we will be using Splunk as our SIEM solution. Logs are
 ## Reconnaissance Phase
 We will start our analysis by examining any reconnaissance attempt against the webserver `imreallynotbatman.com`.  
 Search Query: `index=botsv1 imreallynotbatman.com`  
+<br>
+
 Where do we first need to look? If we look at the available log sources, we will find some log sources covering the network traffic.  
 Search Query: `index=botsv1 imreallynotbatman.com sourcetype=stream:http`  
 
