@@ -100,5 +100,11 @@ Search Query: `index=botsv1 imreallynotbatman.com`
 Where do we first need to look? If we look at the available log sources, we will find some log sources covering the network traffic.  
 Search Query: `index=botsv1 imreallynotbatman.com sourcetype=stream:http`  
 
+### Validate the IP that is scanning
+So what do we need to do to validate the scanning attempt? Look into the suricata logs.  
+Search Query: `index=botsv1 imreallynotbatman.com src=40.80.148.42 sourcetype=suricata`  
+
+## Exploitation Phase
+
 
 
