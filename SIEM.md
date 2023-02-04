@@ -140,10 +140,8 @@ Search Query:
 
 ### Installation Phase
 Once the attacker has successfully exploited the security of a system, he will try to install a backdoor or an application for persistence or to gain more control of the system. This activity comes under the installation phase.  
-<br>
 
 Search Query: `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" *.exe`  
-<br>
 
 Search Query: `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" "part_filename{}"="3791.exe"`  
 <br>
