@@ -107,6 +107,22 @@ So what do we need to do to validate the scanning attempt? Look into the suricat
 Search Query: `index=botsv1 imreallynotbatman.com src=40.80.148.42 sourcetype=suricata`  
 
 ## Exploitation Phase
+The attacker needs to exploit the vulnerability to gain access to the system/server.  
+In this task, we will look at the potential exploitation attempt from the attacker against our web server and see if the attacker got successful in exploiting or not.  
+
+### Count
+Let's use the following search query to see the number of counts by each source IP against the webserver.  
+Search Query:`index=botsv1 imreallynotbatman.com sourcetype=stream* | stats count(src_ip) as Requests by src_ip | sort - Requests`  
+Query Explanation: This query uses the stats function to display the count of the IP addresses in the field src_ip.  
+<br>
+
+Now we will narrow down the result to show requests sent to our web server, which has the IP `192.168.250.70`.  
+Search Query: `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70"`  
+Query Explanation: This query will look for all the inbound traffic towards IP 192.168.250.70.  
+
+
+
+
 
 
 
