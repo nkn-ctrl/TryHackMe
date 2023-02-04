@@ -157,6 +157,37 @@ For the evidence of execution, we can leverage sysmon and look at the EventCode=
 Search Query: `index=botsv1 "3791.exe" sourcetype="XmlWinEventLog" EventCode=1`
 
 ### Action on Objective
+As the website was defaced due to a successful attack by the adversary, it would be helpful to understand better what ended up on the website that caused defacement.  
+
+We will start our investigation by examining the Suricata log source and the IP addresses communicating with the webserver 192.168.250.70.  
+Search Query: `index=botsv1 dest=192.168.250.70 sourcetype=suricata`  
+
+Let us change the flow direction to see if any communication originates from the server.  
+Search Query: `index=botsv1 src=192.168.250.70 sourcetype=suricata`  
+
+Search Query: `index=botsv1 url="/poisonivy-is-coming-for-you-batman.jpeg" dest_ip="192.168.250.70" | table _time src dest_ip http.hostname url`
+
+### Command and Control:
+The attacker uploaded the file to the server before defacing it. While doing so, the attacker used a Dynamic DNS to resolve a malicious IP. Our objective would be to find the IP that the attacker decided the DNS.  
+
+We will first pick fortigate_utm to review the firewall logs and then move on to the other log sources.  
+Search Query: `index=botsv1 sourcetype=fortigate_utm"poisonivy-is-coming-for-you-batman.jpeg"`　　
+
+Let us verify the answer by looking at another log source.`stream:http`.  
+Search Query: `index=botsv1 sourcetype=stream:http dest_ip=23.22.63.114 "poisonivy-is-coming-for-you-batman.jpeg" src_ip=192.168.250.70`
+
+### Weaponization
+In the weaponization phase, the adversaries would:
+- Create Malware / Malicious document to gain initial access / evade detection etc.
+- Establish domains similar to the target domain to trick users.
+- Create a Command and Control Server for the post-exploitation communication/activity etc.  
+We have found some domains / IP addresses associated with the attacker during the investigations. This task will mainly look into OSINT sites to see what more information we can get about the adversary.
+
+#### Robtex:
+[Robtex](https://www.robtex.com/) is a Threat Intel site that provides information about IP addresses, domain names, etc.
+
+
+
 
 
 
