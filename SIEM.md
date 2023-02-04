@@ -130,7 +130,7 @@ Search Query:
 `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST uri="/joomla/administrator/index.php" form_data=*username*passwd* | table _time uri src_ip dest_ip form_data`
 <bf>
 
-Now, let's use Regex.  rex field=form_data "passwd=(?<creds>\w+)" To extract the passwd values only. This will pick the form_data field and extract all the values found with the field. creds.  
+Now, let's use Regex.  `rex field=form_data "passwd=(?<creds>\w+)"` To extract the passwd values only. This will pick the form_data field and extract all the values found with the field. creds.  
 Search Query:  
 `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST form_data=*username*passwd* | rex field=form_data "passwd=(?<creds>\w+)"  | table src_ip creds`  
 <br>
