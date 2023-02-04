@@ -119,6 +119,19 @@ Query Explanation: This query uses the stats function to display the count of th
 Now we will narrow down the result to show requests sent to our web server, which has the IP `192.168.250.70`.  
 Search Query: `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70"`  
 Query Explanation: This query will look for all the inbound traffic towards IP 192.168.250.70.  
+<bf>
+
+`form_data` The field contains the requests sent through the form on the admin panel page, which has a login page. We suspect the attacker may have tried multiple credentials in an attempt to gain access to the admin panel.  
+Search Query: `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST uri="/joomla/administrator/index.php" | table _time uri src_ip dest_ip form_data`
+
+### Extracting Username and Passwd Fields using Regex
+Search Query: `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST uri="/joomla/administrator/index.php" form_data=*username*passwd* | table _time uri src_ip dest_ip form_data`
+<bf>
+
+Search Query:`index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST form_data=*username*passwd* | rex field=form_data "passwd=(?<creds>\w+)"  | table src_ip creds`  
+<img src="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/594dedebeb2d2d5a7cc6cae8d1ebc226.gif" >
+
+
 
 
 
