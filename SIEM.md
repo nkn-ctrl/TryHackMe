@@ -181,6 +181,7 @@ In the weaponization phase, the adversaries would:
 - Create Malware / Malicious document to gain initial access / evade detection etc.
 - Establish domains similar to the target domain to trick users.
 - Create a Command and Control Server for the post-exploitation communication/activity etc.  
+
 We have found some domains / IP addresses associated with the attacker during the investigations. This task will mainly look into OSINT sites to see what more information we can get about the adversary.
 
 #### Robtex:
