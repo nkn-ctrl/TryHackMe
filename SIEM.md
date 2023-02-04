@@ -125,17 +125,12 @@ Query Explanation: This query will look for all the inbound traffic towards IP 1
 Search Query: `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST uri="/joomla/administrator/index.php" | table _time uri src_ip dest_ip form_data`
 
 ### Extracting Username and Passwd Fields using Regex
-Search Query: `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST uri="/joomla/administrator/index.php" form_data=*username*passwd* | table _time uri src_ip dest_ip form_data`
+Search Query:  `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST uri="/joomla/administrator/index.php" form_data=*username*passwd* | table _time uri src_ip dest_ip form_data`
 <bf>
+Now, let's use Regex.  rex field=form_data "passwd=(?<creds>\w+)" To extract the passwd values only. This will pick the form_data field and extract all the values found with the field. creds.  
 
-Search Query:`index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST form_data=*username*passwd* | rex field=form_data "passwd=(?<creds>\w+)"  | table src_ip creds`  
+Search Query:  `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST form_data=*username*passwd* | rex field=form_data "passwd=(?<creds>\w+)"  | table src_ip creds`  
 <br>
-
-![creds](https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/594dedebeb2d2d5a7cc6cae8d1ebc226.gif)  
-
-
-![creds](https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/594dedebeb2d2d5a7cc6cae8d1ebc226.gif)
-
 
 
 
