@@ -152,6 +152,7 @@ Following the Host-centric log, sources were found to have traces of the executa
 - Sysmon
 - WinEventlog
 - fortigate_utm  
+
 For the evidence of execution, we can leverage sysmon and look at the EventCode=1 for program execution.  
 Search Query: `index=botsv1 "3791.exe" sourcetype="XmlWinEventLog" EventCode=1`
 
