@@ -138,7 +138,7 @@ Search Query:
 Search Query:   
 `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST form_data=*username*passwd* | rex field=form_data "passwd=(?<creds>\w+)" |table _time src_ip uri http_user_agent creds`
 
-### Installation Phase
+## Installation Phase
 Once the attacker has successfully exploited the security of a system, he will try to install a backdoor or an application for persistence or to gain more control of the system. This activity comes under the installation phase.  
 
 Search Query: `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" *.exe`  
@@ -156,7 +156,7 @@ Following the Host-centric log, sources were found to have traces of the executa
 For the evidence of execution, we can leverage sysmon and look at the EventCode=1 for program execution.  
 Search Query: `index=botsv1 "3791.exe" sourcetype="XmlWinEventLog" EventCode=1`
 
-### Action on Objective
+## Action on Objective
 As the website was defaced due to a successful attack by the adversary, it would be helpful to understand better what ended up on the website that caused defacement.  
 
 We will start our investigation by examining the Suricata log source and the IP addresses communicating with the webserver 192.168.250.70.  
@@ -167,7 +167,7 @@ Search Query: `index=botsv1 src=192.168.250.70 sourcetype=suricata`
 
 Search Query: `index=botsv1 url="/poisonivy-is-coming-for-you-batman.jpeg" dest_ip="192.168.250.70" | table _time src dest_ip http.hostname url`
 
-### Command and Control:
+## Command and Control:
 The attacker uploaded the file to the server before defacing it. While doing so, the attacker used a Dynamic DNS to resolve a malicious IP. Our objective would be to find the IP that the attacker decided the DNS.  
 
 We will first pick fortigate_utm to review the firewall logs and then move on to the other log sources.  
@@ -176,7 +176,7 @@ Search Query: `index=botsv1 sourcetype=fortigate_utm"poisonivy-is-coming-for-you
 Let us verify the answer by looking at another log source.`stream:http`.  
 Search Query: `index=botsv1 sourcetype=stream:http dest_ip=23.22.63.114 "poisonivy-is-coming-for-you-batman.jpeg" src_ip=192.168.250.70`
 
-### Weaponization
+## Weaponization
 In the weaponization phase, the adversaries would:
 - Create Malware / Malicious document to gain initial access / evade detection etc.
 - Establish domains similar to the target domain to trick users.
