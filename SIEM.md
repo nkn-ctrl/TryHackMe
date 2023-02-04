@@ -148,17 +148,13 @@ Search Query: `index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" "par
 
 #### Was this file executed on the server after being uploaded?
 We have found that file 3791.exe was uploaded on the server. The question that may come to our mind would be, was this file executed on the server? We need to narrow down our search query to show the logs from the host-centric log sources to answer this question.  
-<br>
 
 Following the Host-centric log, sources were found to have traces of the executable 3791. exe.
-Sysmon
-WinEventlog
-fortigate_utm
+- Sysmon
+- WinEventlog
+- fortigate_utm
 For the evidence of execution, we can leverage sysmon and look at the EventCode=1 for program execution.  
-
-
-
-
+Search Query: `index=botsv1 "3791.exe" sourcetype="XmlWinEventLog" EventCode=1`
 
 ### Action on Objective
 
