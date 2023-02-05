@@ -225,6 +225,7 @@ We used various threat Intel platforms to find the attacker's infrastructure bas
 Information we had:
 - Domain: prankglassinebracket.jumpingcrab.com
 - IP Address: 23.22.63.114  
+
 Findings:
 - Multiple masquerading domains were found associated with the attacker's IPs.
 - An email of the user Lillian.rose@po1s0n1vy.com was also found associated with the attacker's IP address.
