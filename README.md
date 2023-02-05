@@ -18,5 +18,5 @@
 - [SIEM](https://github.com/nkn-ctrl/TryHackMe/blob/main/SIEM.md)
 
 ### Digital Forensics and Incident Response
-- [Windows Forensic](https://github.com/nkn-ctrl/TryHackMe/blob/main/Windows_Forensics.md)
+- [Windows Forensics](https://github.com/nkn-ctrl/TryHackMe/blob/main/Windows_Forensics.md)
 - [Volatility](https://github.com/nkn-ctrl/TryHackMe/blob/main/Volatility.md)
