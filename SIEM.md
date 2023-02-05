@@ -210,7 +210,7 @@ Findings:
 - 142 unique brute force attempts were made against the server, out of which one attempt was successful
 
 ### Installation Phase:
-Next, we looked at the installation phase to see any executable from the attacker's IP Address uploaded to our server.  
+ Next, we looked at the installation phase to see any executable from the attacker's IP Address uploaded to our server.  
 Findings:
 - A malicious executable file 3791.exe was observed to be uploaded by the attacker.
 - We looked at the sysmon logs and found the MD5 hash of the file.
