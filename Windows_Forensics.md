@@ -18,4 +18,7 @@ These hives are copied to the `C:\Windows\System32\Config\RegBack` directory eve
 The Amcache Hive:`C:\Windows\AppCompat\Programs\Amcache.hve`  
 Windows creates this hive to save information on programs that were recently run on the system.  
 
-
+### Data Acquisition
+- KAPE: https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape  
+- Autopsy: https://www.autopsy.com/
+- FTK Imager: https://www.exterro.com/ftk-imager   
