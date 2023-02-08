@@ -22,3 +22,12 @@ Windows creates this hive to save information on programs that were recently run
 - KAPE: https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape  
 - Autopsy: https://www.autopsy.com/
 - FTK Imager: https://www.exterro.com/ftk-imager   
+
+### Exploring Windows Registry
+- Registry Viewer: https://accessdata.com/product-download/registry-viewer-2-0-0
+- Zimmerman's Registry Explorer: https://ericzimmerman.github.io/#!index.md
+- RegRipper: https://github.com/keydet89/RegRipper3.0
+
+### System Information and System Accounts
+- OS Version: `SOFTWARE\Microsoft\Windows NT\CurrentVersion`
+- Current control set:
