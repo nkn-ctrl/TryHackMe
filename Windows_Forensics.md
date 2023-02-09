@@ -33,3 +33,5 @@ Windows creates this hive to save information on programs that were recently run
 - Current control set: `HKLM\SYSTEM\CurrentControlSet`
     - ControlSet001 `SYSTEM\ControlSet001` will point to the Control Set that the machine booted with.
     - ControlSet002 `SYSTEM\ControlSet002` will be the last known good configuration.
+- Computer Name: `SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName`
+- 
