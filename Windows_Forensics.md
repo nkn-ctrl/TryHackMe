@@ -34,4 +34,6 @@ Windows creates this hive to save information on programs that were recently run
     - ControlSet001 `SYSTEM\ControlSet001` will point to the Control Set that the machine booted with.
     - ControlSet002 `SYSTEM\ControlSet002` will be the last known good configuration.
 - Computer Name: `SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName`
-- 
+- Time Zone information: `SYSTEM\CurrentControlSet\Control\TimeZoneInformation`
+- Network Interfaces and Past Networks:`SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces`
+
