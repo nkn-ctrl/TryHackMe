@@ -68,8 +68,9 @@ Windows creates this hive to save information on programs that were recently run
 ### Usage or knowledge of files/folders
 - Recent Files: `NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs`
 - Office Recent Files: `NTUSER.DAT\Software\Microsoft\Office\VERSION`  
-- ShellBags: `USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\Bags`  
-            `USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\BagMRU`  
-            `NTUSER.DAT\Software\Microsoft\Windows\Shell\BagMRU`  
-            `NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags`  
+- ShellBags:
+    - `USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\Bags`  
+    - `USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\BagMRU`  
+    - `NTUSER.DAT\Software\Microsoft\Windows\Shell\BagMRU`  
+    - `NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags`  
 
