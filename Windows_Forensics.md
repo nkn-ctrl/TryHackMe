@@ -36,4 +36,8 @@ Windows creates this hive to save information on programs that were recently run
 - Computer Name: `SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName`
 - Time Zone information: `SYSTEM\CurrentControlSet\Control\TimeZoneInformation`
 - Network Interfaces and Past Networks:`SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces`
+    The past networks a given machine was connected
+    - `SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged`
+    - `SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Managed`
+- 
 
