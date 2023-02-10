@@ -16,7 +16,14 @@ The majority of these hives are located in the `C:\Windows\System32\Config`.
 2. SAM (mounted on `HKEY_LOCAL_MACHINE\SAM`)
 3. SECURITY (mounted on `HKEY_LOCAL_MACHINE\Security`)
 4. SOFTWARE (mounted on `HKEY_LOCAL_MACHINE\Software`)
-5. SYSTEM (mounted on `HKEY_LOCAL_MACHINE\System`)
+5. SYSTEM (mounted on `HKEY_LOCAL_MACHINE\System`)  
+<br>
+
+**Hives containing user information**: a user’s profile directory is located in C:\Users\<username>\  
+1. NTUSER.DAT (mounted on HKEY_CURRENT_USER when a user logs in)
+    `C:\Users\<username>\`
+2. USRCLASS.DAT (mounted on HKEY_CURRENT_USER\Software\CLASSES)  
+    `C:\Users\<username>\AppData\Local\Microsoft\Windows`
 
 These hives are copied to the `C:\Windows\System32\Config\RegBack` directory every ten days.  
 <br>
