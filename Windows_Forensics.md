@@ -9,9 +9,15 @@ Five root keys:
 |HKEY_LOCAL_MACHINE|Contains configuration information particular to the computer (for any user). This key is sometimes abbreviated as HKLM.|
 |HKEY_CLASSES_ROOT| Is a subkey of `HKEY_LOCAL_MACHINE\Software`. The information that is stored here makes sure that the correct program opens when you open a file by using Windows Explorer. This key is sometimes abbreviated as HKCR.<br><br>Starting with Windows 2000, this information is stored under both the HKEY_LOCAL_MACHINE and HKEY_CURRENT_USER keys. The `HKEY_LOCAL_MACHINE\Software\Classes` key contains default settings that can apply to all users on the local computer. The `HKEY_CURRENT_USER\Software\Classes` key has settings that override the default settings and apply only to the interactive user.<br><br>The HKEY_CLASSES_ROOT key provides a view of the registry that merges the information from these two sources. HKEY_CLASSES_ROOT also provides this merged view for programs that are designed for earlier versions of Windows. To change the settings for the interactive user, changes must be made under `HKEY_CURRENT_USER\Software\Classes` instead of under HKEY_CLASSES_ROOT.<br><br>To change the default settings, changes must be made under `HKEY_LOCAL_MACHINE\Software\Classes`. If you write keys to a key under HKEY_CLASSES_ROOT, the system stores the information under `HKEY_LOCAL_MACHINE\Software\Classes`.<br><br>If you write values to a key under HKEY_CLASSES_ROOT, and the key already exists under `HKEY_CURRENT_USER\Software\Classes`, the system will store the information there instead of under `HKEY_LOCAL_MACHINE\Software\Classes`.|
 |HKEY_CURRENT_CONFIG|Contains information about the hardware profile that is used by the local computer at system startup.|  
-<br>
 
+### Accessing registry hives offline
 The majority of these hives are located in the `C:\Windows\System32\Config`.  
+    1. DEFAULT (mounted on `HKEY_USERS\DEFAULT`)
+    2. SAM (mounted on `HKEY_LOCAL_MACHINE\SAM`)
+    3. SECURITY (mounted on `HKEY_LOCAL_MACHINE\Security`)
+    4. SOFTWARE (mounted on `HKEY_LOCAL_MACHINE\Software`)
+    5. SYSTEM (mounted on `HKEY_LOCAL_MACHINE\System`)
+
 These hives are copied to the `C:\Windows\System32\Config\RegBack` directory every ten days.  
 <br>
 
@@ -54,4 +60,5 @@ Windows creates this hive to save information on programs that were recently run
 
 ### Usage or knowledge of files/folders
 - Recent Files: `NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs`
+- Office Recent Files: `NTUSER.DAT\Software\Microsoft\Office\VERSION`
 
