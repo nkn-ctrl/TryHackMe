@@ -39,6 +39,11 @@ Windows creates this hive to save information on programs that were recently run
     The past networks a given machine was connected
     - `SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged`
     - `SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Managed`
-- **Autostart Programs (Autoruns):**
+- **Autostart Programs (Autoruns):** programs or commands that run when a user logs on.  
+    - `NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Run`
+    - `NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\RunOnce`
+    - `SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce`
+    - `SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer\Run`
+    - `SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
 
 
