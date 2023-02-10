@@ -79,3 +79,17 @@ Windows creates this hive to save information on programs that were recently run
 - Windows Explorer Address/Search Bars:
     - `NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths`
     - `NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery`
+
+###  Evidence of Execution
+- UserAssist: Windows keeps track of applications launched by the user using Windows Explorer for statistical purposes in the User Assist registry keys.However, programs that were run using the command line can't be found in the User Assist keys.
+    - `NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\{GUID}\Count`
+- ShimCache (AppCompatCache): ShimCache is a mechanism used to keep track of application compatibility with the OS and tracks all applications launched on the machine. Its main purpose in Windows is to ensure backward compatibility of applications. 
+    - `SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache`
+- AmCache: his performs a similar function to ShimCache, and stores additional data related to program executions.
+    - `C:\Windows\appcompat\Programs\Amcache.hve`
+    - `Amcache.hve\Root\File\{Volume GUID}\`
+- BAM/DAM: Background Activity Monitor or BAM keeps a tab on the activity of background applications. It contains information about last run programs, their full paths, and last execution time.
+    - `SYSTEM\CurrentControlSet\Services\bam\UserSettings\{SID}`
+    - `SYSTEM\CurrentControlSet\Services\dam\UserSettings\{SID}`
+
+
