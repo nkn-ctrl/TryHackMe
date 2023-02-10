@@ -12,11 +12,11 @@ Five root keys:
 
 ### Accessing registry hives offline
 The majority of these hives are located in the `C:\Windows\System32\Config`.  
-    1. DEFAULT (mounted on `HKEY_USERS\DEFAULT`)
-    2. SAM (mounted on `HKEY_LOCAL_MACHINE\SAM`)
-    3. SECURITY (mounted on `HKEY_LOCAL_MACHINE\Security`)
-    4. SOFTWARE (mounted on `HKEY_LOCAL_MACHINE\Software`)
-    5. SYSTEM (mounted on `HKEY_LOCAL_MACHINE\System`)
+1. DEFAULT (mounted on `HKEY_USERS\DEFAULT`)
+2. SAM (mounted on `HKEY_LOCAL_MACHINE\SAM`)
+3. SECURITY (mounted on `HKEY_LOCAL_MACHINE\Security`)
+4. SOFTWARE (mounted on `HKEY_LOCAL_MACHINE\Software`)
+5. SYSTEM (mounted on `HKEY_LOCAL_MACHINE\System`)
 
 These hives are copied to the `C:\Windows\System32\Config\RegBack` directory every ten days.  
 <br>
