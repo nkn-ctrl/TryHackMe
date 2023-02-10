@@ -20,7 +20,7 @@ The majority of these hives are located in the `C:\Windows\System32\Config`.
 <br>
 
 **Hives containing user information**: a user’s profile directory is located in C:\Users\<username>\  
-1. NTUSER.DAT (mounted on HKEY_CURRENT_USER when a user logs in)
+1. NTUSER.DAT (mounted on HKEY_CURRENT_USER when a user logs in)  
     `C:\Users\<username>\`
 2. USRCLASS.DAT (mounted on HKEY_CURRENT_USER\Software\CLASSES)  
     `C:\Users\<username>\AppData\Local\Microsoft\Windows`
