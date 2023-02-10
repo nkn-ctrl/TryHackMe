@@ -45,5 +45,6 @@ Windows creates this hive to save information on programs that were recently run
     - `SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce`
     - `SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer\Run`
     - `SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
+    - information about services: `information about services:`
 
 
