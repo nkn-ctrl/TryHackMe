@@ -48,4 +48,8 @@ Windows creates this hive to save information on programs that were recently run
     - information about services: `information about services:`  
         <img src="https://github.com/nkn-ctrl/pushtest/blob/main/windows_reg_start.png" width="700"><br>
         In this registry key, if the start key is set to `0x02`, this means that this service will start at boot.
+- SAM hive and user information: `SAM\Domains\Account\Users`
+    <img src="https://github.com/nkn-ctrl/pushtest/blob/main/windows_reg_sam.png" width="700"><br>
+    The information contained here includes the relative identifier (RID) of the user, number of times the user logged in, last login time, last failed login, last password change, password expiry, password policy and password hint, and any groups that the user is a part of.   
+
 
