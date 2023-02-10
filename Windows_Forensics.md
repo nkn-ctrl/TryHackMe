@@ -46,6 +46,6 @@ Windows creates this hive to save information on programs that were recently run
     - `SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer\Run`
     - `SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
     - information about services: `information about services:`  
-    <img src="https://tryhackme-images.s3.amazonaws.com/user-uploads/61306d87a330ed00419e22e7/room-content/5605bfda34393bfcb8c4aee6a5ad771f.png" width="500">  
-    In this registry key, if the start key is set to `0x02`, this means that this service will start at boot.
+        <img src="https://github.com/nkn-ctrl/pushtest/blob/main/windows_reg_start.png" width="500"><br>
+        In this registry key, if the start key is set to `0x02`, this means that this service will start at boot.
 
