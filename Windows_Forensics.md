@@ -94,8 +94,8 @@ Windows creates this hive to save information on programs that were recently run
 
 ### External Devices/USB device forensics
 - Device identification: The following locations keep track of USB keys plugged into a system. These locations store the vendor id, product id, and version of the USB device plugged in and can be used to identify unique devices.
-    - `SYSTEM\CurrentControlSet\Enum\USBSTOR`
-    - `SYSTEM\CurrentControlSet\Enum\USB`
+    - `SYSTEM\CurrentControlSet [aka:ControlSet001] \Enum\USBSTOR`
+    - `SYSTEM\CurrentControlSet [aka:ControlSet001] \Enum\USB`
 - First/Last Times: The first time the device was connected, the last time it was connected and the last time the device was removed from the system.
     - `SYSTEM\CurrentControlSet\Enum\USBSTOR\Ven_Prod_Version\USBSerial#\Properties\{83da6326-97a6-4088-9453-a19231573b29}\####`  
 
