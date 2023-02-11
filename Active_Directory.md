@@ -26,10 +26,11 @@ The machine account name is the computer's name followed by a dollar sign. For e
 
 ## Active Directory Users and Computers
 **Organizational Units (OUs)** which are container objects that allow you to classify users and machines.
-<img src="https://github.com/nkn-ctrl/pushtest/blob/main/AD_OUs.png" width="600">  
-
 - Builtin: Contains default groups available to any Windows host.
 - Computers: Any machine joining the network will be put here by default. You can move them if needed.
 - Domain Controllers: Default OU that contains the DCs in your network.
 - Users: Default users and groups that apply to a domain-wide context.
 - Managed Service Accounts: Holds accounts used by services in your Windows domain.
+
+
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/AD_OUs.png" width="600">  
