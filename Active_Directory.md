@@ -36,5 +36,5 @@ The machine account name is the computer's name followed by a dollar sign. For e
 
 ## Group Policies
 Windows manages such policies through Group Policy Objects (GPO). GPOs are simply a collection of settings that can be applied to OUs. GPOs can contain policies aimed at either users or computers, allowing you to set a baseline on specific machines and identities.  
-<img src="https://github.com/nkn-ctrl/pushtest/blob/main/AD_GPOs.png" width="600">  
+<img src="https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/d82cb9440894c831f6f3d58a2b0538ed.png" width="600">  
 
