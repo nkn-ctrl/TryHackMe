@@ -106,7 +106,5 @@ Windows creates this hive to save information on programs that were recently run
     |0067|	Last removal time|
 - USB device Volume Name: The device name of the connected drive
     - `SOFTWARE\Microsoft\Windows Portable Devices\Devices`
-
-
-<img src="https://github.com/nkn-ctrl/pushtest/blob/main/windows_reg_USBname.png" width="700>
+    <img src="https://github.com/nkn-ctrl/pushtest/blob/main/windows_reg_USBname.png" width="700">
 
