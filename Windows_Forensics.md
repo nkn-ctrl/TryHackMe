@@ -108,3 +108,4 @@ Windows creates this hive to save information on programs that were recently run
     - `SOFTWARE\Microsoft\Windows Portable Devices\Devices`
     <img src="https://github.com/nkn-ctrl/pushtest/blob/main/windows_reg_USBname.png" width="800">
 
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/Windows%20Forensics%20Cheatsheet.pdf">
