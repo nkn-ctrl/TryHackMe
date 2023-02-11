@@ -1,8 +1,19 @@
 # Active Directory
 
 The main idea behind a domain is to centralise the administration of common components of a Windows computer network in a single repository called Active Directory (AD). The server that runs the Active Directory services is known as a Domain Controller (DC).
+<br>
 
-Security Groups  
+*Users*  
+Users can be used to represent two types of entities:
+- People: users will generally represent persons in your organisation that need to access the network, like employees.
+- Services: you can also define users to be used by services like IIS or MSSQL. Every single service requires a user to run, but service users are different from regular users as they will only have the privileges needed to run their specific service.  
+<br>
+
+*Machines*  
+The machine account name is the computer's name followed by a dollar sign. For example, a machine named `DC01` will have a machine account called `DC01$`.  
+<br>
+
+*Security Groups*    
 |Security Group|	Description|
 |:------------:|---------------|
 |Domain Admins|	Users of this group have administrative privileges over the entire domain. By default, they can administer any computer on the domain, including the DCs.|
