@@ -205,6 +205,34 @@ Foreach-Object {
 - 4799   A security-enabled local group membership was enumerated  
 ### User Logon
 - 4624   Security / An account was successfully logged on.
+```
+C:\Windows\system32>net user john
+User name                    John
+Full Name                    John
+Comment
+User's comment
+Country/region code          000 (System Default)
+Account active               Yes
+Account expires              Never
+
+Password last set            3/2/2019 5:48:19 PM
+Password expires             Never
+Password changeable          3/2/2019 5:48:19 PM
+Password required            Yes
+User may change password     Yes
+
+Workstations allowed         All
+Logon script
+User profile
+Home directory
+Last logon                   3/2/2019 5:48:32 PM
+
+Logon hours allowed          All
+
+Local Group Memberships      *Users
+Global Group memberships     *None
+The command completed successfully.
+```
 - 1102   Security / Audit event log clear 
 
 
