@@ -34,4 +34,7 @@ The machine account name is the computer's name followed by a dollar sign. For e
 - Users: Default users and groups that apply to a domain-wide context.
 - Managed Service Accounts: Holds accounts used by services in your Windows domain.
 
+## Group Policies
+Windows manages such policies through Group Policy Objects (GPO). GPOs are simply a collection of settings that can be applied to OUs. GPOs can contain policies aimed at either users or computers, allowing you to set a baseline on specific machines and identities.  
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/AD_GPOs.png" width="600">  
 
