@@ -33,4 +33,4 @@ The machine account name is the computer's name followed by a dollar sign. For e
 - Managed Service Accounts: Holds accounts used by services in your Windows domain.
 
 
-<img src="https://github.com/nkn-ctrl/pushtest/blob/main/AD_OUs.png" width="600">  
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/AD_OUs.png" width="600">
