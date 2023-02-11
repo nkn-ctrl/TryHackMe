@@ -98,8 +98,9 @@ Windows creates this hive to save information on programs that were recently run
     - `SYSTEM\CurrentControlSet\Enum\USB`
 - First/Last Times: The first time the device was connected, the last time it was connected and the last time the device was removed from the system.
     - `SYSTEM\CurrentControlSet\Enum\USBSTOR\Ven_Prod_Version\USBSerial#\Properties\{83da6326-97a6-4088-9453-a19231573b29}\####`  
-    
-    |Value of `####` |	Information |
+<br>
+
+    |Value of `####` |Information |
     |:--------------:|--------------|
     |0064|	First Connection time|
     |0066|	Last Connection time|
