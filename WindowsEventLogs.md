@@ -204,7 +204,11 @@ Foreach-Object {
  
 - 4799   A security-enabled local group membership was enumerated  
 ### User Logon
-- 4624   Security / An account was successfully logged on.
+- 4624   Security / An account was successfully logged on.  
+Which user logged in last?  
+```
+PS C:\Users\Administrator> Get-WinEvent -Computer $env:COMPUTERNAME -FilterHashtable @{Logname='Security';ID=4624} | select @{N='User'; E={$_.Properties[1].Value}}, TimeCreated
+```
 ```
 C:\Windows\system32>net user john
 User name                    John
@@ -232,7 +236,12 @@ Logon hours allowed          All
 Local Group Memberships      *Users
 Global Group memberships     *None
 The command completed successfully.
+```  
+What two accounts had administrative privileges (other than the Administrator user)?  
 ```
+net localgroup administrators
+```
+
 - 4672   Security / Special privileges assigned to new logon.
 - 1102   Security / Audit event log clear 
 
