@@ -233,6 +233,7 @@ Local Group Memberships      *Users
 Global Group memberships     *None
 The command completed successfully.
 ```
+- 4672   Security / Special privileges assigned to new logon.
 - 1102   Security / Audit event log clear 
 
 
