@@ -211,6 +211,7 @@ Which user logged in last?
 ```
 PS C:\Users\Administrator> Get-WinEvent -Computer $env:COMPUTERNAME -FilterHashtable @{Logname='Security';ID=4624} | select @{N='User'; E={$_.Properties[1].Value}}, TimeCreated
 ```
+[Windowsのnetコマンドの使い方](https://atmarkit.itmedia.co.jp/ait/articles/0211/23/news002.html)  
 ```
 C:\Windows\system32>net user john
 User name                    John
