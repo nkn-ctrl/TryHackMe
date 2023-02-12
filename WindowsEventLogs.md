@@ -205,6 +205,8 @@ Foreach-Object {
 - 4799   A security-enabled local group membership was enumerated  
 ### User Logon
 - 4624   Security / An account was successfully logged on.  
+<br>
+
 Which user logged in last?  
 ```
 PS C:\Users\Administrator> Get-WinEvent -Computer $env:COMPUTERNAME -FilterHashtable @{Logname='Security';ID=4624} | select @{N='User'; E={$_.Properties[1].Value}}, TimeCreated
