@@ -89,3 +89,6 @@ root         729  0.0  0.0   7352  2212 ttyS0    Ss+  17:28   0:00 /sbin/agetty 
 ### DNS information
 `/etc/hosts`  
 `/etc/resolv.conf` :The information about DNS servers  
+
+## Persistence mechanisms
+### Cron jobs
