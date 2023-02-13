@@ -17,4 +17,32 @@ games                 x  5      60     games                               /usr/
 .
 ubuntu                x  1000   1000   Ubuntu                              /home/ubuntu             /bin/bash
 ```
+The username is ubuntu, its password information field shows `x`, which signifies that the password information is stored in the `/etc/shadow` file.   
 
+### Group Information
+`/etc/group`  
+```
+user@machine$ cat /etc/group
+.
+.
+adm:x:4:syslog,ubuntu
+```
+We can see that the user `ubuntu` belongs to the `adm` group, which has a password stored in the `/etc/shadow` file, signified by the `x` character. The gid is 4, and the group contains 2 users, Syslog, and ubuntu.
+
+### Sudoers List
+A Linux host allows only those users to elevate privileges to `sudo`, which are present in the Sudoers list.  
+`/etc/sudoers`
+
+### Login information
+- `/var/log/wtmp` : information about failed logins  
+- `/var/log/wtmp` : historical data of logins
+They are binary file, which havet to be read using the `last` utility.
+```
+user@machine$ sudo last -f /var/log/wtmp
+reboot   system boot  5.4.0-1029-aws   Tue Mar 29 17:28   still running
+reboot   system boot  5.4.0-1029-aws   Tue Mar 29 04:46 - 15:52  (11:05)
+reboot   system boot  5.4.0-1029-aws   Mon Mar 28 01:35 - 01:51 (1+00:16)
+
+wtmp begins Mon Mar 28 01:35:10 2022
+```
+### Authentication logs
