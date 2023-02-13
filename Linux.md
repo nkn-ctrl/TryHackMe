@@ -166,3 +166,44 @@ user@machine$ cat ~/.viminfo
 .
 .
 ```
+
+## Log files
+Logs are generally found in the `/var/log` directory.
+
+### Syslog
+The Syslog contains messages that are recorded by the host about system activity.  
+`/var/log/syslog`
+```
+user@machine$ cat /var/log/syslog* | head
+Mar 29 00:00:37 tryhackme systemd-resolved[519]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
+Mar 29 00:00:37 tryhackme rsyslogd: [origin software="rsyslogd" swVersion="8.2001.0" x-pid="635" x-info="https://www.rsyslog.com"] rsyslogd was HUPed
+Mar 29 00:00:37 tryhackme systemd[1]: man-db.service: Succeeded.
+Mar 29 00:00:37 tryhackme systemd[1]: Finished Daily man-db regeneration.
+Mar 29 00:09:01 tryhackme CRON[7713]: (root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond)
+Mar 29 00:17:01 tryhackme CRON[7726]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+```
+
+### Auth logs
+```
+user@machine$ cat /var/log/auth.log* |head
+Feb 27 13:52:33 ip-10-10-238-44 useradd[392]: new group: name=ubuntu, GID=1000
+Feb 27 13:52:33 ip-10-10-238-44 useradd[392]: new user: name=ubuntu, UID=1000, GID=1000, home=/home/ubuntu, shell=/bin/bash, from=none
+Feb 27 13:52:33 ip-10-10-238-44 useradd[392]: add 'ubuntu' to group 'adm'
+Feb 27 13:52:33 ip-10-10-238-44 useradd[392]: add 'ubuntu' to group 'dialout'
+```
+
+### Third-party logs
+The `/var/log/` directory contains logs for third-party applications such as webserver, database, or file share server logs.  
+```
+user@machine$ ls /var/log
+Xorg.0.log          apt                    cloud-init.log  dmesg.2.gz      gdm3                    kern.log.1         prime-supported.log  syslog.2.gz
+Xorg.0.log.old      auth.log               cups            dmesg.3.gz      gpu-manager-switch.log  landscape          private              syslog.3.gz
+alternatives.log    auth.log.1             dist-upgrade    dmesg.4.gz      gpu-manager.log         lastlog            samba                syslog.4.gz
+```
+
+```
+user@machine$  ls /var/log/apache2/
+access.log  error.log  other_vhosts_access.log
+```
+
+[Linux Forensics Cheat Sheat](https://github.com/nkn-ctrl/pushtest/blob/main/Linux-Forensics-Cheatsheet.pdf)
