@@ -250,3 +250,4 @@ net localgroup administrators
 
 
 
+<img src="https://www.dropbox.com/s/jykr1alu8b91olh/AD_OUs.png?dl=0">
