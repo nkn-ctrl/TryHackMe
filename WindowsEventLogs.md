@@ -247,7 +247,3 @@ net localgroup administrators
 
 - 4672   Security / Special privileges assigned to new logon.
 - 1102   Security / Audit event log clear 
-
-
-
-<img src="https://www.dropbox.com/s/jykr1alu8b91olh/AD_OUs.png?dl=0">
