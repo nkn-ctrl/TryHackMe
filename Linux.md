@@ -54,3 +54,27 @@ user@machine$ cat /var/log/auth.log |tail
 Mar 29 17:28:48 tryhackme gnome-keyring-daemon[989]: The PKCS#11 component was already initialized
 Mar 29 17:28:48 tryhackme gnome-keyring-daemon[989]: The SSH agent was already initialized
 ```
+
+## System Configuration
+### Hostname
+`/etc/hostname`
+
+### Timezone
+`/etc/timezone`
+
+### Network Configuration
+`/etc/network/interfaces`
+```
+user@machine$ ip address show
+```
+
+### Active network connections
+`netstat`
+```
+user@machine$ netstat -natp
+.
+.
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:5901          0.0.0.0:*               LISTEN      829/Xtigervnc
+```
+
