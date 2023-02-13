@@ -95,12 +95,8 @@ root         729  0.0  0.0   7352  2212 ttyS0    Ss+  17:28   0:00 /sbin/agetty 
 `/etc/crontab`
 ```
 user@machine$ cat /etc/crontab 
-# /etc/crontab: system-wide crontab
-# Unlike any other crontab you don't have to run the `crontab'
-# command to install the new version when you edit this file
-# and files in /etc/cron.d. These files also have username fields,
-# that none of the other crontabs do.
-
+.
+.
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
@@ -117,4 +113,33 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
 52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
 #
+```
+
+### Service startup
+Services can be set up in Linux that will start and run in the background after every system boot.  
+`/etc/init.d` : We can check the contents of the directory by using the `ls` utility.  
+```
+user@machine$ ls /etc/init.d/
+acpid       avahi-daemon      cups          hibagent           kmod             networking     pppd-dns                     screen-cleanup     unattended-upgrades
+.
+.
+```
+
+### .Bashrc
+When a bash shell is spawned, it runs the commands stored in the `.bashrc` file. This file can be considered as a startup list of actions to be performed. Hence it can prove to be a good place to look for persistence.   
+```
+user@machine$ cat ~/.bashrc
+```
+System-wide settings are stored in `/etc/bash.bashrc` and `/etc/profile` files, so it is often a good idea to take a look at these files as well.  
+
+## Evidence of Execution
+### Sudo execution history
+All the commands that are run on a Linux host using `sudo` are stored in `/var/log/auth.log`.  
+We can use the `grep` utility to filter out only the required information from the auth log.
+```
+user@machine$ cat /var/log/auth.log* |grep -i COMMAND|tail
+Mar 29 17:28:58 tryhackme pkexec[1618]: ubuntu: Error executing command as another user: Not authorized [USER=root] [TTY=unknown] [CWD=/home/ubuntu] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Mar 29 17:49:52 tryhackme sudo:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/cat /etc/sudoers
+.
+.
 ```
