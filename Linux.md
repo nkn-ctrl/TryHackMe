@@ -35,8 +35,8 @@ A Linux host allows only those users to elevate privileges to `sudo`, which are 
 `/etc/sudoers`
 
 ### Login information
-- `/var/log/wtmp` : information about failed logins  
-- `/var/log/wtmp` : historical data of logins
+- `/var/log/btmp` : information about failed logins  
+- `/var/log/wtmp` : historical data of logins  
 They are binary file, which havet to be read using the `last` utility.
 ```
 user@machine$ sudo last -f /var/log/wtmp
