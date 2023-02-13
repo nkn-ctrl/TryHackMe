@@ -78,3 +78,14 @@ Proto Recv-Q Send-Q Local Address           Foreign Address         State       
 tcp        0      0 127.0.0.1:5901          0.0.0.0:*               LISTEN      829/Xtigervnc
 ```
 
+### Running processes
+The `ps` utility shows details about the running processes.
+```
+user@machine$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         729  0.0  0.0   7352  2212 ttyS0    Ss+  17:28   0:00 /sbin/agetty -o -p -- \u --
+```
+
+### DNS information
+`/etc/hosts`  
+`/etc/resolv.conf` :The information about DNS servers  
