@@ -26,3 +26,4 @@ POP3 vs IMAP
     - Sent messages are stored on the server.
     - Messages can be synced and accessed across multiple devices.  
 
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/email-network-flow-4.png">
