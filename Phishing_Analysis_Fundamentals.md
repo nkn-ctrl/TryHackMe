@@ -31,3 +31,13 @@ POP3 vs IMAP
 
 [E-mail PORT](https://help.dreamhost.com/hc/en-us/articles/215612887-Email-client-protocols-and-port-numbers)
 
+
+## Email Headers
+
+Email header fields:  
+1. From - the sender's email address
+2. Subject - the email's subject line
+3. Date - the date when the email was sent
+4. To - the recipient's email address  
+    <img src="https://github.com/nkn-ctrl/pushtest/blob/main/email-raw-headers-2b.png" width="600">  
+
