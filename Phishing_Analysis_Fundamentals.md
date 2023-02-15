@@ -39,5 +39,5 @@ Email header fields:
 2. Subject - the email's subject line
 3. Date - the date when the email was sent
 4. To - the recipient's email address  
-    <img src="https://github.com/nkn-ctrl/pushtest/blob/main/email-raw-headers-2b.png" width="600">  
+    <img src="https://github.com/nkn-ctrl/pushtest/blob/main/email-raw-headers-2b.png" width="800">  
 
