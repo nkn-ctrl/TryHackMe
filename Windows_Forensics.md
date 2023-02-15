@@ -114,3 +114,6 @@ Windows creates this hive to save information on programs that were recently run
     <img src="https://github.com/nkn-ctrl/pushtest/blob/main/windows_reg_USBname.png" width="800">
 
 [Windows Forensics Cheatsheat](https://github.com/nkn-ctrl/pushtest/blob/main/Windows%20Forensics%20Cheatsheet.pdf)
+
+### Network Configuration
+`C:\Windows\System32\drivers\etc\hosts`
