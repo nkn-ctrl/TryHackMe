@@ -19,4 +19,5 @@
 
 ### Digital Forensics and Incident Response
 - [Windows Forensics](https://github.com/nkn-ctrl/TryHackMe/blob/main/Windows_Forensics.md)
+- [Linux Forensics](https://github.com/nkn-ctrl/TryHackMe/blob/main/Linux.md)
 - [Volatility](https://github.com/nkn-ctrl/TryHackMe/blob/main/Volatility.md)
