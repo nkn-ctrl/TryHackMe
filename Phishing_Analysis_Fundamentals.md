@@ -47,3 +47,16 @@ Email header fields:
 <br>
 
 [Media Temple on how to analyze email headers](https://mediatemple.net/community/products/all/204643950/understanding-an-email-header)
+
+## Email Body
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/email-with-attachment-2.png" width="600">  
+
+From the above example, we can see the headers associated with this attachment:
+- Content-Type is application/pdf. 
+- Content-Disposition specifies it's an attachment. 
+- Content-Transfer-Encoding tells us it's base64 encoded. 
+
+Reconstruct the PDF using the base64 data.  
+    Use Cyberchef from Base64 and save the output as a pdf file. Open the pdf.  
+<img src="https://miro.medium.com/max/720/1*6kW7iS8roG616-1hU5Ly5g.webp" width="650">
+
