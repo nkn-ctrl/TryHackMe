@@ -26,4 +26,8 @@ POP3 vs IMAP
     - Sent messages are stored on the server.
     - Messages can be synced and accessed across multiple devices.  
 
-<img src="https://github.com/nkn-ctrl/pushtest/blob/main/email-network-flow-4.png" width="700">
+    <img src="https://github.com/nkn-ctrl/pushtest/blob/main/email-network-flow-4.png" width="700">  
+<br>
+
+[E-mail PORT](https://help.dreamhost.com/hc/en-us/articles/215612887-Email-client-protocols-and-port-numbers)
+
