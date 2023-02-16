@@ -132,4 +132,5 @@ In summary, the bits that make up a file are stored in clusters. All the filenam
 |Supported size of clusters|	512B - 8KB|	2KB - 32KB|	4KB - 32KB|
 |Maximum Volume size|	32MB|	2GB|	2TB|
 
+### The NTFS file system
 
