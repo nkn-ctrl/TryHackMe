@@ -124,4 +124,12 @@ Windows creates this hive to save information on programs that were recently run
 
 **The File Allocation Table (FAT):**  
  the File Allocation Table creates a table that indexes the location of bits that are allocated to different files.  
- 
+In summary, the bits that make up a file are stored in clusters. All the filenames on a file system, their starting clusters, and their lengths are stored in directories. And the location of each cluster on the disk is stored in the File Allocation Table. We can see that we started with a raw disk composed of bits and organized it to define what group of bits refers to what file stored on the disk.  
+|Attribute	|FAT12	|FAT16	|FAT32|
+|:---------:|:-----:|:-----:|:---:|
+|Addressable bits|	12|	16|	28|
+|Max number of clusters|	4,096|	65,536|	268,435,456|
+|Supported size of clusters|	512B - 8KB|	2KB - 32KB|	4KB - 32KB|
+|Maximum Volume size|	32MB|	2GB|	2TB|
+
+
