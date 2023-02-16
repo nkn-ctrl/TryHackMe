@@ -117,3 +117,11 @@ Windows creates this hive to save information on programs that were recently run
 
 ### Network Configuration
 `C:\Windows\System32\drivers\etc\hosts`
+
+## Windows File System:
+
+### The FAT file sytems
+
+**The File Allocation Table (FAT):**  
+ the File Allocation Table creates a table that indexes the location of bits that are allocated to different files.  
+ 
