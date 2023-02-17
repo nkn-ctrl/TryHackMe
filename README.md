@@ -25,3 +25,6 @@
 - [Windows Forensics](https://github.com/nkn-ctrl/TryHackMe/blob/main/SOC_LV1/Windows_Forensics.md)
 - [Linux Forensics](https://github.com/nkn-ctrl/TryHackMe/blob/main/SOC_LV1/Linux.md)
 - [Volatility](https://github.com/nkn-ctrl/TryHackMe/blob/main/SOC_LV1/Volatility.md)
+
+## Jr Penetration Tester
+- [Contents Descovery](https://github.com/nkn-ctrl/TryHackMe/blob/main/Jr_Penetration_Tester/Content_Discovery.md)
