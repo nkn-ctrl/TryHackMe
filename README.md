@@ -2,7 +2,7 @@
 
 ## Cyber Defense
 ### Cyber Defense Intro
-- [Active Directory Basics](https://github.com/nkn-ctrl/TryHackMe/blob/main/Active_Directory.md)
+- [Active Directory Basics](https://github.com/nkn-ctrl/TryHackMe/blob/main/Cyber_Defense/Active_Directory.md)
 
 ## SOC Level 1
 ### Network Security and Traffic Analysis
