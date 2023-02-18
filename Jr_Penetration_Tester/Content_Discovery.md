@@ -1,9 +1,11 @@
 # Content Discovery and Subdomain Enumeration
+
 ## Content Discovery
-### Manual Discovery - Robots.txt
-`http://[target.url].robots.txt`
 
 ### Manual Discovery
+- Robots.txt  
+`http://[target.url].robots.txt`
+
 - Favicon  
 **Favicon:** The favicon is a small icon displayed in the browser's address bar or tab used for branding a website.  
 https://wiki.owasp.org/index.php/OWASP_favicon_database  
