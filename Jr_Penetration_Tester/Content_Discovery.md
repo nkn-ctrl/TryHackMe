@@ -1,8 +1,9 @@
-# Content Discovery
-## Manual Discovery - Robots.txt
+# Content Discovery and Subdomain Enumeration
+## Content Discovery
+### Manual Discovery - Robots.txt
 `http://[target.url].robots.txt`
 
-## Manual Discovery - Favicon
+### Manual Discovery - Favicon
 **Favicon:** The favicon is a small icon displayed in the browser's address bar or tab used for branding a website.  
 https://wiki.owasp.org/index.php/OWASP_favicon_database  
 
@@ -15,11 +16,12 @@ PowerShell
 PS C:\> curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico -UseBasicParsing -o favicon.ico
 PS C:\> Get-FileHash .\favicon.ico -Algorithm MD5 
 ```  
-## Manual Discovery - Sitemap.xml
+### Manual Discovery
+- Sitemap.xml
 **Sitemap.xml:**  The sitemap.xml file gives a list of every file the website owner wishes to be listed on a search engine.  
 `http://[target.url]/sitemap.xml`
 
-## Manual Discovery - HTTP Headers
+- HTTP Headers
 **HTTP Headers:**  can sometimes contain useful information. 
 ```
 user@machine$ curl http://10.10.239.107 -v
@@ -42,10 +44,11 @@ user@machine$ curl http://10.10.239.107 -v
 ```
 we can see the webserver is NGINX version 1.18.0 and runs PHP version 7.4.3. Using this information, we could find vulnerable versions of software being used.   
 
-## Manual Discovery - Framework Stack
+- Framework Stack
 **Framework Stack:** Once you've established the framework of a website, either from the above favicon example or by looking for clues in the page source such as comments, copyright notices or credits, you can then locate the framework's website. 
 
-## OSINT - Google Hacking / Dorking
+### OSINT
+- Google Hacking / Dorking
 |Filter|Example|Description|
 |:----:|:-----:|-----------|
 |site|site:tryhackme.com|returns results only from the specigied website address|
@@ -55,16 +58,16 @@ we can see the webserver is NGINX version 1.18.0 and runs PHP version 7.4.3. Usi
 
 More information about google hacking can be found here: https://en.wikipedia.org/wiki/Google_hacking
 
-## OSINT - Wappalyzer
+- Wappalyzer
 Wappalyzer (https://www.wappalyzer.com/) is an online tool and browser extension that helps identify what technologies a website uses, such as frameworks, Content Management Systems (CMS), payment processors and much more, and it can even find version numbers as well.  
 
-## OSINT - Wayback Machine
+- Wayback Machine
 The Wayback Machine (https://archive.org/web/) is a historical archive of websites. This service can help uncover old pages that may still be active on the current website.  
 
-## OSINT - GitHub
+- GitHub
 You can use GitHub's search feature to look for company names or website names to try and locate repositories belonging to your target. Once discovered, you may have access to source code, passwords or other content that you hadn't yet found.
 
-## OSINT - S3 Buckets
+- S3 Buckets
 **S3 Buckets:** are a storage service provided by Amazon AWS. The format of the S3 buckets is `http(s)://{name}.s3.amazonaws.com` where `{name}` is decided by the owner, such as `tryhackme-assets.s3.amazonaws.com`.   One common automation method is by using the company name followed by common terms such as `{name}-assets`, `{name}-www`, `{name}-public`, `{name}-private`, etc. 
 
 ## Automated Discovery
