@@ -99,6 +99,17 @@ user@machine$ gobuster dir --url http://10.10.249.195/ -w /usr/share/wordlists/S
 - Search Engines  
 `-site:www.domain.com site:*.domain.com` would only contain results leading to the domain name `domain.com` but exclude any links to `www.domain.com`; therefore, it shows us only subdomain names belonging to `domain.com`.  
 
+- Automation Using Sublist3r  
+To speed up the process of OSINT subdomain discovery, we can automate [Sublist3r](https://github.com/aboul3la/Sublist3r).  
+```
+user@thm:~$ ./sublist3r.py -d acmeitsupport.thm
+.
+.
+[-] Total Unique Subdomains Found: 2
+web55.acmeitsupport.thm
+www.acmeitsupport.thm
+```
+
 ### Bruteforce
 - DNS Bruteforce  
 Bruteforce DNS (Domain Name System) enumeration is the method of trying tens, hundreds, thousands or even millions of different possible subdomains from a pre-defined list of commonly used subdomains.  
