@@ -55,5 +55,34 @@ we can see the webserver is NGINX version 1.18.0 and runs PHP version 7.4.3. Usi
 
 More information about google hacking can be found here: https://en.wikipedia.org/wiki/Google_hacking
 
+## OSINT - Wappalyzer
+Wappalyzer (https://www.wappalyzer.com/) is an online tool and browser extension that helps identify what technologies a website uses, such as frameworks, Content Management Systems (CMS), payment processors and much more, and it can even find version numbers as well.  
 
+## OSINT - Wayback Machine
+The Wayback Machine (https://archive.org/web/) is a historical archive of websites. This service can help uncover old pages that may still be active on the current website.  
+
+## OSINT - GitHub
+You can use GitHub's search feature to look for company names or website names to try and locate repositories belonging to your target. Once discovered, you may have access to source code, passwords or other content that you hadn't yet found.
+
+## OSINT - S3 Buckets
+**S3 Buckets:** are a storage service provided by Amazon AWS. The format of the S3 buckets is `http(s)://{name}.s3.amazonaws.com` where `{name}` is decided by the owner, such as `tryhackme-assets.s3.amazonaws.com`.   One common automation method is by using the company name followed by common terms such as `{name}-assets`, `{name}-www`, `{name}-public`, `{name}-private`, etc. 
+
+## Automated Discovery
+Wordlists are just text files that contain a long list of commonly used words.
+Seclists: https://github.com/danielmiessler/SecLists
+<br>
+
+**Automation Tools**
+- ffuf
+```
+user@machine$ ffuf -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -u http://10.10.249.195/FUZZ
+```
+- dirb
+```
+user@machine$ dirb http://10.10.249.195/ /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
+```
+- gobuster
+```
+user@machine$ gobuster dir --url http://10.10.249.195/ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
+```
 
