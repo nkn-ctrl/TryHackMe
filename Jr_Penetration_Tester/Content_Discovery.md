@@ -68,21 +68,21 @@ You can use GitHub's search feature to look for company names or website names t
 **S3 Buckets:** are a storage service provided by Amazon AWS. The format of the S3 buckets is `http(s)://{name}.s3.amazonaws.com` where `{name}` is decided by the owner, such as `tryhackme-assets.s3.amazonaws.com`.   One common automation method is by using the company name followed by common terms such as `{name}-assets`, `{name}-www`, `{name}-public`, `{name}-private`, etc. 
 
 ## Automated Discovery
-Wordlists are just text files that contain a long list of commonly used words.
+Wordlists are just text files that contain a long list of commonly used words.  
 Seclists: https://github.com/danielmiessler/SecLists
 <br>
 
 **Automation Tools**
 - ffuf
 ```
-user@machine$ ffuf -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -u http://10.10.249.195/FUZZ
+user@machine$ ffuf -w /uusr/share/wordlists/SecLists-master/Discovery/Web-Content/common.txt -u http://10.10.249.195/FUZZ
 ```
 - dirb
 ```
-user@machine$ dirb http://10.10.249.195/ /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
+user@machine$ dirb http://10.10.249.195/ /usr/share/wordlists/SecLists-master/Discovery/Web-Content/common.txt
 ```
 - gobuster
 ```
-user@machine$ gobuster dir --url http://10.10.249.195/ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
+user@machine$ gobuster dir --url http://10.10.249.195/ -w /usr/share/wordlists/SecLists-master/Discovery/Web-Content/common.txt
 ```
 
