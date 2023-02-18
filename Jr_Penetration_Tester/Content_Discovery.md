@@ -51,13 +51,12 @@ we can see the webserver is NGINX version 1.18.0 and runs PHP version 7.4.3. Usi
 
 ### OSINT
 - Google Hacking / Dorking  
-
-|Filter|Example|Description|
-|:----:|:-----:|-----------|
-|site|site:tryhackme.com|returns results only from the specigied website address|
-|inurl|inurl:admin|returns results that have the specified word in the URL|
-|filetype|filetype:pdf|returns results which are a particular file extension|
-|intitle|intitle:admin|returns results that contain the specified word in the title|  
+    |Filter|Example|Description|
+    |:----:|:-----:|-----------|
+    |site|site:tryhackme.com|returns results only from the specigied website address|
+    |inurl|inurl:admin|returns results that have the specified word in the URL|
+    |filetype|filetype:pdf|returns results which are a particular file extension|
+    |intitle|intitle:admin|returns results that contain the specified word in the title|  
 
 More information about google hacking can be found here: https://en.wikipedia.org/wiki/Google_hacking
 
