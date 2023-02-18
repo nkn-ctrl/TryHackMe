@@ -122,5 +122,13 @@ user@thm:~$ dnsrecon -t brt -d acmeitsupport.thm
 [+] 2 Record Found
 ```
 
-
+### Virtual Hosts
+Some subdomains aren't always hosted in publically accessible DNS results, such as development versions of a web application or administration portals. Instead, the DNS record could be kept on a private DNS server or recorded on the developer's machines in their `/etc/hosts` file (or `c:\windows\system32\drivers\etc\hosts` file for Windows users) which maps domain names to IP addresses.   
+```
+user@machine$ ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://10.10.212.189
+```
+Because the above command will always produce a valid result, we need to filter the output. We can do this by using the page size result with the `-fs` switch.  Edit the below command replacing `{size}` with the most occurring size value from the previous result
+```
+user@machine$ ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://10.10.212.189 -fs {size}
+```
 
