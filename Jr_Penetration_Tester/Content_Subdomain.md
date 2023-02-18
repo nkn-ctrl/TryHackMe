@@ -96,6 +96,20 @@ user@machine$ gobuster dir --url http://10.10.249.195/ -w /usr/share/wordlists/S
 - SSL/TLS Certificates  
  When an `SSL/TLS` (Secure Sockets Layer/Transport Layer Security) certificate is created for a domain by a `CA` (Certificate Authority), CA's take part in what's called `Certificate Transparency (CT) logs`. These are publicly accessible logs of every SSL/TLS certificate created for a domain name. The purpose of Certificate Transparency logs is to stop malicious and accidentally made certificates from being used. We can use this service to our advantage to discover subdomains belonging to a domain, sites like https://crt.sh and https://ui.ctsearch.entrust.com/ui/ctsearchui offer a searchable database of certificates that shows current and historical results.
 
-- 
+- Search Engines  
+`-site:www.domain.com site:*.domain.com` would only contain results leading to the domain name `domain.com` but exclude any links to `www.domain.com`; therefore, it shows us only subdomain names belonging to `domain.com`.  
+
+### Bruteforce
+- DNS Bruteforce  
+Bruteforce DNS (Domain Name System) enumeration is the method of trying tens, hundreds, thousands or even millions of different possible subdomains from a pre-defined list of commonly used subdomains.  
+```
+user@thm:~$ dnsrecon -t brt -d acmeitsupport.thm
+[*] No file was specified with domains to check.
+[*] Using file provided with tool: /usr/share/dnsrecon/namelist.txt
+[*]     A api.acmeitsupport.thm 10.10.10.10
+[*]     A www.acmeitsupport.thm 10.10.10.10
+[+] 2 Record Found
+```
+
 
 
