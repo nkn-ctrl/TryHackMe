@@ -20,6 +20,14 @@ user@tryhackme$ ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Pas
 ```  
 
 ### Logic Flaw
+A logic flaw is when the typical logical path of an application is either bypassed, circumvented or manipulated by a hacker.  
+
+## Cookie Tampering
+- Plain Text
+- Hashing
+    https://crackstation.net/ keep databases of billions of hashes and their original strings.
+- Encoding
+
 
 
 
