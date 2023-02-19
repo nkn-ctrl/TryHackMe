@@ -100,6 +100,6 @@ LFI attacks against web applications are often due to a developers' lack of secu
 ### Remote File Inclusion
 Remote File Inclusion (RFI) is a technique to include remote files and into a vulnerable application.  One requirement for RFI is that the `allow_url_fopen` option needs to be `on`.   
 
-
+<img src="https://user-images.githubusercontent.com/73976100/219932115-8c9dfbfc-bb9e-46ba-8d74-feb24ecfbc00.png">
 
 
