@@ -30,7 +30,7 @@ user@tryhackme$ curl 'http://MACHINE_IP/customers/reset?email=robert%40acmeitsup
 In the application, the user account is retrieved using the query string, but later on, in the application logic, the password reset email is sent using the data found in the PHP variable `$_REQUEST`.  
 The PHP `$_REQUEST` variable is an array that contains data received from the query string and POST data.  If the same key name is used for both the query string and POST data, the application logic for this variable favours POST data fields rather than the query string, so if we add another parameter to the POST form, we can control where the password reset email gets delivered.
 
-## Cookie Tampering
+### Cookie Tampering
 - Plain Text
 - Hashing
     https://crackstation.net/ keep databases of billions of hashes and their original strings.
@@ -57,6 +57,28 @@ he vulnerable endpoint you're targeting may not always be something you see in t
     - JavaScript reference  
     - unregerenced parameter  (use during development)
     - as parameter mining
+
+## File Inclusion
+Local File Inclusion (LFI), Remote File Inclusion (RFI)  
+### Path Traversal
+Path traversal vulnerabilities occur when the user's input is passed to a function such as `file_get_contents` in PHP.  
+> https://www.php.net/manual/en/function.file-get-contents.php  
+Path traversal attacks, also known as the dot-dot-slash attack, then the attacker may send something as `http://webapp.thm/get.php?file=../../../../etc/passwd`  
+<img src="https://github.com/nkn-ctrl/pushtest/blob/main/vul_pathtraversal.png">  
+|Location	|Description|
+|:---------:|-----------|
+|/etc/issue|contains a message or system identification to be printed before the login prompt.|
+|/etc/profile|controls system-wide default variables, such as Export variables, File creation mask (umask), Terminal types, Mail messages to indicate when new mail has arrived|
+|/proc/version|specifies the version of the Linux kernel|
+|/etc/passwd|has all registered user that has access to a system|
+|/etc/shadow|contains information about the system's users' passwords|
+|/root/.bash_history|contains the history commands for root user|
+|/var/log/dmessage|contains global system messages, including the messages that are logged during system startup|
+|/var/mail/root|all emails for root user|
+|/root/.ssh/id_rsa|Private SSH keys for a root or any known valid user on the server|
+|/var/log/apache2/access.log|the accessed requests for Apache  webserver|
+|C:\boot.ini|contains the boot options for computers with BIOS firmware|
+
 
 
 
