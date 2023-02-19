@@ -63,8 +63,10 @@ Local File Inclusion (LFI), Remote File Inclusion (RFI)
 ### Path Traversal
 Path traversal vulnerabilities occur when the user's input is passed to a function such as `file_get_contents` in PHP.  
 > https://www.php.net/manual/en/function.file-get-contents.php  
+
 Path traversal attacks, also known as the dot-dot-slash attack, then the attacker may send something as `http://webapp.thm/get.php?file=../../../../etc/passwd`  
-{: align="center"}
+
+{: align="center"}　　
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/vul_pathtraversal.png" width="600">  
 
 |Location	|Description|
