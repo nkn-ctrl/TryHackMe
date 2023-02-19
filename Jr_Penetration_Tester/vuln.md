@@ -36,6 +36,27 @@ The PHP `$_REQUEST` variable is an array that contains data received from the qu
     https://crackstation.net/ keep databases of billions of hashes and their original strings.
 - Encoding
 
+## IDOR
+IDOR stands for Insecure Direct Object Reference and is a type of access control vulnerability.  
+### Finding IDORs
+- Encode IDs  
+    The most common encoding technique on the web is base64 encoding and can usually be pretty easy to spot.  
+    - https://www.base64decode.org/
+    - https://www.base64encode.org/  
+
+- Hashed IDs  
+    Hashed IDs are a little bit more complicated to deal with than encoded ones, but they may follow a predictable pattern, such as being the hashed version of the integer value.  
+    - https://crackstation.net/  
+
+- Unpredictable IDs
+    If the Id cannot be detected using the above methods, an excellent method of IDOR detection is to create two accounts and swap the Id numbers between them.   
+
+### Where are they located?
+he vulnerable endpoint you're targeting may not always be something you see in the address bar.  
+    - AJAX request  
+    - JavaScript reference  
+    - unregerenced parameter  (use during development)
+    - as parameter mining
 
 
 
