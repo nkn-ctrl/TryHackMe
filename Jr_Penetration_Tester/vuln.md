@@ -67,6 +67,9 @@ Path traversal vulnerabilities occur when the user's input is passed to a functi
 Path traversal attacks, also known as the dot-dot-slash attack, then the attacker may send something as `http://webapp.thm/get.php?file=../../../../etc/passwd`  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/vul_pathtraversal.png" width="500">  
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/73976100/219909591-89db95e2-864f-4160-a3be-f95dcbdbe579.png" />
+</p>
 
 ![vul_pathtraversal](https://user-images.githubusercontent.com/73976100/219909591-89db95e2-864f-4160-a3be-f95dcbdbe579.png)
 
