@@ -92,7 +92,12 @@ LFI attacks against web applications are often due to a developers' lack of secu
     Using null bytes such as `%00` or `0x00` is an injection technique which the web app into disregarding whatever comes after the Null Byte..    
     NOTE: the %00 trick is fixed and not working with PHP 5.3.4 and above.  
 - `http://webapp.thm/get.php?file=../../../../etc/passwd/.`  
-- 
+- `....//....//....//....//....//etc/passwd`  
+    The web application replaces the `../` with the empty string.  
+- ` ?lang=languages/../../../../../etc/passwd`  
+    the web application asks to supply input that has to include a directory such as `languages`    
+
+
 
 
 
