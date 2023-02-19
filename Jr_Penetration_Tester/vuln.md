@@ -88,7 +88,7 @@ Path traversal attacks, also known as the dot-dot-slash attack, then the attacke
 LFI attacks against web applications are often due to a developers' lack of security awareness. With PHP, using functions such as `include`, `require`, `include_once`, and `require_once` often contribute to vulnerable web applications.  
 - `http://webapp.thm/get.php?file=/etc/passwd`   
 - `http://webapp.thm/get.php?file=../../../../etc/passwd`
-- `http://webapp.thm/get.php?file=../../../../etc/passwd%00`
+- `http://webapp.thm/get.php?file=../../../../etc/passwd%00`  
     Using null bytes is an injection technique such as `%00` or `0x00`  
     NOTE: the %00 trick is fixed and not working with PHP 5.3.4 and above.  
 - 
