@@ -148,4 +148,12 @@ SSRF stands for Server-Side Request Forgery. It's a vulnerability that allows a 
 If working with a blind SSRF where no output is reflected back to you, you'll need to use an external HTTP logging tool to monitor requests such as [requestbin.com](https://requestbin.com/), your own HTTP server or Burp Suite's Collaborator client.
 
 ### Defeating Common SSRF Defenses
+- Deny List  
+    - A Deny List is where all requests are accepted apart from resources specified in a list or matching a particular pattern such as `localhost` and `127.0.0.1` would appear on a deny list. Attackers can bypass a Deny List by using alternative localhost references such as `0`, `0.0.0.0`, `0000`, `127.1`, `127.*.*.*`, `2130706433`, `017700000001` or subdomains that have a DNS record which resolves to the IP Address 127.0.0.1 such as `127.0.0.1.nip.io`.
+    - In a cloud environment,  it would be beneficial to block access to the IP address `169.254.169.254`, which contains metadata for the deployed cloud server, including possibly sensitive information. An attacker can bypass this by registering a subdomain on their own domain with a DNS record that points to the IP Address 169.254.169.254.  
+- Allow List  
+    An allow list is where all requests get denied unless they appear on a list or match a particular pattern, such as a rule that an URL used in a parameter must begin with https://website.thm. An attacker could quickly circumvent this rule by creating a subdomain on an attacker's domain name, such as https://website.thm.attackers-domain.thm. The application logic would now allow this input and let an attacker control the internal HTTP request.  
+- Open Redirect  
+     An open redirect is an endpoint on the server where the website visitor gets automatically redirected to another website address.  
+
 
