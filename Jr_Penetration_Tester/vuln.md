@@ -120,14 +120,20 @@ RFI steps
 ## SSRF
 SSRF stands for Server-Side Request Forgery. It's a vulnerability that allows a malicious user to cause the webserver to make an additional or edited HTTP request to the resource of the attacker's choosing.  
 1. The attacker can modify the area in red to an URL of their choice.   
-    ![ssrf_1](https://user-images.githubusercontent.com/73976100/220030798-fcc0111c-5a86-44b9-8058-13c9e6859400.png)    
+    <p align="center">
+    <img src="https://user-images.githubusercontent.com/73976100/220030798-fcc0111c-5a86-44b9-8058-13c9e6859400.png" width="700">
+    </p>    
 2. An attacker can still reach the /api/user page with only having control over the path by utilising directory traversal.  
-    ![ssrf_2](https://user-images.githubusercontent.com/73976100/220030808-afefc890-82bb-42b9-9641-86daaefa1abe.png)    
+    <p align="center">
+    <img src="https://user-images.githubusercontent.com/73976100/220030808-afefc890-82bb-42b9-9641-86daaefa1abe.png" width="700">
+    </p>    
 3. The attacker can control the server's subdomain to which the request is made. Take note of the payload ending in &x= being used to stop the remaining path.  
-    ![ssrf_3](https://user-images.githubusercontent.com/73976100/220030812-0084942f-87d7-4469-8f27-4f3d1fce56a0.png)    
+    <p align="center">
+    <img src="https://user-images.githubusercontent.com/73976100/220030812-0084942f-87d7-4469-8f27-4f3d1fce56a0.png" width="700">
+    </p>    
 4. Going back to the original request, the attacker can instead force the webserver to request a server of the attacker's choice.   
-    ![ssrf_4](https://user-images.githubusercontent.com/73976100/220030815-0ed30e01-bd18-4790-9e01-8344cac296c8.png)
-
+    <p align="center">
+    <img src="https://user-images.githubusercontent.com/73976100/220030815-0ed30e01-bd18-4790-9e01-8344cac296c8.png" width="700">
 
 ### Finding an SSRF
 - When a full URL is used in a parameter in the address bar:    
