@@ -206,6 +206,13 @@ Blind XSS is similar to a stored XSS in that your payload gets stored on the web
 When testing for Blind XSS vulnerabilities, you need to ensure your payload has a call back (usually an HTTP request). This way, you know if and when your code is being executed.  
 A popular tool for Blind XSS attacks is [xsshunter](https://xsshunter.com/). Although it's possible to make your own tool in JavaScript, this tool will automatically capture cookies, URLs, page contents and more.  
 
+### Polyglots:
+```
+jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */onerror=alert('THM') )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert('THM')//>\x3e
+```
+
+### PayloadAlltheThings
+https://github.com/swisskyrepo/PayloadsAllTheThings  
 
 
 
