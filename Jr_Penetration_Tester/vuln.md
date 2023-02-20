@@ -192,3 +192,9 @@ DOM stands for [Document Object Model](https://www.w3.org/TR/REC-DOM-Level-1/int
 <p align="center">
 <img src="https://user-images.githubusercontent.com/73976100/220102897-3151d000-8368-48b7-83cd-d79da6cd2827.png" width="400">
 </p>
+Exploiting the DOM      
+DOM Based XSS is where the JavaScript execution happens directly in the browser without any new pages being loaded or data submitted to backend code. Execution occurs when the website JavaScript code acts on input or user interaction.    
+
+How to test for Dom Based XSS:      
+DOM Based XSS can be challenging to test for and requires a certain amount of knowledge of JavaScript to read the source code. You'd need to look for parts of the code that access certain variables that an attacker can have control over, such as `window.location.x` parameters.       
+
