@@ -114,7 +114,20 @@ RFI steps
     $ python3 -m http.server
     Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
     ```
-2. The web app server will send a GET request to the malicious server to fetch the file.
-3. 
+2. The web app server will send a `GET` request to the malicious server to fetch the file.
+3. The web app includes the remote file into include function to execute the PHP file within the page and send the execution content to the attacker.  
+
+## SSRF
+SSRF stands for Server-Side Request Forgery. It's a vulnerability that allows a malicious user to cause the webserver to make an additional or edited HTTP request to the resource of the attacker's choosing.  
+
+### Finding an SSRF
+- When a full URL is used in a parameter in the address bar:    
+    ![vuln_ssrf01](https://user-images.githubusercontent.com/73976100/220021784-4a5aa01d-8f9f-46fe-a346-45cf125f1f19.png)
+- A hidden field in a form: 
+    ![vuln_ssrf02](https://user-images.githubusercontent.com/73976100/220021781-5eff37be-4cdc-467e-947a-732bf9859d3e.png)   
+- A partial URL such as just the hostname:
+    ![vuln_ssrf03](https://user-images.githubusercontent.com/73976100/220021780-284dfc47-81dc-4a1e-ad33-a727306c82c9.png)
+- Or perhaps only the path of the URL:
+    ![vuln_ssrf04](https://user-images.githubusercontent.com/73976100/220021776-77d02346-9068-409a-a05e-083c1533a653.png)
 
 
