@@ -187,3 +187,8 @@ How to test for Stored XSS:
 - User profile information
 - Website Listings
 
+### DOM based XSS
+DOM stands for [Document Object Model](https://www.w3.org/TR/REC-DOM-Level-1/introduction.html) and is a programming interface for HTML and XML documents.  
+<p align="center">
+<img src="https://user-images.githubusercontent.com/73976100/220102897-3151d000-8368-48b7-83cd-d79da6cd2827.png" width="400">
+</p>
