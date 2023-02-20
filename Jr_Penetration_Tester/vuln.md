@@ -134,6 +134,7 @@ SSRF stands for Server-Side Request Forgery. It's a vulnerability that allows a 
 4. Going back to the original request, the attacker can instead force the webserver to request a server of the attacker's choice.   
     <p align="center">
     <img src="https://user-images.githubusercontent.com/73976100/220030815-0ed30e01-bd18-4790-9e01-8344cac296c8.png" width="500">
+    </p>
 
 ### Finding an SSRF
 - When a full URL is used in a parameter in the address bar:    
@@ -167,3 +168,8 @@ Cross-Site Scripting, better known as XSS in the cybersecurity community, is cla
 - Business Logic: For example, imagine a JavaScript function for changing the user's email address called user.changeEmail(). Your payload could look like this:`<script>user.changeEmail('attacker@hacker.thm');</script>`     
 
 ### Reflected XSS
+<p align="center">
+<img src="https://user-images.githubusercontent.com/73976100/220097862-41ea6bab-b739-4145-8cc9-f8d8b8980b47.png" width="700">
+</p>
+
+
