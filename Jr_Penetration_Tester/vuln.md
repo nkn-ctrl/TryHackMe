@@ -130,4 +130,5 @@ SSRF stands for Server-Side Request Forgery. It's a vulnerability that allows a 
 - Or perhaps only the path of the URL:  
     ![vuln_ssrf04](https://user-images.githubusercontent.com/73976100/220021776-77d02346-9068-409a-a05e-083c1533a653.png)
 
+If working with a blind SSRF where no output is reflected back to you, you'll need to use an external HTTP logging tool to monitor requests such as [requestbin.com](https://requestbin.com/), your own HTTP server or Burp Suite's Collaborator client.
 
