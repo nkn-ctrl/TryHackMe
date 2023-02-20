@@ -179,7 +179,7 @@ How to test for Reflected XSS:
 
 ### Stored XSS
 <p align="center">
-<img src="https://user-images.githubusercontent.com/73976100/220099137-f7d12855-be8f-4be4-aaf1-56f7390b1733.png" width="500">
+<img src="https://user-images.githubusercontent.com/73976100/220099137-f7d12855-be8f-4be4-aaf1-56f7390b1733.png" width="600">
 </p>  
 
 How to test for Stored XSS:
