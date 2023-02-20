@@ -169,7 +169,7 @@ Cross-Site Scripting, better known as XSS in the cybersecurity community, is cla
 
 ### Reflected XSS
 <p align="center">
-<img src="https://user-images.githubusercontent.com/73976100/220097862-41ea6bab-b739-4145-8cc9-f8d8b8980b47.png" width="700">
+<img src="https://user-images.githubusercontent.com/73976100/220097862-41ea6bab-b739-4145-8cc9-f8d8b8980b47.png" width="500">
 </p>
 
 
