@@ -172,4 +172,18 @@ Cross-Site Scripting, better known as XSS in the cybersecurity community, is cla
 <img src="https://user-images.githubusercontent.com/73976100/220097862-41ea6bab-b739-4145-8cc9-f8d8b8980b47.png" width="500">
 </p>
 
+How to test for Reflected XSS:
+- Parameters in the URL Query String
+- URL File Path
+- Sometimes HTTP Headers (although unlikely exploitable in practice)
+
+### Stored XSS
+<p align="center">
+<img src="https://user-images.githubusercontent.com/73976100/220099137-f7d12855-be8f-4be4-aaf1-56f7390b1733.png" width="500">
+</p>  
+
+How to test for Stored XSS:
+- Comments on a blog
+- User profile information
+- Website Listings
 
