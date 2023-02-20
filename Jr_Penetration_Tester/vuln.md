@@ -199,3 +199,13 @@ DOM Based XSS is where the JavaScript execution happens directly in the browser 
 **How to test for Dom Based XSS:**      
 DOM Based XSS can be challenging to test for and requires a certain amount of knowledge of JavaScript to read the source code. You'd need to look for parts of the code that access certain variables that an attacker can have control over, such as `window.location.x` parameters.       
 
+### Blind XSS
+Blind XSS is similar to a stored XSS in that your payload gets stored on the website for another user to view, but in this instance, you can't see the payload working or be able to test it against yourself first.  
+
+**How to test for Blind XSS:**  
+When testing for Blind XSS vulnerabilities, you need to ensure your payload has a call back (usually an HTTP request). This way, you know if and when your code is being executed.  
+A popular tool for Blind XSS attacks is [xsshunter](https://xsshunter.com/). Although it's possible to make your own tool in JavaScript, this tool will automatically capture cookies, URLs, page contents and more.  
+
+
+
+
