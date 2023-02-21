@@ -242,6 +242,24 @@ Command Injection can be detected in mostly one of two ways:
 |:----:|:----------|
 |Blind|NO direct output. You will have to investigate the behaviours of the application.|
 |Verbose|Direct feedback. For example, running the `whoami` command and The web application will output the username on the page directly.|  
+<br>
+
+**Detecting Blind Command Injection**  
+- The `ping` and `sleep` commands are significant payloads to test with. Using `ping`, the application will hang for x seconds in relation to how many pings you have specified.
+- Execute `whoami` command and redirect `>` that to a file. We can then use a command such as `cat` to read this newly created file’s contents.
+- The `curl` command can deliver data.  
+    `curl http://vulnerable.app/process.php%3Fsearch%3DThe%20Beatles%3B%20whoami`
+<br>
+
+**Useful payloads**
+*Linux*
+`whoami`, `ls`, `ping`, `sleep`, `nc`  
+<br>
+
+*Windows*
+`whoami`, `dir`, `ping`  
+`timeout`: This command will also invoke the application to hang. It is also useful for testing an application for blind command injection if the `ping` command is not installed.  
+
 
 
 
