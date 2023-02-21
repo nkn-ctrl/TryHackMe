@@ -254,9 +254,7 @@ Command Injection can be detected in mostly one of two ways:
 **Useful payloads**  
 *Linux*  
 `whoami`, `ls`, `ping`, `sleep`, `nc`  
-<br>
-
-*Windows*
+*Windows*  
 `whoami`, `dir`, `ping`  
 `timeout`: This command will also invoke the application to hang. It is also useful for testing an application for blind command injection if the `ping` command is not installed.  
 
