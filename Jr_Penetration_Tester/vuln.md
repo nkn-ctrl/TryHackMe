@@ -228,4 +228,12 @@ https://github.com/swisskyrepo/PayloadsAllTheThings
 
 ## Command Injection
 A command injection vulnerability is also known as a "Remote Code Execution" (RCE) because an attacker can trick the application into executing a series of payloads that they provide, without direct access to the machine itself (i.e. an interactive shell).   
+### Discovering Command Injection
+<img src="https://user-images.githubusercontent.com/73976100/220255535-49831ac8-b3de-41af-bf1d-f64c11aa024b.png" width="600">  
+
+1. The application stores MP3 files in a directory contained on the operating system.
+2. The user inputs the song title they wish to search for. The application stores this input into the `$title` variable.
+3. The data within this `$title` variable is passed to the command `grep` to search a text file named songtitle.txt for the entry of whatever the user wishes to search for.
+4. The output of this search of songtitle.txt will determine whether the application informs the user that the song exists or not.
+
 
