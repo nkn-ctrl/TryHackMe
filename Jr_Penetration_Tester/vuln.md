@@ -223,7 +223,7 @@ jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */onerror=alert('THM') )//%0D%0A%0d%0a//</stY
 ```
 
 ### PayloadAlltheThings
-https://github.com/swisskyrepo/PayloadsAllTheThings  
+[PayloadAlltheThings-XSS](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS%20Injection)  
 
 
 ## Command Injection
