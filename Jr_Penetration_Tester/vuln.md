@@ -239,7 +239,7 @@ A command injection vulnerability is also known as a "Remote Code Execution" (RC
 ### Exploiting Command Injection
 Command Injection can be detected in mostly one of two ways:  
 |method|Descriotion|
-|:----:|:---------:|
+|:----:|:----------|
 |Blind|NO direct output. You will have to investigate the behaviours of the application.|
 |Verbose|Direct feedback. For example, running the `whoami` command and The web application will output the username on the page directly.|  
 
