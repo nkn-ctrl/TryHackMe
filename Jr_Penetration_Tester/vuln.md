@@ -251,8 +251,8 @@ Command Injection can be detected in mostly one of two ways:
     `curl http://vulnerable.app/process.php%3Fsearch%3DThe%20Beatles%3B%20whoami`
 <br>
 
-**Useful payloads**
-*Linux*
+**Useful payloads**  
+*Linux*  
 `whoami`, `ls`, `ping`, `sleep`, `nc`  
 <br>
 
