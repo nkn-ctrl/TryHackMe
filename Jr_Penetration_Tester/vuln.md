@@ -266,4 +266,17 @@ Command Injection can be detected in mostly one of two ways:
 [command-injection-payload-list](https://github.com/payloadbox/command-injection-payload-list)  
 
 
+## SQL Injection
+SQL (Structured Query Language) Injection, mostly referred to as SQLi, is an attack on a web application database server that causes malicious queries to be executed. 
+### What is SQL?
+- SELECT
+    `select * from users;`  
+    |id|username|password|
+    |:----|:----|:----|
+    |1|jon|pass123|
+    |2|admin|p4ssword|
+    |3|martin|secret123|
+    `select username,password from users;`  
+
+
 
