@@ -270,6 +270,7 @@ Command Injection can be detected in mostly one of two ways:
 SQL (Structured Query Language) Injection, mostly referred to as SQLi, is an attack on a web application database server that causes malicious queries to be executed. 
 ### What is SQL?
 **SELECT**  
+The SELECT query used to retrieve data from the database.   
 - `select * from users;`  
 - `select username,password from users;`  
 - `select * from users LIMIT 1;`
@@ -279,7 +280,20 @@ SQL (Structured Query Language) Injection, mostly referred to as SQLi, is an att
 - `select * from users where username='admin' and password='p4ssword';`
 - `select * from users where username like 'a%';` This returns any rows with username beginning with the letter a.  
 - `select * from users where username like '%n';` This returns any rows with username ending with the letter n.  
-- `select * from users where username like '%mi%';`  This returns any rows with a username containing the characters mi within them.
+- `select * from users where username like '%mi%';`  This returns any rows with a username containing the characters mi within them.  
+**UNION**  
+The UNION statement combines the results of two or more SELECT statements to retrieve data from either single or multiple tables.
+- `SELECT name,address,city,postcode from customers UNION SELECT company,address,city,postcode from suppliers;`  
+**INSERT**  
+The INSERT statement tells the database we wish to insert a new row of data into the table.   
+- `insert into users (username,password) values ('bob','password123');`  
+**UPDATE**  
+The UPDATE statement tells the database we wish to update one or more rows of data within a table.   
+- `update users SET username='root',password='pass123' where username='admin';`  
+**DELETE**  
+The DELETE statement tells the database we wish to delete one or more rows of data.  
+- `delete from users where username='martin';`  
+
 
 
 
