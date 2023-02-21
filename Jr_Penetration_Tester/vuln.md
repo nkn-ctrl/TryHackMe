@@ -258,6 +258,11 @@ Command Injection can be detected in mostly one of two ways:
     `whoami`, `dir`, `ping`  
     `timeout`: This command will also invoke the application to hang. It is also useful for testing an application for blind command injection if the `ping` command is not installed.  
 
+### PayloadAlltheThings
+[PayloadAlltheThings-command_injection](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection)  
+
+### Payload Box
+[command-injection-payload-list](https://github.com/payloadbox/command-injection-payload-list)  
 
 
 
