@@ -278,6 +278,15 @@ SQL (Structured Query Language) Injection, mostly referred to as SQLi, is an att
     |3|martin|secret123|　　
 
 - `select username,password from users;`  
+    |username|password|
+    |:----|:----|
+    |jon|pass123|
+    |admin|p4ssword|
+    |martin|secret123|
 
+- `select * from users LIMIT 1;`
+    |id|username|password|
+    |--|:----|:----|
+    |1|jon|pass123|
 
 
