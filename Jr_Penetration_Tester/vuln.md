@@ -237,6 +237,7 @@ A command injection vulnerability is also known as a "Remote Code Execution" (RC
 4. The output of this search of songtitle.txt will determine whether the application informs the user that the song exists or not.
 
 ### Exploiting Command Injection
+Applications that use user input to populate system commands with data can often be combined in unintended behaviour. For example, the shell operators `;`, `&` and `&&` will combine two (or more) system commands and execute them both.  
 Command Injection can be detected in mostly one of two ways:  
 |method|Descriotion|
 |:----:|:----------|
