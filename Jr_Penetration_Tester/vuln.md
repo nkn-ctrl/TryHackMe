@@ -271,22 +271,17 @@ SQL (Structured Query Language) Injection, mostly referred to as SQLi, is an att
 ### What is SQL?
 **SELECT**  
 - `select * from users;`  
-    |id|username|password|
-    |:----|:----|:----|
-    |1|jon|pass123|
-    |2|admin|p4ssword|
-    |3|martin|secret123|　　
-
 - `select username,password from users;`  
-    |username|password|
-    |:----|:----|
-    |jon|pass123|
-    |admin|p4ssword|
-    |martin|secret123|
-
 - `select * from users LIMIT 1;`
-    |id|username|password|
-    |--|:----|:----|
-    |1|jon|pass123|
+- `select * from users where username='admin';`
+- `select * from users where username != 'admin';`
+- `select * from users where username='admin' or username='jon';`
+- `select * from users where username='admin' and password='p4ssword';`
+- `select * from users where username like 'a%';` This returns any rows with username beginning with the letter a.  
+- `select * from users where username like '%n';` This returns any rows with username ending with the letter n.  
+- `select * from users where username like '%mi%';`  This returns any rows with a username containing the characters mi within them.
+
+
+
 
 
