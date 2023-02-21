@@ -236,4 +236,12 @@ A command injection vulnerability is also known as a "Remote Code Execution" (RC
 3. The data within this `$title` variable is passed to the command `grep` to search a text file named songtitle.txt for the entry of whatever the user wishes to search for.
 4. The output of this search of songtitle.txt will determine whether the application informs the user that the song exists or not.
 
+### Exploiting Command Injection
+Command Injection can be detected in mostly one of two ways:  
+|method|Descriotion|
+|:----:|:---------:|
+|Blind|NO direct output. You will have to investigate the behaviours of the application.|
+|Verbose|Direct feedback. For example, running the `whoami` command and The web application will output the username on the page directly.|  
+
+
 
