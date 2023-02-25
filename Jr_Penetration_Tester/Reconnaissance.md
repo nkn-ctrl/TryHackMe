@@ -30,7 +30,16 @@
     - SERVER is the DNS server that you want to query.
     - DOMAIN_NAME is the domain name you are looking up.
     - TYPE contains the DNS record type, as shown in the table provided earlier.  
-`dig @1.1.1.1 tryhackme.com MX`
+
+`dig @1.1.1.1 tryhackme.com MX`  
+
+### DNSDumpster
+[DNSDumpster](https://dnsdumpster.com/)  
+<p align="center">
+<img src="https://user-images.githubusercontent.com/73976100/221383161-245e669c-e295-46c1-8c2f-9dfc5ee5218b.png" width="700">
+</p>
+
+
 
 
 
