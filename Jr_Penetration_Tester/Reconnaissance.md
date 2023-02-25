@@ -10,6 +10,7 @@
 ### nslookup and dig
 - nslookup   
 `nslookup OPTIONS DOMAIN_NAME SERVER`  
+
 |Query type|	Result|
 |:--------:|----------|
 |A	|IPv4 Addresses|
