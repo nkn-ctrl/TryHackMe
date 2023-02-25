@@ -27,10 +27,11 @@
 `dig DOMAIN_NAME`  
 `dig DOMAIN_NAME TYPE`   
 `dig @SERVER DOMAIN_NAME TYPE`  
-
     - SERVER is the DNS server that you want to query.
     - DOMAIN_NAME is the domain name you are looking up.
-    - TYPE contains the DNS record type, as shown in the table provided earlier.
+    - TYPE contains the DNS record type, as shown in the table provided earlier.  
+`dig @1.1.1.1 tryhackme.com MX`
+
 
 
 
