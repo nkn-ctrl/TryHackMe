@@ -8,6 +8,7 @@
 - Name Server: Which server to ask to resolve the domain name?
 
 ### nslookup and dig
+- nslookup   
 `nslookup OPTIONS DOMAIN_NAME SERVER`  
 |Query type|	Result|
 |:--------:|----------|
@@ -16,4 +17,20 @@
 |CNAME|	Canonical Name|
 |MX|	Mail Servers|
 |SOA|	Start of Authority|
-|TXT|	TXT Record|
+|TXT|	TXT Record|  
+
+`nslookup -type=A tryhackme.com 1.1.1.1`  
+`nslookup -type=MX tryhackme.com`  
+
+- dig "Domain Information Groper"  
+`dig DOMAIN_NAME`  
+`dig DOMAIN_NAME TYPE`   
+`dig @SERVER DOMAIN_NAME TYPE`  
+
+    - SERVER is the DNS server that you want to query.
+    - DOMAIN_NAME is the domain name you are looking up.
+    - TYPE contains the DNS record type, as shown in the table provided earlier.
+
+
+
+
