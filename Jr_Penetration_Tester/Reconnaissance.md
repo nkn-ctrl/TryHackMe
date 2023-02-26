@@ -43,7 +43,6 @@
 [Shodan.io](https://www.shodan.io/)  
 
 <img src="https://user-images.githubusercontent.com/73976100/221397062-079cd6bc-64ee-4084-9884-89e2729e8416.png" width="700">  
-<br>
 
 - IP address
 - hosting company
