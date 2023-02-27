@@ -69,6 +69,33 @@ ping [-aAbBdCDefhLnOqrRUvV46] [-c count] [-F flowlabel] [-i interval] [-I interf
      [-s packetsize] [-S sndbuf] [-t ttl] [-T timestamp option] [hop...] {destination}
 ```
 
+### Trace Route
+On Linux and macOS, the command to use is `traceroute MACHINE_IP`, and on MS Windows, it is `tracert MACHINE_IP`. traceroute tries to discover the routers across the path from your system to the target system.  
+- The number of hops/routers between your system and the target system depends on the time you are running traceroute. There is no guarantee that your packets will always follow the same route, even if you are on the same network or you repeat the traceroute command within a short time.
+- Some routers return a public IP address. You might examine a few of these routers based on the scope of the intended penetration testing.
+- Some routers don’t return a reply.
+
+### Telnet
+The telnet client, with its simplicity, can be used for other purposes. Knowing that telnet client relies on the TCP protocol, you can use Telnet to connect to any service and grab its banner. Using telnet `MACHINE_IP PORT`, you can connect to any service running on TCP and even exchange a few messages unless it uses encryption.  
+```
+pentester@TryHackMe$ telnet MACHINE_IP 80
+Trying MACHINE_IP...
+Connected to MACHINE_IP.
+Escape character is '^]'.
+GET / HTTP/1.1
+host: telnet
+
+HTTP/1.1 200 OK
+Server: nginx/1.6.2
+Date: Tue, 17 Aug 2021 11:13:25 GMT
+Content-Type: text/html
+Content-Length: 867
+Last-Modified: Tue, 17 Aug 2021 11:12:16 GMT
+Connection: keep-alive
+ETag: "611b9990-363"
+Accept-Ranges: bytes
+```
+
 
 
 
