@@ -60,8 +60,14 @@
 - geographic location
 - server type and version  
 
+## Active Reconnaissance
+### Ping
 
-
+```
+ping [-aAbBdCDefhLnOqrRUvV46] [-c count] [-F flowlabel] [-i interval] [-I interface] [-l preload] [-m mark]
+     [-M pmtudisc_option] [-N nodeinfo_option] [-w deadline] [-W timeout] [-p pattern] [-Q tos]
+     [-s packetsize] [-S sndbuf] [-t ttl] [-T timestamp option] [hop...] {destination}
+```
 
 
 
