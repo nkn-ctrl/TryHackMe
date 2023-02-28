@@ -21,11 +21,11 @@
 - list file: `nmap -iL list_of_hosts.txt`  
 <br>
 
-`nmap -sL TARGETS`: This option will give you a detailed list of the hosts that Nmap will scan without scanning them; however, Nmap will attempt a reverse-DNS resolution on all the targets to obtain their names.  (If you don’t want Nmap to the DNS server, you can add `-n`.)  
+`sudo nmap -sL TARGETS`: This option will give you a detailed list of the hosts that Nmap will scan without scanning them; however, Nmap will attempt a reverse-DNS resolution on all the targets to obtain their names.  (If you don’t want Nmap to the DNS server, you can add `-n`.)  
 
 ### Nmap Host Discovery Using ARP
 ARP scan is possible only if you are on the same subnet as the target systems.  
-`nmap -PR -sn TARGETS`: ARP scan without port-scanning  
+`sudo nmap -PR -sn TARGETS`: ARP scan without port-scanning  
 `-PR`: Only ARP scan  
 `-sn`: No port scan  
 <img src="https://user-images.githubusercontent.com/73976100/221833308-c25da2f7-9a48-42b8-ad7f-8031f3880e59.png" width="600">  
@@ -40,17 +40,28 @@ Note:
 - Many firewalls and new versions of MS Windows block ICMP echo.
 - ARP query will precede the ICMP request if your target is on the same subnet.  
 
-`nmap -PE -sn TARGETS`  
+`sudo nmap -PE -sn TARGETS`  
 `-PE`: To use ICMP echo request  
 `-sn`: No port scan  
 
 <img src="https://user-images.githubusercontent.com/73976100/221835212-f5d2fa5d-0ab3-4799-b014-0029fbe03ae5.png" width="600">  
 
 Because ICMP echo requests tend to be blocked, you might also consider ICMP Timestamp or ICMP Address Mask requests to tell if a system is online.  
-- `nmap -PP -sn TARGET`  
+- `sudo nmap -PP -sn TARGET`  
     `-PP`: To use ICMP timestamp (ICMP type 13) and timestamp reply (ICMP type 14)  
-- `nmap -PM -sn TARGET`  
+- `sudo nmap -PM -sn TARGET`  
     `-PM`: To use ICMP address mask  
+
+### Nmap Host Discovery Using TCP and UDP
+<img src="https://user-images.githubusercontent.com/73976100/222006479-36459296-6f99-4166-827f-a36787a973be.png" width="600">  
+
+- TCP SYN Ping
+`sudo nmap -PS -sn TARGET`  
+`-PS`: To use TCP SYN ping  
+`-PS21`: target port 21 `-PS21-25`: target ports 21,22,23,24,25 `-PS80,443,8080`: target ports 80,443,8080  
+<img src="https://user-images.githubusercontent.com/73976100/222007719-95528d21-7903-4c71-94da-698935103ce9.png" width="600">  
+
+
 
 
 
