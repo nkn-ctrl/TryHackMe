@@ -95,10 +95,18 @@ Connection: keep-alive
 ETag: "611b9990-363"
 Accept-Ranges: bytes
 ```
+### Netcat
+`nc 10.10.90.114 80`  
+`nc -vnlp 1234`, `nc -v -l -n -p 1234`
+|option|	meaning|
+|:----:|-----------|
+|`-l`|	Listen mode|
+|`-p`|	Specify the Port number (should appear just before the port number you want to listen on. port numbers less than 1024 require root privileges to listen on.)|
+|`-n`|	Numeric only; no resolution of hostnames via DNS ( will avoid DNS lookups and warnings.)|
+|`-v`|	Verbose output (optional, yet useful to discover any bugs)|
+|`-vv`|	Very Verbose (optional)|
+|`-k`|	Keep listening after client disconnects|  
 
-
-## test
-hogehoge
 
 
 
