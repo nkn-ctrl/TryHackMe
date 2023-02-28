@@ -5,9 +5,14 @@
 
 ## Nmap Live Host Discovery
 1. ARP scan: This scan uses ARP requests to discover live hosts
-2. ICMP scan: This scan uses ICMP requests to identify live hosts
-3. TCP/UDP ping scan: This scan sends packets to TCP ports and UDP ports to determine live hosts.  
-<img src="https://user-images.githubusercontent.com/73976100/221764823-20f9f256-88ab-44f4-9a59-4f15f749804e.png" width="600">
+2. ICMP scan: This scan uses [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) requests to identify live hosts.  ICMP ping uses Type 8 (Echo) and Type 0 (Echo Reply).
+3. TCP/UDP ping scan: This scan sends packets to TCP ports and UDP ports to determine live hosts. This method is efficient, especially when ICMP Echo is blocked.  
+<img src="https://user-images.githubusercontent.com/73976100/221764823-20f9f256-88ab-44f4-9a59-4f15f749804e.png" width="600">  
+<br>
+
+1. When a `privileged user` tries to scan targets on a `local network` (Ethernet), Nmap uses `ARP` requests. 
+2. When a `privileged user` tries to scan targets `outside the local network`, Nmap uses `ICMP echo` requests, `TCP ACK` (Acknowledge) to port `80`, `TCP SYN` (Synchronize) to port `443`, and `ICMP timestamp` request.
+3. When an `unprivileged user` tries to scan targets `outside the local network`, Nmap resorts to a `TCP 3-way handshake` by sending SYN packets to ports `80` and `443`.
 
 ### Enumerating Targets
 - list: `MACHINE_IP scanme.nmap.org example.com` will scan 3 IP addresses.
@@ -18,5 +23,15 @@
 
 `nmap -sL TARGETS`: This option will give you a detailed list of the hosts that Nmap will scan without scanning them; however, Nmap will attempt a reverse-DNS resolution on all the targets to obtain their names.  (If you don’t want Nmap to the DNS server, you can add `-n`.)  
 
-### Discovering Live Hosts
+### Nmap Host Discovery Using ARP
+ARP scan is possible only if you are on the same subnet as the target systems.
+`nmap -PR -sn TARGETS`: ARP scan without port-scanning  
+`-PR`: Only ARP scan  
+`-sn`: No port scan  
+<br>
+
+`sudo arp-scan -I eth0 -l`: Send ARP queries for all valid IP addresses on the `eth0` interface.  
+`-I eth0`:  Limit the adapter to be scanned to eth0
+`-l`: --localhost  
+
 
