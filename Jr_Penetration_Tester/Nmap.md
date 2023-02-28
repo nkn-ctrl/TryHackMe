@@ -34,4 +34,14 @@ ARP scan is possible only if you are on the same subnet as the target systems.
 `-I eth0`:  Limit the adapter to be scanned to eth0
 `-l`: --localhost  
 
+## Nmap Host Discovery Using ICMP
+We can ping every IP address on a target network and see who would respond to our ping (ICMP Type 8/Echo) requests with a ping reply (ICMP Type 0).  
+Note:
+- Many firewalls and new versions of MS Windows block ICMP echo.
+- ARP query will precede the ICMP request if your target is on the same subnet.  
 
+`nmap -PE -sn TARGETS`
+`-PE`: To use ICMP echo request
+`-sn`: No port scan  
+
+<img src="https://user-images.githubusercontent.com/73976100/221835212-f5d2fa5d-0ab3-4799-b014-0029fbe03ae5.png" width="600">
