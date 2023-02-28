@@ -70,6 +70,7 @@ By default, port 80 is used.
 - UDP Ping  
 `sudo nmap -PU -sn TARGET`  
 `-PU`: To use UDP Ping  
+
     - UDP port is open.
     <img src="https://user-images.githubusercontent.com/73976100/222009187-2cf464fb-7266-4f69-8d38-d08b84abfdbf.png" width="600">  
     - UDP port is closed.  
