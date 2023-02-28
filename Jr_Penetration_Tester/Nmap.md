@@ -28,7 +28,7 @@ ARP scan is possible only if you are on the same subnet as the target systems.
 `nmap -PR -sn TARGETS`: ARP scan without port-scanning  
 `-PR`: Only ARP scan  
 `-sn`: No port scan  
-<br>
+<img src="https://user-images.githubusercontent.com/73976100/221833308-c25da2f7-9a48-42b8-ad7f-8031f3880e59.png" width="600">  
 
 `sudo arp-scan -I eth0 -l`: Send ARP queries for all valid IP addresses on the `eth0` interface.  
 `-I eth0`:  Limit the adapter to be scanned to eth0
