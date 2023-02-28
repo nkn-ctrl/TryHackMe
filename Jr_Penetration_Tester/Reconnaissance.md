@@ -106,8 +106,3 @@ Accept-Ranges: bytes
 |`-v`|	Verbose output (optional, yet useful to discover any bugs)|
 |`-vv`|	Very Verbose (optional)|
 |`-k`|	Keep listening after client disconnects|  
-
-
-
-
-
