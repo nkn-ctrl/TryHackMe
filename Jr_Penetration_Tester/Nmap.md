@@ -34,7 +34,7 @@ ARP scan is possible only if you are on the same subnet as the target systems.
 `-I eth0`:  Limit the adapter to be scanned to eth0
 `-l`: --localhost  
 
-## Nmap Host Discovery Using ICMP
+### Nmap Host Discovery Using ICMP
 We can ping every IP address on a target network and see who would respond to our ping (ICMP Type 8/Echo) requests with a ping reply (ICMP Type 0).  
 Note:
 - Many firewalls and new versions of MS Windows block ICMP echo.
@@ -44,4 +44,14 @@ Note:
 `-PE`: To use ICMP echo request  
 `-sn`: No port scan  
 
-<img src="https://user-images.githubusercontent.com/73976100/221835212-f5d2fa5d-0ab3-4799-b014-0029fbe03ae5.png" width="600">
+<img src="https://user-images.githubusercontent.com/73976100/221835212-f5d2fa5d-0ab3-4799-b014-0029fbe03ae5.png" width="600">  
+
+Because ICMP echo requests tend to be blocked, you might also consider ICMP Timestamp or ICMP Address Mask requests to tell if a system is online.  
+- `nmap -PP -sn TARGET`  
+    `-PP`: To use ICMP timestamp (ICMP type 13) and timestamp reply (ICMP type 14)  
+- `nmap -PM -sn TARGET`  
+    `-PM`: To use ICMP address mask  
+
+
+
+
