@@ -30,3 +30,6 @@
 ### Introduction to Web Hacking
 - [Contents Descovery and Subdomain Enumeration](https://github.com/nkn-ctrl/TryHackMe/blob/main/Jr_Penetration_Tester/Content_Subdomain.md)
 - [Vulnerability](https://github.com/nkn-ctrl/TryHackMe/blob/main/Jr_Penetration_Tester/vuln.md)
+
+### Network Security
+- [Reconnaissance](https://github.com/nkn-ctrl/TryHackMe/blob/main/Jr_Penetration_Tester/Reconnaissance.md)
