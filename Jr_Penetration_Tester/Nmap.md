@@ -7,6 +7,7 @@
 1. ARP scan: This scan uses ARP requests to discover live hosts
 2. ICMP scan: This scan uses ICMP requests to identify live hosts
 3. TCP/UDP ping scan: This scan sends packets to TCP ports and UDP ports to determine live hosts.  
+<img src="https://user-images.githubusercontent.com/73976100/221764823-20f9f256-88ab-44f4-9a59-4f15f749804e.png" width="600">
 
 ### Enumerating Targets
 - list: `MACHINE_IP scanme.nmap.org example.com` will scan 3 IP addresses.
@@ -15,7 +16,7 @@
 - list file: `nmap -iL list_of_hosts.txt`  
 <br>
 
-`nmap -sL TARGETS`: This option will give you a detailed list of the hosts that Nmap will scan without scanning them; however, Nmap will attempt a reverse-DNS resolution on all the targets to obtain their names.  (If you don’t want Nmap to the DNS server, you can add -n.)  
+`nmap -sL TARGETS`: This option will give you a detailed list of the hosts that Nmap will scan without scanning them; however, Nmap will attempt a reverse-DNS resolution on all the targets to obtain their names.  (If you don’t want Nmap to the DNS server, you can add `-n`.)  
 
 ### Discovering Live Hosts
 
