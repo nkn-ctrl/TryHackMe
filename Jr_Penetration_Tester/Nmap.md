@@ -24,7 +24,7 @@
 `nmap -sL TARGETS`: This option will give you a detailed list of the hosts that Nmap will scan without scanning them; however, Nmap will attempt a reverse-DNS resolution on all the targets to obtain their names.  (If you don’t want Nmap to the DNS server, you can add `-n`.)  
 
 ### Nmap Host Discovery Using ARP
-ARP scan is possible only if you are on the same subnet as the target systems.
+ARP scan is possible only if you are on the same subnet as the target systems.  
 `nmap -PR -sn TARGETS`: ARP scan without port-scanning  
 `-PR`: Only ARP scan  
 `-sn`: No port scan  
@@ -40,8 +40,8 @@ Note:
 - Many firewalls and new versions of MS Windows block ICMP echo.
 - ARP query will precede the ICMP request if your target is on the same subnet.  
 
-`nmap -PE -sn TARGETS`
-`-PE`: To use ICMP echo request
+`nmap -PE -sn TARGETS`  
+`-PE`: To use ICMP echo request  
 `-sn`: No port scan  
 
 <img src="https://user-images.githubusercontent.com/73976100/221835212-f5d2fa5d-0ab3-4799-b014-0029fbe03ae5.png" width="600">
