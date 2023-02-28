@@ -61,6 +61,21 @@ Because ICMP echo requests tend to be blocked, you might also consider ICMP Time
 `-PS21`: target port 21 `-PS21-25`: target ports 21,22,23,24,25 `-PS80,443,8080`: target ports 80,443,8080  
 <img src="https://user-images.githubusercontent.com/73976100/222007719-95528d21-7903-4c71-94da-698935103ce9.png" width="600">  
 
+- TCP ACK Ping  
+`sudo nmap -PA -sn TARGET`  
+By default, port 80 is used.  
+`-PA21`: target port 21 `-PA21-25`: target ports 21,22,23,24,25 `-PA80,443,8080`: target ports 80,443,8080. If no port is specified, port 80 will be used.  
+<img src="https://user-images.githubusercontent.com/73976100/222008801-2a47438d-b5bd-40db-b7a6-a6e6d7c608da.png" width="600">  
+
+- UDP Ping  
+`sudo nmap -PU -sn TARGET`  
+`-PU`: To use UDP Ping  
+    - UDP port is open.
+    <img src="https://user-images.githubusercontent.com/73976100/222009187-2cf464fb-7266-4f69-8d38-d08b84abfdbf.png" width="600">  
+    - UDP port is closed.  
+    <img src="https://user-images.githubusercontent.com/73976100/222009330-8b4d2a78-82d1-4b28-94a0-cd5bf507268e.png">  
+
+
 
 
 
