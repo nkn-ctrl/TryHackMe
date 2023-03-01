@@ -131,3 +131,6 @@ Nmap’s default behaviour is to use reverse-DNS online hosts.
 6. FIN: The sender has no more data to send.  
 
 ### TCP Connect Scan
+`nmap -sT TARGET`  
+`-sT`: The connection is torn as soon as its state is confirmed by sending a RST/ACK.  
+<img src="https://user-images.githubusercontent.com/73976100/222042542-c83034bc-fe35-4daf-997b-fad46c96b29d.png" width="600">  
