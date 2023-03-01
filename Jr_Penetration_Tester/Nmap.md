@@ -197,3 +197,21 @@ To avoid IDS alerts, you might consider `-T0` or `-T1`. If you don’t specify a
     `-sX`: The Xmas scan gets its name after Christmas tree lights. An Xmas scan sets the FIN, PSH, and URG flags simultaneously.  
     <img src="https://user-images.githubusercontent.com/73976100/222054522-8e4c8864-1064-402d-8ea3-8bdcb45f617c.png" width="600">  
     <img src="https://user-images.githubusercontent.com/73976100/222054524-b6eb9b46-e9cf-4e6c-a8e0-85e05ba08d9d.png" width="600">  
+
+### TCP ACK, Window, and Custom Scan  
+This kind of scan would be helpful if there is a firewall in front of the target.  
+- TCP Ack Scan  
+    `-sA`: ACK scan will send a TCP packet with the ACK flag set. The target would respond to the ACK with RST regardless of the state of the port. Hence, this scan won’t tell us whether the target port is open in a simple setup.  
+    In the following example, we scanned the target VM before installing a firewall on it. As expected, we couldn’t learn which ports were open.  
+    
+    ```
+    pentester@TryHackMe$ sudo nmap -sA 10.10.255.57
+
+    Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 10:37 BST
+    Nmap scan report for 10.10.255.57
+    Host is up (0.0013s latency).
+    All 1000 scanned ports on MACHINE_IP are unfiltered
+    MAC Address: 02:45:BF:8A:2D:6B (Unknown)
+
+    Nmap done: 1 IP address (1 host up) scanned in 1.68 seconds
+    ```
