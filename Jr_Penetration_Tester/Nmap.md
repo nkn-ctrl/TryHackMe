@@ -247,3 +247,4 @@ In some network setups, you will be able to scan a target system using a spoofed
     2. Target machine replies to the spoofed IP address as the destination.
     3. Attacker captures the replies to figure out open ports.
 
+ff
