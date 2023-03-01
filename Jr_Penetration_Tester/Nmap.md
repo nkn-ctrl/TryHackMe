@@ -188,8 +188,12 @@ To avoid IDS alerts, you might consider `-T0` or `-T1`. If you don’t specify a
     <img src="https://user-images.githubusercontent.com/73976100/222052739-ae3f6e34-8a58-442f-aa67-3567fb662340.png" width="600">  
     <img src="https://user-images.githubusercontent.com/73976100/222052863-9009ca06-8b0c-4a53-a217-e51cd5a3a33b.png" width="600">    
 
-- FIN Scan
+- FIN Scan  
     `-sF`: The FIN scan sends a TCP packet with the FIN flag set.  
     <img src="https://user-images.githubusercontent.com/73976100/222053220-b1b65b5d-05f3-40fe-8c56-87aab1d33c9d.png" width="600">  
     <img src="https://user-images.githubusercontent.com/73976100/222053416-5378374b-7d9a-4475-8cac-ecb584debf49.png" width="600">  
 
+- Xmas Scan  
+    `-sX`: The Xmas scan gets its name after Christmas tree lights. An Xmas scan sets the FIN, PSH, and URG flags simultaneously.  
+    <img src="https://user-images.githubusercontent.com/73976100/222054522-8e4c8864-1064-402d-8ea3-8bdcb45f617c.png" width="600">  
+    <img src="https://user-images.githubusercontent.com/73976100/222054524-b6eb9b46-e9cf-4e6c-a8e0-85e05ba08d9d.png" width="600">  
