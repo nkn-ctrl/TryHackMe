@@ -60,8 +60,15 @@
 |Option|Purpose|
 |:----|:----|
 |`--source-port PORT_NUM`|specify source port number|
-|`--data-length NUM`|append random data to reach given length|
+|`--data-length NUM`|append random data to reach given length|  
 
+|Option|Purpose|
+|:----|:----|
+|`--reason`|explains how Nmap made its conclusion|
+|`-v`|verbose|
+|`-vv`|very verbose|
+|`-d`|debugging|
+|`-dd`|more details for debugging|  
 
 
 
