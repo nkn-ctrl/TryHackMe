@@ -121,7 +121,7 @@ Nmap’s default behaviour is to use reverse-DNS online hosts.
 6. Closed|Filtered: Nmap cannot decide whether a port is closed or filtered.  
 
 ### TCP Flags
-<img src="https://user-images.githubusercontent.com/73976100/222037103-e74cd7e5-a435-4c96-ab4d-d1989ea93269.png" width="800">  
+<img src="https://user-images.githubusercontent.com/73976100/222037103-e74cd7e5-a435-4c96-ab4d-d1989ea93269.png" width="600">  
 
 1. URG: incoming data is urgent. Send immediately without consideration of having to wait on previously sent TCP segments.
 2. ACK: To used to acknowledge the receipt of a TCP segment.
@@ -136,3 +136,10 @@ Nmap’s default behaviour is to use reverse-DNS online hosts.
 `-F`: Fast mode (scan ports from 1000 to 100)  
 `-r`: scan the port in consecutive order  
 <img src="https://user-images.githubusercontent.com/73976100/222042542-c83034bc-fe35-4daf-997b-fad46c96b29d.png" width="600">  
+
+### TCP SYN Scan  
+TCP SYN scan is the default scan mode when running Nmap as a privileged user.    
+`sudo nmap -sS TARGET`  
+`-sS`: does not need to complete the TCP 3-way handshake  
+<img src="https://user-images.githubusercontent.com/73976100/222044115-168089d8-f867-4b9e-a559-22abba285008.png" width="600">  
+
