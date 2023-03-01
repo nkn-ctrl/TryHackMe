@@ -24,21 +24,43 @@
 
 |Port Scan Type|Example Command|
 |:----|:----|
-|TCP Connect Scan|nmap -sT 10.10.94.114|
-|TCP SYN Scan|sudo nmap -sS 10.10.94.114|
-|UDP Scan|sudo nmap -sU 10.10.94.114|
+|TCP Connect Scan|`nmap -sT 10.10.94.114`|
+|TCP SYN Scan|`sudo nmap -sS 10.10.94.114`|
+|UDP Scan|`sudo nmap -sU 10.10.94.114`|  
 
 |Option|Purpose|
 |:----|:----|
-|-p-|all ports|
-|-p1-1023|scan ports 1 to 1023|
-|-F|100 most common ports|
-|-r|scan ports in consecutive order|
-|-T<0-5>|-T0 being the slowest and T5 the fastest|
-|--max-rate 50|rate <= 50 packets/sec|
-|--min-rate 15|rate >= 15 packets/sec|
-|--min-parallelism 100|at least 100 probes in parallel|
+|`-p-`|all ports|
+|`-p1-1023`|scan ports 1 to 1023|
+|`-F`|100 most common ports|
+|`-r`|scan ports in consecutive order|
+|`-T<0-5>`|-T0 being the slowest and T5 the fastest|
+|`--max-rate 50`|rate <= 50 packets/sec|
+|`--min-rate 15`|rate >= 15 packets/sec|
+|`--min-parallelism 100`|at least 100 probes in parallel|  
 
+<p align="center">--- Nmap Advanced Port Scans ---</p>  
+
+|Port Scan Type|Example Command|
+|:----|:----|
+|TCP Null Scan|`sudo nmap -sN 10.10.166.135`|
+|TCP FIN Scan|`sudo nmap -sF 10.10.166.135`|
+|TCP Xmas Scan|`sudo nmap -sX 10.10.166.135`|
+|TCP Maimon Scan|`sudo nmap -sM 10.10.166.135`|
+|TCP ACK Scan|`sudo nmap -sA 10.10.166.135`|
+|TCP Window Scan|`sudo nmap -sW 10.10.166.135`|
+|Custom TCP Scan|`sudo nmap --scanflags URGACKPSHRSTSYNFIN 10.10.166.135`|
+|Spoofed Source IP|`sudo nmap -S SPOOFED_IP 10.10.166.135`|
+|Spoofed MAC Address|`--spoof-mac SPOOFED_MAC`|
+|Decoy Scan|`nmap -D DECOY_IP,ME 10.10.166.135`|
+|Idle (Zombie) Scan|`sudo nmap -sI ZOMBIE_IP 10.10.166.135`|
+|Fragment IP data into 8 bytes|`-f`|
+|Fragment IP data into 16 bytes|`-ff`|  
+
+|Option|Purpose|
+|:----|:----|
+|`--source-port PORT_NUM`|specify source port number|
+|`--data-length NUM`|append random data to reach given length|
 
 
 
@@ -273,6 +295,17 @@ The idle scan, or zombie scan, requires an idle system connected to the network 
 1. Trigger the idle host to respond so that you can record the current IP ID on the idle host.
 2. Send a SYN packet to a TCP port on the target. The packet should be spoofed to appear as if it was coming from the idle host (zombie) IP address.
 3. Trigger the idle machine again to respond so that you can compare the new IP ID with the one received earlier.
+
+`sudo nmap -sI ZOMBIE_IP TARGET_IP`  
+
+<img src="https://user-images.githubusercontent.com/73976100/222288522-62e0e400-b26c-464b-a3ff-58678374a54c.png" width="600">  
+
+<img src="https://user-images.githubusercontent.com/73976100/222288530-c1c8794b-d78d-41d3-b3e2-ddbd54af2106.png" width="600">  
+
+<img src="https://user-images.githubusercontent.com/73976100/222288538-c961f21d-8385-43ee-b4f2-4741609017d0.png" width="600">  
+
+### Getting More Details  
+`--reason` `-v` `-vv` `-d` `-dd`
 
 
 
