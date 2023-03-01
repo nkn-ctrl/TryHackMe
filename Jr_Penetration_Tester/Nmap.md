@@ -120,5 +120,6 @@ Nmap’s default behaviour is to use reverse-DNS online hosts.
 5. Open|Filtered: Nmap cannot determine whether the port is open or filtered.
 6. Closed|Filtered: Nmap cannot decide whether a port is closed or filtered.  
 
-
+### TCP Flags
+<img src="https://user-images.githubusercontent.com/73976100/222037103-e74cd7e5-a435-4c96-ab4d-d1989ea93269.png" width="800">  
 
