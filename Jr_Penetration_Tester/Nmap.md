@@ -241,6 +241,7 @@ This kind of scan would be helpful if there is a firewall in front of the target
     <img src="https://user-images.githubusercontent.com/73976100/222062015-af103fe3-562a-4156-adb9-5403a21ce888.png" width="600">  
 
 ### Spoofing and Decoys
+Spoofing the source IP address can be a great approach to scanning stealthily. However, spoofing will only work in specific network setups. It requires you to be in a position where you can monitor the traffic.   
 - Spoofing  
 In some network setups, you will be able to scan a target system using a spoofed IP address and even a spoofed MAC address. Such a scan is only beneficial in a situation where you can guarantee to capture the response.    
 `sudo namp -e NET_INTERFACE -Pn -S SPOOFED_IP TARGET_IP`  
@@ -263,3 +264,15 @@ Spoofing only works in a minimal number of cases where certain conditions are me
 `RND`: Random_IP
 
 <img src="https://user-images.githubusercontent.com/73976100/222261653-5619a502-df76-4683-a966-28820827b60e.png" width="600">  
+
+### Fragmented Packets
+Nmap provides the option `-f` to fragment packets. Once chosen, the IP data will be divided into 8 bytes or less. Adding another `-f` (`-f -f` or `-ff`) will split the data into 16 byte-fragments instead of 8. You can change the default value by using the --mtu; however, you should always choose a multiple of 8.  
+
+### Idle/Zombike Scan
+The idle scan, or zombie scan, requires an idle system connected to the network that you can communicate with.  
+1. Trigger the idle host to respond so that you can record the current IP ID on the idle host.
+2. Send a SYN packet to a TCP port on the target. The packet should be spoofed to appear as if it was coming from the idle host (zombie) IP address.
+3. Trigger the idle machine again to respond so that you can compare the new IP ID with the one received earlier.
+
+
+
