@@ -2,9 +2,16 @@
 <p align="center">
 <img src="https://user-images.githubusercontent.com/73976100/221752594-9bc1f554-c724-4acd-985a-3ee666c30563.png" width="300">
 </p>  
-<p align="center">
-**Nmap Live Host Dsiscovery**
-</p>
+<p align="center">--- Nmap Live Host Dsiscovery ---</p>  
+|Scan Type|Example Command|
+|:----|:----|
+|ARP Scan|sudo nmap -PR -sn MACHINE_IP/24|
+|ICMP Echo Scan|sudo nmap -PE -sn MACHINE_IP/24|
+|ICMP Timestamp Scan|sudo nmap -PP -sn MACHINE_IP/24|
+|ICMP Address Mask Scan|sudo nmap -PM -sn MACHINE_IP/24|
+|TCP SYN Ping Scan|sudo nmap -PS22,80,443 -sn MACHINE_IP/30|
+|TCP ACK Ping Scan|sudo nmap -PA22,80,443 -sn MACHINE_IP/30|
+|UDP Ping Scan|sudo nmap -PU53,161,162 -sn MACHINE_IP/30|
 
 
 
