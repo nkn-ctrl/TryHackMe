@@ -243,5 +243,7 @@ This kind of scan would be helpful if there is a firewall in front of the target
 ### Spoofing and Decoys
 In some network setups, you will be able to scan a target system using a spoofed IP address and even a spoofed MAC address. Such a scan is only beneficial in a situation where you can guarantee to capture the response.    
 `sudo namp -S SPOOFED_IP TARGET`
-
+    1. Attacker sends a packet with a spoofed source IP address to the target machine.
+    2. Target machine replies to the spoofed IP address as the destination.
+    3. Attacker captures the replies to figure out open ports.
 
