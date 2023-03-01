@@ -59,6 +59,8 @@ Because ICMP echo requests tend to be blocked, you might also consider ICMP Time
 `sudo nmap -PS -sn TARGET`  
 `-PS`: To use TCP SYN ping  
 `-PS21`: target port 21 `-PS21-25`: target ports 21,22,23,24,25 `-PS80,443,8080`: target ports 80,443,8080  
+    - Privileged users don't need to complete the TCP 3-way handshake even if the port is open.  
+    - Unprivileged users have no choice but to complete the 3-way handshake if the port is open.  
 <img src="https://user-images.githubusercontent.com/73976100/222007719-95528d21-7903-4c71-94da-698935103ce9.png" width="600">  
 
 - TCP ACK Ping  
@@ -77,7 +79,7 @@ By default, port 80 is used.
     - UDP port is closed.  
     <img src="https://user-images.githubusercontent.com/73976100/222009330-8b4d2a78-82d1-4b28-94a0-cd5bf507268e.png" width="600">  
 
-**Masscan**
+**Masscan**  
 Masscan uses a similar approach to discover the available systems.   
 `masscan MACHINE_IP/24 -p443`  
 `masscan MACHINE_IP/24 -p80,443`  
