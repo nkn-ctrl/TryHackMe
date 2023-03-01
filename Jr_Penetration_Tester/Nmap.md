@@ -257,7 +257,9 @@ In some network setups, you will be able to scan a target system using a spoofed
 
 - Decoy  
 Spoofing only works in a minimal number of cases where certain conditions are met. Therefore, the attacker might resort to using decoys to make it more challenging to be pinpointed.  
-`sudo nmap -D DECOY1,ME,DECOY2 TARGET_IP`  
+`sudo nmap -D DECOY1,DECOY2,RND,RND,ME TARGET_IP`  
 `-D`: To use decoy  
+`DECOY1`: Decoy_ip  
+`RND`: Random_IP
 
 <img src="https://user-images.githubusercontent.com/73976100/222261653-5619a502-df76-4683-a966-28820827b60e.png" width="600">  
