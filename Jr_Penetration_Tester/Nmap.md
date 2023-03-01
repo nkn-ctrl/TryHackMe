@@ -143,3 +143,21 @@ TCP SYN scan is the default scan mode when running Nmap as a privileged user.
 `-sS`: does not need to complete the TCP 3-way handshake  
 <img src="https://user-images.githubusercontent.com/73976100/222044115-168089d8-f867-4b9e-a559-22abba285008.png" width="600">  
 
+### UDP Scan  
+`sudo nmap -sU TARGET`  
+`-sU`: To use UDP scan.  
+
+### Fine-Tuning Scope and Performance
+**Port**  
+- port list: `-p22,80,443` scan ports22,80,443
+- port range: `-p1-1023` scan ports between 1 and 1023
+- all ports: `-p-` scan all 65535 ports  
+- fast mode: `-F` scan the most common 100 ports
+- more fast: `--top-ports 10` check the 10 most common ports  
+
+**Timing**
+`-T<0-5>`: `-T0` is the slowest (paranoid), while `-T5` is the fastest.  
+To avoid IDS alerts, you might consider `-T0` or `-T1`. If you don’t specify any timing, Nmap uses normal `-T3`.  
+
+
+
