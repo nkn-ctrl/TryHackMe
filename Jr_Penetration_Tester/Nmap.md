@@ -86,6 +86,11 @@ Masscan uses a similar approach to discover the available systems.
 `masscan MACHINE_IP/24 -p22-25`  
 `masscan MACHINE_IP/24 ‐‐top-ports 100`  
 
+### Using Reverse-DNS Lookup  
+Nmap’s default behaviour is to use reverse-DNS online hosts.  
+`-n`: no DNS lookup  
+`-R`: reverse-DNS lookup for all hosts  
+`--dns-servers DNS_SERVER`: To use a specific DNS server   
 
 
 
