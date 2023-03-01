@@ -240,6 +240,8 @@ This kind of scan would be helpful if there is a firewall in front of the target
     `--scanflags`: To experiment with a new TCP flag combination beyond the built-in TCP scan types. To set SYN, RST, and FIN simultaneously, you can do so using `--scanflags RSTSYNFIN`.  
     <img src="https://user-images.githubusercontent.com/73976100/222062015-af103fe3-562a-4156-adb9-5403a21ce888.png" width="600">  
 
-
+### Spoofing and Decoys
+In some network setups, you will be able to scan a target system using a spoofed IP address and even a spoofed MAC address. Such a scan is only beneficial in a situation where you can guarantee to capture the response.    
+`sudo namp -S SPOOFED_IP TARGET`
 
 
