@@ -242,7 +242,7 @@ This kind of scan would be helpful if there is a firewall in front of the target
 
 ### Spoofing and Decoys
 In some network setups, you will be able to scan a target system using a spoofed IP address and even a spoofed MAC address. Such a scan is only beneficial in a situation where you can guarantee to capture the response.    
-`sudo namp -e NET_INTERFACE -Pn -S SPOOFED_IP TARGET_IP`
+`sudo namp -e NET_INTERFACE -Pn -S SPOOFED_IP TARGET_IP`  
 `-e`: To use specify network interface  
 `-Pn`: disable ping scan    
 `--spoof-mac SPOOFED_MAC`: spoof mac address  
@@ -252,3 +252,7 @@ In some network setups, you will be able to scan a target system using a spoofed
 3. Attacker captures the replies to figure out open ports.  
 <br>
 
+Spoofing only works in a minimal number of cases where certain conditions are met. Therefore, the attacker might resort to using decoys to make it more challenging to be pinpointed.  
+`sudo nmap -D DECOY1,ME,DECOY2 TARGET_IP`  
+`-D`: To use decoy  
+<img src="https://user-images.githubusercontent.com/73976100/222261653-5619a502-df76-4683-a966-28820827b60e.png" width="600">  
