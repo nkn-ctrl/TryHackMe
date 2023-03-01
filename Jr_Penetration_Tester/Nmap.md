@@ -111,6 +111,14 @@ Nmap’s default behaviour is to use reverse-DNS online hosts.
 `-R`: reverse-DNS lookup for all hosts  
 `--dns-servers DNS_SERVER`: To use a specific DNS server   
 
+## Nmap Basic Port Scans
+### TCP and UDP Ports  
+1. Open: a service is listening on the specified port.
+2. Closed: no service is listening on the specified port, although the port is accessible.
+3. Filtered: the port is not accessible. 
+4. Unfiltered: Nmap cannot determine if the port is open or closed, although the port is accessible. This state is encountered when using an ACK scan -sA.
+5. Open|Filtered: Nmap cannot determine whether the port is open or filtered.
+6. Closed|Filtered: Nmap cannot decide whether a port is closed or filtered.  
 
 
 
