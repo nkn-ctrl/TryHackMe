@@ -246,6 +246,7 @@ In some network setups, you will be able to scan a target system using a spoofed
 `-e`: To use specify network interface  
 `-Pn`: disable ping scan    
 `--spoof-mac SPOOFED_MAC`: spoof mac address  
+<br>
 <img src="https://user-images.githubusercontent.com/73976100/222259226-38a941e2-0452-4b1d-8f26-a8a823c9f9c6.png" width="600">
 1. Attacker sends a packet with a spoofed source IP address to the target machine.
 2. Target machine replies to the spoofed IP address as the destination.
@@ -255,4 +256,5 @@ In some network setups, you will be able to scan a target system using a spoofed
 Spoofing only works in a minimal number of cases where certain conditions are met. Therefore, the attacker might resort to using decoys to make it more challenging to be pinpointed.  
 `sudo nmap -D DECOY1,ME,DECOY2 TARGET_IP`  
 `-D`: To use decoy  
+
 <img src="https://user-images.githubusercontent.com/73976100/222261653-5619a502-df76-4683-a966-28820827b60e.png" width="600">  
