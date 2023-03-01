@@ -133,4 +133,6 @@ Nmap’s default behaviour is to use reverse-DNS online hosts.
 ### TCP Connect Scan
 `nmap -sT TARGET`  
 `-sT`: The connection is torn as soon as its state is confirmed by sending a RST/ACK.  
+`-F`: Fast mode (scan ports from 1000 to 100)  
+`-r`: scan consecutive order  
 <img src="https://user-images.githubusercontent.com/73976100/222042542-c83034bc-fe35-4daf-997b-fad46c96b29d.png" width="600">  
