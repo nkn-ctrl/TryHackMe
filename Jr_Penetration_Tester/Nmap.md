@@ -237,7 +237,7 @@ This kind of scan would be helpful if there is a firewall in front of the target
     `-sW`: The TCP window scan is almost the same as the ACK scan; however, it examines the TCP Window field of the RST packets returned. On specific systems, this can reveal that the port is open.  
 
 - Custom Scan  
-    `--scanflags RSTSYNFIN`: If you want to experiment with a new TCP flag combination beyond the built-in TCP scan types, you can do so using `--scanflags`.  
+    `--scanflags`: To experiment with a new TCP flag combination beyond the built-in TCP scan types. To set SYN, RST, and FIN simultaneously, you can do so using `--scanflags RSTSYNFIN`.  
     <img src="https://user-images.githubusercontent.com/73976100/222062015-af103fe3-562a-4156-adb9-5403a21ce888.png" width="600">  
 
 
