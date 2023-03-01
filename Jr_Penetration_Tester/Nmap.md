@@ -77,7 +77,12 @@ By default, port 80 is used.
     - UDP port is closed.  
     <img src="https://user-images.githubusercontent.com/73976100/222009330-8b4d2a78-82d1-4b28-94a0-cd5bf507268e.png" width="600">  
 
-
+**Masscan**
+Masscan uses a similar approach to discover the available systems.   
+`masscan MACHINE_IP/24 -p443`  
+`masscan MACHINE_IP/24 -p80,443`  
+`masscan MACHINE_IP/24 -p22-25`  
+`masscan MACHINE_IP/24 ‐‐top-ports 100`  
 
 
 
