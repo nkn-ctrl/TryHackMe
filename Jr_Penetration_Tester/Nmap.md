@@ -203,7 +203,7 @@ This kind of scan would be helpful if there is a firewall in front of the target
 - TCP Ack Scan  
     `-sA`: ACK scan will send a TCP packet with the ACK flag set. The target would respond to the ACK with RST regardless of the state of the port. Hence, this scan won’t tell us whether the target port is open in a simple setup.  
     In the following example, we scanned the target VM before installing a firewall on it. As expected, we couldn’t learn which ports were open.  
-    
+
     ```
     pentester@TryHackMe$ sudo nmap -sA 10.10.255.57
 
@@ -214,4 +214,26 @@ This kind of scan would be helpful if there is a firewall in front of the target
     MAC Address: 02:45:BF:8A:2D:6B (Unknown)
 
     Nmap done: 1 IP address (1 host up) scanned in 1.68 seconds
+    ```  
+    After setting up the target VM 10.10.255.57 with a firewall, we repeated the ACK scan. This time, we received some interesting results. As seen in the console output below, we have three ports that aren't being blocked by the firewall. This result indicates that the firewall is blocking all other ports except for these three ports.  
+
     ```
+    pentester@TryHackMe$ sudo nmap -sA 10.10.255.57
+
+    Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-07 11:34 BST
+    Nmap scan report for 10.10.255.57
+    Host is up (0.00046s latency).
+    Not shown: 997 filtered ports
+    PORT    STATE      SERVICE
+    22/tcp  unfiltered ssh
+    25/tcp  unfiltered smtp
+    80/tcp  unfiltered http
+    MAC Address: 02:78:C0:D0:4E:E9 (Unknown)
+
+    Nmap done: 1 IP address (1 host up) scanned in 15.45 
+    ```  
+
+
+
+
+    
