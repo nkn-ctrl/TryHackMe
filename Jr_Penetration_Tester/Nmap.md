@@ -180,5 +180,16 @@ TCP SYN scan is the default scan mode when running Nmap as a privileged user.
 `-T<0-5>`: `-T0` is the slowest (paranoid), while `-T5` is the fastest.  
 To avoid IDS alerts, you might consider `-T0` or `-T1`. If you don’t specify any timing, Nmap uses normal `-T3`.  
 
+## Nmap Advanced Port Scans  
+### TCP Null Scan, FIN Scan, and Xmas Scan
+- Null Scan  
+    `-sN`: The null scan does not set any flag; all six flag bits are set to zero.  
+    If target respond with RST,ACK packet, TCP port is closed.  If target didn't response, TCP port is open or filterd.
+    <img src="https://user-images.githubusercontent.com/73976100/222052739-ae3f6e34-8a58-442f-aa67-3567fb662340.png" width="600">  
+    <img src="https://user-images.githubusercontent.com/73976100/222052863-9009ca06-8b0c-4a53-a217-e51cd5a3a33b.png" width="600">    
 
+- FIN Scan
+    `-sF`: The FIN scan sends a TCP packet with the FIN flag set.  
+    <img src="https://user-images.githubusercontent.com/73976100/222053220-b1b65b5d-05f3-40fe-8c56-87aab1d33c9d.png" width="600">  
+    <img src="https://user-images.githubusercontent.com/73976100/222053416-5378374b-7d9a-4475-8cac-ecb584debf49.png" width="600">  
 
