@@ -5,7 +5,7 @@
 <p align="center">--- Nmap Live Host Dsiscovery ---</p>  
 
 |Scan Type|Example Command|
-|:----|:----|
+|:---:|----|
 |ARP Scan|`sudo nmap -PR -sn MACHINE_IP/24`|
 |ICMP Echo Scan|`sudo nmap -PE -sn MACHINE_IP/24`|
 |ICMP Timestamp Scan|`sudo nmap -PP -sn MACHINE_IP/24`|
@@ -15,7 +15,7 @@
 |UDP Ping Scan|`sudo nmap -PU53,161,162 -sn MACHINE_IP/30`|  
 
 |Option|Purpose|
-|:----|:----|
+|:---:|----|
 |`-n`|no DNS lookup|
 |`-R`|reverse-DNS lookup for all hosts|
 |`-sn`|host discovery only|
@@ -23,13 +23,13 @@
 <p align="center">--- Nmap Basic Port Scans ---</p>  
 
 |Port Scan Type|Example Command|
-|:----|:----|
+|:---:|----|
 |TCP Connect Scan|`nmap -sT 10.10.94.114`|
 |TCP SYN Scan|`sudo nmap -sS 10.10.94.114`|
 |UDP Scan|`sudo nmap -sU 10.10.94.114`|  
 
 |Option|Purpose|
-|:----|:----|
+|:---:|----|
 |`-p-`|all ports|
 |`-p1-1023`|scan ports 1 to 1023|
 |`-F`|100 most common ports|
@@ -42,7 +42,7 @@
 <p align="center">--- Nmap Advanced Port Scans ---</p>  
 
 |Port Scan Type|Example Command|
-|:----|:----|
+|:---:|----|
 |TCP Null Scan|`sudo nmap -sN 10.10.166.135`|
 |TCP FIN Scan|`sudo nmap -sF 10.10.166.135`|
 |TCP Xmas Scan|`sudo nmap -sX 10.10.166.135`|
@@ -58,12 +58,12 @@
 |Fragment IP data into 16 bytes|`-ff`|  
 
 |Option|Purpose|
-|:----|:----|
+|:---:|----|
 |`--source-port PORT_NUM`|specify source port number|
 |`--data-length NUM`|append random data to reach given length|  
 
 |Option|Purpose|
-|:----|:----|
+|:---:|----|
 |`--reason`|explains how Nmap made its conclusion|
 |`-v`|verbose|
 |`-vv`|very verbose|
