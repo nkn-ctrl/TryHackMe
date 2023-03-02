@@ -314,5 +314,42 @@ The idle scan, or zombie scan, requires an idle system connected to the network 
 ### Getting More Details  
 `--reason` `-v` `-vv` `-d` `-dd`
 
+## Nmap Post Port Scans  
+### Service Detection
+`sudo nmap -sV TARGET_IP`  
+`-sV`: To collect and determine service and version information for the open ports  
+`--version-intensity LEVEL`: 0(lightest)-9(most complete)  
+`-sV --version-light`: intesity of 2  
+`-sV --version-all`: intensity of 9  
+Note: stealth SYN scan `-sS` is not possible when `-sV` option is chosen.   
 
+### OS Detection and Traceroute
+- OS Dtection
+    `sudo nmap -sS -O TARGET_IP`  
+    `-O`: to detect the Operating System (OS)  
 
+- Traceroute
+    `sudo nmap -sS --traceroute TARGET_IP`  
+    `--traceroute`: Nmap appended a traceroute to its scan results.  
+
+### Nmap Scripting Engine (NSE)
+`/usr/share/nmap/scripts`  
+`sudo nmap -sS -sC TARGET_IP`  
+`--scripts=default` or `-sC`: using default scripts  
+
+|Script Category|Description|
+|:---*|:----|
+|`auth`|Authentication related scripts|
+|`broadcast`|Discover hosts by sending broadcast messages|
+|`brute`|Performs brute-force password auditing against logins|
+|`default`|Default scripts, same as `-sC`|
+|`discovery`|Retrieve accessible information, such as database tables and DNS names|
+|`dos`|Detects servers vulnerable to Denial of Service (DoS)|
+|`exploit`|Attempts to exploit various vulnerable services|
+|`external`|Checks using a third-party service, such as Geoplugin and Virustotal|
+|`fuzzer`|Launch fuzzing attacks|
+|`intrusive`|Intrusive scripts such as brute-force attacks and exploitation|
+|`malware`|Scans for backdoors|
+|`safe`|Safe scripts that won’t crash the target|
+|`version`|Retrieve service versions|
+|`vuln`|Checks for vulnerabilities or exploit vulnerable services|
