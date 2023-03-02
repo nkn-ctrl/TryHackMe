@@ -354,3 +354,14 @@ Note: stealth SYN scan `-sS` is not possible when `-sV` option is chosen.
 |`safe`|Safe scripts that won’t crash the target|
 |`version`|Retrieve service versions|
 |`vuln`|Checks for vulnerabilities or exploit vulnerable services|
+
+### Saving the Output  
+Conveniently enough, you can save the scan output in all three formats using `-oA FILENAME` to combine `-oN`, `-oG`, and `-oX` for normal, grepable, and XML.  
+- Normal  
+    `-oN FILENAME`: The normal format is similar to the output you get on the screen when scanning a target.  
+
+- Grepable  
+    `-oG FILENAME`: It makes filtering the scan output for specific keywords or terms efficient.  
+
+- XML  
+    `-oX FILENAME`: The XML format would be most convenient to process the output in other programs. 
