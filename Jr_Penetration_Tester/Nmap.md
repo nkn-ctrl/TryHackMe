@@ -337,8 +337,9 @@ Note: stealth SYN scan `-sS` is not possible when `-sV` option is chosen.
 `sudo nmap -sS -sC TARGET_IP`  
 `--scripts=default` or `-sC`: using default scripts  
 
+
 |Script Category|Description|
-|:---*|:----|
+|:---:|:----|
 |`auth`|Authentication related scripts|
 |`broadcast`|Discover hosts by sending broadcast messages|
 |`brute`|Performs brute-force password auditing against logins|
