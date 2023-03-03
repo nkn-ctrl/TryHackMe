@@ -115,7 +115,40 @@ After `helo`, we issue `mail from:`, `rcpt to:` to indicate the sender and the r
 
 ### Post Office Protocol 3 (POP3)
 `telnet MACHINE_IP 110`  
-
+`USER frank`: User name  
+`PASS D2xc9CgD`: password  
+`STAT`: we get the reply `+OK 1 179`; based on RFC 1939
+`+OK nn mm`, where `nn` is the number of email messages in the inbox, and `mm` is the size of the inbox in octets (byte).   
+`LIST`: list of new messages on the server  
+`RETR 1`: retrieved the first message in the list  
+```
+pentester@TryHackMe$ telnet MACHINE_IP 110
+Trying MACHINE_IP...
+Connected to MACHINE_IP.
+Escape character is '^]'.
++OK MACHINE_IP Mail Server POP3 Wed, 15 Sep 2021 11:05:34 +0300 
+USER frank
++OK frank
+PASS D2xc9CgD
++OK 1 messages (179) octets
+STAT
++OK 1 179
+LIST
++OK 1 messages (179) octets
+1 179
+.
+RETR 1
++OK
+From: Mail Server 
+To: Frank 
+subject: Sending email with Telnet
+Hello Frank,
+I am just writing to say hi!
+.
+QUIT
++OK MACHINE_IP closing connection
+Connection closed by foreign host.
+```
 ### Internet Message Access Protocol (IMAP)
 `telnet MACHINE_IP 143`  
 
