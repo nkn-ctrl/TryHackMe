@@ -8,14 +8,15 @@
 1. [Rapid7](https://www.rapid7.com/db/)
 2. [GitHub](https://github.com/) : search by keywords such as "POC", "vulnerability", "cve"
 3. Searchsploit: Searchsploit is a tool that is available on popular pentesting distributions such as Kali Linux. This tool is an offline copy of Exploit-DB, containing copies of exploits on your system.  
-```
-searchsploit wordpress
-WordPress Theme Think Responsive 1.0 - Arbitr | php/webapps/29332.txt
-WordPress Theme This Way - 'upload_settings_i | php/webapps/38820.php
-WordPress Theme Toolbox - 'mls' SQL Injection | php/webapps/38077.txt
-WordPress Theme Trending 0.1 - 'cpage' Cross- | php/webapps/36195.txt
-WordPress Theme Uncode 1.3.1 - Arbitrary File | php/webapps/39895.php
-```  
+    ```
+    searchsploit wordpress
+    WordPress Theme Think Responsive 1.0 - Arbitr | php/webapps/29332.txt
+    WordPress Theme This Way - 'upload_settings_i | php/webapps/38820.php
+    WordPress Theme Toolbox - 'mls' SQL Injection | php/webapps/38077.txt
+    WordPress Theme Trending 0.1 - 'cpage' Cross- | php/webapps/36195.txt
+    WordPress Theme Uncode 1.3.1 - Arbitrary File | php/webapps/39895.php
+    ...
+    ```  
 
 
 ## Authentication Bypass
