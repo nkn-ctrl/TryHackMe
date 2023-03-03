@@ -16,6 +16,20 @@
 |SMTPS|465|Email (MTA)|Encrypted|
 |Telnet|23|Remote Access|Cleartext|  
 
+### Telnet
+`telnet MACHINE_IP`  
+
+### Hypertext Transfer Protocol (HTTP)
+`telnet MACHINE_IP 23`  
+
+### File Transfer Protocol (FTP)
+`telnet MACHINE_IP 21`  
+
+### Simple Mail Transfer Protocol (SMTP)
+`telnet MACHINE_IP 25`  
+
+### Post Office Protocol 3 (POP3)
+
 ### Snifing Attack
 Sniffing attack refers to using a network packet capture tool to collect information about the target.   
 `sudo tcpdump port 110 -A`  
