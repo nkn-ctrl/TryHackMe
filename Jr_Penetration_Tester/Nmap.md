@@ -21,7 +21,7 @@
 |`-R`|reverse-DNS lookup for all hosts|
 |`-sn`|host discovery only|
 
-<p align="center">--- Nmap Basic Port Scans ---</p>  
+--- [Nmap Basic Port Scans](#nmap-basic-port-scans) ---  
 
 |Port Scan Type|Example Command|
 |:---:|----|
@@ -40,7 +40,7 @@
 |`--min-rate 15`|rate >= 15 packets/sec|
 |`--min-parallelism 100`|at least 100 probes in parallel|  
 
-<p align="center">--- Nmap Advanced Port Scans ---</p>  
+--- [Nmap Advanced Port Scans](#nmap-advanced-port-scans) ---  
 
 |Port Scan Type|Example Command|
 |:---:|----|
@@ -71,7 +71,7 @@
 |`-d`|debugging|
 |`-dd`|more details for debugging|  
 
-<p align="center">--- Nmap Post Port Scans ---</p>   
+--- [Nmap Post Port Scans](#nmap-post-port-scans) ---  
 
 |Option|Meaning|
 |:---:|----|
