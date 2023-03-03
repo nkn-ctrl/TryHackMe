@@ -20,15 +20,49 @@
 `telnet MACHINE_IP`  
 
 ### Hypertext Transfer Protocol (HTTP)
-`telnet MACHINE_IP 23`  
+`telnet MACHINE_IP 80`  
+1. First, we connect to port 80 using `telnet MACHINE_IP 80`.
+2. Next, we need to type `GET /index.html HTTP/1.1` to retrieve the page `index.html` or `GET / HTTP/1.1` to retrieve the default page.
+3. Finally, you need to provide some value for the host like `host: telnet` and hit the Enter/Return key twice.  
+```
+pentester@TryHackMe$ telnet MACHINE_IP 80
+Trying MACHINE_IP...
+Connected to MACHINE_IP.
+Escape character is '^]'.
+GET /index.html HTTP/1.1
+host: telnet
+
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Wed, 15 Sep 2021 08:56:20 GMT
+Content-Type: text/html
+....
+```
 
 ### File Transfer Protocol (FTP)
 `telnet MACHINE_IP 21`  
+1. We connected to an FTP server using a Telnet client. Since FTP servers listen on port 21 by default, we had to specify to our Telnet client to attempt connection to port 21 instead of the default Telnet port.
+2. We needed to provide the username with the command `USER frank`.
+3. Then, we provided the password with the command `PASS D2xc9CgD`.
+4. Because we supplied the correct username and password, we got logged in.  
+`STAT`: some added information  
+`SYST`: System Type of the target  
+`PASV`: switches the mode to passive.
+- Active: In the active mode, the data is sent over a separate channel originating from the FTP server’s port 20.
+- Passive: In the passive mode, the data is sent over a separate channel originating from an FTP client’s port above port number 1023.  
+`TYPE A`: switches the file transfer mode to ASCII  
+`TYPE I`: switches the file transfer mode to binary  
+
+
 
 ### Simple Mail Transfer Protocol (SMTP)
 `telnet MACHINE_IP 25`  
 
 ### Post Office Protocol 3 (POP3)
+`telnet MACHINE_IP 110`  
+
+### Internet Message Access Protocol (IMAP)
+`telnet MACHINE_IP 143`  
 
 ### Snifing Attack
 Sniffing attack refers to using a network packet capture tool to collect information about the target.   
