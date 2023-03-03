@@ -83,10 +83,35 @@ File may not have transferred correctly.
 4006 bytes received in 0.000269 secs (14892.19 Kbytes/sec)
 ftp> exit
 221 Goodbye.
-```
+```  
 
 ### Simple Mail Transfer Protocol (SMTP)
 `telnet MACHINE_IP 25`  
+Once connected, we issue `helo hostname` and then start typing our email.  
+```
+pentester@TryHackMe$ telnet MACHINE_IP 25
+Trying MACHINE_IP...
+Connected to MACHINE_IP.
+Escape character is '^]'.
+220 bento.localdomain ESMTP Postfix (Ubuntu)
+helo telnet
+250 bento.localdomain
+mail from: 
+250 2.1.0 Ok
+rcpt to: 
+250 2.1.5 Ok
+data
+354 End data with .
+subject: Sending email with Telnet
+Hello Frank,
+I am just writing to say hi!             
+.
+250 2.0.0 Ok: queued as C3E7F45F06
+quit
+221 2.0.0 Bye
+Connection closed by foreign host.
+```  
+After `helo`, we issue `mail from:`, `rcpt to:` to indicate the sender and the recipient. When we send our email message, we issue the command `data` and type our message. We issue `<CR><LF>.<CR><LF>` (or `Enter . Enter` to put it in simpler terms). The SMTP server now queues the message.
 
 ### Post Office Protocol 3 (POP3)
 `telnet MACHINE_IP 110`  
