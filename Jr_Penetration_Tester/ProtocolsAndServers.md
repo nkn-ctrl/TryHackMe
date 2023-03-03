@@ -19,4 +19,11 @@ Any time you browse over HTTP, you are susceptible to a MITM attack, and the sca
 `scp backup.tar.bz2 mark@10.10.105.149:/home/mark/`  
 
 ### Password Attack  
+`/usr/share/wordlists/rockyou.txt`: wordlist  
+Hydra supports many protocols, including FTP, POP3, IMAP, SMTP, SSH, and all methods related to HTTP.  
+`hydra -l username -P wordlist.txt server service`  
+- `-l username`: `-l` should precede the `username`, i.e. the login name of the target.
+- `-P wordlist.txt`: `-P` precedes the `wordlist.txt` file, which is a text file containing the list of passwords you want to try with the provided username.
+- `server` is the hostname or IP address of the target server.
+- `service` indicates the service which you are trying to launch the dictionary attack.
 
