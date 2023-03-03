@@ -27,7 +27,7 @@ Hydra supports many protocols, including FTP, POP3, IMAP, SMTP, SSH, and all met
 - `server` is the hostname or IP address of the target server.
 - `service` indicates the service which you are trying to launch the dictionary attack.  
 
-examples:  
+examples:
 - `hydra -l mark -P /usr/share/wordlists/rockyou.txt 10.10.105.149 ftp` will use `mark` as the username as it iterates over the provided passwords against the FTP server.
 - `hydra -l mark -P /usr/share/wordlists/rockyou.txt ftp://10.10.105.149` is identical to the previous example. `10.10.105.149 ftp` is the same as `ftp://10.10.105.149`.
 - `hydra -l frank -P /usr/share/wordlists/rockyou.txt 10.10.105.149 ssh` will use `frank` as the user name as it tries to login via SSH using the different passwords.  
