@@ -1,5 +1,21 @@
 # Protocols and Servers
 
+|Protocol|TCP Port|Application(s)|Data Security|
+|:----:|:----:|:----:|:----:|
+|FTP|21|File Transfer|Cleartext|
+|FTPS|990|File Transfer|Encrypted|
+|HTTP|80|Worldwide Web|Cleartext|
+|HTTPS|443|Worldwide Web|Encrypted|
+|IMAP|143|Email (MDA)|Cleartext|
+|IMAPS|993|Email (MDA)|Encrypted|
+|POP3|110|Email (MDA)|Cleartext|
+|POP3S|995|Email (MDA)|Encrypted|
+|SFTP|22|File Transfer|Encrypted|
+|SSH|22|Remote Access and File Transfer|Encrypted|
+|SMTP|25|Email (MTA)|Cleartext|
+|SMTPS|465|Email (MTA)|Encrypted|
+|Telnet|23|Remote Access|Cleartext|  
+
 ### Snifing Attack
 Sniffing attack refers to using a network packet capture tool to collect information about the target.   
 `sudo tcpdump port 110 -A`  
@@ -33,7 +49,10 @@ examples:
 - `hydra -l frank -P /usr/share/wordlists/rockyou.txt 10.10.105.149 ssh` will use `frank` as the user name as it tries to login via SSH using the different passwords.  
 
 optional arguments:  
-
+- `-s PORT` to specify a non-default port for the service in question.
+- `-V` or `-vV`, for verbose, makes Hydra show the username and password combinations that are being tried. This verbosity is very convenient to see the progress, especially if you are still not confident of your command-line syntax.
+- `-t n` where n is the number of parallel connections to the target. `-t 16` will create 16 threads used to connect to the target.
+- `-d`, for debugging, to get more detailed information about what’s going on. The debugging output can save you much frustration; for instance, if Hydra tries to connect to a closed port and timing out, `-d` will reveal this right away.
 
 
 
