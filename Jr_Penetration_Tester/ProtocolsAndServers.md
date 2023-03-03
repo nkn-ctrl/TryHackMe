@@ -52,8 +52,38 @@ Content-Type: text/html
 - Passive: In the passive mode, the data is sent over a separate channel originating from an FTP client’s port above port number 1023.  
 `TYPE A`: switches the file transfer mode to ASCII  
 `TYPE I`: switches the file transfer mode to binary  
+<br>
 
-
+`ftp MACHINE_IP`:  After logging in successfully, we get the FTP prompt, `ftp>`.  
+We used `ls` to list the files and learn the file name; then, we switched to `ascii` since it is a text file (not binary). Finally, `get FILENAME` made the client and server establish another channel for file transfer.  
+```
+pentester@TryHackMe$ ftp MACHINE_IP
+Connected to MACHINE_IP.
+220 (vsFTPd 3.0.3)
+Name: frank
+331 Please specify the password.
+Password: D2xc9CgD
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> ls
+227 Entering Passive Mode (10,20,30,148,201,180).
+150 Here comes the directory listing.
+-rw-rw-r--    1 1001     1001         4006 Sep 15 10:27 README.txt
+226 Directory send OK.
+ftp> ascii
+200 Switching to ASCII mode.
+ftp> get README.txt
+local: README.txt remote: README.txt
+227 Entering Passive Mode (10,10,0,148,125,55).
+150 Opening BINARY mode data connection for README.txt (4006 bytes).
+WARNING! 9 bare linefeeds received in ASCII mode
+File may not have transferred correctly.
+226 Transfer complete.
+4006 bytes received in 0.000269 secs (14892.19 Kbytes/sec)
+ftp> exit
+221 Goodbye.
+```
 
 ### Simple Mail Transfer Protocol (SMTP)
 `telnet MACHINE_IP 25`  
