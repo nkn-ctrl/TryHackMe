@@ -1,5 +1,9 @@
 # Vulnerability
 
+### Vulnerability Database
+1. [NVD (National Vulnerability Database)](https://nvd.nist.gov/vuln/full-listing)
+2. [Exploit DB](https://www.exploit-db.com/)
+
 ## Authentication Bypass
 ### Username Enumeration
 ```
