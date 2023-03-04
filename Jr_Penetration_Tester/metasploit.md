@@ -406,6 +406,7 @@ Core Commands
     close                     Closes a channel[...]
 ```  
 - Core Commands  
+
 |command|Description|
 |:-----:|-----------|
 |`background`| Backgrounds the current session|
@@ -417,8 +418,9 @@ Core Commands
 |`load`| Loads one or more Meterpreter extensions|
 |`migrate`| Allows you to migrate Meterpreter to another process|
 |`run`| Executes a Meterpreter script or Post module|
-|`sessions`| Quickly switch to another session|
+|`sessions`| Quickly switch to another session|  
 
+- File system commands  
 
 |command|Description|
 |:-----:|-----------|
@@ -430,7 +432,9 @@ Core Commands
 |`rm`| Will delete the specified file|
 |`search`| Will search for files|
 |`upload`| Will upload a file or directory|
-|`download`| Will download a file or directory|
+|`download`| Will download a file or directory|  
+
+- Networking commands
 
 |command|Description|
 |:-----:|-----------|
@@ -438,7 +442,9 @@ Core Commands
 |`ifconfig`| Displays network interfaces available on the target system|
 |`netstat`| Displays the network connections|
 |`portfwd`| Forwards a local port to a remote service|
-|`route`| Allows you to view and modify the routing table|
+|`route`| Allows you to view and modify the routing table|  
+
+- System commands
 
 |command|Description|
 |:-----:|-----------|
@@ -452,7 +458,9 @@ Core Commands
 |`reboot`| Reboots the remote computer|
 |`shell`| Drops into a system command shell|
 |`shutdown`| Shuts down the remote computer|
-|`sysinfo`| Gets information about the remote system, such as OS|
+|`sysinfo`| Gets information about the remote system, such as OS|  
+
+- Others Commands (these will be listed under different menu categories in the help menu)  
 
 |command|Description|
 |:-----:|-----------|
