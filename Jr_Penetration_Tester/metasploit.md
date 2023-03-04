@@ -241,6 +241,21 @@ msf6 exploit(windows/smb/ms17_010_eternalblue) > set payload 2
 payload => generic/shell_reverse_tcp
 ```
 
+### Msfvenom  
+Msfvenom, which replaced Msfpayload and Msfencode, allows you to generate payloads.  
+```
+root@ip-10-10-186-44:~# msfvenom -l payloads 
+
+Framework Payloads (562 total) [--payload ]
+==================================================
+
+    Name                                                Description
+    ----                                                -----------
+    aix/ppc/shell_bind_tcp                              Listen for a connection and spawn a command shell
+    aix/ppc/shell_find_port                             Spawn a shell on an established connection
+    aix/ppc/shell_interact                              Simply execve /bin/sh (for inetd programs)
+```  
+
 
 
 
