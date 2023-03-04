@@ -212,6 +212,14 @@ host          port  proto  name         state  info
 ----          ----  -----  ----         -----  ----                                                                              
 10.10.12.229  139   tcp    netbios-ssn  open   Microsoft Windows netbios-ssn
 ```  
+Low-hanging fruits:  
+|Query|description|
+|:----:|----------|
+|HTTP|Could potentially host a web application where you can find vulnerabilities like SQL injection or Remote Code Execution (RCE). |
+|FTP|Could allow anonymous login and provide access to interesting files. |
+|SMB|Could be vulnerable to SMB exploits like MS17-010|
+|SSH|Could have default or easy to guess credentials|
+|RDP|Could be vulnerable to Bluekeep or allow desktop access if weak credentials were used. |  
 
 
 
