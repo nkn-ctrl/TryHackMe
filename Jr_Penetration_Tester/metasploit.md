@@ -86,6 +86,33 @@ Flushing datastore...
 `exploit`: launch the module  
 `run`: alias created for the `exploit` command as the word exploit did not make sense when using modules that were not exploits (port scanners, vulnerability scanners, etc.)  
 `-z`: background the session as soon as it opens  
+`-check`: check if the target system is vulnerable without exploiting it  
+
+#### Sessions
+`background`: background the session prompt and go back to the msfconsole prompt  
+```
+meterpreter > background
+[*] Backgrounding session 2...
+msf5 exploit(windows/smb/ms17_010_eternalblue) > 
+```  
+`sessions`: To see the existing sessions  
+`-i`: To interact with any session  
+```
+msf5 > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                     Information                   Connection
+  --  ----  ----                     -----------                   ----------
+  1         meterpreter x64/windows  NT AUTHORITY\SYSTEM @ JON-PC  10.10.44.70:4444 -> 10.10.12.229:49163 (10.10.12.229)
+  2         meterpreter x64/windows  NT AUTHORITY\SYSTEM @ JON-PC  10.10.44.70:4444 -> 10.10.12.229:49186 (10.10.12.229)
+
+msf5 > sessions -i 2
+[*] Starting interaction with 2...
+
+meterpreter >
+```  
 
 
 
