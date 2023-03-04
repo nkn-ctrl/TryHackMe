@@ -49,6 +49,9 @@ Matching Modules
 ```  
 You can use any module returned in a search result with the command use followed by the number at the beginning of the result line. (e.g. `use 0` instead of `use auxiliary/admin/smb/ms17_010_command`)  
 
+<img src="https://user-images.githubusercontent.com/73976100/222870889-cbb16361-7699-4ef4-be9b-bbef1479dd61.png" width="600">  
+
+
 
 
 
