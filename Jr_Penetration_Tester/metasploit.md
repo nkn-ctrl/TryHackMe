@@ -150,6 +150,46 @@ root@attackbox:~# msfdb init
 [+] Creating initial database schema
 /usr/share/metasploit-framework/vendor/bundle/ruby/2.7.0/gems/activerecord-4.2.11.3/lib/active_record/connection_adapters/abstract_adapter.rb:84: warning: deprecated Object#=~ is called on Integer; it always returns nil
 ```  
+`db_status`: check the database status  
+`workspace`: create workspaces  
+`-a`: add a workspace, `-d`: delete a workspace  
+```
+msf6 > workspace -a tryhackme
+[*] Added workspace: tryhackme
+[*] Workspace: tryhackme
+msf5 > workspace
+default
+* tryhackme
+msf6 >
+```  
+`workspace -h`  
+`help`: show the Database Backends Commands menu  
+If you run a Nmap scan using the `db_nmap` shown below, all results will be saved to the database.   
+```
+msf6 > db_nmap -sV -p- 10.10.12.229
+[*] Nmap: Starting Nmap 7.80 ( https://nmap.org ) at 2021-08-20 03:15 UTC
+```  
+You can now reach information relevant to hosts and services running on target systems with the `hosts` and `services` commands, respectively.   
+```
+msf6 > hosts
+Hosts
+=====
+
+address       mac                name                                        os_name  os_flavor  os_sp  purpose  info  comments
+-------       ---                ----                                        -------  ---------  -----  -------  ----  --------
+10.10.12.229  02:ce:59:27:c8:e3  ip-10-10-12-229.eu-west-1.compute.internal  Unknown                    device         
+
+msf6 > services
+Services
+========
+
+host          port   proto  name               state  info
+----          ----   -----  ----               -----  ----
+10.10.12.229  135    tcp    msrpc              open   Microsoft Windows RPC
+10.10.12.229  139    tcp    netbios-ssn        open   Microsoft Windows netbios-ssn
+10.10.12.229  445    tcp    microsoft-ds       open   Microsoft Windows 7 - 10 microsoft-ds workgroup: WORKGROUP
+```  
+
 
 
 
