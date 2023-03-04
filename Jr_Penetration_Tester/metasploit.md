@@ -189,6 +189,28 @@ host          port   proto  name               state  info
 10.10.12.229  139    tcp    netbios-ssn        open   Microsoft Windows netbios-ssn
 10.10.12.229  445    tcp    microsoft-ds       open   Microsoft Windows 7 - 10 microsoft-ds workgroup: WORKGROUP
 ```  
+Once the host information is stored in the database, you can use the `hosts -R` command to add this value to the RHOSTS parameter.   
+<br>  
+
+In a typical penetration testing engagement, we could have the following scenario:  
+1. Finding available hosts using the `db_nmap` command
+2. Scanning these for further vulnerabilities or open ports (using a port scanning module) 
+<br>  
+
+Example Workflow
+1. We will use the vulnerability scanning module that finds potential MS17-010 vulnerabilities with the `use auxiliary/scanner/smb/smb_ms17_010` command.
+2. We set the RHOSTS value using `hosts -R`.
+3. We have typed `show options` to check if all values were assigned correctly.
+4. Once all parameters are set, we launch the exploit using the `run` or `exploit` command.  
+The services command used with the `-S` parameter will allow you to search for specific services in the environment.  
+```
+msf6 > services -S netbios                
+Services                          
+========                           
+host          port  proto  name         state  info                                                                              
+----          ----  -----  ----         -----  ----                                                                              
+10.10.12.229  139   tcp    netbios-ssn  open   Microsoft Windows netbios-ssn
+```  
 
 
 
