@@ -27,7 +27,30 @@
 msf6 > use exploit/windows/smb/ms17_010_eternalblue 
 [*] No payload configured, defaulting to windows/x64/meterpreter/reverse_tcp
 msf6 exploit(windows/smb/ms17_010_eternalblue) >
+```  
+`show options`: show context set  
+`show payloads`: show  list available modules in the context
+`back`: leave the context  
+`info`: information in the context (`info exploit/windows/smb/ms17_010_eternalblue`)  
+<br>  
+
+`search`  
 ```
+msf6 > search ms17-010
+
+Matching Modules
+================
+
+   #  Name                                      Disclosure Date  Rank     Check  Description
+   -  ----                                      ---------------  ----     -----  -----------
+   0  auxiliary/admin/smb/ms17_010_command      2017-03-14       normal   No     MS17-010 EternalRomance/EternalSynergy/EternalChampion SMB Remote Windows Command Execution
+   1  auxiliary/scanner/smb/smb_ms17_010                         normal   No     MS17-010 SMB RCE Detection
+   2  exploit/windows/smb/ms17_010_eternalblue  2017-03-14       average  Yes    MS17-
+```  
+
+
+
+
 
 
 
