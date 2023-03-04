@@ -321,7 +321,7 @@ Just read the content, all you’ll get everything you want to answer the questi
 
 ssh murphy@[MACHINE IP]
 
-sudo su
+`sudo su`
 
 #2 Create a meterpreter payload in the .elf format.
 
