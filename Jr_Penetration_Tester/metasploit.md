@@ -51,6 +51,9 @@ You can use any module returned in a search result with the command use followed
 
 <img src="https://user-images.githubusercontent.com/73976100/222870889-cbb16361-7699-4ef4-be9b-bbef1479dd61.png" width="800">  
 
+You can direct the search function using keywords such as type and platform.  
+`search type:auxiliary telnet`  
+`search rank:excellent telnet`  
 
 
 
