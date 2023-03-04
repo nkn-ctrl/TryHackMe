@@ -117,6 +117,41 @@ meterpreter >
 ## Exploitation  
 ### Scanning  
 #### Port Scanning  
+`search porscan`  
+You can directly perform Nmap scans from the msfconsole prompt as shown below faster:  
+```
+msf6 > nmap -sS 10.10.12.229
+[*] exec: nmap -sS 10.10.12.229
+
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-20 03:54 BST
+```  
+
+#### UDP service Identification  
+`scanner/discovery/udp_sweep`: provide a quick way to identify services such as DNS or NetBIOS  
+
+#### SMB Scans  
+Especially useful in a corporate network would be `smb_enumshares` and `smb_version` but please spend some time to identify scanners that the Metasploit version installed on your system offers.  
+When performing service scans, it would be important not to omit more "exotic" services such as NetBIOS. NetBIOS (Network Basic Input Output System), similar to SMB, allows computers to communicate over the network to share files or send files to printers.   
+`scanner/smb/smb_login`: scan user's SMB password  
+
+### The Metasploit Database
+Metasploit has a database function to simplify project management and avoid possible confusion when setting up parameter values.   
+`systemctl start postgresql`  
+`msfdb init`
+```
+root@attackbox:~# systemctl start postgresql 
+root@attackbox:~# msfdb init
+[i] Database already started
+[+] Creating database user 'msf'
+[+] Creating databases 'msf'
+[+] Creating databases 'msf_test'
+[+] Creating configuration file '/usr/share/metasploit-framework/config/database.yml'
+[+] Creating initial database schema
+/usr/share/metasploit-framework/vendor/bundle/ruby/2.7.0/gems/activerecord-4.2.11.3/lib/active_record/connection_adapters/abstract_adapter.rb:84: warning: deprecated Object#=~ is called on Integer; it always returns nil
+```  
+
+
 
 
 
