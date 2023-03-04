@@ -377,6 +377,12 @@ $6$Sy0NNIXw$SJ27WltHI89hwM5UxqVGiXidj94QFRm2Ynp9p9kxgVbjrmtMez9EqXoDWtcQd8rf0tjc
 
 </summary>
 
+## Meterpreter
+- Run on the target system and act as an agent within a C&C architecture.   
+- Run in tagrget machine memory and does not write itself to the disk (antivirus software evasion).   
+- Avoid being detected by network-based IPS and IDS by using encrypted communication.
+- Process(PID) is not shown as "meterpreter.exe", e.g. it's shown as "spoolsv.exe". DLLs(e.g. meterpreter.dll) isn't also shown.  
+   
 
 
 
