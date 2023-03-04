@@ -374,7 +374,7 @@ You got the meterpreter reverse shell in your machine ;)
 #5 What is the other user’s password hash?
 
 $6$Sy0NNIXw$SJ27WltHI89hwM5UxqVGiXidj94QFRm2Ynp9p9kxgVbjrmtMez9EqXoDWtcQd8rf0tjc77hBFbWxjGmQCTbep0
-</detail>
+</details>
 
 
 ## Meterpreter
