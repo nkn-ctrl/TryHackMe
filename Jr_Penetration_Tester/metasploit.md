@@ -22,6 +22,8 @@
     - Stages: Downloaded by the stager. This will allow you to use larger sized payloads.
 - Post: Post modules will be useful on the final stage of the penetration testing process listed above, post-exploitation.  
 
+### Msfconsole
+
 `use`  
 ```
 msf6 > use exploit/windows/smb/ms17_010_eternalblue 
@@ -71,6 +73,20 @@ Parameters:
 - LHOST: “Localhost”, the attacking machine (your AttackBox or Kali Linux) IP address.
 - LPORT: “Local port”, the port you will use for the reverse shell to connect back to. This is a port on your attacking machine, and you can set it to any port not used by any other application.
 - SESSION: Each connection established to the target system using Metasploit will have a session ID. You will use this with post-exploitation modules that will connect to the target system using an existing connection.  
+
+`unset`: clear any parameters  
+```
+msf5 exploit(windows/smb/ms17_010_eternalblue) > unset all
+Flushing datastore...
+```  
+
+`setg` and `unsetg`: set (unset) values that will be used for all modules  
+
+#### Using modules  
+`exploit`: launch the module  
+`run`: alias created for the `exploit` command as the word exploit did not make sense when using modules that were not exploits (port scanners, vulnerability scanners, etc.)  
+`-z`: background the session as soon as it opens  
+
 
 
 
