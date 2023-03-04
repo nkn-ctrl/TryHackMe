@@ -54,7 +54,18 @@ You can use any module returned in a search result with the command use followed
 You can direct the search function using keywords such as type and platform.  
 `search type:auxiliary telnet`  
 `search rank:excellent telnet`  
+<br>  
 
+`set PARAMETER_NAME VALUE`: All parameters are set using the same command  
+
+```
+msf5 exploit(windows/smb/ms17_010_eternalblue) > set rhosts 10.10.165.39
+rhosts => 10.10.165.39
+```  
+
+Parameters:  
+- RHOSTS: “Remote host”, the IP address of the target system. A single IP address or a network range can be set. CIDR (/24, /16, etc.) or a network range (10.10.10.x – 10.10.10.y) support.  list support. file:/path/of/the/target_file.txt  
+    <img src="https://user-images.githubusercontent.com/73976100/222873145-dcde2b37-2cdb-43a2-8757-ee2bc80c5e43.png" width="600">  
 
 
 
