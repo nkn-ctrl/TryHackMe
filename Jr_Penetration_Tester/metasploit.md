@@ -221,6 +221,22 @@ Low-hanging fruits:
 |SSH|Could have default or easy to guess credentials|
 |RDP|Could be vulnerable to Bluekeep or allow desktop access if weak credentials were used. |  
 
+### Exploit
+`show payloads` command to list other commands you can use with that specific exploit.  
+```
+msf6 exploit(windows/smb/ms17_010_eternalblue) > show payloads 
+
+Compatible Payloads
+===================
+
+   #   Name                                        Disclosure Date  Rank    Check  Description
+   -   ----                                        ---------------  ----    -----  -----------
+   0   generic/custom                                               manual  No     Custom Payload
+   1   generic/shell_bind_tcp                                       manual  No     Generic Command Shell, Bind TCP Inline
+   2   generic/shell_reverse_tcp                                    manual  No     Generic Command Shell, Reverse TCP Inline
+```  
+
+
 
 
 
