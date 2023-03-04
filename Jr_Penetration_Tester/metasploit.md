@@ -22,6 +22,12 @@
     - Stages: Downloaded by the stager. This will allow you to use larger sized payloads.
 - Post: Post modules will be useful on the final stage of the penetration testing process listed above, post-exploitation.  
 
+`use`  
+```
+msf6 > use exploit/windows/smb/ms17_010_eternalblue 
+[*] No payload configured, defaulting to windows/x64/meterpreter/reverse_tcp
+msf6 exploit(windows/smb/ms17_010_eternalblue) >
+```
 
 
 
