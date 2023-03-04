@@ -405,7 +405,8 @@ Core Commands
     channel                   Displays information or control active channels
     close                     Closes a channel[...]
 ```  
-- Core Commands
+- Core Commands  
+
 |command|Description|
 |:-----:|-----------|
 |`background`| Backgrounds the current session|
