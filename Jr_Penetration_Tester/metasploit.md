@@ -202,6 +202,7 @@ Example Workflow
 2. We set the RHOSTS value using `hosts -R`.
 3. We have typed `show options` to check if all values were assigned correctly.
 4. Once all parameters are set, we launch the exploit using the `run` or `exploit` command.  
+
 The services command used with the `-S` parameter will allow you to search for specific services in the environment.  
 ```
 msf6 > services -S netbios                
