@@ -47,6 +47,7 @@ Matching Modules
    1  auxiliary/scanner/smb/smb_ms17_010                         normal   No     MS17-010 SMB RCE Detection
    2  exploit/windows/smb/ms17_010_eternalblue  2017-03-14       average  Yes    MS17-
 ```  
+You can use any module returned in a search result with the command use followed by the number at the beginning of the result line. (e.g. `use 0` instead of `use auxiliary/admin/smb/ms17_010_command`)  
 
 
 
