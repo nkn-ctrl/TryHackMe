@@ -1,7 +1,5 @@
 # TryHackMe Summary & Cheet Sheet  
 
-<script src="https://tryhackme.com/badge/1518826"></script>  
-
 ## Cyber Defense
 ### Cyber Defense Intro
 - [Active Directory Basics](https://github.com/nkn-ctrl/TryHackMe/blob/main/Cyber_Defense/Active_Directory.md)
