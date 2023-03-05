@@ -11,7 +11,6 @@
 
 ### Netcat  
 *Reverse Shells*  
-<br>
 
 `nc -lvnp <port-number>`: starting a netcat listener  
 `-l` is used to tell netcat that this will be a listener  
