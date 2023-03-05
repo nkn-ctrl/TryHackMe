@@ -478,6 +478,14 @@ Core Commands
 |`getsystem`| Attempts to elevate your privilege to that of local system|
 |`hashdump`| Dumps the contents of the SAM database|
 
+### Post-Exploitation with Meterpreter  
+`help`: list of all available commands in Meterpreter  
+`getuid`: display the user with which Meterpreter is currently running  
+```
+meterpreter > getuid
+Server username: NT AUTHORITY\SYSTEM
+meterpreter >
+```
 
 
 
