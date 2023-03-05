@@ -112,6 +112,7 @@ This will take a GET parameter in the URL and execute it on the system with shel
 <img src="https://user-images.githubusercontent.com/73976100/222945750-dac50e93-affe-4e85-96b6-c223ae5689d4.png" width="600">  
 
 [PentestMonkey php-reverse-shell](https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php)  
+`/usr/share/webshells/php/php-reverse-shell.php`: in kali  
 
 When the target is Windows, it is often easiest to obtain RCE using a web shell, or by using msfvenom to generate a reverse/bind shell in the language of the server. With the former method, obtaining RCE is often done with a URL Encoded Powershell Reverse Shell. This would be copied into the URL as the `cmd` argument:  
 ```
