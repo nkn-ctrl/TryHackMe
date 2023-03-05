@@ -40,3 +40,6 @@
 
 ### Metasploit
 - [Metasploit](https://github.com/nkn-ctrl/TryHackMe/blob/main/Jr_Penetration_Tester/metasploit.md)  
+
+### Privilege Escalation  
+- [Shell](https://github.com/nkn-ctrl/TryHackMe/blob/main/Jr_Penetration_Tester/PrivillegeEscalation.md)
