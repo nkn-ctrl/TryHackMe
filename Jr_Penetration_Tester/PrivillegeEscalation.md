@@ -77,4 +77,5 @@ right: compromised target
 - sane, stabilises the terminal, attempting to "normalise" it.
 </details>
 
-
+### Socat Encrypted Shells  
+`openssl req --newkey rsa:2048 -nodes -keyout shell.key -x509 -days 362 -out shell.crt`: generate a certificate (on an attacking machine is easy)  
