@@ -1,4 +1,6 @@
-# TryHackMe Summary & Cheet Sheet
+# TryHackMe Summary & Cheet Sheet  
+
+<script src="https://tryhackme.com/badge/1518826"></script>  
 
 ## Cyber Defense
 ### Cyber Defense Intro
