@@ -159,6 +159,14 @@ Endpoint Detection and Response (EDR): monitor endpoint devices (laptops, server
 
 Security Information and Event Management (SIEM): collect, correlate, and analyze system logs in order to identify potential threats and provide threat intelligence.
 
+Network Access Control (NAC): monitor network access and ensure that only authorized devices and users have network access.
+
+Sandboxing: simulate the execution of suspicious files in a controlled environment where their behavior can be studied.
+
+Behavioral Analytics: use machine learning algorithms to detect anomalies in network or device usage.
+
+Cloud Security Solutions: specifically designed to monitor and protect cloud-based infrastructure and services.
+
 
 
 
