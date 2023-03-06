@@ -139,3 +139,8 @@ Ideally on Windows you would obtain a shell running as the SYSTEM user, or an ad
     - TTY: Terminal type used by the user
     - Time: Amount of CPU time used by the process (this is NOT the time this process has been running for)
     - CMD: The command or executable running (will NOT display any command line parameter)  
+    - `ps -A`: view all running processes
+    - `ps axjf`: view process tree 
+    - `ps aux`: show processes for all users (a), display the user that launched the process (u), and show processes that are not attached to a terminal (x)  
+ 
+
