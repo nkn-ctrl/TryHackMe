@@ -147,16 +147,16 @@ accessing files on an administrator file share? How could we detect this?
 • We skimmed the surface of properly baselining our network, but the idea is that we need to ensure that we have a firm understanding of our network environment (“Threat Hunting Ground”). Our goal is to understand our environment so we can make it as difficult as possible for an adversary to move in, and ensure we rapidly respond if they do.
 
 ### Examples of Hunting Grounds
-Utility company
-• Includes control systems and SCADA systems, as well as any external networks that interact with company assets.
-• Any third-party vendors’ systems would also be considered a part of the hunting grounds.
-Automobile manufacturer
-• Includes plants used to build automobiles, as well as any other vehicles or stores used to transport and sell cars once they have been built.
-• Public-facing websites used to advertise or sell vehicles could also be a way for attackers to exploit the system.
-Shipping company
-• Includes vessels used to transport goods, as well as any communications or navigation systems used to monitor and track those goods during transit.
-Hospital
-• Includes hospital networks and equipment, as well as any vendors responsible for providing data management and record-keeping capabilities.
+Utility company  
+• Includes control systems and SCADA systems, as well as any external networks that interact with company assets.  
+• Any third-party vendors’ systems would also be considered a part of the hunting grounds.  
+Automobile manufacturer  
+• Includes plants used to build automobiles, as well as any other vehicles or stores used to transport and sell cars once they have been built.  
+• Public-facing websites used to advertise or sell vehicles could also be a way for attackers to exploit the system.  
+Shipping company  
+• Includes vessels used to transport goods, as well as any communications or navigation systems used to monitor and track those goods during transit.  
+Hospital  
+• Includes hospital networks and equipment, as well as any vendors responsible for providing data management and record-keeping capabilities.  
 
 
 
