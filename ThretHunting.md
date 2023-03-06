@@ -147,8 +147,17 @@ Shipping company
 Hospital  
 • Includes hospital networks and equipment, as well as any vendors responsible for providing data management and record-keeping capabilities.  
 
+## Network Security Monitoring
+Network Security Monitoring helps to detect and respond to cyber threats by continuously monitoring network traffic and identifying abnormal or suspicious activity.
 
+### Types of Network Monitoring Tools
+Network Intrusion Detection Systems (NIDS): used to monitor network traffic and detect any suspicious activity.
 
+Network Intrusion Prevention Systems (NIPS): similar to NIDS, except these are capable of responding to and preventing these threats from continuing.
+
+Endpoint Detection and Response (EDR): monitor endpoint devices (laptops, servers, phones, etc.) for suspicious activity and can respond to threats in real time.
+
+Security Information and Event Management (SIEM): collect, correlate, and analyze system logs in order to identify potential threats and provide threat intelligence.
 
 
 
