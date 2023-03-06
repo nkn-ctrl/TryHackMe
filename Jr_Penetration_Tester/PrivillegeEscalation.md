@@ -127,3 +127,12 @@ On Windows the options are often more limited. It's sometimes possible to find p
 Ideally on Windows you would obtain a shell running as the SYSTEM user, or an administrator account running with high privileges.  
 `net user <username> <password> /add`  
 `net localgroup administrators <username> /add`  
+
+## Linux Privilege Escalation
+### Enumeration
+- `hostname`: return the hostname of the target machine  
+- `uname -a`: print system more information about the kernel
+- `/proc/version`: provides information about the target system processes
+- `etc/issue`: contains some information about the operating system  
+- `ps`: see the running processes  
+- 
