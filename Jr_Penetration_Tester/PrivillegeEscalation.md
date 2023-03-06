@@ -133,6 +133,9 @@ Ideally on Windows you would obtain a shell running as the SYSTEM user, or an ad
 - `hostname`: return the hostname of the target machine  
 - `uname -a`: print system more information about the kernel
 - `/proc/version`: provides information about the target system processes
-- `etc/issue`: contains some information about the operating system  
+- `/etc/issue`: contains some information about the operating system  
 - `ps`: see the running processes  
-- 
+    - PID: The process ID (unique to the process)
+    - TTY: Terminal type used by the user
+    - Time: Amount of CPU time used by the process (this is NOT the time this process has been running for)
+    - CMD: The command or executable running (will NOT display any command line parameter)  
