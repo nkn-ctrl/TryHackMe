@@ -439,5 +439,6 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
     - Logs can help catch exploitation and can be useful in determining exploitation method after the intrusion is detected
 - Make sure systems are patched and hardened
 
+### Cyber Kill Chain – Phase 5
 
 
