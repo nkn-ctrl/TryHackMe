@@ -353,8 +353,7 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 - At the end of today, we have a very good example of phishing!
 - Mitigations:
     - Antivirus, Antimalware
-    - NIDS – used to detect malicious attachments or links as they traverse the 
-    - network
+    - NIDS – used to detect malicious attachments or links as they traverse the network
     - Restrict web-based content – block internet downloads or email attachments of certain file types
     - User training
 - Detection:
