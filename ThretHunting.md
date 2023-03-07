@@ -569,6 +569,7 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 - Attacker will escalate privileges if possible – watch for unusual login activity (failed logins, unusual time of day, unusual account used)
 
 ### Cyber Kill Chain – Phase 6
+[C2Matrix](https://www.thec2matrix.com/)
 **Command and Control (C2)**
 - C2 server is established
     - Target is sending callbacks to C2 server
@@ -615,6 +616,24 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
     - If it appears malicious, what can you learn about the end device? (WHOIS, certificate)
     - Is there traffic to other external devices that is similar?
 - Reducing the number of ways in or out of the network will make monitoring external traffic easier.
+
+### Cyber Kill Chain – Phase 7
+**Actions on Objectives**
+
+Threat actor works to achieve the objective of the intrusion on target.
+Exfiltration of data
+Destruction of data
+Long-term reconnaissance and intelligence gathering
+Movement to additional target(s)
+
+The phases of the Cyber Kill Chain are used to determine and analyze a threat actor’s overall Tactics, Techniques, and Procedures (TTPs) for cyber operations. 
+
+
+
+
+
+
+
 
 
 
