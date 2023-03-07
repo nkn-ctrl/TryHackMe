@@ -283,6 +283,8 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 
 </details>
 
+### Cyber Kill Chain – Phase 3
+
 #### Phase 3: Delivery – Attacker’s Perspective
 - Launch the attack
     - Attacker controlled delivery: 
