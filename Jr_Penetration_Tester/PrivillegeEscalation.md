@@ -148,7 +148,7 @@ Ideally on Windows you would obtain a shell running as the SYSTEM user, or an ad
 - `ls`: `ls -als`  
 - `id`: provide a general overview of the user’s privilege level and group memberships  
 - `/etc/passwd`: an easy way to discover users on the system  
-    <img src="https://user-images.githubusercontent.com/73976100/223573778-7e2a8118-3445-468f-b1b6-f661f6c7c548.png" width="600">  
+    <img src="https://user-images.githubusercontent.com/73976100/223573778-7e2a8118-3445-468f-b1b6-f661f6c7c548.png" width="400">  
     Remember that this will return all users, some of which are system or service users that would not be very useful. Another approach could be to grep for “home” as real users will most likely have their folders under the “home” directory.  
     `cat /etc/passwd | grep home`  
 - `history`: Looking at earlier commands  
