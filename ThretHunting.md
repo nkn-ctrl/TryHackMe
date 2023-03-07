@@ -431,6 +431,13 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
     - Malicious link in email
     - Office document macro
 
+#### Phase 4: Exploitation – Defender’s Perspective
+- Depending on the attack method being used, this portion can be noisy.
+    - May generate logs or require an unusually large amount of traffic on an uncommonly used port
+    - Better chance of detecting attacker in this phase
+- Review unusual log events and network traffic that does not match baseline
+    - Logs can help catch exploitation and can be useful in determining exploitation method after the intrusion is detected
+- Make sure systems are patched and hardened
 
 
 
