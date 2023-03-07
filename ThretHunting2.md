@@ -124,7 +124,26 @@ The example of permissions below would be explained as follows:
 | -|this is a regular file|
 |rw-|the Owner has read and write permissions|
 |r--|the Group has only read permissions|
-|r--|all users have ONLY read permissions|
+|r--|all users have ONLY read permissions|  
+
+To set permissions on a file or directory, the `chmod` command is used. Each permission is assigned a number:
+r = 4
+w = 2
+x = 1
+
+The number value is assigned for the owner, group, and all users per file. For example, a file with the value of `741` would be displayed as `-rwxr----x`.  
+The command for setting the value for the file above would be: `chmod 741 file1.txt`  
+
+The `setuid/setguid` permissions are used to tell the system to run an executable as the owner with the owner’s permissions.
+
+Be careful using `setuid/setgid` bits in permissions. If you incorrectly assign permissions to a file owned by root with the `setuid/setgid` bit set, then you can open your system to intrusion.
+
+You can only assign the `setuid/setgid` bit by explicitly defining permissions. The character for the `setuid/setguid` bit is `s`.
+
+To set the `setuid/setguid` bit on `file2.sh`, you would issue the command:`chmod g+s file2.sh`.   
+
+
+
 
 
 
