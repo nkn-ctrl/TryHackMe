@@ -290,6 +290,34 @@ Phishing, USB malware, malicious website
 
 What MITRE ATT&CK Tactic corresponds to the “Delivery” phase of the Cyber Kill Chain? 
 
+**Drive-by Compromise**
+Attacker gains access to the system via a user browsing to a website  
+- Legitimate website is compromised with malicious code: JavaScript, iFrame, cross-site scripting
+- Malicious advertisements
+- Use existing website functions to introduce attacker code: forum posts, comments, anything users can modify directly on the page
 
+Mitigations:  
+- Application Isolation and Sandboxing
+- Restrict web content – adblocker, script blocking extensions
+- Keep web browsers updated
+
+Detection:  
+- Firewalls, proxies, NIDS
+- On host – files written to disk, process injection indicators
+
+**Exploit Public-Facing Application**
+Attacker takes advantage of a weakness in Internet-facing computer/program using software, data, or commands to exploit a bug or misconfiguration to cause unintended behavior
+- SQL injection
+- Web server exploit
+
+Mitigations:  
+- Network Segmentation – keep servers isolated from internal network  
+- Account management – avoid having server applications running with root privileges
+- Application Isolation/Sandboxing
+- Update software  
+
+Detection:  
+- Web Application Firewalls can detect improper inputs
+- Application logs, deep packet inspection
 
 
