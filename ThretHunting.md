@@ -439,6 +439,121 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
     - Logs can help catch exploitation and can be useful in determining exploitation method after the intrusion is detected
 - Make sure systems are patched and hardened
 
+**Command and Scripting Interpreter**
+- Attacker uses a command line or shell to execute a command on target; can also utilize scripts with more advanced functionality or easier/faster execution 
+    - Windows command line, PowerShell
+    - Unix-based shells: Bash, Zsh, Korn, etc.
+    - Scripting languages: Python, Perl, JavaScript
+- Exploits are commonly designed to return a reverse shell from the victim to the attacker where commands typed into the attacker’s command line interface are run on the victim machine over an established network connection.
+- Many techniques for this!
+    - Web shell
+    - SQL injection
+    - Remote Desktop or VNC
+    - Reverse shell
+- Mitigations:
+    - Antivirus
+    - Code signing – only allow execution of signed executables
+    - Disable or remove shell access from users
+    - Application whitelisting – only allow certain commands to run
+- Detection:
+    - Log process execution and command line arguments
+        - Look for commands designed to learn information about the system 
+            - Files, processes, network connections, and commands that create or download files then execute them
+    - If scripts or command shell usage is restricted, monitor for attempts to utilize them
+
+**Exploitation for Client Execution**
+- Attacker exploits a vulnerability in an application running on the victim in order to obtain command execution.
+    - The more common the application, the better! Microsoft Office, Adobe, Web browsers, Operating Systems
+    - “Zero Day” exploit – exploit that is not yet known to the vendor or the security community
+- Example:
+    - Political dissidents in Hong Kong were sent phishing emails with Microsoft Word documents which had embedded exploit code – this code reached out to Dropbox using the Dropbox API to download and run the attackers backdoor program
+    - https://www.fireeye.com/blog/threat-research/2015/11/china-based-threat.html
+- Mitigations:
+    - Application Sandboxing – especially web browsers
+    - Keep software updated
+- Detection:
+    - Unusual network traffic, files written to disk, new process running
+
+**Inter-process Communication**
+- Attacker abuses IPC mechanisms for local code or command execution
+- IPC is typically used to share information between processes or synchronize execution
+- Two common IPC frameworks are COM (Component Object Model) and DDE (Dynamic Data Exchange)
+- This is frequently seen in attacks using Microsoft Office documents
+    - Microsoft Office documents were designed to share content and embed themselves in each other – a spreadsheet in a Word document, etc.
+    - This was accomplished using COM and DDE, but there are many other types of objects used by COM and DDE; you can also embed these objects in Office documents (for example, a script)
+
+**Inter-process Communication**
+- Mitigations:
+    - Application Sandboxing
+    - Windows 10 Attack Surface Reduction (ASR) – Microsoft Defender feature that prevents DDE attacks
+    - Registry keys to prevent Office programs from using DDE execution
+        - Enabled by default with recent Office patches
+    - General registry keys:
+        - `HKLM\\SOFTWARE\\Classes\\AppID\\{AppID_GUID}`
+        - `HKLM\\SOFTWARE\\Microsoft\\Ole`
+    - Keep Office software updated
+- Detection:
+    - Monitor the following sources for items associated with abuse of IPC:
+        - Strings in files/commands
+        - Loaded DLLs, libraries
+        - Spawned processes
+- Example:
+    - https://www.varonis.com/blog/adventures-malware-free-hacking-part-v/
+
+**Native API**
+- Operating Systems use APIs (Application Programming Interfaces) to easily expose OS functionality to other programs
+    - For example, Wine allows Windows programs to run in Linux by translating Windows API calls to Linux API calls
+    - Common Windows API functions to look for:
+        - CreateProcess – create a new process
+        - WinExec – run an executable
+        - LoadLibrary – load a DLL into memory
+        - ShellExecute – open a file
+        - WriteFile – create and write to file
+        - CreateRemoteThread – create a new thread within current process
+- Mitigation:
+    - Application whitelisting
+- Detection:
+    - Difficult to monitor since API calls happen continuously and logging may not be feasible
+    - Monitor for DLL loads (kernel32.dll, advadpi.dll, user32.dll) to processes that should not need them
+
+**Scheduled Task/Job**
+- Attacker utilizes task scheduling to initially execute malware, or schedule it for recurring execution
+    - Windows: At, Scheduled Task
+    - Linux: At, Cron, Systemd Timers
+    - Mac: Launchd
+- Mitigations:
+    - Look for scheduled tasks with weak permissions that allow them to be modified
+    - Change registry key to prevent scheduled tasks from running as SYSTEM
+        - `HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\SubmitControl`
+    - Modify group policy to only permit administrators to create scheduled tasks
+- Detection:
+    - Monitor for new scheduled tasks, especially tasks created from the command line
+    - Monitor for new executables running that have not been seen previously
+
+
+
+
+
+
+
+
 ### Cyber Kill Chain – Phase 5
+**Installation**
+- The payload installs persistence on target’s network
+    - Payload completes installation
+    - Payload install persistence efforts
+- The end goal of phase 5:
+    - Malware completes installation
+    - Persistence is installed and achieved on target
+
+#### Phase 5: Installation – Attacker’s Perspective
+- Attacker already has initial access into the network; now they are trying to make their access more robust.
+- Attacker’s goal will be to maintain access and hide their presence.
+- May require privilege escalation.
+- Establish persistence: 
+    - Create service, use Run keys, cron job/scheduled task
+- Cover tracks:
+    - Modify or remove local log files
+    - Time-stomp uploaded files so they blend in
 
 
