@@ -37,17 +37,32 @@ Windows Workstation Images
 - How are updates pushed out? 
     - If you know where updates/installations should be happening, this will aid you when you come across a questionable remote service creation.
 
-#### The Hunting Grounds - Windows
+### The Hunting Grounds - Windows
 - There are many great resources on Windows baselining available online:
     - https://adsecurity.org/?p=3299
         - That website alone is an amazing resource, but that specific article is on Windows Baselining.
 - Keep it simple. Follow compliance. Turn off unnecessary services. Track software installed on images. If you can, use an application whitelist. Keep antivirus/OS/HIDS/EDR (Endpoint Detection and Response) applications up to date and current. Ensure GPOs are applied to all endpoints. 
 - If you want to be stellar...have a contingency plan for a supply chain attack!
 
-#### The Hunting Grounds - Linux
+### The Hunting Grounds - Linux
 - For the most part, things do not really change when baselining/securing/hardening a Linux-based host.
 - Keep it simple and follow the previous measures; however, one of the more important differences is the amount of baseline scripts available for Linux.
         - Choose a reputable source that fits your needs and understand what the configuration script is doing!
+
+### The Hunting Grounds - Networking
+- Do we have network diagrams on hand?
+    - Placement of routers/firewalls/servers/management devices (jump hosts) and even data flow direction should be highlighted.
+        - Are these things in locations that make sense? Do you have choke points for critical assets?
+
+### The Hunting Grounds
+- The reality is that you most likely have an established environment. You may already have a baseline of what your configurations are, how your network is segmented, what normal traffic looks like, and methods to capture and forward Events and Syslogs that identify system changes.
+- If not, have a conversation with your system and network administration team about incorporating methods to understand what “normal” looks like and how we are monitoring and collecting information in our environment. Threat Hunting is a team sport. 
+- We skimmed the surface of properly baselining our network, but the idea is that we need to ensure that we have a firm understanding of our network environment (“Threat Hunting Ground”). Our goal is to understand our environment so we can make it as difficult as possible for an adversary to move in, and ensure we rapidly respond if they do.
+
+## File System Structure
+
+
+
 
 
 
