@@ -577,6 +577,17 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 - The end goal of phase 6:
     - Threat actors can perform “hands on keyboard” access inside the target’s network
 
+#### Phase 6: Command and Control – Attacker’s Perspective
+- Establish two-way communications between victim and attacker’s infrastructure
+    - Even though it is “two-way,” that does not mean the traffic from the attacker to the victim and back is traversing the same path
+    - Communication methods used by attackers between compromised hosts inside the network may be different than the methods used to communicate with external infrastructure
+    - May have built-in redundancy, a “Plan B” in case communication is lost
+    - May use different infrastructure for different phases of the Cyber Kill Chain – exploitation delivery infrastructure may be different   than post-installation C2 infrastructure 
+- Can be synchronous or asynchronous
+    - Regular “keep alive” back to C2 infrastructure on repeating intervals, or calls back when certain event occurs – or waits for the attacker to reach out to it
+- Will try to blend in as much as possible
+    - Typically, will use common ports and protocols – HTTPS, DNS, SMB, email, IRC
+- Infrastructure may be owned/leased directly by the attacker or it may belong to another victim
 
 
 
