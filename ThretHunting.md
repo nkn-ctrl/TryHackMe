@@ -167,6 +167,47 @@ Behavioral Analytics: use machine learning algorithms to detect anomalies in net
 
 Cloud Security Solutions: specifically designed to monitor and protect cloud-based infrastructure and services.
 
+
+#### Phase 2: Weaponization – Attacker’s Perspective
+Find or develop an exploit and payload; establish a collection of attack tools to use.
+
+Tailor the malware for the specific mission (if needed) and compile the code into a deliverable exploit and payload.
+
+Prepare additional assets required for the attack (malicious email, office documents or PDFs, malicious website, USB drives for close access attack).
+
+Establish infrastructure to be used in exploitation and command and control phases.
+
+#### Phase 2: Weaponization – Defender’s Perspective
+Familiarize yourself as much as possible with common threat platforms and methods.
+
+“Knowledge is POWER!”
+
+Useful resources:
+News:
+https://www.darkreading.com/
+https://www.sans.org/security-resources/
+https://www.scmagazine.com/
+https://www.techrepublic.com/topic/security/
+https://thehackernews.com/
+https://threatpost.com/
+
+APT info:
+https://attack.mitre.org/groups/
+https://github.com/CyberMonitor/APT_CyberCriminal_Campagin_Collections
+
+Commercial products can help with this (Antivirus, IDS/IPS), but do not rely on them; there is always a workaround.
+
+Once you catch malware in your network, be sure to analyze it.
+Is it commonly used or custom tailored?
+How does it work? 
+Can you develop signatures for some of its activities?
+File paths/reg keys/processes/process names
+URI/URLs to which it connects
+Noticed behaviors (sleeps, API calls, debug checks)
+How advanced is it?
+Persistence methods
+Static/dynamic analysis
+
 <details>
 <summary>LAB: ATT&CK Framework</summary>
 <!--- 
@@ -236,5 +277,19 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 4. What is the most interesting technique you have found within the Matrix so far, and why?
 
 </details>
+
+#### Phase 3: Delivery – Attacker’s Perspective
+Launch the attack
+Attacker controlled delivery: 
+Attacker has direct control over the entire exploitation process
+Direct exploitation of server or other victim owned devices
+
+Attacker directed delivery:
+Attacker relies on a middle man to deliver and run the exploit
+Phishing, USB malware, malicious website
+
+What MITRE ATT&CK Tactic corresponds to the “Delivery” phase of the Cyber Kill Chain? 
+
+
 
 
