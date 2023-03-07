@@ -619,14 +619,40 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 
 ### Cyber Kill Chain – Phase 7
 **Actions on Objectives**
+- Threat actor works to achieve the objective of the intrusion on target.
+    - Exfiltration of data
+    - Destruction of data
+    - Long-term reconnaissance and intelligence gathering
+    - Movement to additional target(s)
+- The phases of the Cyber Kill Chain are used to determine and analyze a threat actor’s overall Tactics, Techniques, and Procedures (TTPs) for cyber operations. 
 
-Threat actor works to achieve the objective of the intrusion on target.
-Exfiltration of data
-Destruction of data
-Long-term reconnaissance and intelligence gathering
-Movement to additional target(s)
+#### Phase 7: Actions on Objectives – Attacker’s Perspective
+- Attackers will attempt to:
+    - Collect user credentials and utilize accounts with desired network or system access
+    - Conduct internal reconnaissance and expand access
+    - Expand access into additional systems and parts of the network
+    - Collect and exfiltrate data
+    - Modify, corrupt, destroy data
+    - Destroy systems
+    - Cover tracks
 
-The phases of the Cyber Kill Chain are used to determine and analyze a threat actor’s overall Tactics, Techniques, and Procedures (TTPs) for cyber operations. 
+#### Phase 7: Actions on Objectives – Defender’s Perspective
+- Typically, attackers have one overall priority:
+    - Data collection and exfiltration
+    - Damage and destruction
+- Sometimes attackers will have a mix of the two priorities:
+    - May start with collection and move to destruction once collection goals are completed
+    - May transition to destruction if the attacker knows they are caught
+- Even if the priority is destruction, collection will still occur!
+    - Attacker wants additional information to increase their access into the target
+    - Attacker may want information to facilitate access into other targets
+    - Attacker may seek information they can put online to embarrass the target
+- Log monitoring is crucial
+- Watch for indicators of these activities in your network
+- Establish log priorities and examine log events that are deemed "critical" first
+- Establish procedures in the event of identification of possible malicious activity
+
+
 
 
 
