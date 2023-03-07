@@ -419,5 +419,18 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
     - Accurate timekeeping is important – make sure that all devices have the same timekeeping source and pay attention to timezones.
     - You may be able to identify delivery later on.
 
+### Cyber Kill Chain – Phase 4
+#### Phase 4: Exploitation – Attacker’s Perspective
+- Attacker delivered the exploit in the previous phase – now they need to get it to execute!
+- Attacker will select an exploit based on vulnerabilities discovered during reconnaissance and their available toolset.
+- Exploits can target software, hardware, or people.
+- Can be directly controlled by the attacker or rely on human interaction.
+- Examples: 
+    - USB malware
+    - Web server exploit
+    - Malicious link in email
+    - Office document macro
+
+
 
 
