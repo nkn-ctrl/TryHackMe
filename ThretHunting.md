@@ -319,16 +319,43 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 - Attacker uses victim provided external service to gain access to internal infrastructure
    -  VPN, Citrix, SSH, RDP
     - Requires valid credentials
-
 - Mitigations:
     - Disable or remove the service – is it necessary?
     - Limit access to the service as much as possible
     - Multi-factor authentication
     - Network Segmentation
-
 - Detection:
     - Review authentication logs for unusual activity 
     - Outside of normal hours, user is in two places at once (Impossible Traveler)
+
+**Hardware Additions**
+- Attacker introduces additional hardware to the network or a computer system
+    - USB drives
+    - Small device (Raspberry Pi) plugged into local network
+    - Network taps, keystroke injection, keystroke collection
+    - Requires physical access to the target
+- Mitigations:
+    - Restrict DHCP to registered devices only
+    - Block unknown devices from use, especially USB
+- Detection:
+    - Asset management systems to check for new devices on the network
+    - Endpoint software/sensors can be configured to block and alert on detection of unauthorized hardware additions
+
+**Phishing**
+- Electronically delivered social engineering – VERY common attack!
+    - Targeted = Spear Phishing
+    - Spam, malicious attachments or links – possibly sent to non-corporate accounts to bypass the corporate attachment policies
+- At the end of today, we have a very good example of phishing!
+- Mitigations:
+    - Antivirus, Antimalware
+    - NIDS – used to detect malicious attachments or links as they traverse the 
+    - network
+    - Restrict web-based content – block internet downloads or email attachments of certain file types
+    - User training
+- Detection:
+    - NIDS/email gateway – SSL/TLS inspection may be required
+    - Run email attachments in sandbox prior to delivery
+    - Antivirus – may alert upon download or execution
 
 
 
