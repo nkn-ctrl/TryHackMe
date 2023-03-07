@@ -588,6 +588,17 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 - Will try to blend in as much as possible
     - Typically, will use common ports and protocols – HTTPS, DNS, SMB, email, IRC
 - Infrastructure may be owned/leased directly by the attacker or it may belong to another victim
+- The main priority is communication – so UDP, ICMP, etc. may be used if they are not as closely monitored or restricted and the attacker cannot find a better method
+- Otherwise, two competing priorities – typically will see a mix of the two:
+    - Blending vs. Obfuscation
+- Attackers want to look like traffic that normally occurs in the network
+    - Use common protocols: HTTPS, SMB, SSH, RDP, DNS
+    - If the protocol is encrypted by default, even better
+    - In the event that the traffic gets flagged, it may be dismissed by security personnel who cannot determine what it is doing as long as it looks normal enough
+- Attackers want it to be difficult for defenders to see what they are doing
+    - In the event of detection and trying to reverse engineer – custom encrypted protocols, modified payloads
+    - The more obfuscated the traffic is, the less it may blend with legitimate traffic
+    - Split communications up among large infrastructure so it is difficult to put it all back together
 
 
 
