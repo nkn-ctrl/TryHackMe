@@ -105,8 +105,14 @@ Permissions on files apply as read, write, and execute.
 Permissions on directories:  
 - Read:  Allow file names to be read.
 - Write: Allow entries to be modified within the directory.
-- Execute: Allow access to contents of metadata for entries to the directory.
+- Execute: Allow access to contents of metadata for entries to the directory.  
 
+Permissions categories for users:
+|---|---|
+|u|Users (user who owns the file)|
+|g|Group (users that are in the file’s group)|
+|o|Other (users who do not own are in the file’s group)|
+|a|All – user, group, and other|
 
 
 
