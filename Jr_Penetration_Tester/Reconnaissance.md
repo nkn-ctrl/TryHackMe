@@ -61,7 +61,7 @@
 - server type and version  
 
 ### Censys
-[Censys](http://censys.io)  
+[Censys](http://search.censys.io)  
 
 ## Active Reconnaissance
 ### Ping
