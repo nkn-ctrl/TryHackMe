@@ -143,6 +143,37 @@ Ideally on Windows you would obtain a shell running as the SYSTEM user, or an ad
     - `ps axjf`: view process tree 
     - `ps aux`: show processes for all users (a), display the user that launched the process (u), and show processes that are not attached to a terminal (x)  
 - `env`: show environmental variables  
+    <img src="https://user-images.githubusercontent.com/73976100/223572360-ab79bd05-32e8-44dd-9d58-049bf06be043.png" width="600">  
+- `sudo -l`: list all commands user can run using `sudo`  
+- `ls`: `ls -als`  
+- `id`: provide a general overview of the user’s privilege level and group memberships  
+- `/etc/passwd`: an easy way to discover users on the system  
+    <img src="https://user-images.githubusercontent.com/73976100/223573778-7e2a8118-3445-468f-b1b6-f661f6c7c548.png" width="600">  
+    Remember that this will return all users, some of which are system or service users that would not be very useful. Another approach could be to grep for “home” as real users will most likely have their folders under the “home” directory.  
+    `cat /etc/passwd | grep home`  
+- `history`: Looking at earlier commands  
+- `ifconfig`: information about the network interfaces of the system  
+- `ip route`: see which network routes exist  
+- `netstat`: check for existing interfaces and network routes  
+    - `netstat -a`: shows all listening ports and established connections.
+    - `netstat -at` or `netstat -au` can also be used to list TCP or UDP protocols respectively.
+    - `netstat -l`: list ports in “listening” mode. These ports are open and ready to accept incoming connections. This can be used with the “t” option to list only ports that are listening using the TCP protocol (below)
+    - `netstat -s`: list network usage statistics by protocol (below) This can also be used with the `-t` or `-u` options to limit the output to a specific protocol.
+    - `netstat -ltp`: list connections with the service name and PID information.
+    - `netstat -i`: Shows interface statistics. We see below that “eth0” and “tun0” are more active than “tun1”.
+    - `netstat -ano`: `-a`:Display all sockets, `-n`: Do not resolve names, `-o`: Display timers  
+- `find` Command
+    - `find . -name flag1.txt`: find the file named “flag1.txt” in the current directory
+    - `find /home -name flag1.txt`: find the file names “flag1.txt” in the /home directory
+    - `find / -type d -name config`: find the directory named config under “/”
+    - `find / -type f -perm 0777`: find files with the 777 permissions (files readable, writable, and executable by all users)
+    - `find / -perm a=x`: find executable files
+    - `find /home -user frank`: find all files for user “frank” under “/home”
+    - `find / -mtime 10`: find files that were modified in the last 10 days
+    - `find / -atime 10`: find files that were accessed in the last 10 day
+    - `find / -cmin -60`: find files changed within the last hour (60 minutes)
+    - `find / -amin -60`: find files accesses within the last hour (60 minutes)
+    - `find / -size 50M`: find files with a 50 MB size
 
 
 
