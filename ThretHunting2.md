@@ -108,6 +108,7 @@ Permissions on directories:
 - Execute: Allow access to contents of metadata for entries to the directory.  
 
 Permissions categories for users:
+|  |  |
 |---|---|
 |u|Users (user who owns the file)|
 |g|Group (users that are in the file’s group)|
