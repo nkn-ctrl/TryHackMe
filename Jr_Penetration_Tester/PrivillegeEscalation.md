@@ -183,7 +183,7 @@ Ideally on Windows you would obtain a shell running as the SYSTEM user, or an ad
     Find development tools and supported languages:
     - `find / -name perl*`
     - `find / -name python*`
-    - `find / -name gcc*`
+    - `find / -name gcc*`  
     The SUID bit allows the file to run with the privilege level of the account that owns it, rather than the account which runs it.
     - `find / -perm -u=s -type f 2>/dev/null`: Find files with the SUID bit.
 
