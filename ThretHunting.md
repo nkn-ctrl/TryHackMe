@@ -556,4 +556,28 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
     - Modify or remove local log files
     - Time-stomp uploaded files so they blend in
 
+#### Phase 5: Installation – Defender’s Perspective
+- This is possibly the defender’s best opportunity to catch the attacker!
+    - Attacker got a foothold in exploitation, but their capabilities are limited
+    - Possibly only user-level access
+    - Attacker will want access to more of their toolset and may be uploading pieces of it to the target
+- Attacker will be creating files/footprint on target.
+    - New files, processes, services, registry keys, scheduled tasks
+- Many persistence methods: web shells, services, run keys, etc. 
+    - Be sure to monitor all of these and watch for indications of new ones
+- Watch for "time-stomped" files or altered log files – gaps in logs, missing logs.
+- Attacker will escalate privileges if possible – watch for unusual login activity (failed logins, unusual time of day, unusual account used)
+
+### Cyber Kill Chain – Phase 6
+**Command and Control (C2)**
+- C2 server is established
+    - Target is sending callbacks to C2 server
+    - Threat actors have remote access to target network
+    - C2 is set up for final actions on target (Phase 7)
+- The end goal of phase 6:
+    - Threat actors can perform “hands on keyboard” access inside the target’s network
+
+
+
+
 
