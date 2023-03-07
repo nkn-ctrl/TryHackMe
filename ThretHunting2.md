@@ -77,7 +77,34 @@ Thompson shell syntax: command [options] [arguments]
 ## System Administration Tools
 ### System Administration Tools - Windows
 <img src="https://user-images.githubusercontent.com/73976100/223370435-c3ba3bcb-a3b6-4891-8dfc-6d8ce607ccba.jpg">  
+The images above is a Microsoft Management Console instance. These are common command line interfaces found on Windows operating systems.
 
+### System Administration Tools - Linux
+To gather information about the system, the following commands prove useful:
+- man – provides help
+- hostname – name of system
+- pwd – present working directory
+- date – date configured on system
+- last – recent users logged onto system
+- ps – list of active processes running
+- history – list of recently entered commands
+- clear – clears the screen
+- ifconfig – networking/IP address information
+- uname – system information
+- dmesg – kernel information
+
+## File Permissions
+### File Permissions - Windows
+<img src="(https://user-images.githubusercontent.com/73976100/223371183-bfd73fa1-622d-4846-9904-10f84891022e.png">  
+The image above is an example of common folder permissions found on Windows operating systems.
+
+### File Permissions - Linux
+<img src="https://user-images.githubusercontent.com/73976100/223371573-7ee88842-87b1-4ff2-bdaf-648a72bbb555.png">  
+Permissions on files apply as read, write, and execute.
+Permissions on directories:
+	Read:  Allow file names to be read.
+	Write: Allow entries to be modified within the directory.
+	Execute: Allow access to contents of metadata for entries to the directory.
 
 
 
