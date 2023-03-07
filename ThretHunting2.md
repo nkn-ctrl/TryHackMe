@@ -60,6 +60,26 @@ Windows Workstation Images
 - We skimmed the surface of properly baselining our network, but the idea is that we need to ensure that we have a firm understanding of our network environment (“Threat Hunting Ground”). Our goal is to understand our environment so we can make it as difficult as possible for an adversary to move in, and ensure we rapidly respond if they do.
 
 ## File System Structure
+### File System Structure - Windows
+<img src="(https://user-images.githubusercontent.com/73976100/223368250-fcd71e10-c9cd-41f2-a89a-5d4782ae74b9.jpg">  
+
+### File System Structure - Linux
+<img src="https://user-images.githubusercontent.com/73976100/223368762-96163399-50ee-47a5-8e2e-aa398b26dbb6.png">  
+
+## Command Line Interface
+### Command Line Interface - Windows
+<img src="https://user-images.githubusercontent.com/73976100/223369481-3171541b-f479-49e2-98a0-3f199dc44bdd.png">  
+
+### Command Line Interface - Linux
+The Thompson shell is a historical Unix shell developed by Ken Thompson in the late 1970s. It was one of the first Unix shells and was used as the default shell in early versions of Unix. However, it is no longer widely used and has been replaced by more modern shells such as the Bourne shell and the C shell.  
+Thompson shell syntax: command [options] [arguments]  
+
+## System Administration Tools
+### System Administration Tools - Windows
+<img src="https://user-images.githubusercontent.com/73976100/223370435-c3ba3bcb-a3b6-4891-8dfc-6d8ce607ccba.jpg">  
+
+
+
 
 
 
