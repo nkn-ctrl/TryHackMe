@@ -63,6 +63,9 @@
 ### Censys
 [Censys](http://search.censys.io)  
 
+### crt.sh
+[crt.sh](https://crt.sh/): Use certificate monitoring/certificate transparency  
+
 ## Active Reconnaissance
 ### Ping
 
