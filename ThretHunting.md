@@ -167,46 +167,51 @@ Behavioral Analytics: use machine learning algorithms to detect anomalies in net
 
 Cloud Security Solutions: specifically designed to monitor and protect cloud-based infrastructure and services.
 
+# Day 2
+## CYBER KILL CHAIN
+### Cyber Kill Chain – Phase 1
+#### Phase 1: Reconnaissance – Attacker’s Perspective
+- Learn as much as possible about the network using both passive and active means.
+- Passive (undetectable):  
+    - Network information – many online resources: Rapid7, Shodan, Censys, website certificates, WHOIS, DNS information
+- Active (detectable):  
+    - Network scanning: Nmap, etc.
+    - Web scraping public facing websites to learn about target organization
+    - Social media
 
+### Cyber Kill Chain – Phase 2
 #### Phase 2: Weaponization – Attacker’s Perspective
-Find or develop an exploit and payload; establish a collection of attack tools to use.
-
-Tailor the malware for the specific mission (if needed) and compile the code into a deliverable exploit and payload.
-
-Prepare additional assets required for the attack (malicious email, office documents or PDFs, malicious website, USB drives for close access attack).
-
-Establish infrastructure to be used in exploitation and command and control phases.
+- Find or develop an exploit and payload; establish a collection of attack tools to use.
+- Tailor the malware for the specific mission (if needed) and compile the code into a deliverable exploit and payload.
+- Prepare additional assets required for the attack (malicious email, office documents or PDFs, malicious website, USB drives for close access attack).
+- Establish infrastructure to be used in exploitation and command and control phases.
 
 #### Phase 2: Weaponization – Defender’s Perspective
-Familiarize yourself as much as possible with common threat platforms and methods.
+- Familiarize yourself as much as possible with common threat platforms and methods.
+- “Knowledge is POWER!”
+- Useful resources:
+    - News:
+    - https://www.darkreading.com/
+    - https://www.sans.org/security-resources/
+    - https://www.scmagazine.com/
+    - https://www.techrepublic.com/topic/security/
+    - https://thehackernews.com/
+    - https://threatpost.com/
 
-“Knowledge is POWER!”
-
-Useful resources:
-News:
-https://www.darkreading.com/
-https://www.sans.org/security-resources/
-https://www.scmagazine.com/
-https://www.techrepublic.com/topic/security/
-https://thehackernews.com/
-https://threatpost.com/
-
-APT info:
-https://attack.mitre.org/groups/
-https://github.com/CyberMonitor/APT_CyberCriminal_Campagin_Collections
-
-Commercial products can help with this (Antivirus, IDS/IPS), but do not rely on them; there is always a workaround.
-
-Once you catch malware in your network, be sure to analyze it.
-Is it commonly used or custom tailored?
-How does it work? 
-Can you develop signatures for some of its activities?
-File paths/reg keys/processes/process names
-URI/URLs to which it connects
-Noticed behaviors (sleeps, API calls, debug checks)
-How advanced is it?
-Persistence methods
-Static/dynamic analysis
+    - APT info:
+    - https://attack.mitre.org/groups/
+    - https://github.com/CyberMonitor/APT_CyberCriminal_Campagin_Collections
+- Commercial products can help with this (Antivirus, IDS/IPS), but do not rely on them; there is always a workaround.
+- Once you catch malware in your network, be sure to analyze it.
+    - Is it commonly used or custom tailored?
+    - How does it work? 
+    - Can you develop signatures for some of its activities?
+        - File paths/reg keys/processes/process names
+        - URI/URLs to which it connects
+        - Noticed behaviors (sleeps, API calls, debug checks)
+    - How advanced is it?
+        - Persistence methods
+        - Static/dynamic analysis
 
 <details>
 <summary>LAB: ATT&CK Framework</summary>
