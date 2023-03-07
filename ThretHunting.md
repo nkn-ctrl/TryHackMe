@@ -171,17 +171,20 @@ Cloud Security Solutions: specifically designed to monitor and protect cloud-bas
 <!--- 
 lab X exercise 
 --->
+
 ## LAB: ATT&CK Framework
 ### What is the ATT&CK Framework?
 The MITRE ATT&CK Framework is a framework created by MITRE to document attacker tactics and techniques, then categorize them in a consistent and systematic way. Organizations often look to the ATT&CK Framework to check for the coverage that specific defensive tooling provides to their network, and to choose new defensive techniques to provide for areas that lack coverage. The MITRE ATT&CK Framework also gives organizations a universal way to discuss attacker tactics and techniques with other like-minded professionals.
 Also, organizations can utilize MITRE's public database of adversary groups to identify groups that may be a threat to their organization or industry with a list of their specific tactics and techniques.
 The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and view the different stages of an attack. This exercise will also serve as a way for you to explore MITRE ATT&CK, and how it can apply to your organization.
 ### <u>Web Browser</u> 
+
 1) **Open a web browser and navigate to MITRE ATT&CK Framework URL provided by your instructor.**
 
 <br>
 ### Exercises:
 #### Exercise 1:
+
 1. You are now on the main page the MITRE ATT&CK website. Look at the Matrix on the page, as well as its labeled columns.
    ![ATT_CK_Image](ATT_CK_Image.png)
 
@@ -194,6 +197,7 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 8. Click **Network Traffic Flow** link under **Detection.**
 9. Look at the description for this section of the new page. What are some of the tools listed in the description?
 10. Take some time to explore the ATT&CK Matrix. Repeat the steps above on one or more areas which may interest you.
+
 #### Exercise 2:
 1. Click **Groups** at the top of the page.
 2. On the left is a public list of groups, categorized by MITRE.
@@ -205,6 +209,7 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 8. What are the mitigations listed?
 9. Why are the detection and mitigation measures different? How could you apply these within your organization?
 10. Take some time to explore the **Groups** section. Repeat the steps above on one or more groups which may interest you.
+
 #### Exercise 3:
 1. Click **Software** at the top of the page.
 2. Below you will find a public list of software listed by MITRE. Take a few minutes to read the description of the page, and take note of the two types of software listed. Without referencing the page, can you think of some examples for each of these two types of software?
@@ -221,6 +226,7 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 13. What are the mitigations listed?
 14. Why do you think the detection and mitigation measures are different? How could you apply these within your organization?
 15. Take some time to explore the **Software** section. Repeat the steps above on one or more groups which may interest you.
+
 #### Exercise 4:
 1. Look at the **Tactics** and **Techniques** individual sections. What is the difference between the two terms? How do they relate to each other?
 2. Look at the **Data Sources** section. How could each of the data sources apply to your organization? What are some reasons why an organization may choose to monitor some data sources, but not others? How do you think you would prioritize data sources if given the choice, and why? Does this alter the way you think about the way your organization collects data?
