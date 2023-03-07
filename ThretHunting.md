@@ -600,6 +600,21 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
     - The more obfuscated the traffic is, the less it may blend with legitimate traffic
     - Split communications up among large infrastructure so it is difficult to put it all back together
 
+#### Phase 6: Command and Control – Defender’s Perspective
+- Most likely way for defender to catch the attacker via network traffic monitoring.
+- Attacker will establish a method of communication with the implant that was installed.
+- Important to observe both internal and external traffic.
+- Watch for unusual traffic:
+    - Traffic appears to be a certain protocol, but the traffic does not fit the normal pattern
+    - Traffic occurs at unusual times of day or is unusually large in size or volume
+    - Traffic occurs at regular, repeating intervals
+    - Traffic is occurring between devices on the network that do not usually communicate with each other
+- Look into external traffic
+    - Is the distant end legit? Reputation, unusual URL, "categorized“
+    - Does it make sense for the internal host to be communicating with that external host?
+    - If it appears malicious, what can you learn about the end device? (WHOIS, certificate)
+    - Is there traffic to other external devices that is similar?
+- Reducing the number of ways in or out of the network will make monitoring external traffic easier.
 
 
 
