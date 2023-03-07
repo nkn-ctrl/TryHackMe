@@ -183,6 +183,7 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 1) **Open a web browser and navigate to MITRE ATT&CK Framework URL provided by your instructor.**
 
 <br>
+
 ### Exercises:
 #### Exercise 1:
 
