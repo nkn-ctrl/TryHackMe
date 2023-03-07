@@ -100,11 +100,11 @@ The image above is an example of common folder permissions found on Windows oper
 
 ### File Permissions - Linux
 <img src="https://user-images.githubusercontent.com/73976100/223371573-7ee88842-87b1-4ff2-bdaf-648a72bbb555.png">  
-Permissions on files apply as read, write, and execute.
-Permissions on directories:
-	Read:  Allow file names to be read.
-	Write: Allow entries to be modified within the directory.
-	Execute: Allow access to contents of metadata for entries to the directory.
+Permissions on files apply as read, write, and execute.  
+Permissions on directories:  
+	- Read:  Allow file names to be read.
+	- Write: Allow entries to be modified within the directory.
+	- Execute: Allow access to contents of metadata for entries to the directory.
 
 
 
