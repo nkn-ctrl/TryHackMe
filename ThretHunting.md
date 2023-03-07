@@ -168,6 +168,7 @@ Behavioral Analytics: use machine learning algorithms to detect anomalies in net
 Cloud Security Solutions: specifically designed to monitor and protect cloud-based infrastructure and services.
 
 <details>
+<summary>LAB: ATT&CK Framework</summary>
 <!--- 
 lab X exercise 
 --->
