@@ -173,7 +173,21 @@ Ideally on Windows you would obtain a shell running as the SYSTEM user, or an ad
     - `find / -atime 10`: find files that were accessed in the last 10 day
     - `find / -cmin -60`: find files changed within the last hour (60 minutes)
     - `find / -amin -60`: find files accesses within the last hour (60 minutes)
-    - `find / -size 50M`: find files with a 50 MB size
+    - `find / -size 50M`: find files with a 50 MB size  
+    It is important to note that the “find” command tends to generate errors which sometimes makes the output hard to read. This is why it would be wise to use the “find” command with “-type f 2>/dev/null” to redirect errors to “/dev/null” and have a cleaner output.  
+    Folders and files that can be written to or executed from:
+    - `find / -writable -type d 2>/dev/null`: Find world-writeable folders
+    - `find / -perm -222 -type d 2>/dev/null`: Find world-writeable folders
+    - `find / -perm -o w -type d 2>/dev/null`: Find world-writeable folders
+    - `find / -perm -o x -type d 2>/dev/null`: Find world-executable folders
+    Find development tools and supported languages:
+    - `find / -name perl*`
+    - `find / -name python*`
+    - `find / -name gcc*`
+    The SUID bit allows the file to run with the privilege level of the account that owns it, rather than the account which runs it.
+    - `find / -perm -u=s -type f 2>/dev/null`: Find files with the SUID bit.
+
+
 
 
 
