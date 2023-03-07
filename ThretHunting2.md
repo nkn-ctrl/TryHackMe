@@ -114,9 +114,11 @@ Permissions categories for users:
 |g|Group (users that are in the file’s group)|
 |o|Other (users who do not own are in the file’s group)|
 |a|All – user, group, and other|  
+
 On each file or directory, permissions are applied as: Owners, Group, and all users.  
 The example of permissions below would be explained as follows:  
-`-rw-r--r--`
+`-rw-r--r--`  
+
 | | |
 |-|-|
 | -|this is a regular file|
