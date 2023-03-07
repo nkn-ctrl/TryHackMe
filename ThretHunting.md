@@ -357,7 +357,61 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
     - Run email attachments in sandbox prior to delivery
     - Antivirus – may alert upon download or execution
 
+**Replication through Removable Media**
+- Attacker uses previously infected media to gain access to a new host USB, CD/DVD, Hard Disk
+    - Autorun, modified firmware
+    - Can be used to access air-gapped systems
+- Mitigations:
+    - Disable Autorun
+    - Avoid media re-use
+    - Limit use of removable media
+- Detection:
+    - Monitor file access on removable media, detect process execution/network activity immediately after media mount
 
+**Supply Chain Compromise**
+- Attacker modifies software or hardware prior to receipt by the target
+    - Hardware compromise not as common; typically used by Government sponsored groups
+    - Software compromise can occur if an attacker gains access to the website and/or files of   a software developer and inserts malicious code
+- Mitigations:
+    - Keep software updated and keep apprised of news – big news if this happens!
+        - https://nakedsecurity.sophos.com/2016/02/22/worlds-biggest-linux-distro-infected-with-malware/
+        - Linux Mint website was hacked in 2016 – download link was modified to point to external server containing Linux Mint special malware edition
+    - Check hashes/digital signatures when downloading software
+    - Make sure hardware/software is from trusted sources
+- Detection:
+    - Verify hashes, scan downloads for malware, inspect hardware for indications of tampering
+
+**Trusted Relationship**
+- Attacker uses trusted relationships between organizations to gain initial access into a new network
+    - Active Directory Trusts, or other ways of sharing account access between organizations
+        - APT28 used their access into DCCC (Democratic Congressional Campaign Committee) to gain access to DNC (Democratic National Committee) systems
+            - https://www.justice.gov/file/1080281/download
+    - Contractor with VPN access into the network is compromised and credentials are stolen
+- Mitigations:
+    - What does the external organization really need access to?
+    - Network Segmentation
+    - User Account Control
+- Detection:
+    - Monitor third-party network access for anomalous behavior – if attacker gets in via this method, they will likely have the knowledge of your internal network to move quickly
+
+**Valid Accounts**
+- Attacker uses previously obtained or guessed credentials to gain initial access to a system. The attacker may choose not to use malware in this attack in order to make their presence more difficult to detect.
+- Mitigations:
+    - Avoid password reuse across services
+    - Protect passwords – keep them off of network shares and out of code
+    - Good password/SSH key policy – regular changes 
+    - Privileged Account Management – separation of duties, only access what they need; Principle of Least Privilege (PoLP)
+- Detection:
+    - Account Activity Audits – especially administrator accounts
+
+#### Phase 3: Delivery – Defender’s Perspective
+- Delivery is often the defender's first opportunity to detect the attacker – but it can be difficult to detect if the delivery blends well with normal network traffic.
+- If detected, can you identify the targets? Can you infer anything about the possible end goals based on what was targeted?
+- Can you signature the delivery method and filter it from normal traffic?
+- What time of day was the attack initiated?
+- Be sure you are collecting logs.
+    - Accurate timekeeping is important – make sure that all devices have the same timekeeping source and pay attention to timezones.
+    - You may be able to identify delivery later on.
 
 
 
