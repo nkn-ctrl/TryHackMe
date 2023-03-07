@@ -63,8 +63,10 @@
 ### Censys
 [Censys](http://search.censys.io)  
 
-### crt.sh
-[crt.sh](https://crt.sh/): Use certificate monitoring/certificate transparency  
+#### Public facing footprint
+- Nmap, Shodan, Censys, etc. (your external facing network ranges) - open ports
+- Check DNS: https://searchdns.netcraft.com/
+- Use certificate monitoring/certificate transparency: https://crt.sh/?q=google.com
 
 ## Active Reconnaissance
 ### Ping
