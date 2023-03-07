@@ -73,7 +73,7 @@ You can write a simple script to search through it, or look on Github: https://g
 #### Public facing footprint
 - Nmap, Shodan, Censys, etc. (your external facing network ranges) - open ports
 - Check DNS: https://searchdns.netcraft.com/
-- Use certificate monitoring/certificate transparency: https://crt.sh/?q=google.com
+- Use certificate monitoring/certificate transparency: https://crt.sh/
 
 ## Active Reconnaissance
 ### Ping
