@@ -169,9 +169,120 @@ There are many ways to exfiltrate data from a network. The increase in quantity 
 File-less execution and persistence is commonly used by threat actors and can be an indictor of exploitation or access. The Windows registry has been a very common place for file-less persistence to hide.
 
 ## Event Logs
+### Windows PowerShell Logging
 - First things first... let’s review and turn on PowerShell logging.
 - Windows PowerShell usage among attackers has decreased due to Windows increasing PowerShell logging capabilities. However, this does not mean that has it has gone away by any means, and monitoring malicious PowerShell usage should still be a priority (among many others). It has gotten easier to monitor PowerShell usage with the addition of Module, Transcription, and Script Block Logging.
 - This does not apply to Windows Powershell 2.0! Attackers can use PowerShell 2.0 to evade logging features found in newer versions. Make an assessment on whether or not you can disable PowerShell 2.0 in your environment.
+- Powershell 2.0 Event Log
+<img src="https://user-images.githubusercontent.com/73976100/223567780-3b60f97d-e504-4aaa-8219-a43f515623f4.png">  
+
+- We are going to assume that your environment consists of primarily Windows 10 images.
+    - Note that Windows versions 7/8.1/2008/2012 require additional updates to enable enhanced PowerShell logging.
+- Logging must be set through Group Policy.  
+<img src="https://user-images.githubusercontent.com/73976100/223568245-9d453fd3-a220-4ae3-9179-3155c16d9d2c.png">  
+
+**Module Logging**
+- Module logging will record portions of scripts, some de-obfuscated code, and some data formatted for output.
+- This logging will capture some details missed by other PowerShell logging sources, though it may not reliably capture the commands executed.
+- For the most part, this will only leave you with limited module input.
+
+- Get-NetIPAddress
+<img src="https://user-images.githubusercontent.com/73976100/223568794-dae938e4-c51b-4108-bc89-42c0f01314a6.png">  
+
+**Script Block Logging**
+- This policy setting will enable logging of all PowerShell input, which includes the processing of commands, script blocks, functions and scripts invoked interactively or automatically.
+- Useful for catching those pesky .ps1 scripts!
+
+- Running a .ps1 script:
+<img src="https://user-images.githubusercontent.com/73976100/223569462-eb0b5c90-49c6-4fca-9529-195378137ece.png">  
+
+**Transcript Logging**
+- Lets you capture both input and output of PowerShell commands into text-based transcripts. You can specify where you store the transcripts when configuring the policy.
+- This is the most detailed capture for PowerShell commands, but transcript storage needs to be planned and evaluated for your environment.
+
+- Contents of a transcript .txt file
+<img src="(https://user-images.githubusercontent.com/73976100/223569766-31010a82-40d1-402d-9663-9e3e02adf6b7.png">   
+
+### Windows Event Forwarding
+“Windows Event Forwarding (WEF) reads any operational or administrative event log on a device in your organization and forwards the events you choose to a Windows Event Collector (WEC) server.” – Windows
+- Powerful log forwarding solution integrated with modern versions of Windows
+- Agent Free
+- Logs can be pushed/pulled to a WEC server
+- Windows Event Channels – queues that can be used for collecting and storing event log entries on a server
+- Subscriptions – used to define what events/information get sent to the WEC
+
+- Sample WEF Setup Requirements
+    - Group Policy Objects (GPOs) to control security auditing/event logging
+    - One or more servers configured as a WEC
+    - Kerberos for all endpoints for encryption/sending events
+    - WinRM turned on for all endpoints that will be forwarding events
+    - Firewall rules for WEF activity (ports 5985/5986)
+    - GPOs to specify the URL of the WEF subscription manger(s)
+    - One or more event log subscriptions; remember, subscriptions are basically a collection of events based on Event IDs or criteria to tell the endpoint which event logs to forward
+    - A GPO linked to the root domain with relevant settings; basically, this GPO will be defining which clients talk to which WEC server and how frequently they do so to check if it has subscriptions for any clients and what events to send.
+    - The WEC server then needs to be configured with the Eventlog MMC, and this is also where we will define/hold our subscriptions
+    - You can then optionally install a third-party log collection agent on the WEC server if you would like to, in order to ingest into a SIEM  
+
+**Simplified WEF Walkthrough**
+- Client receives GPO and begins logging
+- Client connects to subscription manager (WEC server) and pulls down relevant subscriptions
+- Workstation sends events to the WEC server periodically
+
+- Sample Subscription 
+<img src="https://user-images.githubusercontent.com/73976100/223570527-cb5f9c42-3968-4381-9677-cc9d8efa71a6.png">  
+
+### Linux Rsyslog
+Rsyslog is a log processing system which accepts data from different types of sources and can output it into multiple formats.
+- Client/Server model
+- Define a server and set up clients
+- Can use UDP 514 or TCP 514 (TCP sounds more reliable)... or define your own port!
+
+**Rsyslog Server**
+- Install and enable Rsyslog
+- Configure our .conf file at /etc/rsyslog.conf
+- Define our listening port (UDP and/or TCP)
+- Define our ruleset for the facility (or what process/application is generating the message, the severity level, and the destination of where we are going to store the log
+- Restart Rsyslog!
+
+**Example Ruleset:**
+
+    $template RemoteLogs,"/var/log/%HOSTNAME%/%PROGRAMNAME%.log“
+    *.* ?RemoteLogs 
+    & ~
+
+    $template tells rsyslog daemon to gather all of the received remote messages and store them under distinct logs in /var/log based on the hostname and the program/application that generated the message using the settings in the RemoteLogs template.
+
+    *.*?RemoteLogs records messages from all facilities at all severity levels using the RemoteLogs template. Severity levels include emerg-0, alert-1, crit-2, err-3, warn-4, notice-5, info-6, debug-7, and * means all.
+
+    & ~ instructs Rsyslog to stop processing messages once it has been written to file. If you do not include this, messages will be written to local files.  
+
+**Rsyslog Client**
+- Install and enable Rsyslog
+
+## Malware
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
