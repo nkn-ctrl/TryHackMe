@@ -126,10 +126,10 @@ The example of permissions below would be explained as follows:
 |r--|the Group has only read permissions|
 |r--|all users have ONLY read permissions|  
 
-To set permissions on a file or directory, the `chmod` command is used. Each permission is assigned a number:
-r = 4
-w = 2
-x = 1
+To set permissions on a file or directory, the `chmod` command is used. Each permission is assigned a number:  
+r = 4  
+w = 2  
+x = 1  
 
 The number value is assigned for the owner, group, and all users per file. For example, a file with the value of `741` would be displayed as `-rwxr----x`.  
 The command for setting the value for the file above would be: `chmod 741 file1.txt`  
@@ -142,7 +142,36 @@ You can only assign the `setuid/setgid` bit by explicitly defining permissions. 
 
 To set the `setuid/setguid` bit on `file2.sh`, you would issue the command:`chmod g+s file2.sh`.   
 
+The sticky bit can be very useful in shared environments. This is because when it has been assigned to the permissions on a directory, it is set so that only the file owner can rename or delete the said file.
 
+You can only assign the sticky bit by explicitly defining permissions. The character for the sticky bit is ‘t’.
+
+To set the sticky bit on a directory named dir1, you would issue the command:
+chmod +t dir1. 
+<img src="(https://user-images.githubusercontent.com/73976100/223374479-f495c022-019c-49dd-b032-dd59c62664f5.png">  
+
+## Network Actions
+### Network Actions – C2
+Cobalt Strike is a legitimate commercial tool often used by red teams to provide a post-exploitation implant named ‘Beacon.’ Threat actors have also used it for the delivery of a memory-based implant that can evade detection and provide numerous capabilities. 
+
+Command and Control (C2) communications utilize common protocols, including HTTPS, DNS, and SMB to aid in avoiding anomaly detection by appearing alongside other legitimate network communications.
+<img src="https://user-images.githubusercontent.com/73976100/223375079-b8745719-77b0-462d-96ec-a65223efb5af.png">  
+
+### Network Actions – Lateral Movement
+Once initial exploitation has been achieved, lateral movement is usually required. Many modern threat actors use ports, protocols, and services that are built into the operating system to move laterally in a network.  
+<img src="https://user-images.githubusercontent.com/73976100/223375434-de3ad414-9d99-447b-b948-e47eeb27c148.jpg">  
+
+### Network Actions – Data Exfiltration
+There are many ways to exfiltrate data from a network. The increase in quantity of webservers that are installed and available on devices allows them to be leveraged as a covert channel. A rogue SSL connection can be as damaging to an organization as plugging in a malware-infected thumb drive.  
+<img src="https://user-images.githubusercontent.com/73976100/223375653-ec26e889-9721-4e00-8a20-cb9fd1ff68bb.png">  
+
+## Registry
+File-less execution and persistence is commonly used by threat actors and can be an indictor of exploitation or access. The Windows registry has been a very common place for file-less persistence to hide.
+
+## Event Logs
+- First things first... let’s review and turn on PowerShell logging.
+- Windows PowerShell usage among attackers has decreased due to Windows increasing PowerShell logging capabilities. However, this does not mean that has it has gone away by any means, and monitoring malicious PowerShell usage should still be a priority (among many others). It has gotten easier to monitor PowerShell usage with the addition of Module, Transcription, and Script Block Logging.
+- This does not apply to Windows Powershell 2.0! Attackers can use PowerShell 2.0 to evade logging features found in newer versions. Make an assessment on whether or not you can disable PowerShell 2.0 in your environment.
 
 
 
