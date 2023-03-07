@@ -60,6 +60,13 @@
 - geographic location
 - server type and version  
 
+### Part of Rapid7’s “Project Sonar”
+an initiative to scan and collect data from the entire internet.  
+https://opendata.rapid7.com/  
+
+Rapid7 does an nslookup against every public IP on the entire internet four times per month – each results in an 11GB gzip file.  
+You can write a simple script to search through it, or look on Github: https://github.com/erbbysam/DNSGrep  
+
 ### Censys
 [Censys](http://search.censys.io)  
 
