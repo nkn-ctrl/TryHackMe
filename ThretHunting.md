@@ -279,45 +279,58 @@ The purpose of this lab is to take a deeper dive into the Cyber Kill Chain and v
 </details>
 
 #### Phase 3: Delivery – Attacker’s Perspective
-Launch the attack
-Attacker controlled delivery: 
-Attacker has direct control over the entire exploitation process
-Direct exploitation of server or other victim owned devices
+- Launch the attack
+    - Attacker controlled delivery: 
+        - Attacker has direct control over the entire exploitation process
+        - Direct exploitation of server or other victim owned devices
 
-Attacker directed delivery:
-Attacker relies on a middle man to deliver and run the exploit
-Phishing, USB malware, malicious website
-
-What MITRE ATT&CK Tactic corresponds to the “Delivery” phase of the Cyber Kill Chain? 
+    - Attacker directed delivery:
+        - Attacker relies on a middle man to deliver and run the exploit
+        - Phishing, USB malware, malicious website
+- What MITRE ATT&CK Tactic corresponds to the “Delivery” phase of the Cyber Kill Chain? 
 
 **Drive-by Compromise**
-Attacker gains access to the system via a user browsing to a website  
-- Legitimate website is compromised with malicious code: JavaScript, iFrame, cross-site scripting
-- Malicious advertisements
-- Use existing website functions to introduce attacker code: forum posts, comments, anything users can modify directly on the page
-
-Mitigations:  
-- Application Isolation and Sandboxing
-- Restrict web content – adblocker, script blocking extensions
-- Keep web browsers updated
-
-Detection:  
-- Firewalls, proxies, NIDS
-- On host – files written to disk, process injection indicators
+- Attacker gains access to the system via a user browsing to a website  
+    - Legitimate website is compromised with malicious code: JavaScript, iFrame, cross-site scripting
+    - Malicious advertisements
+    - Use existing website functions to introduce attacker code: forum posts, comments, anything users can modify directly on the page
+- Mitigations:  
+    - Application Isolation and Sandboxing
+    - Restrict web content – adblocker, script blocking extensions
+    - Keep web browsers updated
+- Detection:  
+    - Firewalls, proxies, NIDS
+    - On host – files written to disk, process injection indicators
 
 **Exploit Public-Facing Application**
-Attacker takes advantage of a weakness in Internet-facing computer/program using software, data, or commands to exploit a bug or misconfiguration to cause unintended behavior
-- SQL injection
-- Web server exploit
+- Attacker takes advantage of a weakness in Internet-facing computer/program using software, data, or commands to exploit a bug or misconfiguration to cause unintended behavior
+    - SQL injection
+    - Web server exploit
+- Mitigations:  
+    - Network Segmentation – keep servers isolated from internal network  
+    - Account management – avoid having server applications running with root privileges
+    - Application Isolation/Sandboxing
+    - Update software  
+- Detection:  
+    - Web Application Firewalls can detect improper inputs
+    - Application logs, deep packet inspection
 
-Mitigations:  
-- Network Segmentation – keep servers isolated from internal network  
-- Account management – avoid having server applications running with root privileges
-- Application Isolation/Sandboxing
-- Update software  
+**External Remote Services**
+- Attacker uses victim provided external service to gain access to internal infrastructure
+   -  VPN, Citrix, SSH, RDP
+    - Requires valid credentials
 
-Detection:  
-- Web Application Firewalls can detect improper inputs
-- Application logs, deep packet inspection
+- Mitigations:
+    - Disable or remove the service – is it necessary?
+    - Limit access to the service as much as possible
+    - Multi-factor authentication
+    - Network Segmentation
+
+- Detection:
+    - Review authentication logs for unusual activity 
+    - Outside of normal hours, user is in two places at once (Impossible Traveler)
+
+
+
 
 
