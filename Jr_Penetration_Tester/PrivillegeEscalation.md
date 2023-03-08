@@ -194,6 +194,19 @@ Ideally on Windows you would obtain a shell running as the SYSTEM user, or an ad
 - Linux Smart Enumeration: https://github.com/diego-treitos/linux-smart-enumeration
 - Linux Priv Checker: https://github.com/linted/linuxprivchecker
 
+### Privilege Escalation: Kernel Exploits
+The kernel on Linux systems manages the communication between components such as the memory on the system and applications. This critical function requires the kernel to have specific privileges; thus, a successful exploit will potentially lead to root privileges.  
+1. Identify the kernel version
+2. Search and find an exploit code for the kernel version of the target system
+3. Run the exploit  
+NOTE: A failed kernel exploit can lead to system crash.  
+
+Reseach sources:
+1. Google search
+2. https://www.linuxkernelcves.com/cves
+3. A script like LES (Linux Exploit Suggester), but make many FP and FN  
+
+
 
 
 
