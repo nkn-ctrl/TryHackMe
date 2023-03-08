@@ -61,7 +61,7 @@ Windows Workstation Images
 
 ## File System Structure
 ### File System Structure - Windows
-<img src="(https://user-images.githubusercontent.com/73976100/223368250-fcd71e10-c9cd-41f2-a89a-5d4782ae74b9.jpg">  
+![ff](https://user-images.githubusercontent.com/73976100/223368250-fcd71e10-c9cd-41f2-a89a-5d4782ae74b9.jpg")
 
 ### File System Structure - Linux
 <img src="https://user-images.githubusercontent.com/73976100/223368762-96163399-50ee-47a5-8e2e-aa398b26dbb6.png" width="600">  
