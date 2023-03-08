@@ -1,6 +1,8 @@
 # Wireshark
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/wireshark-logo.png" width="800"><br>
 
+[Wireshirk CheetSheet](https://github.com/nkn-ctrl/TryHackMe/blob/main/SOC_LV1/cheetsheets/Wireshark-Cheat-Sheet.pdf)
+
 ## View
 - Time Display Format: "View --> Time Dsiplay Format"
 - Change IP address to domain name: "View --> Name Resolution --> Resolve Network Address" 
