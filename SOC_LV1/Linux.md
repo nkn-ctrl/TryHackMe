@@ -80,6 +80,14 @@ tcp        0      0 127.0.0.1:5901          0.0.0.0:*               LISTEN      
 
 ### Running processes
 The `ps` utility shows details about the running processes.
+- `ps`: see the running processes  
+    - PID: The process ID (unique to the process)
+    - TTY: Terminal type used by the user
+    - Time: Amount of CPU time used by the process (this is NOT the time this process has been running for)
+    - CMD: The command or executable running (will NOT display any command line parameter)  
+    - `ps -A`: view all running processes
+    - `ps axjf`: view process tree 
+    - `ps aux`: show processes for all users (a), display the user that launched the process (u), and show processes that are not attached to a terminal (x)  
 ```
 user@machine$ ps aux
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
