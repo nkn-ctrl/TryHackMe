@@ -86,6 +86,11 @@ USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root         729  0.0  0.0   7352  2212 ttyS0    Ss+  17:28   0:00 /sbin/agetty -o -p -- \u --
 ```
 
+`lsof -p <PID>`:   
+`ls -als /proc/<PID>`: 
+
+`ldd <FILE>`: Show libraries that execute files use
+
 ### DNS information
 `/etc/hosts`  
 `/etc/resolv.conf` :The information about DNS servers  
