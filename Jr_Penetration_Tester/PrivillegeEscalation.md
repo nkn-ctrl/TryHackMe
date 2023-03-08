@@ -187,7 +187,12 @@ Ideally on Windows you would obtain a shell running as the SYSTEM user, or an ad
     The SUID bit allows the file to run with the privilege level of the account that owns it, rather than the account which runs it.
     - `find / -perm -u=s -type f 2>/dev/null`: Find files with the SUID bit.
 
-
+### Automated Enumeration Tools
+- LinPeas: https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS
+- LinEnum: https://github.com/rebootuser/LinEnum
+- LES (Linux Exploit Suggester): https://github.com/mzet-/linux-exploit-suggester
+- Linux Smart Enumeration: https://github.com/diego-treitos/linux-smart-enumeration
+- Linux Priv Checker: https://github.com/linted/linuxprivchecker
 
 
 
