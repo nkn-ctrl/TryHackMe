@@ -148,7 +148,7 @@ You can only assign the sticky bit by explicitly defining permissions. The chara
 
 To set the sticky bit on a directory named dir1, you would issue the command:
 chmod +t dir1. 
-<img src="(https://user-images.githubusercontent.com/73976100/223374479-f495c022-019c-49dd-b032-dd59c62664f5.png">  
+<img src="https://user-images.githubusercontent.com/73976100/223374479-f495c022-019c-49dd-b032-dd59c62664f5.png">  
 
 ## Network Actions
 ### Network Actions – C2
