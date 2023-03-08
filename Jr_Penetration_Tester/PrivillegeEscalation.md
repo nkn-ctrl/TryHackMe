@@ -206,7 +206,13 @@ Reseach sources:
 2. https://www.linuxkernelcves.com/cves
 3. A script like LES (Linux Exploit Suggester), but make many FP and FN  
 
+<details>
+<summary> task_5 </summary>
 
+1. Identify the kernel version.
+2. Search and find an exploit code for the kernel version of the target system.
+3. Compile exploit code. `gcc 37292.c -o exploit -masm=intel -w`
+4. Move `/tmp` in Target Machine. `/tmp` is permission that user can write.
+5. wget and exploit
 
-
-
+</details>
