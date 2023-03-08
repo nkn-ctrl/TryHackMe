@@ -29,7 +29,7 @@ So, what do we know about our network?
 - For instance, should a workstation in the accounting department be accessing files on an administrator file share? How could we detect this?  
 
 Windows Workstation Images
-- Be aware of the software installed on your workstation images.
+- Be aware of the software installed on your workstation images.  
         - Is AppLocker an option?
 - More importantly, track the services that are installed.
     - If you have tight control on services installed, the second an unknown service gets created, you can quickly hone in on it.
