@@ -61,14 +61,14 @@ Windows Workstation Images
 
 ## File System Structure
 ### File System Structure - Windows
-<img src="(https://user-images.githubusercontent.com/73976100/223368250-fcd71e10-c9cd-41f2-a89a-5d4782ae74b9.jpg">  
+<img src="(https://user-images.githubusercontent.com/73976100/223368250-fcd71e10-c9cd-41f2-a89a-5d4782ae74b9.jpg" width="600">  
 
 ### File System Structure - Linux
-<img src="https://user-images.githubusercontent.com/73976100/223368762-96163399-50ee-47a5-8e2e-aa398b26dbb6.png">  
+<img src="https://user-images.githubusercontent.com/73976100/223368762-96163399-50ee-47a5-8e2e-aa398b26dbb6.png" width="800">  
 
 ## Command Line Interface
 ### Command Line Interface - Windows
-<img src="https://user-images.githubusercontent.com/73976100/223369481-3171541b-f479-49e2-98a0-3f199dc44bdd.png">  
+<img src="https://user-images.githubusercontent.com/73976100/223369481-3171541b-f479-49e2-98a0-3f199dc44bdd.png" width="600">  
 
 ### Command Line Interface - Linux
 The Thompson shell is a historical Unix shell developed by Ken Thompson in the late 1970s. It was one of the first Unix shells and was used as the default shell in early versions of Unix. However, it is no longer widely used and has been replaced by more modern shells such as the Bourne shell and the C shell.  
