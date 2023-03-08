@@ -95,7 +95,7 @@ To gather information about the system, the following commands prove useful:
 
 ## File Permissions
 ### File Permissions - Windows
-<img src="(https://user-images.githubusercontent.com/73976100/223371183-bfd73fa1-622d-4846-9904-10f84891022e.png">  
+<img src="https://user-images.githubusercontent.com/73976100/223371183-bfd73fa1-622d-4846-9904-10f84891022e.png">  
 The image above is an example of common folder permissions found on Windows operating systems.
 
 ### File Permissions - Linux
