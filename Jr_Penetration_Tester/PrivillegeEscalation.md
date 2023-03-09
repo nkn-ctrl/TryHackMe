@@ -252,7 +252,7 @@ system("/bin/bash");
 We can save this code as shell.c and compile it using gcc into a shared object file using the following parameters;  
 `gcc -fPIC -shared -o shell.so shell.c -nostartfiles`  
 This will result in a shell spawn with root privileges.  
-<img src="https://user-images.githubusercontent.com/73976100/224015606-15b05e75-fb9a-4624-86dd-4cc9b5334cd6.png" width=800>  
+<img src="https://user-images.githubusercontent.com/73976100/224015606-15b05e75-fb9a-4624-86dd-4cc9b5334cd6.png" width=1000>  
 
 
 
