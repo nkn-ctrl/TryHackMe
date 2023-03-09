@@ -228,7 +228,7 @@ Loading the `/etc/shadow` file using this option will result in an error message
 
 **Leverage LD_PRELOAD**  
 On some systems, you may see the LD_PRELOAD environment option.  
-<img src="https://user-images.githubusercontent.com/73976100/224011113-f5c57311-318b-40c8-b88f-6926a4aa8366.png" width="600">  
-
-
+<img src="https://user-images.githubusercontent.com/73976100/224011113-f5c57311-318b-40c8-b88f-6926a4aa8366.png" width="500">  
+[LD_PRELOAD](https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/) is a function that allows any program to use shared libraries.  
+If the "env_keep" option is enabled we can generate a shared library which will be loaded and executed before the program is run. 
 
