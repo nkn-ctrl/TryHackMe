@@ -216,3 +216,17 @@ Reseach sources:
 5. wget and exploit
 
 </details>
+
+### Privilege Escalation: Sudo
+`sudo -l`: Any user can check its current situation related to root privileges  
+https://gtfobins.github.io/ information on how any program, on which you may have sudo rights, can be used  
+**Leverage application functions**  
+Some applications will not have a known exploit within this context. Such an application you may see is the Apache2 server.  
+In this case, we can use a "hack" to leak information leveraging a function of the application. As you can see below, Apache2 has an option that supports loading alternative configuration files (`-f` : specify an alternate ServerConfigFile).  
+Loading the `/etc/shadow` file using this option will result in an error message that includes the first line of the `/etc/shadow` file.
+**Leverage LD_PRELOAD**  
+On some systems, you may see the LD_PRELOAD environment option.  
+<img src="https://user-images.githubusercontent.com/73976100/224011113-f5c57311-318b-40c8-b88f-6926a4aa8366.png" width="600">  
+
+
+
