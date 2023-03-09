@@ -254,5 +254,7 @@ We can save this code as shell.c and compile it using gcc into a shared object f
 This will result in a shell spawn with root privileges.  
 <img src="https://user-images.githubusercontent.com/73976100/224015606-15b05e75-fb9a-4624-86dd-4cc9b5334cd6.png" width=1000>  
 
-
+### Privilege Escalation: SUID
+Users within their privilege levels changes with SUID(Set-user Identification) and SGID(Set-group Identification). These allow files to be executed with the permission level of the file owner or the group owner, respectively.  
+`find / -type f -perm -04000 -ls 2>/dev/null`: list files that have SUID or SGID bits set  
 
