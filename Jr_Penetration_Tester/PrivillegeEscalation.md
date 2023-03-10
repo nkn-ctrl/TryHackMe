@@ -264,6 +264,7 @@ Clicking on the SUID button in [GTFOBins](https://gtfobins.github.io/#+suid)
 The list above shows that nano has the SUID bit set. Unfortunately, GTFObins does not provide us with an easy win.  
 
 The SUID bit set for the nano text editor allows us to create, edit and read files using the file owner’s privilege. Nano is owned by root, which probably means that we can read and edit files at a higher privilege level than our current user has. At this stage, we have two basic options for privilege escalation: reading the `/etc/shadow` file or adding our user to `/etc/passwd`.  
+
 <detail>
 <summary> details </summary>
 
