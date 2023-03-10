@@ -264,11 +264,24 @@ Clicking on the SUID button in [GTFOBins](https://gtfobins.github.io/#+suid)
 The list above shows that nano has the SUID bit set. Unfortunately, GTFObins does not provide us with an easy win.  
 
 The SUID bit set for the nano text editor allows us to create, edit and read files using the file owner’s privilege. Nano is owned by root, which probably means that we can read and edit files at a higher privilege level than our current user has. At this stage, we have two basic options for privilege escalation: reading the `/etc/shadow` file or adding our user to `/etc/passwd`.  
+<detail>
+<summary> details </summary>
 
+1. reading the `/etc/shadow` file.
+2. We see that the nano text editor has the SUID bit set by running the `find / -type f -perm -04000 -ls 2>/dev/null` command.
+3. `nano /etc/shadow` will print the contents of the `/etc/shadow` file. We can now use the unshadow tool to create a file crackable by John the Ripper. To achieve this, unshadow needs both the `/etc/shadow` and `/etc/passwd` files.  
+![DAWxbJD](https://user-images.githubusercontent.com/73976100/224442223-3ff1eebb-ea4b-4bc4-a789-78b14dc74d1b.png)
+4. The unshadow tool’s usage can be seen below;
+`unshadow passwd.txt shadow.txt > passwords.txt`  
+![6cHBAr1](https://user-images.githubusercontent.com/73976100/224442815-77034199-2b2b-43f8-9ac3-a6fed91e8ba2.png)  
 
+The Other Option: Add a new user  
+1. We will need the hash value of the password we want the new user to have. This can be done quickly using the openssl tool on Kali Linux.  
+![bkOGaHY](https://user-images.githubusercontent.com/73976100/224442955-7ab56fa3-d3dc-4ce9-b1a4-7cd8a4ec262b.png)  
+2. We will then add this password with a username to the `/etc/passwd` file.
+3. Once our user is added (please note how `root:/bin/bash` was used to provide a root shell) we will need to switch to this user and hopefully should have root privileges.
 
-
-
+</details>
 
 
 
