@@ -255,12 +255,18 @@ This will result in a shell spawn with root privileges.
 <img src="https://user-images.githubusercontent.com/73976100/224015606-15b05e75-fb9a-4624-86dd-4cc9b5334cd6.png" width=1000>  
 
 ### Privilege Escalation: SUID
+[Linux: SUID、SGID、スティッキービットまとめ](https://qiita.com/aosho235/items/16434a490f9a05ddb0dc)  
 Users within their privilege levels changes with SUID(Set-user Identification) and SGID(Set-group Identification). These allow files to be executed with the permission level of the file owner or the group owner, respectively.  
 `find / -type f -perm -04000 -ls 2>/dev/null`: list files that have SUID or SGID bits set  
 ![fJEeZ4m](https://user-images.githubusercontent.com/73976100/224185408-d3b5ee86-5e23-4445-a757-237308904644.png)  
 Clicking on the SUID button in [GTFOBins](https://gtfobins.github.io/#+suid)  
 
-The list above shows that nano has the SUID bit set. Unfortunately, GTFObins does not provide us with an easy win.   
+The list above shows that nano has the SUID bit set. Unfortunately, GTFObins does not provide us with an easy win.  
+
+The SUID bit set for the nano text editor allows us to create, edit and read files using the file owner’s privilege. Nano is owned by root, which probably means that we can read and edit files at a higher privilege level than our current user has. At this stage, we have two basic options for privilege escalation: reading the `/etc/shadow` file or adding our user to `/etc/passwd`.  
+
+
+
 
 
 
