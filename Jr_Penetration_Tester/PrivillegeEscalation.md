@@ -159,7 +159,7 @@ Ideally on Windows you would obtain a shell running as the SYSTEM user, or an ad
     <details>
     <summary>image</summary>
 
-    <img src="https://user-images.githubusercontent.com/73976100/223572360-ab79bd05-32e8-44dd-9d58-049bf06be043.png" width="600">  
+    <img src="https://user-images.githubusercontent.com/73976100/223572360-ab79bd05-32e8-44dd-9d58-049bf06be043.png" width="800">  
     </details>
 
 - `sudo -l`: list all commands user can run using `sudo`  
