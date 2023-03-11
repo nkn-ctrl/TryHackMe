@@ -486,5 +486,18 @@ The easiest way to gain access to another user is to gather credentials from a c
     Note: Simon Tatham is the creator of PuTTY (and his name is part of the path), not the username for which we are retrieving the password. The stored proxy username should also be visible after running the command above.
     </details>
 
-
+### Other Quick Wins (CTF Techuniques)
+- Scheduled Tasks
+    Looking into scheduled tasks on the target system, you may see a scheduled task that either lost its binary or it's using a binary you can modify.  
+    List scheduled task: `schtasks`  
+    ```
+    C:\> schtasks /query /tn vulntask /fo list /v
+    Folder: \
+    HostName:                             THM-PC1
+    TaskName:                             \vulntask
+    Task To Run:                          C:\tasks\schtask.bat
+    Run As User:                          taskusr1
+    ```  
+    Check the "Task to Run" parameter and "Run as Uer" parameter  
+    
 
