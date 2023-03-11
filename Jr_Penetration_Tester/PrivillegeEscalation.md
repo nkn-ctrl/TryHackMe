@@ -333,8 +333,9 @@ Configuration of the target system:
 3. Can you modify $PATH?
 4. Is there a script/application you can start that will be affected by this vulnerability?  
 
-<details>
-<summary> demo </sumarry>
+<details>  
+<summary> demo </sumarry>  
+
 For demo purposes, we will use the script below:  
 <img src="https://user-images.githubusercontent.com/73976100/224473899-968b7fff-3cad-4705-ad70-8b11be1a2aba.png" width="300">  
 This script tries to launch a system binary called “thm” but the example can easily be replicated with any binary.  
@@ -359,4 +360,5 @@ Creating this command is fairly easy by copying /bin/bash as “thm” under the
 <img src="https://user-images.githubusercontent.com/73976100/224474257-c519e961-8083-42b9-9401-4e1b2615afbb.png" width="400">  
 We have given executable rights to our copy of /bin/bash, please note that at this point it will run with our user’s right. What makes a privilege escalation possible within this context is that the path script runs with root privileges.  
 <img src="https://user-images.githubusercontent.com/73976100/224474349-a57864f9-5810-42c9-b16b-9afe6e0f7b16.png" width="800">  
+
 </details>
