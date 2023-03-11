@@ -452,8 +452,10 @@ The easiest way to gain access to another user is to gather credentials from a c
     ```
     type %userprofile%\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
     ```  
+    <details>
+    <summary>NOTE</summary>
     Note: The command above will only work from cmd.exe, as Powershell won't recognize `%userprofile%` as an environment variable. To read the file from Powershell, you'd have to replace `%userprofile%` with `$Env:userprofile`.  
-
+    </details>
 - 
 
 
