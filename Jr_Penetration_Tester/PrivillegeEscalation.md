@@ -352,3 +352,8 @@ We see a number of folders under /usr, thus it could be easier to run our writab
 Unfortunately, subfolders under /usr are not writable.  
 The folder that will be easier to write to is probably `/tmp`. At this point because /tmp is not present in PATH so we will need to add it. As we can see below, the “`export PATH=/tmp:$PATH`” command accomplishes this.  
 <img src="https://user-images.githubusercontent.com/73976100/224473640-daee466d-b2da-4fd6-9994-0280016b345d.png" width="700">  
+At this point the path script will also look under the /tmp folder for an executable named “thm”.  
+Creating this command is fairly easy by copying /bin/bash as “thm” under the /tmp folder.  
+<img src="https://user-images.githubusercontent.com/73976100/224474257-c519e961-8083-42b9-9401-4e1b2615afbb.png" width="400">  
+We have given executable rights to our copy of /bin/bash, please note that at this point it will run with our user’s right. What makes a privilege escalation possible within this context is that the path script runs with root privileges.  
+<img src="https://user-images.githubusercontent.com/73976100/224474349-a57864f9-5810-42c9-b16b-9afe6e0f7b16.png" width="700">  
