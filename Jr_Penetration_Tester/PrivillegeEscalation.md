@@ -436,6 +436,7 @@ Such installations require the use of an administrator account to perform the in
 - C:\Windows\Panther\Unattend\Unattend.xml
 - C:\Windows\system32\sysprep.inf
 - C:\Windows\system32\sysprep\sysprep.xml  
+
 As part of these files, you might encounter credentials:
 ```
 <Credentials>
