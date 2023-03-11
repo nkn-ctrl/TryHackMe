@@ -296,7 +296,7 @@ The capabilities man page provides detailed information on its usage and options
 
 We can use the `getcap` tool to list enabled capabilities.  
 `getcap -r / 2>/dev/null`:  
-<img src="https://user-images.githubusercontent.com/73976100/224457735-9470b2ac-a3f6-46ad-8a0e-a535a636d2d1.png" width="600">  
+<img src="https://user-images.githubusercontent.com/73976100/224457735-9470b2ac-a3f6-46ad-8a0e-a535a636d2d1.png" width="800">  
 [GTFObins](https://gtfobins.github.io/#+Capabilities) has a good list of binaries that can be leveraged for privilege escalation if we find any set capabilities.  
 We notice that vim can be used with the following command and payload:
 
