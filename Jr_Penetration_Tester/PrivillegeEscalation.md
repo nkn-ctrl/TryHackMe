@@ -412,3 +412,11 @@ The critical element for this privilege escalation vector is the “no_root_squa
 5. You will see below that both files (nfs.c and nfs are present on the target system. We have worked on the mounted share so there was no need to transfer them).  
     <img src="https://user-images.githubusercontent.com/73976100/224477440-7db69826-835c-45c9-8cc3-8f960f690bc4.png" width="800">  
 </details>
+
+
+## Windows Privilege Escalation
+**Windows Users**  
+| | |
+|-|-|
+|Administrators|	These users have the most privileges. They can change any system configuration parameter and access any file in the system.|
+|Standard Users|	These users can access the computer but only perform limited tasks. Typically these users can not make permanent or essential changes to the system and are limited to their files.|
