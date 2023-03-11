@@ -266,7 +266,7 @@ The list above shows that nano has the SUID bit set. Unfortunately, GTFObins doe
 The SUID bit set for the nano text editor allows us to create, edit and read files using the file owner’s privilege. Nano is owned by root, which probably means that we can read and edit files at a higher privilege level than our current user has. At this stage, we have two basic options for privilege escalation: reading the `/etc/shadow` file or adding our user to `/etc/passwd`.  
 
 <details>
-<summary> details </summary>
+<summary> demo </summary>
 
 1. reading the `/etc/shadow` file.
 2. We see that the nano text editor has the SUID bit set by running the `find / -type f -perm -04000 -ls 2>/dev/null` command.
@@ -332,6 +332,8 @@ Configuration of the target system:
 2. Does your current user have write privileges for any of these folders?
 3. Can you modify $PATH?
 4. Is there a script/application you can start that will be affected by this vulnerability?  
+<details>
+<summary> demo </sumarry>
 
 For demo purposes, we will use the script below:  
 <img src="https://user-images.githubusercontent.com/73976100/224473899-968b7fff-3cad-4705-ad70-8b11be1a2aba.png" width="300">  
@@ -357,3 +359,5 @@ Creating this command is fairly easy by copying /bin/bash as “thm” under the
 <img src="https://user-images.githubusercontent.com/73976100/224474257-c519e961-8083-42b9-9401-4e1b2615afbb.png" width="400">  
 We have given executable rights to our copy of /bin/bash, please note that at this point it will run with our user’s right. What makes a privilege escalation possible within this context is that the path script runs with root privileges.  
 <img src="https://user-images.githubusercontent.com/73976100/224474349-a57864f9-5810-42c9-b16b-9afe6e0f7b16.png" width="800">  
+
+</details>
