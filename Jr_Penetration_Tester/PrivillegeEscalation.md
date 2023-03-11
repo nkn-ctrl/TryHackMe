@@ -350,6 +350,8 @@ A simple search for writable folders can done using the “`find / -writable 2>/
 <img src="https://user-images.githubusercontent.com/73976100/224473112-ebbfb665-b3f2-4738-be2d-a66a8b141412.png" width="700">  
 Comparing this with PATH will help us find folders we could use.  
 We see a number of folders under /usr, thus it could be easier to run our writable folder search once more to cover subfolders.  
+<img src="https://user-images.githubusercontent.com/73976100/224474900-e3a925f0-3a8a-4437-a19f-9b4d92936e7b.png" width="700">  
+An alternative could be the command below.  
 
 `find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u`  
 Unfortunately, subfolders under /usr are not writable.  
