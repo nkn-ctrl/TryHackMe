@@ -155,8 +155,7 @@ Ideally on Windows you would obtain a shell running as the SYSTEM user, or an ad
     - `ps -A`: view all running processes
     - `ps axjf`: view process tree 
     - `ps aux`: show processes for all users (a), display the user that launched the process (u), and show processes that are not attached to a terminal (x)  
-- `env`: show environmental variables  
-<details>
+- `env`: show environmental variables  <details>
 <summary>image</summary>
 
 <img src="https://user-images.githubusercontent.com/73976100/223572360-ab79bd05-32e8-44dd-9d58-049bf06be043.png" width="600">  
