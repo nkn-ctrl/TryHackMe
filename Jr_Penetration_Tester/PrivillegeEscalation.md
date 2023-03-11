@@ -314,3 +314,10 @@ As our current user can access this script, we can easily modify it to create a 
 <img src="https://user-images.githubusercontent.com/73976100/224461076-ff88bab7-1caa-4f62-b89e-ebe201a6c7a1.png" width="400">  
 We will now run a listener on our attacking machine to receive the incoming connection.  
 
+Crontab is always worth checking as it can sometimes lead to easy privilege escalation vectors. The following scenario is not uncommon in companies that do not have a certain cyber security maturity level:
+1. System administrators need to run a script at regular intervals.
+2. They create a cron job to do this
+3. After a while, the script becomes useless, and they delete it
+4. They do not clean the relevant cron job
+
+
