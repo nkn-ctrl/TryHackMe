@@ -430,22 +430,22 @@ The critical element for this privilege escalation vector is the “no_root_squa
 ### Harvesting Passwords from Usual Spots
 The easiest way to gain access to another user is to gather credentials from a compromised machine.  
 
-:white_circle: **Unattended Windows Installations**  
-Such installations require the use of an administrator account to perform the initial setup, which might end up being stored in the machine in the following locations:
-- C:\Unattend.xml
-- C:\Windows\Panther\Unattend.xml
-- C:\Windows\Panther\Unattend\Unattend.xml
-- C:\Windows\system32\sysprep.inf
-- C:\Windows\system32\sysprep\sysprep.xml  
+- Unattended Windows Installations 
+    Such installations require the use of an administrator account to perform the initial setup, which might end up being stored in the machine in the following locations:
+    - C:\Unattend.xml
+    - C:\Windows\Panther\Unattend.xml
+    - C:\Windows\Panther\Unattend\Unattend.xml
+    - C:\Windows\system32\sysprep.inf
+    - C:\Windows\system32\sysprep\sysprep.xml  
 
-As part of these files, you might encounter credentials:
-```
-<Credentials>
+    As part of these files, you might encounter credentials:
+    ```
+    <Credentials>
     <Username>Administrator</Username>
     <Domain>thm.local</Domain>
     <Password>MyPassword123</Password>
-</Credentials>
-```  
+    </Credentials>
+    ```  
 
 :white_circle: **Powershell History**  
 `cmd.exe` prompt:  
