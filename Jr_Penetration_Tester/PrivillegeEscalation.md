@@ -333,6 +333,15 @@ Configuration of the target system:
 3. Can you modify $PATH?
 4. Is there a script/application you can start that will be affected by this vulnerability?  
 
+For demo purposes, we will use the script below:  
+<img src="https://user-images.githubusercontent.com/73976100/224473899-968b7fff-3cad-4705-ad70-8b11be1a2aba.png" width="400">  
+This script tries to launch a system binary called “thm” but the example can easily be replicated with any binary.  
+We compile this into an executable and set the SUID bit.
+<img src="https://user-images.githubusercontent.com/73976100/224473983-39fb523b-711d-4968-84c2-2191f68bc395.png" width="500">  
+Our user now has access to the “path” script with SUID bit set.  
+Once executed “path” will look for an executable named “thm” inside folders listed under PATH.  
+If any writable folder is listed under PATH we could create a binary named thm under that directory and have our “path” script run it. As the SUID bit is set, this binary will run with root privilege.  
+
 If any writable folder is listed under PATH we could create a binary named thm under that directory and have our “path” script run it. As the SUID bit is set, this binary will run with root privilege.  
 A simple search for writable folders can done using the “`find / -writable 2>/dev/null`” command.  
 <img src="https://user-images.githubusercontent.com/73976100/224473112-ebbfb665-b3f2-4738-be2d-a66a8b141412.png" width="700">  
@@ -340,6 +349,6 @@ Comparing this with PATH will help us find folders we could use.
 We see a number of folders under /usr, thus it could be easier to run our writable folder search once more to cover subfolders.  
 
 `find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u`  
-Unfortunately, subfolders under /usr are not writable  
+Unfortunately, subfolders under /usr are not writable.  
 The folder that will be easier to write to is probably `/tmp`. At this point because /tmp is not present in PATH so we will need to add it. As we can see below, the “`export PATH=/tmp:$PATH`” command accomplishes this.  
 <img src="https://user-images.githubusercontent.com/73976100/224473640-daee466d-b2da-4fd6-9994-0280016b345d.png" width="700">  
