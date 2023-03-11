@@ -276,8 +276,12 @@ This will result in a shell spawn with root privileges.
 [Linux: SUID、SGID、スティッキービットまとめ](https://qiita.com/aosho235/items/16434a490f9a05ddb0dc)  
 Users within their privilege levels changes with SUID(Set-user Identification) and SGID(Set-group Identification). These allow files to be executed with the permission level of the file owner or the group owner, respectively.  
 `find / -type f -perm -04000 -ls 2>/dev/null`: list files that have SUID or SGID bits set  
+<details>
+<summary>image</summary>
+
 ![fJEeZ4m](https://user-images.githubusercontent.com/73976100/224185408-d3b5ee86-5e23-4445-a757-237308904644.png)  
 Clicking on the SUID button in [GTFOBins](https://gtfobins.github.io/#+suid)  
+</details>
 
 The list above shows that nano has the SUID bit set. Unfortunately, GTFObins does not provide us with an easy win.  
 
@@ -314,11 +318,7 @@ The capabilities man page provides detailed information on its usage and options
 
 We can use the `getcap` tool to list enabled capabilities.  
 `getcap -r / 2>/dev/null`:  
-<details>
-<summary>image</summary>
 <img src="https://user-images.githubusercontent.com/73976100/224457735-9470b2ac-a3f6-46ad-8a0e-a535a636d2d1.png" width="800">  
-</details>
-
 [GTFObins](https://gtfobins.github.io/#+Capabilities) has a good list of binaries that can be leveraged for privilege escalation if we find any set capabilities.  
 We notice that vim can be used with the following command and payload:
 
