@@ -323,6 +323,8 @@ We notice that vim can be used with the following command and payload:
 ### Privilege Escalation: Cron Jobs
 Cron jobs are used to run scripts or binaries at specific times. If there is a scheduled task that runs with root privileges and we can change the script that will be run, then our script will run with root privileges.  
 Our goal will be to find a cron job set by root and have it run our script, ideally a shell.
+<details>
+<summary>demo</summary>
 
 Any user can read the file keeping system-wide cron jobs under `/etc/crontab`  
 <img src="https://user-images.githubusercontent.com/73976100/224460132-2c5ff984-aafc-498a-88a0-b5040d41fcfb.png" width="600">  
@@ -334,11 +336,14 @@ As our current user can access this script, we can easily modify it to create a 
 <img src="https://user-images.githubusercontent.com/73976100/224461076-ff88bab7-1caa-4f62-b89e-ebe201a6c7a1.png" width="400">  
 We will now run a listener on our attacking machine to receive the incoming connection.  
 <img src="https://user-images.githubusercontent.com/73976100/224470386-a5b95cb7-c3b7-41be-ab22-7fe33c5b8d65.png" width="600">  
+
+</details>
 Crontab is always worth checking as it can sometimes lead to easy privilege escalation vectors. The following scenario is not uncommon in companies that do not have a certain cyber security maturity level:
 1. System administrators need to run a script at regular intervals.
 2. They create a cron job to do this
 3. After a while, the script becomes useless, and they delete it
 4. They do not clean the relevant cron job
+
 
 ### Privilege Escalation: PATH
 If a folder for which your user has write permission is located in the path, you could potentially hijack an application to run a script.   
