@@ -445,4 +445,14 @@ As part of these files, you might encounter credentials:
     <Domain>thm.local</Domain>
     <Password>MyPassword123</Password>
 </Credentials>
+```  
+
+:white_circle: **Powershell History**  
+`cmd.exe` prompt:  
 ```
+type %userprofile%\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+```  
+Note: The command above will only work from cmd.exe, as Powershell won't recognize `%userprofile%` as an environment variable. To read the file from Powershell, you'd have to replace `%userprofile%` with `$Env:userprofile`.  
+
+
+
