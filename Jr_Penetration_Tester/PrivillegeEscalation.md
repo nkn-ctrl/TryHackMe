@@ -333,8 +333,8 @@ Configuration of the target system:
 3. Can you modify $PATH?
 4. Is there a script/application you can start that will be affected by this vulnerability?  
 
-<details>  
-<summary> demo </sumarry>  
+<details>
+<summary> demo </summary>
 
 For demo purposes, we will use the script below:  
 <img src="https://user-images.githubusercontent.com/73976100/224473899-968b7fff-3cad-4705-ad70-8b11be1a2aba.png" width="300">  
