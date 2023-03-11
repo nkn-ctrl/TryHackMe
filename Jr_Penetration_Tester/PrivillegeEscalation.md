@@ -309,8 +309,8 @@ Our goal will be to find a cron job set by root and have it run our script, idea
 Any user can read the file keeping system-wide cron jobs under `/etc/crontab`  
 ![fwqPuHN](https://user-images.githubusercontent.com/73976100/224460132-2c5ff984-aafc-498a-88a0-b5040d41fcfb.png)  
 You can see the `backup.sh` script was configured to run every minute. The content of the file shows a simple script that creates a backup of the prices.xls file.  
-<img src="https://user-images.githubusercontent.com/73976100/224461003-381c593c-f9d3-4aff-a2e7-f8383c46ca58.png" width="600">  
+<img src="https://user-images.githubusercontent.com/73976100/224461003-381c593c-f9d3-4aff-a2e7-f8383c46ca58.png" width="400">  
 As our current user can access this script, we can easily modify it to create a reverse shell, hopefully with root privileges.  
-<img src="https://user-images.githubusercontent.com/73976100/224461076-ff88bab7-1caa-4f62-b89e-ebe201a6c7a1.png" width="600">  
+<img src="https://user-images.githubusercontent.com/73976100/224461076-ff88bab7-1caa-4f62-b89e-ebe201a6c7a1.png" width="400">  
 We will now run a listener on our attacking machine to receive the incoming connection.  
 
