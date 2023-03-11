@@ -368,6 +368,7 @@ We have given executable rights to our copy of /bin/bash, please note that at th
 ### Privilege Escalation: NFS  
 Shared folders and remote management interfaces such as SSH and Telnet can also help you gain root access on the target system.  
 NFS (Network File Sharing) configuration is kept in the /etc/exports file. This file is created during the NFS server installation and can usually be read by users.  
-<img src="(https://user-images.githubusercontent.com/73976100/224476435-247dfff3-7a3a-4ec6-9709-0fc6b4417e2a.png" width="600">  
+<img src="https://user-images.githubusercontent.com/73976100/224476435-247dfff3-7a3a-4ec6-9709-0fc6b4417e2a.png" width="600">  
+
 
 
