@@ -313,7 +313,7 @@ You can see the `backup.sh` script was configured to run every minute. The conte
 As our current user can access this script, we can easily modify it to create a reverse shell, hopefully with root privileges.  
 <img src="https://user-images.githubusercontent.com/73976100/224461076-ff88bab7-1caa-4f62-b89e-ebe201a6c7a1.png" width="400">  
 We will now run a listener on our attacking machine to receive the incoming connection.  
-
+<img src="https://user-images.githubusercontent.com/73976100/224470386-a5b95cb7-c3b7-41be-ab22-7fe33c5b8d65.png" width="600">
 Crontab is always worth checking as it can sometimes lead to easy privilege escalation vectors. The following scenario is not uncommon in companies that do not have a certain cyber security maturity level:
 1. System administrators need to run a script at regular intervals.
 2. They create a cron job to do this
