@@ -465,7 +465,8 @@ The easiest way to gain access to another user is to gather credentials from a c
 - IIS Configuration  
     Internet Information Services (IIS) is the default web server on Windows installations. The configuration of websites on IIS is stored in a file called `web.config` and can store passwords for databases or configured authentication mechanisms. 
     - C:\inetpub\wwwroot\web.config
-    - C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\web.config
+    - C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\web.config  
+    
     Here is a quick way to find database connection strings on the file:
     ```
     type C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\web.config | findstr connectionString
