@@ -429,7 +429,7 @@ The critical element for this privilege escalation vector is the “no_root_squa
 
 ### Harvesting Passwords from Usual Spots
 The easiest way to gain access to another user is to gather credentials from a compromised machine.  
-:white_circle: **Unattended Windows Installations**  
+:blue_circle: **Unattended Windows Installations**  
 Such installations require the use of an administrator account to perform the initial setup, which might end up being stored in the machine in the following locations:
 - C:\Unattend.xml
 - C:\Windows\Panther\Unattend.xml
