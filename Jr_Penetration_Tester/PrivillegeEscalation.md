@@ -456,6 +456,11 @@ The easiest way to gain access to another user is to gather credentials from a c
     <summary>NOTE</summary>
     Note: The command above will only work from cmd.exe, as Powershell won't recognize `%userprofile%` as an environment variable. To read the file from Powershell, you'd have to replace `%userprofile%` with `$Env:userprofile`.  
     </details>
-- 
 
+- Saved Windows Credentials  
+    list saved credentials: `cmdkey /list`  
+    While you can't see the actual passwords, if you notice any credentials worth trying, you can use them with the `runas` command and the `/savecred` option, as seen below.  
+    `runas /savecred /user:admin cmd.exe`  
+
+- 
 
