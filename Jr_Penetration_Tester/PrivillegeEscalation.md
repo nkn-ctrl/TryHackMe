@@ -280,8 +280,9 @@ Users within their privilege levels changes with SUID(Set-user Identification) a
 <summary>image</summary>
 
 ![fJEeZ4m](https://user-images.githubusercontent.com/73976100/224185408-d3b5ee86-5e23-4445-a757-237308904644.png)  
+</details>  
+
 Clicking on the SUID button in [GTFOBins](https://gtfobins.github.io/#+suid)  
-</details>
 
 The list above shows that nano has the SUID bit set. Unfortunately, GTFObins does not provide us with an easy win.  
 
