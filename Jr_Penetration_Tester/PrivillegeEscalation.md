@@ -458,9 +458,14 @@ The easiest way to gain access to another user is to gather credentials from a c
     </details>
 
 - Saved Windows Credentials  
-    list saved credentials: `cmdkey /list`  
-    While you can't see the actual passwords, if you notice any credentials worth trying, you can use them with the `runas` command and the `/savecred` option, as seen below.  
-    `runas /savecred /user:admin cmd.exe`  
+    list saved credentials: 
+    ```
+    cmdkey /list
+    ```  
+    While you can't see the actual passwords, if you notice any credentials worth trying, you can use them with the `runas` command and the `/savecred` option, as seen below.    
+    ```
+    runas /savecred /user:admin cmd.exe
+    ```  
 
 - IIS Configuration  
     Internet Information Services (IIS) is the default web server on Windows installations. The configuration of websites on IIS is stored in a file called `web.config` and can store passwords for databases or configured authentication mechanisms. 
@@ -480,4 +485,6 @@ The easiest way to gain access to another user is to gather credentials from a c
     <summary>NOTE</summary>
     Note: Simon Tatham is the creator of PuTTY (and his name is part of the path), not the username for which we are retrieving the password. The stored proxy username should also be visible after running the command above.
     </details>
+
+
 
