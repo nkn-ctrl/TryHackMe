@@ -466,8 +466,18 @@ The easiest way to gain access to another user is to gather credentials from a c
     Internet Information Services (IIS) is the default web server on Windows installations. The configuration of websites on IIS is stored in a file called `web.config` and can store passwords for databases or configured authentication mechanisms. 
     - C:\inetpub\wwwroot\web.config
     - C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\web.config  
-    
+
     Here is a quick way to find database connection strings on the file:
     ```
     type C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\web.config | findstr connectionString
     ```
+- Retrieve Credentials from Software: PuTTY  
+    PuTTY is an SSH client commonly found on Windows systems. Instead of having to specify a connection's parameters every single time, users can store sessions where the IP, user and other configurations can be stored for later use. While PuTTY won't allow users to store their SSH password, it will store proxy configurations that include cleartext authentication credentials.  
+    ```
+    reg query HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\ /f "Proxy" /s
+    ```  
+    <details>
+    <summary>NOTE</summary>
+    Note: Simon Tatham is the creator of PuTTY (and his name is part of the path), not the username for which we are retrieving the password. The stored proxy username should also be visible after running the command above.
+    </details>
+
