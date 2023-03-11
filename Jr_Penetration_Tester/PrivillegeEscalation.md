@@ -356,4 +356,4 @@ At this point the path script will also look under the /tmp folder for an execut
 Creating this command is fairly easy by copying /bin/bash as “thm” under the /tmp folder.  
 <img src="https://user-images.githubusercontent.com/73976100/224474257-c519e961-8083-42b9-9401-4e1b2615afbb.png" width="400">  
 We have given executable rights to our copy of /bin/bash, please note that at this point it will run with our user’s right. What makes a privilege escalation possible within this context is that the path script runs with root privileges.  
-<img src="https://user-images.githubusercontent.com/73976100/224474349-a57864f9-5810-42c9-b16b-9afe6e0f7b16.png" width="700">  
+<img src="https://user-images.githubusercontent.com/73976100/224474349-a57864f9-5810-42c9-b16b-9afe6e0f7b16.png" width="800">  
