@@ -334,9 +334,9 @@ Configuration of the target system:
 4. Is there a script/application you can start that will be affected by this vulnerability?  
 
 For demo purposes, we will use the script below:  
-<img src="https://user-images.githubusercontent.com/73976100/224473899-968b7fff-3cad-4705-ad70-8b11be1a2aba.png" width="400">  
+<img src="https://user-images.githubusercontent.com/73976100/224473899-968b7fff-3cad-4705-ad70-8b11be1a2aba.png" width="300">  
 This script tries to launch a system binary called “thm” but the example can easily be replicated with any binary.  
-We compile this into an executable and set the SUID bit.
+We compile this into an executable and set the SUID bit.  
 <img src="https://user-images.githubusercontent.com/73976100/224473983-39fb523b-711d-4968-84c2-2191f68bc395.png" width="500">  
 Our user now has access to the “path” script with SUID bit set.  
 Once executed “path” will look for an executable named “thm” inside folders listed under PATH.  
