@@ -388,6 +388,8 @@ Shared folders and remote management interfaces such as SSH and Telnet can also 
 NFS (Network File Sharing) configuration is kept in the /etc/exports file. This file is created during the NFS server installation and can usually be read by users.  
 <img src="https://user-images.githubusercontent.com/73976100/224476435-247dfff3-7a3a-4ec6-9709-0fc6b4417e2a.png" width="600">  
 The critical element for this privilege escalation vector is the “no_root_squash” option you can see above. By default, NFS will change the root user to nfsnobody and strip any file from operating with root privileges. If the “no_root_squash” option is present on a writable share, we can create an executable with SUID bit set and run it on the target system.  
+<details>
+<summary>demo</summary>
 
 1. enumerating mountable shares from our attacking machine  
     <img src="https://user-images.githubusercontent.com/73976100/224476986-c713496f-a098-4b65-ba9e-db51961ecd4f.png" width="300">  
@@ -399,3 +401,4 @@ The critical element for this privilege escalation vector is the “no_root_squa
     <img src="https://user-images.githubusercontent.com/73976100/224477391-a0a7a98a-ad90-46b8-a3ee-42112c4e3e86.png" width="500">  
 5. You will see below that both files (nfs.c and nfs are present on the target system. We have worked on the mounted share so there was no need to transfer them).  
     <img src="https://user-images.githubusercontent.com/73976100/224477440-7db69826-835c-45c9-8cc3-8f960f690bc4.png" width="800">  
+</details>
