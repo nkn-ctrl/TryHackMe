@@ -286,5 +286,7 @@ The Other Option: Add a new user
 
 </details>
 
+### Privilege Escalation: Capabilities
+
 
 
