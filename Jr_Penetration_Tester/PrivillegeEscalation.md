@@ -335,4 +335,4 @@ Configuration of the target system:
 
 If any writable folder is listed under PATH we could create a binary named thm under that directory and have our “path” script run it. As the SUID bit is set, this binary will run with root privilege.  
 A simple search for writable folders can done using the “`find / -writable 2>/dev/null`” command.  
-![7UekB3t](https://user-images.githubusercontent.com/73976100/224473112-ebbfb665-b3f2-4738-be2d-a66a8b141412.png)  
+<img src="https://user-images.githubusercontent.com/73976100/224473112-ebbfb665-b3f2-4738-be2d-a66a8b141412.png" width="700">  
