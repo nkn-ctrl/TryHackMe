@@ -276,7 +276,7 @@ The SUID bit set for the nano text editor allows us to create, edit and read fil
 `unshadow passwd.txt shadow.txt > passwords.txt`  
 ![6cHBAr1](https://user-images.githubusercontent.com/73976100/224442815-77034199-2b2b-43f8-9ac3-a6fed91e8ba2.png)  
 5. Delete the other users credential in password.txt before crack.
-6. `john password.txt`
+6. `john [--wordlist=/usr/share/wordlists/rockyou.txt] passwords.txt`
 
 The Other Option: Add a new user  
 1. We will need the hash value of the password we want the new user to have. This can be done quickly using the openssl tool on Kali Linux.  
