@@ -322,4 +322,17 @@ Crontab is always worth checking as it can sometimes lead to easy privilege esca
 3. After a while, the script becomes useless, and they delete it
 4. They do not clean the relevant cron job
 
+### Privilege Escalation: PATH
+If a folder for which your user has write permission is located in the path, you could potentially hijack an application to run a script.   
+Typically the PATH will look like this:  
+<img src="https://user-images.githubusercontent.com/73976100/224472396-b4a6c1c0-f248-4a4c-a9d6-3dbbc3e49826.png" width="700">  
+Configuration of the target system:
 
+1. What folders are located under $PATH
+2. Does your current user have write privileges for any of these folders?
+3. Can you modify $PATH?
+4. Is there a script/application you can start that will be affected by this vulnerability?  
+
+If any writable folder is listed under PATH we could create a binary named thm under that directory and have our “path” script run it. As the SUID bit is set, this binary will run with root privilege.  
+A simple search for writable folders can done using the “`find / -writable 2>/dev/null`” command.  
+![7UekB3t](https://user-images.githubusercontent.com/73976100/224473112-ebbfb665-b3f2-4738-be2d-a66a8b141412.png)  
