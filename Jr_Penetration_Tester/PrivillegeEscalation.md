@@ -606,6 +606,7 @@ The easiest way to gain access to another user is to gather credentials from a c
     |C:\MyPrograms\Disk.exe|Sorter|Enterprise\bin\disksrs.exe|
     |C:\MyPrograms\Disk Sorter.exe|Enterprise\bin\disksrs.exe| |
     |C:\MyPrograms\Disk Sorter Enterprise\bin\disksrs.exe| | |  
+    
     If an attacker creates any of the executables that are searched for before the expected service executable, they can force the service to run an arbitrary executable.  
 
     While this sounds trivial, most of the service executables will be installed under `C:\Program` Files or `C:\Program Files (x86)` by default, which isn't writable by unprivileged users. This prevents any vulnerable service from being exploited. There are exceptions to this rule: 
