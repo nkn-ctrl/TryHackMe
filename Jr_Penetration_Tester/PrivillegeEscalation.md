@@ -546,7 +546,7 @@ The easiest way to gain access to another user is to gather credentials from a c
 
 ### Abusing Service Misconfigurations
 
-- Windows Services
+- Windows Services  
     Windows services are managed by the Service Control Manager (SCM).  
     Check the apphostsvc service configuration: `sc qc`  
     <img src="https://user-images.githubusercontent.com/73976100/224518364-43ea9a1a-9c6b-4274-b93b-d474947a5207.png" width="600">  
