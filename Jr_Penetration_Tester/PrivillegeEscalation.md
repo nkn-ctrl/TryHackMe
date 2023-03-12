@@ -606,15 +606,19 @@ The easiest way to gain access to another user is to gather credentials from a c
     |C:\MyPrograms\Disk.exe|Sorter|Enterprise\bin\disksrs.exe|
     |C:\MyPrograms\Disk Sorter.exe|Enterprise\bin\disksrs.exe| |
     |C:\MyPrograms\Disk Sorter Enterprise\bin\disksrs.exe| | |  
-    
+
     If an attacker creates any of the executables that are searched for before the expected service executable, they can force the service to run an arbitrary executable.  
 
     While this sounds trivial, most of the service executables will be installed under `C:\Program` Files or `C:\Program Files (x86)` by default, which isn't writable by unprivileged users. This prevents any vulnerable service from being exploited. There are exceptions to this rule: 
     - Some installers change the permissions on the installed folders, making the services vulnerable. 
     - An administrator might decide to install the service binaries in a non-default path.  
+
     If such a path is world-writable, the vulnerability can be exploited.
 
+    In our case, the Administrator installed the Disk Sorter binaries under `c:\MyPrograms`. By default, this inherits the permissions of the `C:\` directory, which allows any user to create files and folders in it. We can check this using `icacls`:  
+    <img src="https://user-images.githubusercontent.com/73976100/224522407-31b6de6b-2123-4185-942e-ba9339367b83.png" width="600">  
 
+    The `BUILTIN\\Users` group has AD and WD privileges, allowing the user to create subdirectories and files, respectively.
 
 
 
