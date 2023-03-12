@@ -489,7 +489,8 @@ The easiest way to gain access to another user is to gather credentials from a c
 ### Other Quick Wins (CTF Techuniques)
 - Scheduled Tasks
     <details>
-    <summary>DEMO</summary>
+    <summary>DEMO</summary>  
+    
     Looking into scheduled tasks on the target system, you may see a scheduled task that either lost its binary or it's using a binary you can modify.  
     List scheduled task: `schtasks`  
     ```
@@ -522,7 +523,7 @@ The easiest way to gain access to another user is to gather credentials from a c
     C:\> schtasks /run /tn vulntask
     ```
     </details>
-    
+
 - AlwaysInstallElevated
 
 
