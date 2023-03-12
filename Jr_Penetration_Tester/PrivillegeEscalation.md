@@ -592,7 +592,8 @@ The easiest way to gain access to another user is to gather credentials from a c
     <img src="https://user-images.githubusercontent.com/73976100/224520220-e1f745a5-5da8-4cd2-be84-65af1fc0d59a.png" width="600">   
     Note: PowerShell has `sc` as an alias to `Set-Content`, therefore you need to use `sc.exe` in order to control services with PowerShell this way.  
 
-- Unquoted Service Paths
+- Unquoted Service Paths  
+
     When working with Windows services, a very particular behaviour occurs when the service is configured to point to an "unquoted" executable. By unquoted, we mean that the path of the associated executable isn't properly quoted to account for spaces on the command.  
     <details>
     <summary>DEMO</summary>
