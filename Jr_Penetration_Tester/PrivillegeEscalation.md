@@ -626,7 +626,8 @@ The easiest way to gain access to another user is to gather credentials from a c
     Once the payload is in the server, move it to any of the locations where hijacking might occur. In this case, we will be moving our payload to C:\MyPrograms\Disk.exe. We will also grant Everyone full permissions on the file to make sure it can be executed by the service:  
     <img src="https://user-images.githubusercontent.com/73976100/224522626-f69e4673-cf62-44f8-a044-af60d9668464.png" width="600">  
 
-    
+    Once the service gets restarted, your payload should execute:  
+    <img src="https://user-images.githubusercontent.com/73976100/224522711-4526b85d-e402-4720-99d0-9ce68870dc98.png" width="600">
 
 
 
