@@ -566,7 +566,8 @@ The easiest way to gain access to another user is to gather credentials from a c
     svcuser1: service installed by the vulnerable software  
     `C:\Progra~2\System~1\WService.exe`: executable associated with the service  
 
-    <img src="https://user-images.githubusercontent.com/73976100/224519275-269d8467-36cf-4084-b451-6621efd83f0c.png" width="600">    
+    <img src="https://user-images.githubusercontent.com/73976100/224519275-269d8467-36cf-4084-b451-6621efd83f0c.png" width="600">  
+    
     The Everyone group has modify permissions (M) on the service's executable. This means we can simply overwrite it with any payload of our preference, and the service will execute it with the privileges of the configured user account.  
 
 
