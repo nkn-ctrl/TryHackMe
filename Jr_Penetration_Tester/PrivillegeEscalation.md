@@ -729,6 +729,8 @@ The easiest way to gain access to another user is to gather credentials from a c
 
 - SeTakeOwnership  
     The SeTakeOwnership privilege allows a user to take ownership of any object on the system, including files and registry keys, opening up many possibilities for an attacker to elevate privileges, as we could, for example, search for a service running as SYSTEM and take ownership of the service's executable.  
+    <details>
+    <summary>DEMO</summary>
 
     <img src="https://user-images.githubusercontent.com/73976100/224529408-488b6808-1c48-4b57-a215-97e6210189de.png" width="600">  
 
@@ -760,8 +762,8 @@ The easiest way to gain access to another user is to gather credentials from a c
 
     And finally, proceed to click on the "Ease of Access" button, which runs utilman.exe with SYSTEM privileges. Since we replaced it with a cmd.exe copy, we will get a command prompt with SYSTEM privileges:  
     <img src="https://user-images.githubusercontent.com/73976100/224530102-38714ced-bfe2-4e44-ae57-9104a2350761.png" width="700">  
+    </details>
 
-    
 
 
 
