@@ -659,7 +659,26 @@ The easiest way to gain access to another user is to gather credentials from a c
     <img src="https://user-images.githubusercontent.com/73976100/224524148-c1cc3049-dadc-4aad-9acc-4cd692841073.png" width="600">  
     </details>
 
+### Abusing dangerous privileges  
+- Windows Privileges  
+    ```
+    whoami /priv
+    ```  
+    A complete list of available privileges on Windows systems is available [here](https://docs.microsoft.com/en-us/windows/win32/secauthz/privilege-constants).  
+     You can find a comprehensive list of exploitable privileges on the [Priv2Admin](https://github.com/gtworek/Priv2Admin) Github project.  
 
+- SeBackup / SeRestore  
+    The SeBackup and SeRestore privileges allow users to read and write to any file in the system, ignoring any DACL in place.  
+    Having this power, an attacker can trivially escalate privileges on the system by using many techniques. The one we will look at consists of copying the SAM and SYSTEM registry hives to extract the local Administrator's password hash.
+    <details>
+    <summary>DEMO</summary>
+    This account is part of the "Backup Operators" group, which by default is granted the SeBackup and SeRestore privileges. We will need to open a command prompt using the "Open as administrator" option to use these privileges. We will be asked to input our password again to get an elevated console:  
+    <img src="https://user-images.githubusercontent.com/73976100/224528670-d58b9283-39a0-479e-b713-9ede338e4721.png" width="300">  
+    
+    Once on the command prompt, we can check our privileges with the following command:  
+    <img src="https://user-images.githubusercontent.com/73976100/224528777-25e6fb8b-5cc6-41fe-b617-548ee2a7659d.png" width="600">  
+
+    
 
 
 
