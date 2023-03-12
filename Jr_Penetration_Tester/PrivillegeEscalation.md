@@ -796,6 +796,7 @@ The easiest way to gain access to another user is to gather credentials from a c
 - Case Study: Druva inSync 6.6.3
     <details>
     <summary>DEMO</summary>
+    
     ![FireShot Capture 026 - TryHackMe - Windows Privilege Escalation - tryhackme com](https://user-images.githubusercontent.com/73976100/224541581-f24b0564-d9d4-4df7-a29d-7cd7fafd3716.png)  
     </details>
 
