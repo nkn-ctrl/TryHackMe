@@ -673,12 +673,12 @@ The easiest way to gain access to another user is to gather credentials from a c
     <details>
     <summary>DEMO</summary>
     This account is part of the "Backup Operators" group, which by default is granted the SeBackup and SeRestore privileges. We will need to open a command prompt using the "Open as administrator" option to use these privileges. We will be asked to input our password again to get an elevated console:  
-    <img src="https://user-images.githubusercontent.com/73976100/224528670-d58b9283-39a0-479e-b713-9ede338e4721.png" width="300">  
+   <img src="https://user-images.githubusercontent.com/73976100/224528670-d58b9283-39a0-479e-b713-9ede338e4721.png" width="300">  
     
     Once on the command prompt, we can check our privileges with the following command:  
     <img src="https://user-images.githubusercontent.com/73976100/224528777-25e6fb8b-5cc6-41fe-b617-548ee2a7659d.png" width="600">  
 
-    
+
 
 
 
