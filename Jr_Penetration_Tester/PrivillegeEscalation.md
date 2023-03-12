@@ -637,6 +637,29 @@ The easiest way to gain access to another user is to gather credentials from a c
     <img src="https://user-images.githubusercontent.com/73976100/224522711-4526b85d-e402-4720-99d0-9ce68870dc98.png" width="600">  
     </summary>
 
+- Insecrue Service Permissions  
+    Should the service DACL (not the service's executable DACL) allow you to modify the configuration of a service, you will be able to reconfigure the service. This will allow you to point to any executable you need and run it with any account you prefer, including SYSTEM itself.  
+    <details>
+    <summary>DEMO</summary>  
+
+    To check for a service DACL from the command line, you can use [Accesschk](https://docs.microsoft.com/en-us/sysinternals/downloads/accesschk) from the Sysinternals suite.  
+    <img src="https://user-images.githubusercontent.com/73976100/224523931-f2cd0f4a-fd2b-4a41-9902-1745bd2b3d2f.png" width="600">  
+    Here we can see that the `BUILTIN\\Users` group has the SERVICE_ALL_ACCESS permission, which means any user can reconfigure the service.  
+
+    Before changing the service, let's build another exe-service reverse shell and start a listener for it on the attacker's machine:  
+    <img src="https://user-images.githubusercontent.com/73976100/224523992-d0dc0736-4246-457f-8ad5-4b12a3d75c0f.png" width="600">  
+
+    We will then transfer the reverse shell executable to the target machine and store it in `C:\Users\thm-unpriv\rev-svc3.exe.` Feel free to use wget to transfer your executable and move it to the desired location. Remember to grant permissions to Everyone to execute your payload:  
+    `C:\> icacls C:\Users\thm-unpriv\rev-svc3.exe /grant Everyone:F`  
+
+    To change the service's associated executable and account, we can use the following command (mind the spaces after the equal signs when using sc.exe):  
+    `C:\> sc config THMService binPath= "C:\Users\thm-unpriv\rev-svc3.exe" obj= LocalSystem`  
+
+    Notice we can use any account to run the service. We chose LocalSystem as it is the highest privileged account available. To trigger our payload, all that rests is restarting the service:  
+    <img src="https://user-images.githubusercontent.com/73976100/224524148-c1cc3049-dadc-4aad-9acc-4cd692841073.png" width="600">  
+    </details>
+
+
 
 
 
