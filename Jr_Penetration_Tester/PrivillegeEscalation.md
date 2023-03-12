@@ -592,7 +592,15 @@ The easiest way to gain access to another user is to gather credentials from a c
     <img src="https://user-images.githubusercontent.com/73976100/224520220-e1f745a5-5da8-4cd2-be84-65af1fc0d59a.png" width="600">   
     Note: PowerShell has `sc` as an alias to `Set-Content`, therefore you need to use `sc.exe` in order to control services with PowerShell this way.  
 
+- Unquoted Service Paths
+    When working with Windows services, a very particular behaviour occurs when the service is configured to point to an "unquoted" executable. By unquoted, we mean that the path of the associated executable isn't properly quoted to account for spaces on the command.  
+    The first service will use a proper quotation so that the SCM knows without a doubt that it has to execute the binary file pointed by `"C:\Program Files\RealVNC\VNC Server\vncserver.exe"`, followed by the given parameters:  
+    <img src="https://user-images.githubusercontent.com/73976100/224522045-007224cc-b84a-4ff1-8637-a8dc619eb305.png" width="600">  
 
+    Now let's look at another service without proper quotation:  
+    <img src="https://user-images.githubusercontent.com/73976100/224522108-67c59356-8fd6-4134-a238-dda0958544d9.png" width="600">  
+
+    
 
 
 
