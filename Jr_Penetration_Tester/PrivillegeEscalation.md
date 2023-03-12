@@ -561,6 +561,9 @@ The easiest way to gain access to another user is to gather credentials from a c
 
 - Insecure Permissions on Service Executable   
     If the executable associated with a service has weak permissions that allow an attacker to modify or replace it, the attacker can gain the privileges of the service's account trivially.  
+    <details>
+    <summary>DEMO</summary>
+
     let's look at a vulnerability found on Splinterware System Scheduler.  
     <img src="https://user-images.githubusercontent.com/73976100/224519020-ca6a3494-48c6-4607-a27c-c7fc695d0d2d.png" width="600">  
     svcuser1: service installed by the vulnerable software  
@@ -591,9 +594,9 @@ The easiest way to gain access to another user is to gather credentials from a c
     And finally, restart the service. While in a normal scenario, you would likely have to wait for a service restart, you have been assigned privileges to restart the service yourself to save you some time.   
     <img src="https://user-images.githubusercontent.com/73976100/224520220-e1f745a5-5da8-4cd2-be84-65af1fc0d59a.png" width="600">   
     Note: PowerShell has `sc` as an alias to `Set-Content`, therefore you need to use `sc.exe` in order to control services with PowerShell this way.  
+    </details>  
 
 - Unquoted Service Paths  
-
     When working with Windows services, a very particular behaviour occurs when the service is configured to point to an "unquoted" executable. By unquoted, we mean that the path of the associated executable isn't properly quoted to account for spaces on the command.  
     <details>
     <summary>DEMO</summary>
