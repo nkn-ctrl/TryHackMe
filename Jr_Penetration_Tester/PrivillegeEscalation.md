@@ -786,8 +786,12 @@ The easiest way to gain access to another user is to gather credentials from a c
      ```  
     </details>  
 
-    
-
+### Abusing vulnerable software  
+- Unpatched Software  
+    `wmic` tool to list software installed on the target system and its versions. 
+    ```
+    wmic product get name,version,vendor
+    ```  
 
 
 
