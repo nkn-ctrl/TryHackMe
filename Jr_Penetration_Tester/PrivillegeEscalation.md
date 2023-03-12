@@ -602,7 +602,7 @@ The easiest way to gain access to another user is to gather credentials from a c
 
     When the SCM tries to execute the associated binary, a problem arises. Since there are spaces on the name of the "Disk Sorter Enterprise" folder, the command becomes ambiguous, and the SCM doesn't know which of the following you are trying to execute:  
     |Command|Argument 1|Argument 2|
-    |----|----|----|
+    |:----:|:----:|:----:|
     |C:\MyPrograms\Disk.exe|Sorter|Enterprise\bin\disksrs.exe|
     |C:\MyPrograms\Disk Sorter.exe|Enterprise\bin\disksrs.exe| |
     |C:\MyPrograms\Disk Sorter Enterprise\bin\disksrs.exe| | |
