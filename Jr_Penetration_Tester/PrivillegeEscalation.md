@@ -788,11 +788,15 @@ The easiest way to gain access to another user is to gather credentials from a c
 
 ### Abusing vulnerable software  
 - Unpatched Software  
-    `wmic` tool to list software installed on the target system and its versions. 
+    `wmic` tool to list software installed on the target system and its versions. (it might take around a minute to finish):  
     ```
     wmic product get name,version,vendor
     ```  
 
-
+- Case Study: Druva inSync 6.6.3
+    <details>
+    <summary>DEMO</summary>
+    ![FireShot Capture 026 - TryHackMe - Windows Privilege Escalation - tryhackme com](https://user-images.githubusercontent.com/73976100/224541581-f24b0564-d9d4-4df7-a29d-7cd7fafd3716.png)  
+    </details>
 
 
