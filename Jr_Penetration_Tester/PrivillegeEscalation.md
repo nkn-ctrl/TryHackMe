@@ -549,5 +549,12 @@ The easiest way to gain access to another user is to gather credentials from a c
 - Windows Services
     Windows services are managed by the Service Control Manager (SCM).  
     Check the apphostsvc service configuration: `sc qc`  
-    <img src="https://user-images.githubusercontent.com/73976100/224518364-43ea9a1a-9c6b-4274-b93b-d474947a5207.png" width="500">
+    <img src="https://user-images.githubusercontent.com/73976100/224518364-43ea9a1a-9c6b-4274-b93b-d474947a5207.png" width="500">  
+    `BINARY_PATH_NAME`: associated executable  
+    `SERVICE_START_NAME`: account used to run the service  
 
+    Services have a Discretionary Access Control List (DACL), which indicates who has permission to start, stop, pause, query status, query configuration, or reconfigure the service, amongst other privileges. The DACL can be seen from Process Hacker.   
+    <img src="https://user-images.githubusercontent.com/73976100/224518545-5d997e56-b2f2-423a-8702-f9e800a29395.png" width="500">  
+
+    All of the services configurations are stored on the registry under `HKLM\SYSTEM\CurrentControlSet\Services\`:  
+    <img src="https://user-images.githubusercontent.com/73976100/224518708-d0876272-4a33-4c95-8b6a-ff4bc061bc94.png" width="600">
