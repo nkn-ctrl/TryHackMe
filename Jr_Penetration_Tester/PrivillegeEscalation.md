@@ -756,8 +756,8 @@ The easiest way to gain access to another user is to gather credentials from a c
     ```  
 
     To trigger utilman, we will lock our screen from the start button:  
-    <img src="https://user-images.githubusercontent.com/73976100/224529934-eefe5e3d-61e4-438c-b66a-56c1d36ff60e.png" width="300">  
-    
+    <img src="https://user-images.githubusercontent.com/73976100/224529934-eefe5e3d-61e4-438c-b66a-56c1d36ff60e.png" width="100">  
+
 
 
 
