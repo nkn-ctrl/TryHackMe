@@ -594,6 +594,9 @@ The easiest way to gain access to another user is to gather credentials from a c
 
 - Unquoted Service Paths
     When working with Windows services, a very particular behaviour occurs when the service is configured to point to an "unquoted" executable. By unquoted, we mean that the path of the associated executable isn't properly quoted to account for spaces on the command.  
+    <details>
+    <summary>DEMO</summary>
+
     The first service will use a proper quotation so that the SCM knows without a doubt that it has to execute the binary file pointed by `"C:\Program Files\RealVNC\VNC Server\vncserver.exe"`, followed by the given parameters:  
     <img src="https://user-images.githubusercontent.com/73976100/224522045-007224cc-b84a-4ff1-8637-a8dc619eb305.png" width="600">  
 
@@ -627,7 +630,11 @@ The easiest way to gain access to another user is to gather credentials from a c
     <img src="https://user-images.githubusercontent.com/73976100/224522626-f69e4673-cf62-44f8-a044-af60d9668464.png" width="600">  
 
     Once the service gets restarted, your payload should execute:  
-    <img src="https://user-images.githubusercontent.com/73976100/224522711-4526b85d-e402-4720-99d0-9ce68870dc98.png" width="600">
+    <img src="https://user-images.githubusercontent.com/73976100/224522711-4526b85d-e402-4720-99d0-9ce68870dc98.png" width="600">  
+    </summary>
+
+
+
 
 
 
