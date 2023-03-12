@@ -589,10 +589,7 @@ The easiest way to gain access to another user is to gather credentials from a c
     user@attackerpc$ nc -lvp 4445
     ```  
     And finally, restart the service. While in a normal scenario, you would likely have to wait for a service restart, you have been assigned privileges to restart the service yourself to save you some time.   
-    ```
-    C:\> sc stop windowsscheduler
-    C:\> sc start windowsscheduler
-    ```  
+    <img src="https://user-images.githubusercontent.com/73976100/224520220-e1f745a5-5da8-4cd2-be84-65af1fc0d59a.png" width="600">   
     Note: PowerShell has `sc` as an alias to `Set-Content`, therefore you need to use `sc.exe` in order to control services with PowerShell this way.  
 
 
