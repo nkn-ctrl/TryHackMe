@@ -33,9 +33,7 @@
 
 ### Network Security
 - [Reconnaissance](https://github.com/nkn-ctrl/TryHackMe/blob/main/Jr_Penetration_Tester/Reconnaissance.md)
-
 - [Nmap](https://github.com/nkn-ctrl/TryHackMe/blob/main/Jr_Penetration_Tester/Nmap.md)
-
 - [Protocols and Servers](https://github.com/nkn-ctrl/TryHackMe/blob/main/Jr_Penetration_Tester/ProtocolsAndServers.md)  
 
 ### Metasploit
