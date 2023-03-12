@@ -796,8 +796,21 @@ The easiest way to gain access to another user is to gather credentials from a c
 - Case Study: Druva inSync 6.6.3
     <details>
     <summary>DEMO</summary>
-    
+
     ![FireShot Capture 026 - TryHackMe - Windows Privilege Escalation - tryhackme com](https://user-images.githubusercontent.com/73976100/224541581-f24b0564-d9d4-4df7-a29d-7cd7fafd3716.png)  
     </details>
 
+### Tools of the Trade
+- [WinPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS)  
+    WinPEAS is a script developed to enumerate the target system to uncover privilege escalation paths.   
+    ```
+    C:\> winpeas.exe > outputfile.txt
+    ```  
 
+- [PrivescCheck](https://github.com/itm4n/PrivescCheck)  
+    PrivescCheck is a PowerShell script that searches common privilege escalation on the target system. It provides an alternative to WinPEAS without requiring the execution of a binary file.  
+    ```
+    PS C:\> Set-ExecutionPolicy Bypass -Scope process -Force
+    PS C:\> . .\PrivescCheck.ps1
+    PS C:\> Invoke-PrivescCheck
+    ```
