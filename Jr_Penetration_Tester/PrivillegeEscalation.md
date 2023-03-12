@@ -618,7 +618,15 @@ The easiest way to gain access to another user is to gather credentials from a c
     In our case, the Administrator installed the Disk Sorter binaries under `c:\MyPrograms`. By default, this inherits the permissions of the `C:\` directory, which allows any user to create files and folders in it. We can check this using `icacls`:  
     <img src="https://user-images.githubusercontent.com/73976100/224522407-31b6de6b-2123-4185-942e-ba9339367b83.png" width="600">  
 
-    The `BUILTIN\\Users` group has AD and WD privileges, allowing the user to create subdirectories and files, respectively.
+    The `BUILTIN\\Users` group has AD and WD privileges, allowing the user to create subdirectories and files, respectively.  
+
+    The process of creating an exe-service payload with msfvenom and transferring it to the target host. 
+    <img src="https://user-images.githubusercontent.com/73976100/224522530-874ecef9-b1ad-47e9-a5e8-7e91258a73cd.png" width="600">  
+
+    Once the payload is in the server, move it to any of the locations where hijacking might occur. In this case, we will be moving our payload to C:\MyPrograms\Disk.exe. We will also grant Everyone full permissions on the file to make sure it can be executed by the service:  
+    <img src="https://user-images.githubusercontent.com/73976100/224522626-f69e4673-cf62-44f8-a044-af60d9668464.png" width="600">  
+
+    
 
 
 
