@@ -756,7 +756,12 @@ The easiest way to gain access to another user is to gather credentials from a c
     ```  
 
     To trigger utilman, we will lock our screen from the start button:  
-    <img src="https://user-images.githubusercontent.com/73976100/224529934-eefe5e3d-61e4-438c-b66a-56c1d36ff60e.png" width="100">  
+    <img src="https://user-images.githubusercontent.com/73976100/224529934-eefe5e3d-61e4-438c-b66a-56c1d36ff60e.png" width="200">  
+
+    And finally, proceed to click on the "Ease of Access" button, which runs utilman.exe with SYSTEM privileges. Since we replaced it with a cmd.exe copy, we will get a command prompt with SYSTEM privileges:  
+    <img src="https://user-images.githubusercontent.com/73976100/224530102-38714ced-bfe2-4e44-ae57-9104a2350761.png" width="700">  
+
+    
 
 
 
