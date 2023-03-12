@@ -813,4 +813,15 @@ The easiest way to gain access to another user is to gather credentials from a c
     PS C:\> Set-ExecutionPolicy Bypass -Scope process -Force
     PS C:\> . .\PrivescCheck.ps1
     PS C:\> Invoke-PrivescCheck
+    ```  
+
+- [WES-NG](https://github.com/bitsadmin/wesng): Windows Exploit Suggester - Next Generation  
+    Some exploit suggesting scripts (e.g. winPEAS) will require you to upload them to the target system and run them there. This may cause antivirus software to detect and delete them. To avoid making unnecessary noise that can attract attention, you may prefer to use WES-NG, which will run on your attacking machine (e.g. Kali or TryHackMe AttackBox).  
+    Once installed, and before using it, type the `wes.py --update` command to update the database. The script will refer to the database it creates to check for missing patches that can result in a vulnerability you can use to elevate your privileges on the target system.
+
+    To use the script, you will need to run the `systeminfo` command on the target system. Do not forget to direct the output to a .txt file you will need to move to your attacking machine.  
     ```
+    user@kali$ wes.py systeminfo.txt
+    ```  
+- Metasploit  
+    If you already have a Meterpreter shell on the target system, you can use the `multi/recon/local_exploit_suggester` module to list vulnerabilities that may affect the target system and allow you to elevate your privileges on the target system.
