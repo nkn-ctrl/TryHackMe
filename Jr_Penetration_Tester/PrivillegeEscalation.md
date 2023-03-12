@@ -527,7 +527,7 @@ The easiest way to gain access to another user is to gather credentials from a c
 - AlwaysInstallElevated  
     <details>
     <summary>DEMO</summary>
-    
+
     Windows installer files (also known as .msi files) are used to install applications on the system. They usually run with the privilege level of the user that starts it. However, these can be configured to run with higher privileges from any user account (even unprivileged ones). This could potentially allow us to generate a malicious MSI file that would run with admin privileges.  
     This method requires two registry values to be set. You can query these from the command line using the commands below.  
     ```
@@ -544,5 +544,10 @@ The easiest way to gain access to another user is to gather credentials from a c
     ```
     </details>
 
+### Abusing Service Misconfigurations
 
+- Windows Services
+    Windows services are managed by the Service Control Manager (SCM).  
+    Check the apphostsvc service configuration: `sc qc`  
+    <img src="https://user-images.githubusercontent.com/73976100/224518364-43ea9a1a-9c6b-4274-b93b-d474947a5207.png">
 
