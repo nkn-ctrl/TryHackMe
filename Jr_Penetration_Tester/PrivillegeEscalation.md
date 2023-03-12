@@ -727,7 +727,10 @@ The easiest way to gain access to another user is to gather credentials from a c
     ```  
     </detalis>
 
+- SeTakeOwnership  
+    The SeTakeOwnership privilege allows a user to take ownership of any object on the system, including files and registry keys, opening up many possibilities for an attacker to elevate privileges, as we could, for example, search for a service running as SYSTEM and take ownership of the service's executable.  
 
+    <img src="https://user-images.githubusercontent.com/73976100/224529408-488b6808-1c48-4b57-a215-97e6210189de.png" width="600">
 
 
 
