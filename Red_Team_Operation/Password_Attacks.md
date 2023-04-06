@@ -63,6 +63,34 @@ Crunch will now generate the following amount of data: 243 bytes
 Crunch will now generate the following number of lines: xx
 crunch: 100% completed generating output
 ```
+```
+user@thm$ cat crunch.txt
+00
+01
+02
+03
+04
+0a
+0b
+0c
+0d
+10
+.
+.
+.
+cb
+cc
+cd
+d0
+d1
+d2
+d3
+d4
+da
+db
+dc
+dd
+```
 - `@` - lower case alpha characters
 - `,` - upper case alpha characters
 - `%` - numeric characters
