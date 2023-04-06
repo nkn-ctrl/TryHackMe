@@ -108,5 +108,68 @@ Candidates.#1....: 123456 -> 123123
 Started: Mon Oct 11 08:20:49 2021
 Stopped: Mon Oct 11 08:20:52 2021
 ```
+- `-a 0`  sets the attack mode to a dictionary attack
+- `-m 0`  sets the hash mode for cracking MD5 hashes
+- `--show`: show the cracked value if the hash has been cracked  
+
+### Brute-Force attack
+```
+user@machine$ hashcat --help
+ ? | Charset
+ ===+=========
+  l | abcdefghijklmnopqrstuvwxyz
+  u | ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  d | 0123456789
+  h | 0123456789abcdef
+  H | 0123456789ABCDEF
+  s |  !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+  a | ?l?u?d?s
+  b | 0x00 - 0xff
+```
+```
+user@machine$ hashcat -a 3 ?d?d?d?d --stdout
+1234
+0234
+2234
+3234
+9234
+4234
+5234
+8234
+7234
+6234
+..
+..
+```
+- `-a 3`  sets the attacking mode as a brute-force attack
+- `?d?d?d?d` the ?d tells hashcat to use a digit. In our case, ?d?d?d?d for four digits starting with 0000 and ending at 9999
+- `--stdout` print the result to the terminal  
+```
+user@machine$ hashcat -a 3 -m 0 05A5CF06982BA7892ED2A6D38FE832D6 ?d?d?d?d
+05a5cf06982ba7892ed2a6d38fe832d6:2021
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Name........: MD5
+Hash.Target......: 05a5cf06982ba7892ed2a6d38fe832d6
+Time.Started.....: Mon Oct 11 10:54:06 2021 (0 secs)
+Time.Estimated...: Mon Oct 11 10:54:06 2021 (0 secs)
+Guess.Mask.......: ?d?d?d?d [4]
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........: 16253.6 kH/s (0.10ms) @ Accel:1024 Loops:10 Thr:1 Vec:8
+Recovered........: 1/1 (100.00%) Digests
+Progress.........: 10000/10000 (100.00%)
+Rejected.........: 0/10000 (0.00%)
+Restore.Point....: 0/1000 (0.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-10 Iteration:0-10
+Candidates.#1....: 1234 -> 6764
+
+Started: Mon Oct 11 10:54:05 2021
+Stopped: Mon Oct 11 10:54:08 2021
+```
+
+
+
+
 
 
