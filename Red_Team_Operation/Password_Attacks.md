@@ -52,4 +52,61 @@ jsmith
 smithjohn
 ```
 
+### Keyspace Technique
+```
+user@thm$ crunch 2 2 01234abcd -o crunch.txt
+Crunch will now generate the following amount of data: 243 bytes
+0 MB
+0 GB
+0 TB
+0 PB
+Crunch will now generate the following number of lines: xx
+crunch: 100% completed generating output
+```
+- `@` - lower case alpha characters
+- `,` - upper case alpha characters
+- `%` - numeric characters
+- `^` - special characters including space
+```
+user@thm$  crunch 6 6 -t pass%%
+Crunch will now generate the following amount of data: 700 bytes
+0 MB
+0 GB
+0 TB
+0 PB
+Crunch will now generate the following number of lines: 100
+pass00
+pass01
+pass02
+pass03
+```
+
+## Offline Attacks
+### Dictionary attack
+To identify the type of hash, we could a tool such as `hashid` or `hash-identifier`.  
+```
+user@machine$ hashcat -a 0 -m 0 f806fc5a2a0d5ba2471600758452799c /usr/share/wordlists/rockyou.txt
+hashcat (v6.1.1) starting...
+f806fc5a2a0d5ba2471600758452799c:rockyou
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Name........: MD5
+Hash.Target......: f806fc5a2a0d5ba2471600758452799c
+Time.Started.....: Mon Oct 11 08:20:50 2021 (0 secs)
+Time.Estimated...: Mon Oct 11 08:20:50 2021 (0 secs)
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:   114.1 kH/s (0.02ms) @ Accel:1024 Loops:1 Thr:1 Vec:8
+Recovered........: 1/1 (100.00%) Digests
+Progress.........: 40/40 (100.00%)
+Rejected.........: 0/40 (0.00%)
+Restore.Point....: 0/40 (0.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:0-1
+Candidates.#1....: 123456 -> 123123
+
+Started: Mon Oct 11 08:20:49 2021
+Stopped: Mon Oct 11 08:20:52 2021
+```
+
 
