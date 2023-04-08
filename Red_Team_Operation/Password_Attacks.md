@@ -291,6 +291,15 @@ Hydra (http://www.thc.org/thc-hydra) starting at 2021-10-13 08:06:22
 Hydra (http://www.thc.org/thc-hydra) 
 finished at 2021-10-13 08:06:45
 ```
+`-l admin`  we are specifying a single username, use `-L` for a username wordlist  
+`-P Path` specifying the full path of wordlist, you can specify a single password by using `-p`.  
+`10.10.x.x` the IP address or the fully qualified domain name (FQDN) of the target.  
+`http-get-form` the type of HTTP request, which can be either `http-get-form` or `http-post-form`.  
+Next, we specify the URL, path, and conditions that are split using `:`  
+`login-get/index.php` the path of the login page on the target webserver.  
+`username=^USER^&password=^PASS^` the parameters to brute-force, we inject `^USER^` to brute force usernames and `^PASS^` for passwords from the specified dictionary.  
+
+
 
 
 
