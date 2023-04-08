@@ -204,6 +204,10 @@ Press 'q' or Ctrl-C to abort, almost any other key for status
 Tryh@ckm3
 7089833p 0:00:00:02 100.00% (2021-10-11 13:56) 3016Kp/s tryhackme999999
 ```
+`--wordlist=` to specify the wordlist or dictionary file.  
+`--rules` to specify which rule or rules to use.  
+`--stdout` to print the output to the terminal.  
+
 #### Custom Rules
 ```
 user@machine$ sudo vi /etc/john/john.conf 
