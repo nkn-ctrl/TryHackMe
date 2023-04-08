@@ -234,7 +234,7 @@ $password0
 ```
 user@machine$ hydra -l ftp -P passlist.txt ftp://10.10.x.x
 ```
-`-l` ftp we are specifying a single username, use-L for a username wordlist  
+`-l` ftp we are specifying a single username, use `-L` for a username wordlist  
 `-P` Path specifying the full path of wordlist, you can specify a single password by using `-p`.  
 `ftp://10.10.x.x` the protocol and the IP address or the fully qualified domain name (FDQN) of the target.
 
