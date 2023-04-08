@@ -298,6 +298,7 @@ finished at 2021-10-13 08:06:45
 Next, we specify the URL, path, and conditions that are split using `:`  
 `login-get/index.php` the path of the login page on the target webserver.  
 `username=^USER^&password=^PASS^` the parameters to brute-force, we inject `^USER^` to brute force usernames and `^PASS^` for passwords from the specified dictionary.  
+
 The following section is important to eliminate false positives by specifying the 'failed' condition with `F=`.  
 And success conditions, `S=`. You will have more information about these conditions by analyzing the webpage or in the enumeration stage! What you set for these values depends on the response you receive back from the server for a failed login attempt and a successful login attempt. For example, if you receive a message on the webpage 'Invalid password' after a failed login, set `F=Invalid Password`.  
 
