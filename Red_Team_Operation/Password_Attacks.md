@@ -197,6 +197,35 @@ Stopped: Mon Oct 11 10:54:08 2021
 ```
 
 ### Rule-Based attacks
+```
+user@machine$ john --wordlist=single-password-list.txt --rules=KoreLogic --stdout |grep "Tryh@ckm3"
+Using default input encoding: UTF-8
+Press 'q' or Ctrl-C to abort, almost any other key for status
+Tryh@ckm3
+7089833p 0:00:00:02 100.00% (2021-10-11 13:56) 3016Kp/s tryhackme999999
+```
+#### Custom Rules
+```
+user@machine$ sudo vi /etc/john/john.conf 
+[List.Rules:THM-Password-Attacks] 
+Az"[0-9]" ^[!@#$]
+```
+`Az` represents a single word from the original wordlist/dictionary using -p.  
+`"[0-9]"` append a single digit (from `0` to `9`) to the end of the word. For two digits, we can add `"[0-9][0-9]"`  and so on.   
+`^[!@#$]` add a special character at the beginning of each word. `^` means the beginning of the line/word. Note, changing `^` to `$` will append the special characters to the end of the line/word.
+
+Now let's create a file containing a single word `password` to see how we can expand our wordlist using this rule.
+```
+user@machine$ echo "password" > /tmp/single.lst
+```
+```
+user@machine$ john --wordlist=/tmp/single.lst --rules=THM-Password-Attacks --stdout 
+Using default input encoding: UTF-8 
+!password0 
+@password0 
+#password0 
+$password0
+```
 
 
 
