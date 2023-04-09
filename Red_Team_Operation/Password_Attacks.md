@@ -313,6 +313,12 @@ Or for example, during the enumeration, we found that the webserver serves `logo
 `-f` to stop the brute-forcing attacks after finding a valid username and password  
 
 ## Password spray attack
+Common and weak passwords often follow a pattern and format. Some commonly used passwords and their overall format can be found below.  
+
+- The current season followed by the current year (SeasonYear). For example, Fall2020, Spring2021, etc.
+- The current month followed by the current year (MonthYear). For example, November2020, March2021, etc.
+- Using the company name along with random numbers (CompanyNameNumbers). For example, TryHackMe01, TryHackMe02.  
+If a password complexity policy is enforced within the organization, we may need to create a password that includes symbols to fulfill the requirement, such as `October2021!`, `Spring2021!`, `October2021@`, etc. To be successful in the password spraying attack, we need to enumerate the target and create a list of valid usernames (or email addresses list).
 - SSH
   ```
   user@THM:~$ hydra -L usernames-list.txt -p Spring2021 ssh://10.1.1.10
