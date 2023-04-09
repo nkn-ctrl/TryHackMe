@@ -337,6 +337,7 @@ Or for example, during the enumeration, we found that the webserver serves `logo
   - [SprayingToolkit](https://github.com/byt3bl33d3r/SprayingToolkit) (atomizer.py)
   - [MailSniper](https://github.com/dafthack/MailSniper)
 
-
+- SMB
+  - Tool: Metasploit (auxiliary/scanner/smb/smb_login)
 
 
