@@ -27,3 +27,12 @@ While there are vulnerabilities such as [CVE-2017-7494](https://www.cvedetails.c
 Telnet is an application protocol which allows you, with the use of a telnet client, to connect to and execute commands on a remote machine that's hosting a telnet server.  
 `telnet [ip] [port]`  
 
+### Exploit Telnet
+
+
+## FTP - File Transfer Protocol -
+FTP is a protocol used to allow remote transfer of files over a network.  
+A typical FTP session operates using two channels:
+- a command (sometimes called the control) channel
+- a data channel.  
+
