@@ -27,7 +27,7 @@ While there are vulnerabilities such as [CVE-2017-7494](https://www.cvedetails.c
 Telnet is an application protocol which allows you, with the use of a telnet client, to connect to and execute commands on a remote machine that's hosting a telnet server.  
 `telnet [ip] [port]`  
 
-### Exploit Telnet
+### Exploiting Telnet
 - https://www.cvedetails.com/
 - https://cve.mitre.org/  
 However, you're far more likely to find a misconfiguration in how telnet has been configured or is operating that will allow you to exploit it.  
@@ -40,4 +40,10 @@ FTP is a protocol used to allow remote transfer of files over a network.
 A typical FTP session operates using two channels:
 - a command (sometimes called the control) channel
 - a data channel.  
+
+The FTP server may support either Active or Passive connections, or both.  
+- In an Active FTP connection, the client opens a port and listens. The server is required to actively connect to it. 
+- In a Passive FTP connection, the server opens a port and listens (passively) and the client connects to it.   
+
+### Exploiting FTP
 
