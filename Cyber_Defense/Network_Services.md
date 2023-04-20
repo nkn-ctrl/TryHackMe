@@ -7,7 +7,7 @@
 - Port Scanning
     nmap 
 - Enum4Linux
-    `enum4linux [options] IP_ADDR`  
+    `enum4linux [options] [ip]`  
     `-U` get userlist  
     `-M` get machine list  
     `-N` get namelist dump (different from -U and-M)  
@@ -22,4 +22,8 @@ While there are vulnerabilities such as [CVE-2017-7494](https://www.cvedetails.c
     `smbclient //[IP]/[SHARE]`  
     `-U [name]` : to specify the user  
     `-p [port]` : to specify the port  
+
+## Telnet
+Telnet is an application protocol which allows you, with the use of a telnet client, to connect to and execute commands on a remote machine that's hosting a telnet server.  
+`telnet [ip] [port]`  
 
