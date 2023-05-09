@@ -41,3 +41,12 @@
 
 ### Privilege Escalation  
 - [Privilege Escalation](https://github.com/nkn-ctrl/TryHackMe/blob/main/Jr_Penetration_Tester/PrivillegeEscalation.md)
+
+## Red Teaming
+### Initial Access
+- [Red Team Recon](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/RedTeamRecon.md)
+- [Weaponization](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Weaponization.md)
+- [Password Attacks](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Password_Attacks.md)
+- [Phishing](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Phishing.md)
+### Post Compromise
+- [Enumeration](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Enumeration.md)
