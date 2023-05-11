@@ -351,6 +351,7 @@ However, it is often better to script up these types of attacks yourself, which 
 <details>
 <summary>ntlm_passwordspray.py</summary>
 ```
+
 #!/usr/bin/python3
 
 import requests
