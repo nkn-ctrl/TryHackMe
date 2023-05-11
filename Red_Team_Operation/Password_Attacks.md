@@ -348,9 +348,10 @@ If a password complexity policy is enforced within the organization, we may need
   - Tool: Metasploit (auxiliary/scanner/smb/smb_login)  
 
 However, it is often better to script up these types of attacks yourself, which allows you more control over the process.  A base python script has been provided in the task files that can be used for the password spraying attack.   
+
 <details>
 <summary>ntlm_passwordspray.py</summary>
-
+```
 #!/usr/bin/python3
 
 import requests
@@ -421,5 +422,6 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
+```
 
 </details>
