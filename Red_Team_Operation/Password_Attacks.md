@@ -351,7 +351,6 @@ However, it is often better to script up these types of attacks yourself, which 
 
 <details>
 <summary>ntlm_passwordspray.py</summary>
-```
 #!/usr/bin/python3
 
 import requests
@@ -422,6 +421,4 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
-```
-
 </details>
