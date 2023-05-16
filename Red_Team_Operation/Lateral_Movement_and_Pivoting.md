@@ -14,3 +14,8 @@ User Account Control([UAC](https://docs.microsoft.com/en-us/troubleshoot/windows
 ## Spawning Processes Remotely
 
 ### Psexec
+- Ports: 445/TCP (SMB)
+- Required Group Memberships: Administrators  
+
+Psexec is one of many Sysinternals Tools and can be downloaded [here](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec).  
+
