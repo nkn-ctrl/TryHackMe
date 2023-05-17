@@ -45,3 +45,10 @@ Powershell also includes the Invoke-Command cmdlet, which runs ScriptBlocks remo
 ```
 Invoke-Command -Computername TARGET -Credential $credential -ScriptBlock {whoami}
 ```
+
+### Remotely Creating Services Using sc
+- Ports:
+    - 135/TCP, 49152-65535/TCP (DCE/RPC)
+    - 445/TCP (RPC over SMB Named Pipes)
+    - 139/TCP (RPC over SMB Named Pipes)
+- Required Group Memberships: Administrators  
