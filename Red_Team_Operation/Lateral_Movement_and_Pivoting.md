@@ -35,8 +35,7 @@ We can achieve the same from Powershell, but to pass different credentials, we w
 $username = 'Administrator';
 $password = 'Mypass123';
 $securePassword = ConvertTo-SecureString $password -AsPlainText -Force; 
-$credential = New-Object System.Management.Automation.
-PSCredential $username, $securePassword;
+$credential = New-Object System.Management.Automation.PSCredential $username, $securePassword;
 ```  
 Once we have our PSCredential object, we can create an interactive session using the Enter-PSSession cmdlet:  
 ```
