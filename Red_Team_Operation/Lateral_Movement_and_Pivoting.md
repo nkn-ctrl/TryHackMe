@@ -75,3 +75,8 @@ Finally, to delete the scheduled task, we can use the following command and clea
 ```
 schtasks /S TARGET /TN "THMtask1" /DELETE /F
 ```
+
+## Moving Laterally Using WMI
+WMI(Windows Management Instrumentation) is Windows implementation of Web-Based Enterprise Management (WBEM), an enterprise standard for accessing management information across devices.
+
+### Connecting to WMI From Powershell
