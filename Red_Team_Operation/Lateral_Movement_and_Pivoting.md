@@ -19,3 +19,12 @@ User Account Control([UAC](https://docs.microsoft.com/en-us/troubleshoot/windows
 
 Psexec is one of many Sysinternals Tools and can be downloaded [here](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec).  
 
+```
+psexec64.exe \\MACHINE_IP -u Administrator -p Mypass123 -i cmd.exe
+```
+
+### Remote Process Creation Using WinRM
+- Ports: 5985/TCP (WinRM HTTP) or 5986/TCP(WinRM HTTPS)
+- Required Group Memberships: Remote Management Users  
+
+Windows Remote Management (WinRM) is a web-based protocol used to send Powershell commands to Windows hosts remotely. Most Windows Server installations will have WinRM enabled by default, making it an attractive attack vector.  
