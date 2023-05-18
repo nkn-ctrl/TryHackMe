@@ -100,4 +100,5 @@ $Session = New-Cimsession -ComputerName TARGET -Credential $credential -SessionO
 - Ports:
     - 135/TCP, 49152-65535/TCP (DCERPC)
     - 5985/TCP (WinRM HTTP) or 5986/TCP (WinRM HTTPS)
-- Required Group Memberships: Administrators
+- Required Group Memberships: Administrators  
+We can remotely spawn a process from Powershell by leveraging Windows Management Instrumentation (WMI), sending a WMI request to the Win32_Process class to spawn the process under the session we created before:
