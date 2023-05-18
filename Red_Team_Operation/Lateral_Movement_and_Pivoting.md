@@ -183,3 +183,4 @@ wmic /node:TARGET /user:DOMAIN\USER product call install PackageLocation=c:\Wind
 ### NTLM Authentication
 ![ntlm](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/7a3d4ba8-6638-4241-899f-7996289fded1)
 
+#### Pass-the-Hash
