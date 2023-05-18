@@ -95,3 +95,9 @@ To establish a WMI session from Powershell, we can use the following commands an
 $Opt = New-CimSessionOption -Protocol DCOM
 $Session = New-Cimsession -ComputerName TARGET -Credential $credential -SessionOption $Opt -ErrorAction Stop
 ```
+
+### Remote Process Creation Using WMI
+- Ports:
+    - 135/TCP, 49152-65535/TCP (DCERPC)
+    - 5985/TCP (WinRM HTTP) or 5986/TCP (WinRM HTTPS)
+- Required Group Memberships: Administrators
