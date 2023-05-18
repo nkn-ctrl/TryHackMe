@@ -178,4 +178,8 @@ We can achieve the same by us using wmic in legacy systems:
 wmic /node:TARGET /user:DOMAIN\USER product call install PackageLocation=c:\Windows\myinstaller.msi
 ```
 
+## Use of Alternate Authentication Material
+
+### NTLM Authentication
+![ntlm](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/7a3d4ba8-6638-4241-899f-7996289fded1)
 
