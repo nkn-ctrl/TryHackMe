@@ -244,13 +244,13 @@ Connect to WinRM using PtH:
 ### Kerberos Authentication
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/646465a0-b5ce-4460-b9b7-6a3ae6a38307" width=600>  
 
-<detail>
+<details>
 The user sends his username and a timestamp encrypted using a key derived from his password to the Key Distribution Center (KDC), a service usually installed on the Domain Controller in charge of creating Kerberos tickets on the network.
 
 The KDC will create and send back a Ticket Granting Ticket (TGT), allowing the user to request tickets to access specific services without passing their credentials to the services themselves. Along with the TGT, a Session Key is given to the user, which they will need to generate the requests that follow.
 
 Notice the TGT is encrypted using the krbtgt account's password hash, so the user can't access its contents. It is important to know that the encrypted TGT includes a copy of the Session Key as part of its contents, and the KDC has no need to store the Session Key as it can recover a copy by decrypting the TGT if needed.
-</detail>  
+</details>  
 
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/db298eea-7dc1-4943-971c-567db4c05fcc" width=600>  
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/15611198-53b3-486f-8634-1dede03accec" width=600>  
