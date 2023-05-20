@@ -242,7 +242,9 @@ Connect to WinRM using PtH:
 `evil-winrm -i VICTIM_IP -u MyUser -H NTLM_HASH`
 
 ### Kerberos Authentication
-
+<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/646465a0-b5ce-4460-b9b7-6a3ae6a38307" width=600>  
+<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/db298eea-7dc1-4943-971c-567db4c05fcc" width=600>  
+<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/15611198-53b3-486f-8634-1dede03accec" width=600>  
 
 #### Pass-the-Ticket
 Sometimes it will be possible to extract Kerberos tickets and session keys from LSASS memory using mimikatz. The process usually requires us to have SYSTEM privileges on the attacked machine and can be done as follows:
