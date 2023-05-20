@@ -253,7 +253,16 @@ Notice the TGT is encrypted using the krbtgt account's password hash, so the use
 </details>  
 
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/db298eea-7dc1-4943-971c-567db4c05fcc" width=600>  
+<details>
+When users want to connect to a service on the network like a share, website or database, they will use their TGT to ask the KDC for a Ticket Granting Service (TGS). TGS are tickets that allow connection only to the specific service for which they were created. To request a TGS, the user will send his username and a timestamp encrypted using the Session Key, along with the TGT and a Service Principal Name (SPN), which indicates the service and server name we intend to access.
+
+As a result, the KDC will send us a TGS and a Service Session Key, which we will need to authenticate to the service we want to access. The TGS is encrypted using the Service Owner Hash. The Service Owner is the user or machine account under which the service runs. The TGS contains a copy of the Service Session Key on its encrypted contents so that the Service Owner can access it by decrypting the TGS.
+</details>
+
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/15611198-53b3-486f-8634-1dede03accec" width=600>  
+<details>
+The TGS can then be sent to the desired service to authenticate and establish a connection. The service will use its configured account's password hash to decrypt the TGS and validate the Service Session Key.
+</details>
 
 #### Pass-the-Ticket
 Sometimes it will be possible to extract Kerberos tickets and session keys from LSASS memory using mimikatz. The process usually requires us to have SYSTEM privileges on the attacked machine and can be done as follows:
