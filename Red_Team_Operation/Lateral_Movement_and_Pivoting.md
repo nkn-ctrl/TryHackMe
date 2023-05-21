@@ -352,3 +352,8 @@ To connect to a session, we will use tscon.exe and specify the session ID we wil
 tscon 3 /dest:rdp-tcp#6
 ```  
 Note: Windows Server 2019 won't allow you to connect to another user's session without knowing its password.  
+
+## PORT Forwarding
+We can use port forwarding techniques, which consist of using any compromised host as a jump box to pivot to other hosts.  
+
+### SSH Tunnelling
