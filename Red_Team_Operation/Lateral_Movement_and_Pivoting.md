@@ -367,6 +367,7 @@ passwd tunneluser
 
 #### SSH Remote Port Forwarding
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/3e7d5be2-b012-47c1-9480-dd08c6256547" width=600>  
+
 PC1: Command Prompt:  
 
 ```
@@ -385,6 +386,7 @@ munra@attacker-pc$ xfreerdp /v:127.0.0.1 /u:MyUser /p:MyPassword
 #### SSH Local Port Forwarding  
 Local port forwarding allows us to "pull" a port from an SSH server into the SSH client.  
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/b7eff92c-ddd6-4c01-b16c-b97e90178030" width=600>  
+
 PC1: Command Prompt:  
 ```
 C:\> ssh tunneluser@1.1.1.1 -L *:80:127.0.0.1:80 -N
