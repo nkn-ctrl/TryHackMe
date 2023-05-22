@@ -392,6 +392,17 @@ PC1: Command Prompt:
 C:\> ssh tunneluser@1.1.1.1 -L *:80:127.0.0.1:80 -N
 ```  
 
-`-L` option for local port forwarding
+`-L` option for local port forwarding. This option requires us to indicate the local socket used by PC-1 to receive connections (`*:80`) and the remote socket to connect to from the attacker's PC perspective (`127.0.0.1:80`).  
+
+Since we are opening a new port on PC-1, we might need to add a firewall rule to allow for incoming connections (with `dir=in`). Administrative privileges are needed for this:
+```
+netsh advfirewall firewall add rule name="Open Port 80" dir=in action=allow protocol=TCP localport=80
+```  
+
+Once your tunnel is set up, any user pointing their browsers to PC-1 at `http://2.2.2.2:80` and see the website published by the attacker's machine.  
+
+
+
+
 
 
