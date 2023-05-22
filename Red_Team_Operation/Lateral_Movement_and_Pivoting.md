@@ -368,6 +368,7 @@ passwd tunneluser
 #### SSH Remote Port Forwarding
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/3e7d5be2-b012-47c1-9480-dd08c6256547" width=600>  
 PC1: Command Prompt:  
+
 ```
 C:\> ssh tunneluser@1.1.1.1 -R 3389:3.3.3.3:3389 -N
 ```  
