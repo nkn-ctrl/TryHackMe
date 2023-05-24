@@ -87,3 +87,8 @@ thm@web:~$ cat /tmp/http.bs64 | base64 -d | tar xvfz -
 tmp/task6/
 tmp/task6/creds.txt
 ```
+
+
+### Tunneling
+![exfiltration3](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/21509d65-0b22-458e-ae64-6ae96c31c3df)
+
