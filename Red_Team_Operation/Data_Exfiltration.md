@@ -92,3 +92,28 @@ tmp/task6/creds.txt
 ### Tunneling
 ![exfiltration3](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/21509d65-0b22-458e-ae64-6ae96c31c3df)
 
+#### HTTP Tunneling  
+
+<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/2840f366-f6ee-424e-8264-8f858c64cbb3" width=600>  
+
+For HTTP Tunneling, we will be using a [Neo-reGeorg](https://github.com/L-codes/Neo-reGeorg) tool to establish a communication channel to access the internal network devices.   
+
+- Generating encrypted Tunneling Clients with a selected password!  
+```
+root@AttackBox:/opt/Neo-reGeorg# python3 neoreg.py generate -k thm
+~~~
+~~~
+    [+] Mkdir a directory: neoreg_servers
+    [+] Create neoreg server files:
+       => neoreg_servers/tunnel.aspx
+       => neoreg_servers/tunnel.ashx
+       => neoreg_servers/tunnel.jsp
+       => neoreg_servers/tunnel_compatibility.jsp
+       => neoreg_servers/tunnel.jspx
+       => neoreg_servers/tunnel_compatibility.jspx
+       => neoreg_servers/tunnel.php
+```
+
+
+
+
