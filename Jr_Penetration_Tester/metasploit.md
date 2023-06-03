@@ -67,7 +67,7 @@ rhosts => 10.10.165.39
 
 Parameters:  
 - RHOSTS: “Remote host”, the IP address of the target system. A single IP address or a network range can be set. CIDR (/24, /16, etc.) or a network range (10.10.10.x – 10.10.10.y) support.  list support. file:/path/of/the/target_file.txt  
-    <img src="https://user-images.githubusercontent.com/73976100/222873145-dcde2b37-2cdb-43a2-8757-ee2bc80c5e43.png" width="800">  
+    <img src="https://user-images.githubusercontent.com/73976100/222873145-dcde2b37-2cdb-43a2-8757-ee2bc80c5e43.png" width="1000">  
 - RPORT: “Remote port”, the port on the target system the vulnerable application is running on.
 - PAYLOAD: The payload you will use with the exploit.
 - LHOST: “Localhost”, the attacking machine (your AttackBox or Kali Linux) IP address.
