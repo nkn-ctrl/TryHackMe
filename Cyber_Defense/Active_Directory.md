@@ -1,5 +1,7 @@
 # Active Directory
 
+## Active Directory Basics
+
 The main idea behind a domain is to centralise the administration of common components of a Windows computer network in a single repository called Active Directory (AD). The server that runs the Active Directory services is known as a Domain Controller (DC).
 <br>
 
@@ -24,7 +26,7 @@ The machine account name is the computer's name followed by a dollar sign. For e
 |Domain Computers|	Includes all existing computers in the domain.|
 |Domain Controllers|	Includes all existing DCs on the domain.|
 
-## Active Directory Users and Computers
+### Active Directory Users and Computers
 **Organizational Units (OUs)** which are container objects that allow you to classify users and machines.  
 <img src="https://discord.com/channels/999068403555897515/1074800453289783357/1074800917557293066" width="600">  
 
@@ -34,7 +36,9 @@ The machine account name is the computer's name followed by a dollar sign. For e
 - Users: Default users and groups that apply to a domain-wide context.
 - Managed Service Accounts: Holds accounts used by services in your Windows domain.
 
-## Group Policies
+### Group Policies
 Windows manages such policies through Group Policy Objects (GPO). GPOs are simply a collection of settings that can be applied to OUs. GPOs can contain policies aimed at either users or computers, allowing you to set a baseline on specific machines and identities.  
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/AD_GPOs.png" width="600">  
+
+## Exploiting Active Directory
 
