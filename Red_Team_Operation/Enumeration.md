@@ -53,7 +53,8 @@ enum4linux -a <IP_ADDR>
 <summary>details</summary>  
 
 ```
- enum4linux 10.10.215.115
+┌──(kali㉿kali)-[~]
+└─$ enum4linux 10.10.215.115
 Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Wed Jul 26 11:22:29 2023
 
  =========================================( Target Information )=========================================
