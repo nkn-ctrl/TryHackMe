@@ -50,7 +50,8 @@ rename <remote file> <remote new name>    # Rename file
 enum4linux -a <IP_ADDR>
 ```  
 <details>
-<summary>details</summary>
+<summary>details</summary>  
+
 ```
  enum4linux 10.10.215.115
 Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Wed Jul 26 11:22:29 2023
@@ -103,4 +104,6 @@ S-1-5-32-547 BUILTIN\Power Users (Local Group)
 S-1-5-32-548 BUILTIN\Account Operators (Local Group)
 S-1-5-32-549 BUILTIN\Server Operators (Local Group)
 S-1-5-32-550 BUILTIN\Print Operators (Local Group)
+
 ```
+</details>
