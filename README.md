@@ -50,4 +50,6 @@
 - [Password Attacks](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Password_Attacks.md)
 - [Phishing](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Phishing.md)
 ### Post Compromise
-- [Enumeration](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Enumeration.md)
+- [Enumeration](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Enumeration.md)  
+- [Lateral Movement and Pivoting](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Lateral_Movement_and_Pivoting.md)
+- [Data Exfiltration](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Data_Exfiltration.md)
