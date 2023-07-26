@@ -49,4 +49,58 @@ rename <remote file> <remote new name>    # Rename file
 ```
 enum4linux -a <IP_ADDR>
 ```  
+<details>
+<summary>details</summary>
+```
+ enum4linux 10.10.215.115
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Wed Jul 26 11:22:29 2023
 
+ =========================================( Target Information )=========================================
+
+Target ........... 10.10.215.115
+RID Range ........ 500-550,1000-1050
+Username ......... ''
+Password ......... ''
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+~ ~ ~ ~ ~ ~ ~ ~
+~ ~ ~ ~ ~ ~ ~ ~
+
+==================( Users on 10.10.215.115 via RID cycling (RIDS: 500-550,1000-1050) )==================
+
+
+[I] Found new SID: 
+S-1-22-1
+
+[I] Found new SID: 
+S-1-5-32
+
+[I] Found new SID: 
+S-1-5-32
+
+[I] Found new SID: 
+S-1-5-32
+
+[I] Found new SID: 
+S-1-5-32
+
+[+] Enumerating users using SID S-1-5-21-2853212168-2008227510-3551253869 and logon username '', password ''
+
+S-1-5-21-2853212168-2008227510-3551253869-501 BASIC2\nobody (Local User)
+S-1-5-21-2853212168-2008227510-3551253869-513 BASIC2\None (Domain Group)
+
+[+] Enumerating users using SID S-1-22-1 and logon username '', password ''
+
+S-1-22-1-1000 Unix User\kay (Local User)
+S-1-22-1-1001 Unix User\jan (Local User)
+
+[+] Enumerating users using SID S-1-5-32 and logon username '', password ''
+
+S-1-5-32-544 BUILTIN\Administrators (Local Group)
+S-1-5-32-545 BUILTIN\Users (Local Group)
+S-1-5-32-546 BUILTIN\Guests (Local Group)
+S-1-5-32-547 BUILTIN\Power Users (Local Group)
+S-1-5-32-548 BUILTIN\Account Operators (Local Group)
+S-1-5-32-549 BUILTIN\Server Operators (Local Group)
+S-1-5-32-550 BUILTIN\Print Operators (Local Group)
+```
