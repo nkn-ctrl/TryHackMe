@@ -91,9 +91,9 @@ drwxr-xr-x 3 nullbyte nullbyte 4096 2019-06-19 13:46 ..
     Session completed.
     ```
     </details>  
-    
+
     `$ john --show rsa.hash`  
-4. SSH into the Target.
+4. SSH into the Target.  
     `$ chmod 600 victim_rsa`  
     `$ ssh -i victim_rsa victim@<TARGET_IP>`  
     Enter passphrase. (in this case "beeswax")  
