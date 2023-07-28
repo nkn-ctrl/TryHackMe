@@ -89,7 +89,16 @@ user@machine$ dirb http://10.10.249.195/ /usr/share/wordlists/SecLists-master/Di
 - gobuster
 ```
 user@machine$ gobuster dir --url http://10.10.249.195/ -w /usr/share/wordlists/SecLists-master/Discovery/Web-Content/common.txt
-```
+```  
+|Gobuster flag|Description|
+|:----|:----|
+|-e|Print the full URLs in your console|
+|-u|The target URL|
+|-w|Path to your wordlist|
+|-U and -P|Username and Password for Basic Auth|
+|-p <x>|Proxy to use for requests|
+|-c <http cookies>|Specify a cookie for simulating your auth|　　
+
 
 ## Subdomain Enumeration
 ### OSINT
