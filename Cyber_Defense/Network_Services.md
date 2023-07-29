@@ -5,7 +5,7 @@
 
 ### Enumerating SMB
 - Port Scanning
-    nmap 
+    `nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse [ip]` 
 - Enum4Linux
     `enum4linux [options] [ip]`  
     `-U` get userlist  
@@ -22,7 +22,9 @@ While there are vulnerabilities such as [CVE-2017-7494](https://www.cvedetails.c
     `smbclient //[IP]/[SHARE]`  
     `-U [name]` : to specify the user  
     `-p [port]` : to specify the port  
-
+- Recursively download the SMB share
+    `smbget -R smb://10.10.1.106/anonymous`  
+    
 ## Telnet
 Telnet is an application protocol which allows you, with the use of a telnet client, to connect to and execute commands on a remote machine that's hosting a telnet server.  
 `telnet [ip] [port]`  
