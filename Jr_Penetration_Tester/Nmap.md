@@ -372,6 +372,7 @@ Note: stealth SYN scan `-sS` is not possible when `-sV` option is chosen.
 |`safe`|Safe scripts that won’t crash the target|
 |`version`|Retrieve service versions|
 |`vuln`|Checks for vulnerabilities or exploit vulnerable services|
+|`smb-enum-shares.nse,smb-enum-users.nse`|Enumulate SMB shares|  
 
 ### Saving the Output  
 Conveniently enough, you can save the scan output in all three formats using `-oA FILENAME` to combine `-oN`, `-oG`, and `-oX` for normal, grepable, and XML.  
