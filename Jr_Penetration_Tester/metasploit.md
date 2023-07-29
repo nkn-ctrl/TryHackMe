@@ -390,6 +390,7 @@ $6$Sy0NNIXw$SJ27WltHI89hwM5UxqVGiXidj94QFRm2Ynp9p9kxgVbjrmtMez9EqXoDWtcQd8rf0tjc
 `msfvenom --list payloads | grep meterpreter`  
 
 ### Upgrade Normal Shell To Meterpreter Shell
+https://infosecwriteups.com/metasploit-upgrade-normal-shell-to-meterpreter-shell-2f09be895646  
 Step 1: Background the current(Normal Shell) session, we can do this by pressing CTRL+Z  
 Step 2: Now Run the following command `search shell_to_meterpreter`.  
 Step 3: Use the shown module by following the command
