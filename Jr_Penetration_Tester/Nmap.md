@@ -353,7 +353,7 @@ Note: stealth SYN scan `-sS` is not possible when `-sV` option is chosen.
 ### Nmap Scripting Engine (NSE)
 `/usr/share/nmap/scripts`  
 `sudo nmap -sS -sC TARGET_IP`  
-`--scripts=default` or `-sC`: using default scripts  
+`--script=default` or `-sC`: using default scripts  
 
 
 |Script Category|Description|
