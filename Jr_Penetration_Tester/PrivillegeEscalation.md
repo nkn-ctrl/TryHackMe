@@ -847,8 +847,9 @@ The easiest way to gain access to another user is to gather credentials from a c
     # Runnnig PowerUp.ps1
     PS C:\> Import-Module PowerUp.ps1
     PS C:\> . .\PowerUp.ps1
+    PS C:\> Invoke-AllChecks
     ```
-    
+
     </details>
 
 ### Conclusion  
