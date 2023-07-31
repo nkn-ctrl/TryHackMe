@@ -838,6 +838,7 @@ The easiest way to gain access to another user is to gather credentials from a c
     PowerUp.ps1 is a program that enables a user to perform quick checks against a Windows machine for any privilege escalation opportunities.
     <details>
     <summary>Usage</summary>
+
     ```
     # Bypasse PowerShell’s execution policy
     PS C:\> powershell -ep bypass
@@ -847,6 +848,7 @@ The easiest way to gain access to another user is to gather credentials from a c
     PS C:\> Import-Module PowerUp.ps1
     PS C:\> . .\PowerUp.ps1
     ```
+    
     </details>
 
 ### Conclusion  
