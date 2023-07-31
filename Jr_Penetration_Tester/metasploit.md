@@ -563,6 +563,12 @@ Loading extension python...Success.
 meterpreter > python_execute "print 'TryHackMe Rocks!'"
 [+] Content written to stdout:
 TryHackMe Rocks!
+```
+```
+meterpreter > load powershell
+Loading extension powershell...Success.
+meterpreter > powershell_shell
+PS >
 ```   
 ```
 meterpreter > load kiwi
