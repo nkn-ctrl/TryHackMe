@@ -88,7 +88,8 @@
 |`-oX`|save output in XML format|
 |`-oA`|save output in normal, XML and Grepable formats|
 
-
+Ex.  
+- `sudo nmap -sC -sV -Pn  10.10.77.205` When Can't use ICMP.  
 
 ## Nmap Live Host Discovery
 1. ARP scan: This scan uses ARP requests to discover live hosts
