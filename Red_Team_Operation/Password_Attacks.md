@@ -208,6 +208,10 @@ Tryh@ckm3
 `--rules` to specify which rule or rules to use.  
 `--stdout` to print the output to the terminal.  
 
+```
+john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt --format=Raw-AHA256
+```
+
 #### Custom Rules
 ```
 user@machine$ sudo vi /etc/john/john.conf 
