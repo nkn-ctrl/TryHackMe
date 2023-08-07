@@ -111,7 +111,7 @@ pass03
 
 ## Offline Attacks
 ### Dictionary attack
-To identify the type of hash, we could a tool such as `hashid` or `hash-identifier`.  
+To identify the type of hash, we could a tool such as `hashid` or [hash_identifier](https://hashes.com/en/tools/hash_identifier).  
 ```
 user@machine$ hashcat -a 0 -m 0 f806fc5a2a0d5ba2471600758452799c /usr/share/wordlists/rockyou.txt
 hashcat (v6.1.1) starting...
