@@ -1,5 +1,5 @@
 # Enumeration
-## Host Command  
+## 1 Host Command  
 |Linux Command|Description|
 |:----:|:----|
 |`hostname`|shows the system’s hostname|
@@ -20,31 +20,9 @@
 |`netstat`|shows protocol statistics and current TCP/IP network connections|
 |`net user`|shows the user accounts on the computer|
 |`net localgroup`|shows the local groups on the computer|
-|`arp`|shows the IP-to-Physical address translation tables|
+|`arp`|shows the IP-to-Physical address translation tables|  
 
-## SMB
-### SMBClient
-`smbclient //<IP_ADDR>/anonymous`  
-```
-smbclient Usage
-smbclient -L <server>                    # List shares
-smbclient -L <server> -U <user>%<pwd>    # List shares with auth
-
-smbclient //<server>/<share> -U <user>            # Connect to share interactively
-
-smbclient //<server>/<share> -c <cmd> -U <user>   # Run command on share
-smbclient Commands
-The following commands can be passed with smbclient //<server>/<share> -c
-
-ls                      # List files on share
-cd <folder>; ls         # List files on some folder
-
-mkdir <folder>          # Create remote folder
-
-get <remote file name>                    # Download file
-put <local file name> <remote filename>   # Upload file
-rename <remote file> <remote new name>    # Rename file
-```
+## 2 Automation Enumueration
 ### enum4linux
 ```
 enum4linux -a <IP_ADDR>
@@ -108,3 +86,34 @@ S-1-5-32-550 BUILTIN\Print Operators (Local Group)
 
 ```
 </details>
+
+
+## 3 SMB
+### SMBClient
+`smbclient //<IP_ADDR>/anonymous`  
+```
+smbclient Usage
+smbclient -L <server>                    # List shares
+smbclient -L <server> -U <user>%<pwd>    # List shares with auth
+
+smbclient //<server>/<share> -U <user>            # Connect to share interactively
+
+smbclient //<server>/<share> -c <cmd> -U <user>   # Run command on share
+smbclient Commands
+The following commands can be passed with smbclient //<server>/<share> -c
+
+ls                      # List files on share
+cd <folder>; ls         # List files on some folder
+
+mkdir <folder>          # Create remote folder
+
+get <remote file name>                    # Download file
+put <local file name> <remote filename>   # Upload file
+rename <remote file> <remote new name>    # Rename file
+```
+### SMBGet
+`smbget -R smb://10.10.67.76/milesdyson -U milesdyson`  
+`-R`, --recursive  
+`-U`, --user=username[%password]    
+
+
