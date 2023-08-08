@@ -297,8 +297,8 @@ Save this request into a text file.
 
 2. We can then pass this into SQLMap to use our authenticated user session.  
 `sqlmap -r request.txt --dbms-mysql --dump`  
-`-r` uses the intercepted request you saved earlier
-`--dbms` tells SQLMap what type of database management system it is
+`-r` uses the intercepted request you saved earlier  
+`--dbms` tells SQLMap what type of database management system it is  
 `--dump` attempts to outputs the entire database  
 
 ### What is SQL?
