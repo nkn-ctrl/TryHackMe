@@ -294,6 +294,7 @@ SQLMap automates the whole SQLi process trying different tecqunics.
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/5b7946e6-58ec-4fca-9764-d15b77b3b3d3" width="500">
 </p>  
 Save this request into a text file.  
+
 2. We can then pass this into SQLMap to use our authenticated user session.  
 `sqlmap -r request.txt --dbms-mysql --dump`  
 `-r` uses the intercepted request you saved earlier
