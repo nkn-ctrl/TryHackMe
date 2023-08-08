@@ -1,5 +1,5 @@
 # Enumeration
-## 1 Host Command  
+## 1    Host Command  
 |Linux Command|Description|
 |:----:|:----|
 |`hostname`|shows the system’s hostname|
@@ -22,7 +22,7 @@
 |`net localgroup`|shows the local groups on the computer|
 |`arp`|shows the IP-to-Physical address translation tables|  
 
-## 2 Automation Enumueration
+## 2    Automation Enumueration
 ### enum4linux
 ```
 enum4linux -a <IP_ADDR>
@@ -88,7 +88,7 @@ S-1-5-32-550 BUILTIN\Print Operators (Local Group)
 </details>
 
 
-## 3 SMB
+## 3    SMB
 ### SMBClient
 `smbclient //<IP_ADDR>/anonymous`  
 ```
