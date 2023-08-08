@@ -138,7 +138,7 @@ Started: Mon Oct 11 08:20:49 2021
 Stopped: Mon Oct 11 08:20:52 2021
 ```
 - `-a 0`  sets the attack mode to a dictionary attack
-- `-m 0`  sets the hash mode for cracking MD5 hashes [Generic hash types](https://hashcat.net/wiki/doku.php?id=example_hashes)
+- `-m 0`  sets the hash mode for cracking MD5 hashes : [Generic hash types](https://hashcat.net/wiki/doku.php?id=example_hashes)
 - `--show`: show the cracked value if the hash has been cracked  
 
 ### Brute-Force attack
