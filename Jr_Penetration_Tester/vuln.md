@@ -335,6 +335,7 @@ Save this request into a text file.
 `--dump` attempts to outputs the entire database  
 
 - Options  
+
 |オプション	概要|
 |:----|
 |-u	攻撃対象のURL|
