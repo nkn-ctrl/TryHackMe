@@ -319,6 +319,7 @@ The DELETE statement tells the database we wish to delete one or more rows of da
 - `delete from users where username='martin';`  
 
 ### SQLMap  
+[SQLMap_Usage](https://github.com/sqlmapproject/sqlmap/wiki/Usage)  
 
 SQLMap automates the whole SQLi process trying different tecqunics.  
 1. First we need to intercept a request made to the search feature using BurpSuite.  
@@ -332,6 +333,27 @@ Save this request into a text file.
 `-r` uses the intercepted request you saved earlier  
 `--dbms` tells SQLMap what type of database management system it is  
 `--dump` attempts to outputs the entire database  
+
+- Options  
+|オプション	概要|
+|:----|
+|-u	攻撃対象のURL|
+|-p	攻撃対象のパラメータ名|
+|--dbms	データベースの種類（指定したDBの攻撃値のみに絞って挿入）|
+|--dump	テーブル情報を取得|
+|--dump-all	全てのテーブル情報を取得|
+|-r <ファイル名>	HTTPリクエストデータを指定して実行する|
+|--os-shell	シェルの取得|
+|--risk	攻撃値の網羅性レベル。1〜3の範囲で指定する。|
+|1：基本的な攻撃値のみ（デフォルトの設定）|
+|2：time-based SQL injectionの攻撃値も試す。|
+|3：OR-based SQL injectionの攻撃値も試す|
+|--level	検査対象となるパラメータの範囲。1〜5の範囲で指定する。|
+|1：基本的なパラメータを検査（デフォルトの設定）|
+|2：Cookieのパラメータも検査対象にする。|
+|3：「User-Agent」ヘッダや「Referer」ヘッダも検査対象にする|
+|--proxy	プロキシの設定|
+|--delay	各リクエスト間で遅延させる時間（秒）|  
 
 
 
