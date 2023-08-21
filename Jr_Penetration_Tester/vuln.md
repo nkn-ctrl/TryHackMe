@@ -288,19 +288,6 @@ Command Injection can be detected in mostly one of two ways:
 ## 7 SQL Injection
 SQL (Structured Query Language) Injection, mostly referred to as SQLi, is an attack on a web application database server that causes malicious queries to be executed. 
 
-SQLMap automates the whole SQLi process trying different tecqunics.  
-1. First we need to intercept a request made to the search feature using BurpSuite.  
-<p align="center">
-<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/5b7946e6-58ec-4fca-9764-d15b77b3b3d3" width="500">
-</p>  
-Save this request into a text file.  
-
-2. We can then pass this into SQLMap to use our authenticated user session.  
-`sqlmap -r request.txt --dbms-mysql --dump`  
-`-r` uses the intercepted request you saved earlier  
-`--dbms` tells SQLMap what type of database management system it is  
-`--dump` attempts to outputs the entire database  
-
 ### What is SQL?
 **SELECT**  
 The SELECT query used to retrieve data from the database.   
@@ -330,6 +317,21 @@ The UPDATE statement tells the database we wish to update one or more rows of da
 **DELETE**  
 The DELETE statement tells the database we wish to delete one or more rows of data.  
 - `delete from users where username='martin';`  
+
+### SQLMap  
+
+SQLMap automates the whole SQLi process trying different tecqunics.  
+1. First we need to intercept a request made to the search feature using BurpSuite.  
+<p align="center">
+<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/5b7946e6-58ec-4fca-9764-d15b77b3b3d3" width="500">
+</p>  
+Save this request into a text file.  
+
+2. We can then pass this into SQLMap to use our authenticated user session.  
+`sqlmap -r request.txt --dbms-mysql --dump`  
+`-r` uses the intercepted request you saved earlier  
+`--dbms` tells SQLMap what type of database management system it is  
+`--dump` attempts to outputs the entire database  
 
 
 
