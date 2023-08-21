@@ -351,7 +351,7 @@ sqlmap -u "http://10.10.30.43/index.php?option=com_fields&view=fields&layout=mod
 --tables -D joomla
 ```
 `-u`: Where to run the script  
-Everything between the IP and “list[fullordering] is part of the exploit (which has to be present when investigating the database)
+Everything between the IP and “list[fullordering] is part of the exploit (which has to be present when investigating the database)  
 `--tables`: We want to understand the tables of the database first  
 `-D`: Specify what database to attack (joomla since we want credentials to the login)  
 ```
