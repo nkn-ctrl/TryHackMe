@@ -19,7 +19,7 @@
     ```  
 
 
-## Authentication Bypass
+## 1 Authentication Bypass
 ### Username Enumeration
 ```
 user@tryhackme$ ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&email=x&password=x&cpassword=x" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.217.0/customers/signup -mr "username already exists"
@@ -55,7 +55,7 @@ The PHP `$_REQUEST` variable is an array that contains data received from the qu
     https://crackstation.net/ keep databases of billions of hashes and their original strings.
 - Encoding
 
-## IDOR
+## 2 IDOR
 IDOR stands for Insecure Direct Object Reference and is a type of access control vulnerability.  
 ### Finding IDORs
 - Encode IDs  
@@ -77,7 +77,7 @@ he vulnerable endpoint you're targeting may not always be something you see in t
     - unregerenced parameter  (use during development)
     - as parameter mining
 
-## File Inclusion
+## 3 File Inclusion
 Local File Inclusion (LFI), Remote File Inclusion (RFI)  
 ### Path Traversal
 Path traversal vulnerabilities occur when the user's input is passed to a function such as `file_get_contents` in PHP.  
@@ -136,7 +136,7 @@ RFI steps
 2. The web app server will send a `GET` request to the malicious server to fetch the file.
 3. The web app includes the remote file into include function to execute the PHP file within the page and send the execution content to the attacker.  
 
-## SSRF
+## 4 SSRF
 SSRF stands for Server-Side Request Forgery. It's a vulnerability that allows a malicious user to cause the webserver to make an additional or edited HTTP request to the resource of the attacker's choosing.  
 1. The attacker can modify the area in red to an URL of their choice.   
     <p align="center">
@@ -177,7 +177,7 @@ If working with a blind SSRF where no output is reflected back to you, you'll ne
      An open redirect is an endpoint on the server where the website visitor gets automatically redirected to another website address.  
 
 
-## Cross-site Scripting
+## 5 Cross-site Scripting
 Cross-Site Scripting, better known as XSS in the cybersecurity community, is classified as an injection attack where malicious JavaScript gets injected into a web application with the intention of being executed by other users.     
 
 ### XSS Payloads
@@ -245,7 +245,7 @@ jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */onerror=alert('THM') )//%0D%0A%0d%0a//</stY
 [PayloadAlltheThings-XSS](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS%20Injection)  
 
 
-## Command Injection
+## 6 Command Injection
 A command injection vulnerability is also known as a "Remote Code Execution" (RCE) because an attacker can trick the application into executing a series of payloads that they provide, without direct access to the machine itself (i.e. an interactive shell).   
 ### Discovering Command Injection
 <img src="https://user-images.githubusercontent.com/73976100/220255535-49831ac8-b3de-41af-bf1d-f64c11aa024b.png" width="800">  
@@ -285,7 +285,7 @@ Command Injection can be detected in mostly one of two ways:
 [command-injection-payload-list](https://github.com/payloadbox/command-injection-payload-list)  
 
 
-## SQL Injection
+## 7 SQL Injection
 SQL (Structured Query Language) Injection, mostly referred to as SQLi, is an attack on a web application database server that causes malicious queries to be executed. 
 
 SQLMap automates the whole SQLi process trying different tecqunics.  
