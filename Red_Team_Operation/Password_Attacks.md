@@ -242,9 +242,9 @@ Using default input encoding: UTF-8
 $password0
 ```
 
-### Online password attacks
+## Online attacks
 
-#### Hydra
+### Hydra
 - FTP
 ```
 user@machine$ hydra -l ftp -P passlist.txt ftp://10.10.x.x
@@ -329,7 +329,7 @@ Or for example, during the enumeration, we found that the webserver serves `logo
 
 `-f` to stop the brute-forcing attacks after finding a valid username and password  
 
-## Password spray attack
+### Password spray attack
 Common and weak passwords often follow a pattern and format. Some commonly used passwords and their overall format can be found below.  
 
 - The current season followed by the current year (SeasonYear). For example, Fall2020, Spring2021, etc.
