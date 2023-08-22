@@ -211,7 +211,8 @@ Tryh@ckm3
 
 ```
 john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt --format=Raw-AHA256
-```
+```  
+
 **SSH Private key Cracking**  
 ```
 $ ssh2john rsa > rsa.hash  
