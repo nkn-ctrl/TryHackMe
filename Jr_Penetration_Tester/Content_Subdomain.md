@@ -88,7 +88,7 @@ user@machine$ dirb http://10.10.249.195/ /usr/share/wordlists/seclists/Discovery
 ```
 - gobuster
 ```
-user@machine$ gobuster dir --url http://10.10.249.195/ -w /usr/share/wordlists/SecLists-master/Discovery/Web-Content/common.txt
+user@machine$ gobuster dir --url http://10.10.249.195/ -w /usr/share/wordlists/seclists/Discovery/Web-Content/common.txt
 ```  
 |Gobuster flag|Description|
 |:----|:----|
