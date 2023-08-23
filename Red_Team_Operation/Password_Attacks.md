@@ -141,6 +141,11 @@ Stopped: Mon Oct 11 08:20:52 2021
 - `-m 0`  sets the hash mode for cracking MD5 hashes : [Generic hash types](https://hashcat.net/wiki/doku.php?id=example_hashes)
 - `--show`: show the cracked value if the hash has been cracked  
 
+```
+$ hashcat -a 0 -m 1710 6d05358f090eea56a238af02e47d44ee5489d234810ef6240280857ec69712a3e5e370b8a41899d0196ade16c0d54327c5654019292cbfe0b5e98ad1fec71bed:1c362db832f3f864c8c2fe05f2002a05 /usr/share/wordlists/rockyou.txt
+```  
+- `-m 1710` (sha512($pass.$salt)) PASS`:`SALT  
+
 ### Brute-Force attack
 ```
 user@machine$ hashcat --help
