@@ -80,11 +80,11 @@ Seclists: https://github.com/danielmiessler/SecLists
 **Automation Tools**
 - ffuf
 ```
-user@machine$ ffuf -w /uusr/share/wordlists/SecLists-master/Discovery/Web-Content/common.txt -u http://10.10.249.195/FUZZ
+user@machine$ ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/common.txt -u http://10.10.249.195/FUZZ
 ```
 - dirb
 ```
-user@machine$ dirb http://10.10.249.195/ /usr/share/wordlists/SecLists-master/Discovery/Web-Content/common.txt
+user@machine$ dirb http://10.10.249.195/ /usr/share/wordlists/seclists/Discovery/Web-Content/common.txt
 ```
 - gobuster
 ```
