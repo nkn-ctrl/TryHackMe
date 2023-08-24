@@ -776,6 +776,8 @@ The easiest way to gain access to another user is to gather credentials from a c
     </details>
 
 - SeImpersonate / SeAssignPrimaryToken  
+***“if you have SeAssignPrimaryToken or SeImpersonate privilege, you are SYSTEM”***  
+
     These privileges allow a process to impersonate other users and act on their behalf. Impersonation usually consists of being able to spawn a process or thread under the security context of another user.  
     As attackers, if we manage to take control of a process with SeImpersonate or SeAssignPrimaryToken privileges, we can impersonate any user connecting and authenticating to that process.  
     <details>
