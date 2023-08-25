@@ -814,7 +814,8 @@ The easiest way to gain access to another user is to gather credentials from a c
     C:\Windows\system32>whoami
     whoami
     nt authority\system
-    ```
+    ```  
+    
     </details>
 
 ### Abusing vulnerable software  
