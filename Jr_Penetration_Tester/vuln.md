@@ -338,6 +338,8 @@ Save this request into a text file.
 joomscan  
 
 ```
+$ joomscan -u http://10.10.45.254/administrator      
+
 # CVE : - CVE-2017-8917
 URL Vulnerable: http://localhost/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml%27
 
