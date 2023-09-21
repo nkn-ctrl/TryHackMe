@@ -12,7 +12,8 @@
 
 ## Wildcards and optional characters
 `.` : match any single characlter(Wildcard)  
-`a.c` : match `aac`, `abc`, `acc`, `a!c`...  
+`a.c` : match `aac`, `abc`, `acc`, ..., `a!c`...  
+`...[^n-z]` : match every 4-letter string that doesn't end in any letter from `n` to `z`.    
 `?` : optional  
 `abc?` : match `ab`, and `abc`, since `c` is optional.  
 `\` : escape  
