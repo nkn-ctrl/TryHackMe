@@ -26,6 +26,13 @@
 `\W` matches a non-alphanumeric character, like `!` or `#`  
 `\s` matches a whitespace character (spaces, tabs, and line breaks)  
 `\S` matches everything else (alphanumeric characters and symbols)  
+`z{2}` : match `zz`  
+`{12}` - exactly 12 times.  
+`{1,5}` - 1 to 5 times.  
+`{2,}` - 2 or more times.  
+`*` - 0 or more times.  
+`+` - 1 or more times.  
+
 
 
 
