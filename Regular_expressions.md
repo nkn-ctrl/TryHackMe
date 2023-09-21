@@ -9,3 +9,12 @@
 `file[1-3]` : match `file1`, `file2`, `file3`  
 `[^k]ing` : match NOT `king`  
 `[^a-c]at` : match NOT `aat`, `bat`, `cat`  
+
+## Wildcards and optional characters
+`.` : match any single characlter(Wildcard)  
+`a.c` : match `aac`, `abc`, `acc`, `a!c`...  
+`?` : optional  
+`abc?` : match `ab`, and `abc`, since `c` is optional.  
+`\` : escape  
+`a\.c` : match `a.c`  
+
