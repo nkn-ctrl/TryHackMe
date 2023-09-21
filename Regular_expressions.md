@@ -19,3 +19,15 @@
 `\` : escape  
 `a\.c` : match `a.c`  
 
+## Metacharacters and repetitions
+`\d` matches a digit, like `9`  
+`\D` matches a non-digit, like `A` or `@`  
+`\w` matches an alphanumeric character, like `a` or `3` and `_` 
+`\W` matches a non-alphanumeric character, like `!` or `#`  
+`\s` matches a whitespace character (spaces, tabs, and line breaks)  
+`\S` matches everything else (alphanumeric characters and symbols)  
+
+
+
+
+
