@@ -5,6 +5,8 @@
 New Technology LAN Manager (NTLM) is the suite of security protocols used to authenticate users' identities in AD. NTLM can be used for authentication by using a challenge-response-based scheme called NetNTLM.   
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/e39c9f95-dbec-484c-a3f2-6cd244c93fdd" width=600>
 
+#### Brute-force Login Attacks  
+- Password Spraying  
 <details>
 <summary>ntlm_passwordspray.py</summary>  
 
@@ -84,3 +86,11 @@ if __name__ == "__main__":
 ```
 
 </details>  
+
+```
+python ntlm_passwordspray.py -u <userfile> -f <fqdn> -p <password> -a <attackurl>  
+# <userfile> - Textfile containing our usernames - "usernames.txt"
+# <fqdn> - Fully qualified domain name associated with the organisation that we # are attacking - "za.tryhackme.com"
+# <password> - The password we want to use for our spraying attack - "Changeme123"
+# <attackurl> - The URL of the application that supports Windows Authentication - "http://ntlmauth.za.tryhackme.com"
+```
