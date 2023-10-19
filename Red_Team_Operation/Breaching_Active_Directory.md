@@ -97,7 +97,7 @@ python ntlm_passwordspray.py -u <userfile> -f <fqdn> -p <password> -a <attackurl
 
 ## LDAP
 Another method of AD authentication that applications can use is Lightweight Directory Access Protocol (LDAP) authentication. With LDAP authentication, the application directly verifies the user's credentials.  
-<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/7595afe5-08e2-4ef7-94aa-a6f331b88059" width=600>  
+<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/a241a94c-c3d2-446b-b43f-c8330fcc6e25" width=600>  
 
 ### LDAP Pass-back Attacks
 This is a common attack against network devices, such as printers, when you have gained initial access to the internal network, such as plugging in a rogue device in a boardroom.  
