@@ -6,7 +6,7 @@ New Technology LAN Manager (NTLM) is the suite of security protocols used to aut
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/e39c9f95-dbec-484c-a3f2-6cd244c93fdd" width=600>
 
 <details>
-<summary>details</summary>  
+<summary>ntlm_passwordspray.py</summary>  
 
 ```
 #!/usr/bin/python3
