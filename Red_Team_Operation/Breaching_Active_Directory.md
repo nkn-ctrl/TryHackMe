@@ -1,12 +1,12 @@
 # Compromising Active Directory
 
-## Breaching Active Directory
-### NTLM and NetNTLM
+# Breaching Active Directory
+## NTLM and NetNTLM
 New Technology LAN Manager (NTLM) is the suite of security protocols used to authenticate users' identities in AD. NTLM can be used for authentication by using a challenge-response-based scheme called NetNTLM.   
 <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/e39c9f95-dbec-484c-a3f2-6cd244c93fdd" width=600>
 
-#### Brute-force Login Attacks  
-- Password Spraying  
+### Brute-force Login Attacks  
+**Password Spraying**  
 <details>
 <summary>ntlm_passwordspray.py</summary>  
 
@@ -94,3 +94,10 @@ python ntlm_passwordspray.py -u <userfile> -f <fqdn> -p <password> -a <attackurl
 # <password> - The password we want to use for our spraying attack - "Changeme123"
 # <attackurl> - The URL of the application that supports Windows Authentication - "http://ntlmauth.za.tryhackme.com"
 ```
+
+## LDAP
+Another method of AD authentication that applications can use is Lightweight Directory Access Protocol (LDAP) authentication. With LDAP authentication, the application directly verifies the user's credentials.  
+<img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/7595afe5-08e2-4ef7-94aa-a6f331b88059" width=600>  
+
+### LDAP Pass-back Attacks
+This is a common attack against network devices, such as printers, when you have gained initial access to the internal network, such as plugging in a rogue device in a boardroom.  
