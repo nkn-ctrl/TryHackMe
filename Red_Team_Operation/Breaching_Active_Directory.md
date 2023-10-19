@@ -7,6 +7,7 @@ New Technology LAN Manager (NTLM) is the suite of security protocols used to aut
 
 <details>
 <summary>details</summary>  
+
 ```
 #!/usr/bin/python3
 
@@ -81,5 +82,5 @@ def main(argv):
 if __name__ == "__main__":
     main(sys.argv[1:])
 ```
-  
+
 </details>  
