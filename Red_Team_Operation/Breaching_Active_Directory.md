@@ -114,3 +114,6 @@ olcSaslSecProps: noanonymous,minssf=0,passcred
 ```  
 `sudo ldapmodify -Y EXTERNAL -H ldapi:// -f ./olcSaslSecProps.ldif && sudo service slapd restart`  
 2. Capturing LDAP Credentials  
+you can use a tcpdump to capture the credentials using the following command:  
+`sudo tcpdump -SX -i breachad tcp port 389`  
+
