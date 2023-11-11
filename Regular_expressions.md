@@ -1,5 +1,7 @@
 # Regular expressions
 
+[https://regexr.com/](https://regexr.com/)  
+
 ## Charasets
 `[abc]` : match `a`, `b` and`c`  
 `[abc]zz` : match `azz`, `bzz`, `czz`  
@@ -35,6 +37,8 @@
 `[abc]{1,3}[01]{4}` : match `ab0001`, `bb0000`, `abc1000`, `cba0110`, `c0000`  
 `[fF]ile\d{1,2}` : match `File01`, `File2`, `file12`, `File20`, `File99`  
 `kali\s+tools` : match `kali tools`, `kali     tools`  
+`\b([0-9]{1,3}\.){3}[0-9]{1,3}\b` : match `126.47.40.189`, IP Address  
+
   
 
 
