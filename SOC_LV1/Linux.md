@@ -217,6 +217,31 @@ alternatives.log    auth.log.1             dist-upgrade    dmesg.4.gz      gpu-m
 ```
 user@machine$  ls /var/log/apache2/
 access.log  error.log  other_vhosts_access.log
-```
+```  
+- Web Servers:
+    - Nginx:
+        - Access Logs: `/var/log/nginx/access.log`
+        - Error Logs: `/var/log/nginx/error.log`
+    - Apache:
+        - Access Logs: `/var/log/apache2/access.log`
+        - Error Logs: `/var/log/apache2/error.log`
+- Databases:
+    - MySQL:
+        - Error Logs: `/var/log/mysql/error.log`
+    - PostgreSQL:
+        - Error and Activity Logs: `/var/log/postgresql/postgresql-{version}-main.log`
+- Web Applications:
+    - PHP:
+        - Error Logs: `/var/log/php/error.log`
+- Operating Systems:
+    - Linux:
+        - General System Logs: `/var/log/syslog`
+        - Authentication Logs: `/var/log/auth.log`
+- Firewalls and IDS/IPS:
+    - iptables:
+        - Firewall Logs: `/var/log/iptables.log`
+    - Snort:
+        - Snort `Logs: /var/log/snort/`
 
-[Linux Forensics Cheat Sheat](https://github.com/nkn-ctrl/pushtest/blob/main/Linux-Forensics-Cheatsheet.pdf)
+
+[Linux Forensics Cheat Sheat](https://github.com/nkn-ctrl/pushtest/blob/main/Linux-Forensics-Cheatsheet.pdf)  
