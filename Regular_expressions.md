@@ -41,7 +41,7 @@
 
 ## Regex with CyberChef
 `\b([0-9]{1,3}\.){3}[0-9]{1,3}\b` to search for values that are IP addresses.  
- <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/355300c7-00c5-470c-a910-8519af9d0aa7" width=700>   
+ <img src="https://github.com/nkn-ctrl/TryHackMe/assets/73976100/355300c7-00c5-470c-a910-8519af9d0aa7">   
 
 
 
