@@ -37,6 +37,11 @@
 `[abc]{1,3}[01]{4}` : match `ab0001`, `bb0000`, `abc1000`, `cba0110`, `c0000`  
 `[fF]ile\d{1,2}` : match `File01`, `File2`, `file12`, `File20`, `File99`  
 `kali\s+tools` : match `kali tools`, `kali     tools`  
+`\w{5}\W` : match `notes~`, `stuff@`, `gtfob#`, `lmaoo!`  
+`\S*\s*\S*` : match `2f0h@f0j0%!     a)K!F49h!FFOK`  
+`\S{8}[^!]` : match every 9-character string (with letters, numbers, and symbols) that doesn't end in a "!" sign.  
+`\.?\w+` : match `.bash_rc`, `.unnecessarily_long_filename`, and `note1`  
+
 `\b([0-9]{1,3}\.){3}[0-9]{1,3}\b` : match `126.47.40.189`, IP Address  
 
 ## Regex with CyberChef
