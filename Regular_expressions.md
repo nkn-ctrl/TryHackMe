@@ -41,8 +41,16 @@
 `\S*\s*\S*` : match `2f0h@f0j0%!     a)K!F49h!FFOK`  
 `\S{8}[^!]` : match every 9-character string (with letters, numbers, and symbols) that doesn't end in a "!" sign.  
 `\.?\w+` : match `.bash_rc`, `.unnecessarily_long_filename`, and `note1`  
-
 `\b([0-9]{1,3}\.){3}[0-9]{1,3}\b` : match `126.47.40.189`, IP Address  
+
+## Starts with/ ends with, groups, and either/ or
+`^` - starts with. `^abc` match a line that starts with `abc`.  
+`$` - ends with. `$xyz` match a line that end with `xyz`.  
+- Note: The `^` hat symbol is used to exclude a charset when enclosed in `[`square brackets`]`, but when it is not, it is used to specify the beginning of a word.  
+`|` pipe says "or".  
+`(`parentheses`)` defines groups.  
+`during the (day|night)` will match both of these sentences: `during the day` and `during the night`.  
+`(no){5}` will match the sentence `nonononono`.  
 
 ## Regex with CyberChef
 `\b([0-9]{1,3}\.){3}[0-9]{1,3}\b` to search for values that are IP addresses.  
