@@ -4,7 +4,7 @@
 ### Cyber Defense Intro
 - [Active Directory Basics](https://github.com/nkn-ctrl/TryHackMe/blob/main/Cyber_Defense/Active_Directory.md)
 - [Network Services](https://github.com/nkn-ctrl/TryHackMe/blob/main/Cyber_Defense/Network_Services.md)
-- [Regular expressions]()
+- [Regular expressions](https://github.com/nkn-ctrl/TryHackMe/blob/main/Cyber_Defense/Regular_expressions.md)
 
 ## SOC Level 1
 ### Network Security and Traffic Analysis
