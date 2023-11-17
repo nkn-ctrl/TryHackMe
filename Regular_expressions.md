@@ -47,6 +47,7 @@
 `^` - starts with. `^abc` match a line that starts with `abc`.  
 `$` - ends with. `$xyz` match a line that end with `xyz`.  
 - Note: The `^` hat symbol is used to exclude a charset when enclosed in `[`square brackets`]`, but when it is not, it is used to specify the beginning of a word.  
+
 `|` pipe says "or".  
 `(`parentheses`)` defines groups.  
 `during the (day|night)` will match both of these sentences: `during the day` and `during the night`.  
