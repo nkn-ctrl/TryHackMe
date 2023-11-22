@@ -245,3 +245,7 @@ access.log  error.log  other_vhosts_access.log
 
 
 [Linux Forensics Cheat Sheat](https://github.com/nkn-ctrl/pushtest/blob/main/Linux-Forensics-Cheatsheet.pdf)  
+
+## Grep
+`grep -v`
+`grep -lr "Search Words" <Directory>`
