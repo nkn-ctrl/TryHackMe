@@ -7,6 +7,7 @@ The primary objective during this phase is to gain a foothold in the network, wh
 - Spraying credentials through exposed authentication endpoints.
 - Executing commands through malicious flash drives.
 - Installing cracked software with hidden malicious code.  
+
 The common intersection of the given examples above is gaining initial access to either of the following:  
 - Account access via a valid credential
 - Machine access via a remote code execution  
