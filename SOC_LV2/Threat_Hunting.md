@@ -13,4 +13,18 @@ The common intersection of the given examples above is gaining initial access to
 - Machine access via a remote code execution  
 
 ## Execution
+[Execution Tactic (TA0002)](https://attack.mitre.org/tactics/TA0002/)  
+Example techniques used by adversaries are the following:  
+- Execution through command-line tools like PowerShell and Windows Command Processor (cmd.exe).
+- Execution through built-in system tools or using Living-off-the-land Binaries (LOLBAS).
+- Execution through scripting/programming tools, such as Python or PHP.  
+|Execution Technique	Examples|
+|:----|
+|Command-line Tools|
+|Using built-in commands through powershell.exe and cmd.exe to download and execute the staged payload.|
+|Built-in System Tools	|
+|Using certutil.exe or bitsadmin.exe for downloading the remote payload and rundll32.exe to run it.|
+|Scripting / Programming Tools	|
+|Using built-in functionalities of programming tools such as Python's os.system() or PHP's exec().|
+
 
