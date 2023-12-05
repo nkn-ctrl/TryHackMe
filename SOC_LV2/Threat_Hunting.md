@@ -21,11 +21,8 @@ Example techniques used by adversaries are the following:
 
 |Execution Technique	|Examples|
 |:----|----|
-|Command-line Tools|
-|Using built-in commands through powershell.exe and cmd.exe to download and execute the staged payload.|
-|Built-in System Tools	|
-|Using certutil.exe or bitsadmin.exe for downloading the remote payload and rundll32.exe to run it.|
-|Scripting / Programming Tools	|
-|Using built-in functionalities of programming tools such as Python's os.system() or PHP's exec().|
+|Command-line Tools| Using built-in commands through `powershell.exe` and `cmd.exe` to download and execute the staged payload.|
+|Built-in System Tools	| Using `certutil.exe` or `bitsadmin.exe` for downloading the remote payload and `rundll32.exe` to run it.|
+|Scripting / Programming Tools	| Using built-in functionalities of programming tools such as Python's `os.system()` or PHP's `exec()`.|
 
 
