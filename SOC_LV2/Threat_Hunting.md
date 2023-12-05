@@ -12,4 +12,5 @@ The common intersection of the given examples above is gaining initial access to
 - Account access via a valid credential
 - Machine access via a remote code execution  
 
+## Execution
 
