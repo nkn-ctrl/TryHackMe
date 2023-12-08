@@ -30,7 +30,7 @@
 
 ## SOC Level 2
 ### Threat Hunting
-- [Threat HUnting:Foothold]()
+- [Threat HUnting:Foothold](https://github.com/nkn-ctrl/TryHackMe/blob/main/SOC_LV2/Foothold.md)  
 
 ## Jr Penetration Tester
 ### Introduction to Web Hacking
