@@ -28,6 +28,10 @@
 - [Linux Forensics](https://github.com/nkn-ctrl/TryHackMe/blob/main/SOC_LV1/Linux.md)
 - [Volatility](https://github.com/nkn-ctrl/TryHackMe/blob/main/SOC_LV1/Volatility.md)
 
+## SOC Level 2
+### Threat Hunting
+- [Threat HUnting:Foothold]()
+
 ## Jr Penetration Tester
 ### Introduction to Web Hacking
 - [Contents Descovery and Subdomain Enumeration](https://github.com/nkn-ctrl/TryHackMe/blob/main/Jr_Penetration_Tester/Content_Subdomain.md)
@@ -54,3 +58,4 @@
 - [Enumeration](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Enumeration.md)  
 - [Lateral Movement and Pivoting](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Lateral_Movement_and_Pivoting.md)
 - [Data Exfiltration](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Data_Exfiltration.md)
+
