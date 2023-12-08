@@ -47,10 +47,15 @@ Example techniques used by adversaries are the following:
 - Abuse of built-in system tools.  
     `winlogbeat-*` 
     To hunt process creation (Sysmon Event ID 1) as well as network connection (Sysmon Event ID 3) events:  
-    `host.name: WKSTN-* AND winlog.event_id: (1 OR 3) AND (process.name: (mshta.exe OR certutil.exe OR regsvr32.exe) OR process.parent.name: (mshta.exe OR certutil.exe OR regsvr32.exe))`  
+    ```
+    host.name: WKSTN-* AND winlog.event_id: (1 OR 3) AND (process.name: (mshta.exe OR certutil.exe OR regsvr32.exe) OR process.parent.name: (mshta.exe OR certutil.exe OR regsvr32.exe))
+    ```  
 - Execution via programming/scripting tools.  
     `winlogbeat-*` 
-    `host.name: WKSTN-* AND winlog.event_id: (1 OR 3) AND (process.name: (*python* OR *php* OR *nodejs*) OR process.parent.name: (*python* OR *php* OR *nodejs*))`  
+    ```
+    host.name: WKSTN-* AND winlog.event_id: (1 OR 3) AND (process.name: (*python* OR *php* OR *nodejs*) OR process.parent.name: (*python* OR *php* OR *nodejs*))
+    ```
+    ``  
     Using these findings, we can extend our investigation further by getting the process ID of the cmd.exe process spawned by Python and using it in our new KQL query.  
     Using this process PID, we can search all processes spawned by this cmd.exe instance by using it as our `process.parent.pid`:  
     `host.name: WKSTN-* AND winlog.event_id: (1 OR 3) AND process.parent.pid: 1832`  
