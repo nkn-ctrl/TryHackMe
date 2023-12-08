@@ -53,7 +53,12 @@ Example techniques used by adversaries are the following:
     Using this process PID, we can search all processes spawned by this cmd.exe instance by using it as our `process.parent.pid`:  
     `host.name: WKSTN-* AND winlog.event_id: (1 OR 3) AND process.parent.pid: 1832`  
 
-
+## Defense Evasion
+[Defense Evasion Tactic (TA0005)](https://attack.mitre.org/tactics/TA0005/)  
+- Disabling security software.
+- Deleting attack footprints on logs.
+- Deceiving analysts through masquerading, obfuscation, and encryption. 
+- Executing known bypasses to security controls.  
 
 
 
