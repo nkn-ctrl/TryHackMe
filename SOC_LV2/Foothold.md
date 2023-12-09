@@ -104,7 +104,7 @@ Example techniques used by adversaries are the following:
     host.name: WKSTN-* AND winlog.event_id: (1 OR 3) AND (process.name: (*python* OR *php* OR *nodejs*) OR process.parent.name: (*python* OR *php* OR *nodejs*))
     ```  
     ![6c](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/6ae9a825-2e5f-427e-a9fe-ab710cf44ec1)  
-    
+
     Using these findings, we can extend our investigation further by getting the process ID of the cmd.exe process spawned by Python and using it in our new KQL query.  
     Using this process PID, we can search all processes spawned by this cmd.exe instance by using it as our `process.parent.pid`:  
     ```
@@ -149,6 +149,18 @@ Example techniques used by adversaries are the following:
     ```  
     ![77c](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/411d6d22-8f11-4f97-bdb5-239b0bd01fb9)  
     Based on the results, the entry of `C:\Users\clifford.miller\Downloads\chrome.exe` created a new thread on `explorer.exe`, which is a typical target process threat actors use for process injection techniques. In addition, most entries are executed by a SYSTEM account, except for the chrome.exe, which is being run by Clifford Miller's account. 
+
+## Persistence
+[Persistence Tactic (TA0003)](https://attack.mitre.org/tactics/TA0003/)  
+- Modification of registry keys to hijack the typical system/program startup.
+- Installation of malicious scripts or software that automatically starts.
+- Creation of additional high-privileged backdoor accounts.  
+|Persistence Technique|Examples|
+|:----|:----|
+|Modification of registry keys|Using `reg.exe` to modify registry keys related to system boot-up, such as Run or RunOnce keys.|
+|Installation of auto-start scripts|Creation of scheduled tasks (via `schtasks.exe`) to regularly update and execute the implanted malware.|
+|Creation of additional accounts|Using `net.exe` to create a new user and add it to the local administrators' group.|  
+
 
 
 
