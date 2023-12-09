@@ -87,7 +87,13 @@ Example techniques used by adversaries are the following:
 
 - Log deletion attempts.  
     The simplest way to detect the deletion of Windows Event Logs is via Event ID `1102`.  
-    
+    ```
+    host.name: WKSTN-* AND winlog.event_id: 1102
+    ```  
+    The next step of this investigation is to identify the log source that was removed and the command used to delete the logs. To complete the investigation, use `View surrounding documents` to see the command used to clear the event logs.  
+
+
+
 - Executing shellcode through process injection.  
 
 
