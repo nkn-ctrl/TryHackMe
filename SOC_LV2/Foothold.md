@@ -96,11 +96,15 @@ Example techniques used by adversaries are the following:
     ```
     host.name: WKSTN-* AND winlog.event_id: (1 OR 3) AND (process.name: (mshta.exe OR certutil.exe OR regsvr32.exe) OR process.parent.name: (mshta.exe OR certutil.exe OR regsvr32.exe))
     ```  
+    ![33](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/42d3c16b-cbf1-4803-a3d7-ecf9e98cb286)  
+
 - Execution via programming/scripting tools.  
     `winlogbeat-*` 
     ```
     host.name: WKSTN-* AND winlog.event_id: (1 OR 3) AND (process.name: (*python* OR *php* OR *nodejs*) OR process.parent.name: (*python* OR *php* OR *nodejs*))
     ```  
+    ![6c](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/6ae9a825-2e5f-427e-a9fe-ab710cf44ec1)  
+    
     Using these findings, we can extend our investigation further by getting the process ID of the cmd.exe process spawned by Python and using it in our new KQL query.  
     Using this process PID, we can search all processes spawned by this cmd.exe instance by using it as our `process.parent.pid`:  
     ```
