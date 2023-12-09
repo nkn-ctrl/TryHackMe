@@ -155,6 +155,7 @@ Example techniques used by adversaries are the following:
 - Modification of registry keys to hijack the typical system/program startup.
 - Installation of malicious scripts or software that automatically starts.
 - Creation of additional high-privileged backdoor accounts.  
+
 |Persistence Technique|Examples|
 |:----|:----|
 |Modification of registry keys|Using `reg.exe` to modify registry keys related to system boot-up, such as Run or RunOnce keys.|
