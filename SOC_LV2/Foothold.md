@@ -66,6 +66,15 @@ Example techniques used by adversaries are the following:
 - Deleting attack footprints on logs.
 - Deceiving analysts through masquerading, obfuscation, and encryption. 
 - Executing known bypasses to security controls.  
+|Evasion Technique|Examples|
+|:----|:----|
+|Disabling security software|
+|Disabling Windows Defender via the command line or reverting the updated detection signatures.|
+|Deleting logs| |
+|Deleting all existing Windows Event Logs inside the compromised machine.|
+|Deceiving analysts| |
+|Mimicking process names or spoofing parent process IDs.|
+|Executing known bypasses|Using known vulnerabilities or modifying host configurations to bypass the controls.|
 
 
 
