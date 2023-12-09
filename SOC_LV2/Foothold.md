@@ -84,7 +84,6 @@ Example techniques used by adversaries are the following:
     - DisableRealtimeMonitoring - Commonly used with PowerShell's `Set-MPPreference` to disable its real-time monitoring.
     - RemoveDefinitions - Commonly used with built-in `MpCmdRun.exe` to remove all existing signatures of Windows Defender.  
     ![3b429919f44e0d05a028d2d8f0494b66](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/e7b4f7eb-64ab-454d-b197-3aef35ca104e)  
-
 - Log deletion attempts.  
     The simplest way to detect the deletion of Windows Event Logs is via Event ID `1102`.  
     ```
