@@ -66,6 +66,7 @@ Example techniques used by adversaries are the following:
 - Deleting attack footprints on logs.
 - Deceiving analysts through masquerading, obfuscation, and encryption. 
 - Executing known bypasses to security controls.  
+
 |Evasion Technique|Examples|
 |:----|:----|
 |Disabling security software|
