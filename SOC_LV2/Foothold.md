@@ -72,7 +72,14 @@ Example techniques used by adversaries are the following:
 |Disabling security software|Disabling Windows Defender via the command line or reverting the updated detection signatures.|
 |Deleting logs|Deleting all existing Windows Event Logs inside the compromised machine.|
 |Deceiving analysts|Mimicking process names or spoofing parent process IDs.|
-|Executing known bypasses|Using known vulnerabilities or modifying host configurations to bypass the controls.|
+|Executing known bypasses|Using known vulnerabilities or modifying host configurations to bypass the controls.|  
+
+### Hunting Defense Evasion
+- Disabling security software.
+- Log deletion attempts.
+- Executing shellcode through process injection.  
+
+
 
 
 
