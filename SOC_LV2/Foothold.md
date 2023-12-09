@@ -161,6 +161,7 @@ Example techniques used by adversaries are the following:
 |Installation of auto-start scripts|Creation of scheduled tasks (via `schtasks.exe`) to regularly update and execute the implanted malware.|
 |Creation of additional accounts|Using `net.exe` to create a new user and add it to the local administrators' group.|  
 
+### Hunting Defense Evasion
 
 
 
