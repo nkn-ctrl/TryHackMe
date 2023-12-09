@@ -12,6 +12,40 @@ The common intersection of the given examples above is gaining initial access to
 - Account access via a valid credential
 - Machine access via a remote code execution  
 
+### Hunting Initial Access
+- Brute-forcing attempts via SSH.  
+    `filebeat-*`  
+    To start hunting, use the Visualize Library from the left sidebar and create a visualisation table using Lens.  
+    ```
+    host.name: jumphost AND event.category: authentication AND system.auth.ssh.event: Failed
+    ```  
+    ![a77](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/446eb925-cc47-48b0-a595-0b04d528d44d)  
+    Now that we have gathered significant information about brute-force attempts, let's find a successful authentication.  
+    ```
+    host.name: jumphost AND event.category: authentication AND system.auth.ssh.event: Accepted AND source.ip: (167.71.198.43 OR 218.92.0.115) 
+    ```  
+- Exploitation of a web application vulnerability.  
+    `packetbeat-*`  
+    Web application attacks typically start with enumeration attempts and proceed with exploiting discovered vulnerabilities.  
+    ```
+    host.name: web01 AND network.protocol: http AND destination.port: 80
+    ```  
+    ![a81](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/b5f482b6-2112-4bd0-8f86-0926b7c7a5e5)  
+    Upon checking the results above (highlight #5), it can be observed that the query provided a high count of status code `404`, indicating a directory enumeration attempt by `167.71.198.43` since the attack produces many "Page Not Found" results due to its behaviour of guessing valid endpoints.  
+    ```
+    host.name: web01 AND network.protocol: http AND destination.port: 80 AND source.ip: 167.71.198.43 AND http.response.status_code: 404
+    ```  
+    ![b3a](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/a982989a-ace4-45b9-ba2a-1317f56c4976)  
+    To continue, let's replace the KQL query with status codes 200, 301, and 302 to focus on valid endpoints accessed by the attacker.  
+    ```
+    host.name: web01 AND network.protocol: http AND destination.port: 80 AND source.ip: 167.71.198.43 AND http.response.status_code: (200 OR 301 OR 302)
+    ```  
+- Phishing via links and attachments.  
+    `winlogbeat-*`  
+    Given this, we will hunt for the following behaviours that satisfy this idea: 
+    1. Files downloaded using a web browser.
+    2. Files opened from an email client (in this case, we will be hunting files opened from an Outlook client).
+
 ## Execution
 [Execution Tactic (TA0002)](https://attack.mitre.org/tactics/TA0002/)  
 Example techniques used by adversaries are the following:  
