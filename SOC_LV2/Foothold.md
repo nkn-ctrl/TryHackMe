@@ -90,14 +90,14 @@ Example techniques used by adversaries are the following:
     host.name: WKSTN-* AND winlog.event_id: 1102
     ```  
     The next step of this investigation is to identify the log source that was removed and the command used to delete the logs. To complete the investigation, use `View surrounding documents` to see the command used to clear the event logs.  
-    ![image](https://private-user-images.githubusercontent.com/73976100/289226810-94987c5e-5f4b-4cbf-9ff9-dde8cfced564.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDIwODk3OTksIm5iZiI6MTcwMjA4OTQ5OSwicGF0aCI6Ii83Mzk3NjEwMC8yODkyMjY4MTAtOTQ5ODdjNWUtNWY0Yi00Y2JmLTlmZjktZGRlOGNmY2VkNTY0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA5VDAyMzgxOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY5MDgzYmU2ODM2MGVhNTMwYzE3MzQxZWU5ZDAzMzZhYmU2OGI1NTFmZjAwZjk3YWVhNGU0NWYzYWU0MDBhOWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.jCg86h-5aoRYr5wGkM_StwCnVA9_1xBDZTBgc9uKzgM)  
+    ![d3](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/b7e0696f-924a-43da-aeb8-2e1966887547)  
 - Executing shellcode through process injection.  
     We will use Sysmon's capability to detect CreateRemoteThread and hunt for potential process injection. Sysmon's Event ID `8` (CreateRemoteThread), which detects when a process creates a thread in another process.  
     ```
     host.name: WKSTN-* AND winlog.event_id: 8
     ```  
     ![3b](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/f04978c1-b2eb-4bdb-bbd2-b475a23317f2)  
-    
+
 
 
 
