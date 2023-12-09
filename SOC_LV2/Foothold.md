@@ -97,7 +97,7 @@ Example techniques used by adversaries are the following:
     host.name: WKSTN-* AND winlog.event_id: 8
     ```  
     ![77c](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/411d6d22-8f11-4f97-bdb5-239b0bd01fb9)  
-    
+    Based on the results, the entry of `C:\Users\clifford.miller\Downloads\chrome.exe` created a new thread on `explorer.exe`, which is a typical target process threat actors use for process injection techniques. In addition, most entries are executed by a SYSTEM account, except for the chrome.exe, which is being run by Clifford Miller's account. 
 
 
 
