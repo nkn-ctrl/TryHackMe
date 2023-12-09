@@ -75,7 +75,14 @@ Example techniques used by adversaries are the following:
 |Executing known bypasses|Using known vulnerabilities or modifying host configurations to bypass the controls.|  
 
 ### Hunting Defense Evasion
-- Disabling security software.
+- Disabling security software.  
+    `winlogbeat-*`  
+    For this example, we will focus on known commands used to disable Windows Defender.  
+    ```
+    host.name: WKSTN-* AND (*DisableRealtimeMonitoring* OR *RemoveDefinitions*)
+    ```  
+    - DisableRealtimeMonitoring - Commonly used with PowerShell's Set-MPPreference to disable its real-time monitoring.
+
 - Log deletion attempts.
 - Executing shellcode through process injection.  
 
