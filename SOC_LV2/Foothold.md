@@ -81,7 +81,8 @@ Example techniques used by adversaries are the following:
     ```
     host.name: WKSTN-* AND (*DisableRealtimeMonitoring* OR *RemoveDefinitions*)
     ```  
-    - DisableRealtimeMonitoring - Commonly used with PowerShell's Set-MPPreference to disable its real-time monitoring.
+    - DisableRealtimeMonitoring - Commonly used with PowerShell's `Set-MPPreference` to disable its real-time monitoring.
+    - RemoveDefinitions - Commonly used with built-in `MpCmdRun.exe` to remove all existing signatures of Windows Defender.
 
 - Log deletion attempts.
 - Executing shellcode through process injection.  
