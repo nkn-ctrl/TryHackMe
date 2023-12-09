@@ -96,7 +96,8 @@ Example techniques used by adversaries are the following:
     ```
     host.name: WKSTN-* AND winlog.event_id: 8
     ```  
-    ![3b](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/f04978c1-b2eb-4bdb-bbd2-b475a23317f2)  
+    ![77c](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/411d6d22-8f11-4f97-bdb5-239b0bd01fb9)  
+    
 
 
 
