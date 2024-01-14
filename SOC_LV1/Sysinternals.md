@@ -2,7 +2,7 @@
 <img src="https://github.com/nkn-ctrl/pushtest/blob/main/sysinternals_logo.jpg" width="800"><br>
 
 ## Using Sysinternals Live
-Simply enter a tool's Sysinternals Live path into Windows Explorer or a command prompt as live.```sysinternals.com/<toolname>``` or ```\\live.sysinternals.com\tools\<toolname>```.
+Simply enter a tool's Sysinternals Live path into Windows Explorer or in a command prompt as ```live.sysinternals.com/<toolname>``` or ```\\live.sysinternals.com\tools\<toolname>```.
 
 ## [File and Disk Utilities](https://learn.microsoft.com/en-us/sysinternals/downloads/file-and-disk-utilities)
 
