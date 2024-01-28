@@ -59,3 +59,4 @@
 - [Lateral Movement and Pivoting](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Lateral_Movement_and_Pivoting.md)
 - [Data Exfiltration](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Data_Exfiltration.md)
 
+- [Breaching Active Directory](https://github.com/nkn-ctrl/TryHackMe/blob/main/Red_Team_Operation/Breaching_Active_Directory.md)
