@@ -76,12 +76,13 @@ Next, we will be looking at the Analysis queries. These are queries that the cre
 Under the Domain Information section, we can run the Find all Domain Admins query. Note that you can press LeftCtrl to change the label display settings.  
 ![5912fb5bc22f7acfa8bc35f86329f0b4](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/194d1989-b251-457e-8710-774e7b66bca1)  
 
+Our Start Node would be our AD username, and our End Node will be the Tier 1 ADMINS group since this group has administrative privileges over servers.  
+![b7ae2e4f8e1824e25e69fa69d95c4a4e](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/e91b2fe9-91cd-4c8e-99a5-e0430deaeb05)  
 
-If there is no available attack path using the selected edge filters, Bloodhound will display "No Results Found". Note, this may also be due to a Bloodhound/Sharphound mismatch, meaning the results were not properly ingested. Please make use of Bloodhound v4.1.0. However, in our case, Bloodhound shows an attack path. It shows that one of the T1 ADMINS, ACCOUNT,  broke the tiering model by using their credentials to authenticate to THMJMP1, which is a workstation. It also shows that any user that is part of the DOMAIN USERS group, including our AD account, has the ability to RDP into this host.
+If there is no available attack path using the selected edge filters, Bloodhound will display "No Results Found". Note, this may also be due to a Bloodhound/Sharphound mismatch, meaning the results were not properly ingested. Please make use of Bloodhound v4.1.0. However, in our case, Bloodhound shows an attack path. It shows that one of the T1 ADMINS, ACCOUNT,  broke the tiering model by using their credentials to authenticate to THMJMP1, which is a workstation. It also shows that any user that is part of the DOMAIN USERS group, including our AD account, has the ability to RDP into this host.  
 
-We could do something like the following to exploit this path:
-
-Use our AD credentials to RDP into THMJMP1.
-Look for a privilege escalation vector on the host that would provide us with Administrative access.
-Using Administrative access, we can use credential harvesting techniques and tools such as Mimikatz.
-Since the T1 Admin has an active session on THMJMP1, our credential harvesting would provide us with the NTLM hash of the associated account.
+We could do something like the following to exploit this path:  
+    1. Use our AD credentials to RDP into THMJMP1.  
+    2. Look for a privilege escalation vector on the host that would provide us with Administrative access.  
+    3. Using Administrative access, we can use credential harvesting techniques and tools such as Mimikatz.  
+    4. Since the T1 Admin has an active session on THMJMP1, our credential harvesting would provide us with the NTLM hash of the associated account.  
