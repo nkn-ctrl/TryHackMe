@@ -26,3 +26,26 @@ Closing writers
 ```  
 
 ## Bloodhound  
+
+Bloodhound uses Neo4j as its backend database and graphing system. Before we can start Bloodhound, we need to load Neo4j:   
+
+```
+┌──(kali㉿kali)-[~]
+└─$ sudo neo4j start        
+Directories in use:
+home:         /usr/share/neo4j
+config:       /usr/share/neo4j/conf
+logs:         /etc/neo4j/logs
+plugins:      /usr/share/neo4j/plugins
+import:       /usr/share/neo4j/import
+data:         /etc/neo4j/data
+certificates: /usr/share/neo4j/certificates
+licenses:     /usr/share/neo4j/licenses
+run:          /var/lib/neo4j/run
+Starting Neo4j.
+Started neo4j (pid:982266). It is available at http://localhost:7474
+There may be a short delay until the server is ready.
+```  
+In another Terminal tab, run `bloodhound --no-sandbox`. This will show you the authentication GUI:  
+
+
