@@ -55,4 +55,15 @@ The default credentials for the neo4j database will be `neo4j:neo4j`. Use this t
 
 Once you provide your password, this will copy the results to your current working directory. Drag and drop the ZIP file onto the Bloodhound GUI to import into Bloodhound.  
 
+## Attack Paths  
+
+![a6e1af6f79653eeedb18ac9c3be7a038](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/7eb56164-f8e1-49fe-8270-526abd77b30a)  
+- Overview - Provides summaries information such as the number of active sessions the account has and if it can reach high-value targets.  
+- Node Properties - Shows information regarding the AD account, such as the display name and the title.  
+- Extra Properties - Provides more detailed AD information such as the distinguished name and when the account was created.  
+- Group Membership - Shows information regarding the groups that the account is a member of.  
+- Local Admin Rights - Provides information on domain-joined hosts where the account has administrative privileges.  
+- Execution Rights - Provides information on special privileges such as the ability to RDP into a machine.  
+- Outbound Control Rights - Shows information regarding AD objects where this account has permissions to modify their attributes.  
+- Inbound Control Rights -  Provides information regarding AD objects that can modify the attributes of this account.  
 
