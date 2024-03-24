@@ -25,7 +25,7 @@ Closing writers
 2022-03-16T19:12:32.5418517+00:00|INFORMATION|SharpHound Enumeration Completed at 7:12 PM on 3/16/2022! Happy Graphing!
 ```  
 Getting loot w/ SharpHound -  
-1. `powershell -ep bypass` same as with PowerView  
+1. `powershell -ep bypass`   
 2. `. .\Downloads\SharpHound.ps1`    
 3. `Invoke-Bloodhound -CollectionMethod All -Domain CONTROLLER.local -ZipFileName loot.zip`     
 4. Transfer the loot.zip folder to your Attacker Machine  
