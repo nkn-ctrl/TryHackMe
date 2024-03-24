@@ -48,4 +48,11 @@ There may be a short delay until the server is ready.
 ```  
 In another Terminal tab, run `bloodhound --no-sandbox`. This will show you the authentication GUI:  
 
+![39f261aecedccbaf118eb2ee69d55129](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/4c4c1a73-dc4d-413f-870b-785a52eace0b)  
+
+The default credentials for the neo4j database will be `neo4j:neo4j`. Use this to authenticate in Bloodhound. To import our results, you will need to recover the ZIP file from the Windows host. The simplest way is to use SCP command on your AttackBox:  
+`scp <AD Username>@THMJMP1.za.tryhackme.com:C:/Users/<AD Username>/Documents/<Sharphound ZIP> .`  
+
+Once you provide your password, this will copy the results to your current working directory. Drag and drop the ZIP file onto the Bloodhound GUI to import into Bloodhound.  
+
 
