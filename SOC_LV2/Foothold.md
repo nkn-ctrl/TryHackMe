@@ -3,9 +3,9 @@
 |Tactic	|Hunting Methodology|
 |----|----|
 |Initial Access	|Seek patterns of numerous failed login attempts to external services, followed by a successful authentication.
-Monitor intrusion attempts on web applications and potential code execution on web servers.
-Look for unusual file downloads and temporary files created by Outlook clients.
-Correlate all subsequent events after the successful intrusion attempt.|
+|Monitor intrusion attempts on web applications and potential code execution on web servers.
+|Look for unusual file downloads and temporary files created by Outlook clients.
+|Correlate all subsequent events after the successful intrusion attempt.|
 
 # Inital Access
 [Initial Access Tactic (TA0001)](https://attack.mitre.org/tactics/TA0001/)  
