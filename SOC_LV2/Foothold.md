@@ -239,6 +239,21 @@ Example techniques used by adversaries are the following:
     To start hunting, we will use the same visualisation table of C2 over DNS. However, we will remove the unique subdomain metric and sort the count in ascending order. With this setup, we can see cloud application domains that workstations do not commonly access.  
     ![d36f34dcc5077e39c9ebc2f47408d5fe](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/7f3d8a13-ebe6-442d-a7dd-d8c788e35d1d)  
 
+    Upon seeing the results, `discord.gg`, a known cloud application, is being used by `WKSTN-1`. Threat actors are using this application to host their C2 traffic. We can use this as a lead to investigate its unusual usage. With this information, we can pivot to `winlogbeat-*` index to correlate the associated process and use the following KQL query:  
+    ```
+    host.name: WKSTN-1* AND *discord.gg*
+    ```  
+    ![b645a11f38ee71500d8db738fd313287](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/72ed3406-e2f3-48c1-955b-77087e95824f)  
+
+    Based on the results, it can be seen that the connections going to Discord are initiated by `C:\Windows\Temp\installer.exe`. We can investigate further by hunting all processes spawned by this process using the following KQL query: 
+    ```
+    host.name: WKSTN-1* AND winlog.event_id: 1 AND process.parent.executable: "C:\\Windows\\Temp\\installer.exe"
+    ```  
+    ![54a2a40ceae8f7e0646bf0233c2ea8b6](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/9fae354b-d7dc-497c-a625-1d69b0f77430)  
+
+    
+
+
 
 
 
