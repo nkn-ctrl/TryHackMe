@@ -195,11 +195,11 @@ Example techniques used by adversaries are the following:
 - Standard network protocols, such as DNS, ICMP, HTTP/s.  
 - Known cloud-based services.  
 - Encrypted custom HTTP/s server.  
-|Command and Control Technique　|Examples|
-|:----|---|
-|Standard network protocols|Using the DNS protocol as a communication channel via its subdomain.|
-|Known cloud-based services	|Passing traffic through known web applications such as Google Drive, Telegram and Discord.|
-|Encrypted custom HTTP/s server	|Using a self-hosted server with a well-groomed domain passing encrypted traffic.|
+|Command and Control Technique　|Examples|  
+|:----|---|  
+|Standard network protocols|Using the DNS protocol as a communication channel via its subdomain.|  
+|Known cloud-based services	|Passing traffic through known web applications such as Google Drive, Telegram and Discord.|  
+|Encrypted custom HTTP/s server	|Using a self-hosted server with a well-groomed domain passing encrypted traffic.|  
 
 
 
