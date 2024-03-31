@@ -196,7 +196,7 @@ Example techniques used by adversaries are the following:
 - Known cloud-based services.  
 - Encrypted custom HTTP/s server.  
 
-|Command and Control Technique	Examples|
+|Command and Control Technique|	Examples|
 |:----|
 |Standard network protocols|
 |Using the DNS protocol as a communication channel via its subdomain.|
