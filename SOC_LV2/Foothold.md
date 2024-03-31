@@ -202,6 +202,18 @@ Example techniques used by adversaries are the following:
 |Known cloud-based services|Passing traffic through known web applications such as Google Drive, Telegram and Discord.|
 |Encrypted custom HTTP/s server	|Using a self-hosted server with a well-groomed domain passing encrypted traffic.|
 
+## Hunting Command and Control  
+- Command and Control over DNS  
+    `packetbeat-*` `winlogbeat-*`  
+    In this technique, adversaries can disguise their C2 communications as typical DNS queries and responses, bypassing network security measures.  
+    - High count of unique subdomains  
+    - Unusual DNS requests based on query types (MX, CNAME, TXT)  
+    To start hunting, use the Visualize Library again and create a visualisation table using Lens. Ensure that the table is configured with the following:  
+    - Set the Table Index (packetbeat), Rows (dns.question.registered_domain and host.name), and Metrics (Unique Count of dns.question.subdomain).  
+    - Use the KQL query to list all DNS queries and exclude all reverse DNS lookups:  
+    ```
+    network.protocol: dns AND NOT dns.question.name: *arpa
+    ```  
 
 
 
