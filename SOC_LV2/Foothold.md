@@ -214,6 +214,34 @@ Example techniques used by adversaries are the following:
     ```
     network.protocol: dns AND NOT dns.question.name: *arpa
     ```  
+    ![865a9751c4a18147548b8cff01ab6a9a](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/94b16090-a702-401d-b81d-43711199a5b7)  
+
+    Let's use the following KQL query in the Discover tab on `packetbeat-*` index:  
+
+    ```
+    network.protocol: dns AND NOT dns.question.name: *arpa AND dns.question.registered_domain: golge.xyz AND host.name: WKSTN-1
+    ```  
+    We can also add the `query` field as a column to see its values.  
+    ![8e39190bffa7de54fd56bc460a592b4a](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/e211a654-4896-434c-9bf2-f4312ee0ed8b)  
+    ![f603f27024a4c2851fc5f93fde63826f](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/e3e374e2-11ba-4830-ae07-599233e27f5d)  
+
+     we can correlate this activity on winlogbeat-* to identify the process executing the DNS requests using the following KQL query:  
+     ```
+     host.name: WKSTN-1* AND destination.ip: 167.71.198.43 AND destination.port: 53
+     ```  
+     
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
