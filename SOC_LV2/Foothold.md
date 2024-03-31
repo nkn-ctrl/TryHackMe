@@ -303,6 +303,16 @@ Example techniques used by adversaries are the following:
     ```  
     ![8fb64e55f142870cc480d204f4a10998](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/92918d76-9ac1-4056-b0f2-229c018ada04)  
 
+# Pivoting  
+## Discovery  
+[Discovery Tactic (TA0007)](https://attack.mitre.org/tactics/TA0007/)  
+|Discovery Technique|Examples|
+|:----|:------|
+|User Reconnaissance|Using built-in commands like `whoami`. `net user`. `net localgroup` or `qwinsta` for account enumeration and dir or ls for file and folder enumeration.|
+|Host Reconnaissance|Commands such as `hostname`, `wmic`, `ipconfig` or `systeminfo` for gathering host information, `net start` or `sc.exe query` for service enumeration, and simply navigating through GUI-based applications like Windows Security to determine the security controls running in the compromised host.|
+|Internal Scanning|Displaying arp table (via `arp` command), sweeping reachable assets via `ping`, and scanning open ports using different tools, such as Nmap or PowerShell (leveraging built-in capabilities).|
+|Internal Domain Reconnaissance	|Using built-in commands like `net * /domain` or `nltest /dclist` or loading known PowerShell commands and scripts to list domain users (PowerView or BloodHound) to enumerate domain objects.|
+
 
 
 
