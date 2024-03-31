@@ -251,7 +251,34 @@ Example techniques used by adversaries are the following:
     ```  
     ![54a2a40ceae8f7e0646bf0233c2ea8b6](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/9fae354b-d7dc-497c-a625-1d69b0f77430)  
 
+- Command and Control over Encrypted HTTP Traffic  
+    `packetbeat-*` `winlogbeat-*`  
+    Compared to the first two C2 techniques, C2 over Encrypted HTTP traffic is just a typical command and control type. The main notable thing about this technique is that attackers use their own C2 domain, including custom traffic encryption over HTTP. Given this, we will hunt for unusual HTTP traffic based on the following:
+    - High count of HTTP traffic to distinctive domains  
+    - High outbound HTTP bandwidth to unique domains  
+    To start hunting, use the Visualize Library again and create a visualisation table using Lens. Ensure that the table is configured with the following:  
+    - Set the Table Index (packetbeat), Rows (host.name, destination.domain, http.request.method), and Metrics (count).  
+    - Use the KQL query to list all outbound HTTP requests:  
+    ```
+    network.protocol: http AND network.direction: egress  
+    ```  
+    ![2e5532368e2226e225401380bb69a597](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/70f7c586-c0a3-4c25-af2f-954e9981b893)  
+
+    Based on the results, it is highly notable that HTTP connections to cdn[.]golge[.]xyz from both workstations are numerous. This may indicate that a continuous C2 connection has been running for an extended time. We can modify the Lens table and focus the query to cdn[.]golge[.]xyz using this KQL query to understand better:  
+    ```
+    host.name: WKSTN-* AND network.protocol: http AND network.direction: egress AND destination.domain: cdn.golge.xyz
+    ```  
+    In addition, we can modify the rows and focus only on `host.name` and `query` fields.  
+    ![f1a1675f4d83698f52696047561fa1e9](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/42ebb06e-a639-4df3-ae43-5b3c9cad8574)  
+
+    Using the following KQL query provided us with some insights regarding the associated process:  
+    ```
+    host.name: WKSTN-* AND *cdn.golge.xyz*
+    ```  
+    ![8fb64e55f142870cc480d204f4a10998](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/92918d76-9ac1-4056-b0f2-229c018ada04)  
     
+
+
 
 
 
