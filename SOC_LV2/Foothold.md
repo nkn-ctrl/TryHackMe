@@ -162,7 +162,7 @@ Example techniques used by adversaries are the following:
 |Installation of auto-start scripts|Creation of scheduled tasks (via `schtasks.exe`) to regularly update and execute the implanted malware.|
 |Creation of additional accounts|Using `net.exe` to create a new user and add it to the local administrators' group.|  
 
-## Hunting Defense Evasion
+## Hunting Persistence
 - Scheduled Task creation.  
     `winlogbeat-*`  
     If Windows Advanced Audit Policy is properly configured, we can use Event ID `4698` (Scheduled Task Creation). Else, we can use the following keywords for hunting commands related to scheduled tasks: `schtasks and Register-ScheduledTask (PowerShell)`  
