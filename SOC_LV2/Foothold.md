@@ -1,4 +1,12 @@
-# Threat Hunting: Foothold
+# Threat Hunting: Foothold  
+
+|Tactic	|Hunting Methodology|
+|----|----|
+|Initial Access	|Seek patterns of numerous failed login attempts to external services, followed by a successful authentication.
+Monitor intrusion attempts on web applications and potential code execution on web servers.
+Look for unusual file downloads and temporary files created by Outlook clients.
+Correlate all subsequent events after the successful intrusion attempt.|
+
 # Inital Access
 [Initial Access Tactic (TA0001)](https://attack.mitre.org/tactics/TA0001/)  
 The primary objective during this phase is to gain a foothold in the network, which can be achieved through a variety of means, such as:  
@@ -276,7 +284,7 @@ Example techniques used by adversaries are the following:
     host.name: WKSTN-* AND *cdn.golge.xyz*
     ```  
     ![8fb64e55f142870cc480d204f4a10998](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/92918d76-9ac1-4056-b0f2-229c018ada04)  
-    
+
 
 
 
