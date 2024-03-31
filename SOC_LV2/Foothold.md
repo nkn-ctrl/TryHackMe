@@ -190,8 +190,16 @@ Example techniques used by adversaries are the following:
     ```  
     ![cb](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/b0a048f9-c3a6-417c-b0c6-3b18e9b274ac)  
     
-
-
+# Command and Control  
+[Command and Control Tactic (TA0011)](https://attack.mitre.org/tactics/TA0011/)  
+- Standard network protocols, such as DNS, ICMP, HTTP/s.  
+- Known cloud-based services.  
+- Encrypted custom HTTP/s server.  
+|Command and Control Technique　|Examples|
+|:----|---|
+|Standard network protocols|Using the DNS protocol as a communication channel via its subdomain.|
+|Known cloud-based services	|Passing traffic through known web applications such as Google Drive, Telegram and Discord.|
+|Encrypted custom HTTP/s server	|Using a self-hosted server with a well-groomed domain passing encrypted traffic.|
 
 
 
