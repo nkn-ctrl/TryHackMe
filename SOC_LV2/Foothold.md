@@ -304,7 +304,7 @@ Example techniques used by adversaries are the following:
     ![8fb64e55f142870cc480d204f4a10998](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/92918d76-9ac1-4056-b0f2-229c018ada04)  
 
 # Pivoting  
-## Discovery  
+# Discovery  
 [Discovery Tactic (TA0007)](https://attack.mitre.org/tactics/TA0007/)  
 |Discovery Technique|Examples|
 |:----|:------|
@@ -312,6 +312,19 @@ Example techniques used by adversaries are the following:
 |Host Reconnaissance|Commands such as `hostname`, `wmic`, `ipconfig` or `systeminfo` for gathering host information, `net start` or `sc.exe query` for service enumeration, and simply navigating through GUI-based applications like Windows Security to determine the security controls running in the compromised host.|
 |Internal Scanning|Displaying arp table (via `arp` command), sweeping reachable assets via `ping`, and scanning open ports using different tools, such as Nmap or PowerShell (leveraging built-in capabilities).|
 |Internal Domain Reconnaissance	|Using built-in commands like `net * /domain` or `nltest /dclist` or loading known PowerShell commands and scripts to list domain users (PowerView or BloodHound) to enumerate domain objects.|
+
+## Hunting Discovery  
+- Host Reconnaissance  
+    `winlogbeat-*`  
+    Using the Discover tab, we will focus on the following command-line tools:  
+    `whoami.exe` `hostname.exe` `net.exe` `systeminfo.exe` `ipconfig.exe` `netstat.exe` `tasklist.exe`  
+    ![e726a90eecb5c092ba657f5ce05a0557](https://github.com/nkn-ctrl/TryHackMe/assets/73976100/562c3ab8-cb6b-4502-8710-2f4db9e77232)  
+    Based on the results, it can be seen that bill.hawkins has executed multiple enumeration tools on WKSTN-2. Moreover, all commands were spawned by `cmd.exe`. On a quick look, this might not indicate any unusual activities since System Administrators typically do remote login and spawn Windows Command Processor to execute troubleshooting and host identification commands. Let's continue the investigation by diving deeper into the `cmd.exe` process.  
+
+    To do this, we can get the `parent process ID` of these logs to get the process identifier of the unusual `cmd.exe` process. Click the drop-down button of the first execution of the `whoami /priv` command and find the `process.parent.pid`.  
+
+    
+
 
 
 
