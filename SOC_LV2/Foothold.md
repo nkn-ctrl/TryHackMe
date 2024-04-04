@@ -322,8 +322,15 @@ Example techniques used by adversaries are the following:
     Based on the results, it can be seen that bill.hawkins has executed multiple enumeration tools on WKSTN-2. Moreover, all commands were spawned by `cmd.exe`. On a quick look, this might not indicate any unusual activities since System Administrators typically do remote login and spawn Windows Command Processor to execute troubleshooting and host identification commands. Let's continue the investigation by diving deeper into the `cmd.exe` process.  
 
     To do this, we can get the `parent process ID` of these logs to get the process identifier of the unusual `cmd.exe` process. Click the drop-down button of the first execution of the `whoami /priv` command and find the `process.parent.pid`.  
-
     
+    Next step  
+    - Identify the extent of the attack by checking the child processes spawned by the malicious PowerShell process.  
+    - How the execution of PowerShell started.  
+
+- Internal Network Scanning  
+    
+
+
 
 
 
