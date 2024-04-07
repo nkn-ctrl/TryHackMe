@@ -371,6 +371,8 @@ Example techniques used by adversaries are the following:
     Next step:  
     - Identify the subsequent actions made after the execution of SharpHound.
 
+# Privilege Escalation  
+[Privilege Escalation Tactic (TA0004)](https://attack.mitre.org/tactics/TA0004/)  
 
 
 
