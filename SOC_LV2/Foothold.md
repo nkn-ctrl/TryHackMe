@@ -373,7 +373,12 @@ Example techniques used by adversaries are the following:
 
 # Privilege Escalation  
 [Privilege Escalation Tactic (TA0004)](https://attack.mitre.org/tactics/TA0004/)  
-
+|Privilege Escalation Technique|Examples|
+|:----------|:-----------|
+|Exploitation of vulnerabilities|Using known userland and kernel exploits on unpatched hosts.|
+|Usage of valid accounts|Using runas commands with newly-discovered credentials or re-authenticating with a privileged account in the same machine.|
+|Access control abuse|Abusing overly permissive Access Control Lists (ACLs), allowing other accounts to grant or acquire additional permissions.|
+|Host misconfiguration abuse|Abusing insecure service configurations, such as modifiable and restartable services or overwritable service binaries.|
 
 
 
