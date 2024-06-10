@@ -37,7 +37,7 @@ A Linux host allows only those users to elevate privileges to `sudo`, which are 
 ### Login information
 - `/var/log/btmp` : information about failed logins  
 - `/var/log/wtmp` : historical data of logins  
-They are binary file, which havet to be read using the `last` utility.
+They are binary file, which havet to be read using the `last` `lastlog` utility.
 ```
 user@machine$ sudo last -f /var/log/wtmp
 reboot   system boot  5.4.0-1029-aws   Tue Mar 29 17:28   still running
