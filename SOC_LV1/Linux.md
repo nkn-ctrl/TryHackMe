@@ -52,13 +52,18 @@ reboot   system boot  5.4.0-1029-aws   Mon Mar 28 01:35 - 01:51 (1+00:16)
 wtmp begins Mon Mar 28 01:35:10 2022
 ```
 ### Authentication logs
-`/var/log/auth.log`  
+- Debian/Ubuntu: `/var/log/auth.log`  
+- CentOS: `/var/log/secure`    
 We can use `tail`, `head`, `more` or `less` utilities to make it easier to read.
 ```
 user@machine$ cat /var/log/auth.log |tail
 Mar 29 17:28:48 tryhackme gnome-keyring-daemon[989]: The PKCS#11 component was already initialized
 Mar 29 17:28:48 tryhackme gnome-keyring-daemon[989]: The SSH agent was already initialized
-```
+```  
+- Failed login  
+    `cat /var/log/auth.log* | grep "sshd" | grep "Failed password"`  
+- Successful login  
+    `cat /var/log/auth.log* | grep "sshd" | grep "Accepted"`  
 
 ## System Configuration
 ### Hostname
