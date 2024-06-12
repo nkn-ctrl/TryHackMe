@@ -40,7 +40,7 @@ A Linux host allows only those users to elevate privileges to `sudo`, which are 
 They are binary file, which havet to be read using the `last` `lastlog` utility.
 `lastlog`: Check the date and time of the last login  
 `lastlog -u [username]`: Check the last login of a specific user  
-`last`: Chec the most recent login  
+`last`: Check the most recent login  
 `last -n [n]`: Check the last [n] logins  
 
 ```
