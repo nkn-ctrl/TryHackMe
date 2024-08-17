@@ -1,0 +1,6 @@
+nmap
+
+ftp
+
+Responder RemoteFileInclude John evil-winrm  https://medium.com/rakulee/hack-the-box-starting-point-responder-solution-d0fa2ea77a56
+
