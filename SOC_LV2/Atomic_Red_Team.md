@@ -26,11 +26,11 @@ d-----          9/8/2024   8:26 PM                invoke-atomicredteam
 -a----          9/8/2024   8:53 PM            995 AtomicRedTeam.txt
 ```  
 
-AtomicRedTeamはPoweshellコマンドInvoke-AtomicRedTeamで実行する。  
+AtomicRedTeamはPoweshellコマンド`Invoke-AtomicRedTeam`で実行する。  
 
 ### 準　備  
 
-まずは準備をしていこう。これはWindowsホストが再起動するたびに実施する。  
+まずは準備をしていこう。これはPowershellを立ち上げるたびに実施する。  
 `"C:\AtomicRedTeam\AtomicRedTeam.txt"`にコマンドは書いてあるので参考に。  
 1. PowerShellをAdministratorで開く。  
     ![Win10_WS-01-2024-10-06-13-16-28](https://github.com/user-attachments/assets/a96fc89c-7702-4823-83c1-7bb97c257ab3)  
