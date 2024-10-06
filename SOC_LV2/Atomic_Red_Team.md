@@ -5,6 +5,9 @@ https://tryhackme.com/r/room/atomicredteam
 
 Atomic Red Teamとは Atomic Red Teamは、セキュリティテストと脅威のエミュレーションを実行するためのフレームワークを提供するオープンソースプロジェクトです。  
 
+今回は、永続化のテクニック　`T1053.005: Scheduled Task/Job: Scheduled Task` を調査していこう。  
+https://attack.mitre.org/techniques/T1547/001/  
+
 
 ## Invoke-AtomicRedTeam  
 AtomicRedTeamのバイナリはWindowsホスト(ws-01, ws-02)に格納されている。  
@@ -25,6 +28,9 @@ d-----          9/8/2024   8:26 PM                invoke-atomicredteam
 ```  
 
 AtomicRedTeamはPoweshellコマンドInvoke-AtomicRedTeamで実行する。  
+
+### 準　備  
+
 まずは準備をしていこう。これはWindowsホストが再起動するたびに実施する。  
 `"C:\AtomicRedTeam\AtomicRedTeam.txt"`にコマンドは書いてあるので参考に。  
 1. PowerShellをAdministratorで開く。  
@@ -33,8 +39,8 @@ AtomicRedTeamはPoweshellコマンドInvoke-AtomicRedTeamで実行する。
     `powershell -ExecutionPolicy bypass`
 3. Import-Module コマンドレットを使用してモジュールをロードする。  
     ```
-    Import-Module "C:\AtomicRedTeam\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1" -Force`  
-    `$PSDefaultParameterValues = @{"Invoke-AtomicTest:PathToAtomicsFolder"="C:\AtomicRedTeam\atomics"}
+    Import-Module "C:\AtomicRedTeam\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1" -Force  
+    $PSDefaultParameterValues = @{"Invoke-AtomicTest:PathToAtomicsFolder"="C:\AtomicRedTeam\atomics"}
     ```  
 
 
@@ -43,3 +49,14 @@ AtomicRedTeamはPoweshellコマンドInvoke-AtomicRedTeamで実行する。
 
 4. うまくいったかテストしよう。  
     `help Invoke-AtomicTest`  
+
+### テクニックのリストと詳細を調べる。  
+```
+Invoke-AtomicTest T1547.001 -ShowDetailsBrief  
+```  
+
+```
+Invoke-AtomicTest T1547.001 -ShowDetails  
+```
+
+```
