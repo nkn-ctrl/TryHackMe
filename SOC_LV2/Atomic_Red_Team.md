@@ -32,8 +32,10 @@ AtomicRedTeamはPoweshellコマンドInvoke-AtomicRedTeamで実行する。
 2. モジュールの実行中のセキュリティ警告を全て無視する。  
     `powershell -ExecutionPolicy bypass`
 3. Import-Module コマンドレットを使用してモジュールをロードする。  
-    `Import-Module "C:\AtomicRedTeam\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1" -Force`  
-    `$PSDefaultParameterValues = @{"Invoke-AtomicTest:PathToAtomicsFolder"="C:\AtomicRedTeam\atomics"}`  
+    ```
+    Import-Module "C:\AtomicRedTeam\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1" -Force`  
+    `$PSDefaultParameterValues = @{"Invoke-AtomicTest:PathToAtomicsFolder"="C:\AtomicRedTeam\atomics"}
+    ```  
 
 
 
