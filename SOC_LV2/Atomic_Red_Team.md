@@ -62,21 +62,31 @@ AtomicRedTeamはPoweshellコマンドInvoke-AtomicRedTeamで実行する。
     ```  
     ![Win10_WS-01-2024-10-06-14-44-29](https://github.com/user-attachments/assets/801091d5-69ad-44a0-a2ed-57516e49fb8e)    
 
-    リストの一番上にある `T1053.005-1 Scheduled Task StartUp Script` を実行してみよう。  
+    リストの一番上にある `T1053.005-1 Scheduled Task StartUp Script` をテストしてみることにする。まずは、テストの内容を調べる。`-TestNumber`オプションで番号を指定する。    
 - 詳細を表示  
     ```
     Invoke-AtomicTest  T1053.005 -TestNumbers 1 -ShowDetails  
-    ```
+    ```  
+    ![Win10_WS-01-2024-10-06-14-50-48](https://github.com/user-attachments/assets/9d519ed9-2db0-43ad-a083-850fa4a8a11e)  
+    Descriptionには説明が書いてある。ユーザログオンあるいはシステムスタートアップ時に自動実行されるタスクが登録される。  
+    Attack CommandsにはPowershell等で実行されるコマンドが書いてある。`T1053_005_OnLogon`, `T1053_005_OnStartup`というタスクが登録されるようだ。  
+    ユーザログオン時に`calc.exe`が自動実行される。実際の攻撃ならば、calcの代わりにC2ビーコンやマルウェアが登録される。  
 
 ### 実行する。  
 ```
 Invoke-AtomicTest  T1053.005 -TestNumbers 1  
 ```  
+![Win10_WS-01-2024-10-06-15-01-21](https://github.com/user-attachments/assets/460f3ea4-6e22-4265-bb37-40be10ba8623)  
+`schtasks`コマンドで調べてみても登録が確認できる。  
 
 ### 復旧する。  
+AtomicRedTeamではレジストリの変更やファイルの作成がされるので、実行したら必ずきれいに復旧しよう。  
+以下のコマンドでも不具合があることもあるので、VMのスナップショットによる復旧も考慮しよう。  
 ```
 Invoke-AtomicTest  T1053.005 -TestNumbers 1 -CleanUp
 ```  
+![Win10_WS-01-2024-10-06-16-15-31](https://github.com/user-attachments/assets/49ef34af-849e-45fc-9bc8-106c77704844)  
+
 
 ## 調査しよう。  
 1. Security Onion   
@@ -84,11 +94,11 @@ Invoke-AtomicTest  T1053.005 -TestNumbers 1 -CleanUp
     Windows Advanced Audit Policyが適切に設定されていれば、Event ID 4698 (Scheduled Task Creation)を使うことができる。（本環境では設定されていない。）また、スケジュールされたタスクに関連するコマンドを検索するために、以下のキーワードを使用する。：`schtasks and Register-ScheduledTask（PowerShell）`  
     ```
     host.name: WKSTN-* AND (winlog.event_id: 4698 OR (*schtasks* OR *Register-ScheduledTask*))
-    ```
-
+    ```  
+    ![kali-linux-2023 4-vmware-amd64-2024-10-06-16-46-17](https://github.com/user-attachments/assets/a633bec9-986a-4e21-ab7d-342be31b843e)  
 
     表示コラムを調整する。  
-
+    
 
 
 
