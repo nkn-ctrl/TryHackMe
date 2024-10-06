@@ -122,7 +122,31 @@ LSASS.exeはWindowsの認証に関するプロセスである。有名なmimikat
     実行してみる。Defenderが有効だと失敗するので注意。  
     ![Win10_WS-01-2024-10-06-20-01-40](https://github.com/user-attachments/assets/a1ac1a9a-1716-4516-80cb-8b36e14c63fe)  
       
-    
+    Kibanaで調べる。  
+    ```
+    winlog.event_id: 1 AND process.command_line: (*mimikatz* OR *DumpCreds* OR *privilege\:\:debug* OR *sekurlsa\:\:*)
+    ```
+    Command_lineの文はMimikatzでよく使われるコマンドである。  
+
+    ![kali-linux-2023 4-vmware-amd64-2024-10-06-20-42-13](https://github.com/user-attachments/assets/2db8b39a-a04f-4100-86c0-dd28b457265f)  
+
+    mimikatzの文字列が確認できるが、検索にはひっかからなかったようだ。  
+
+2. ProcDump  
+    Sysinternalsに含まれるツールProcdumpが悪用されることもある。攻撃者はProcDumpでLsass.exeのメモリをダンプすることができる。  
+    TestNumberは1だ。  
+    ![Win10_WS-01-2024-10-06-20-47-48](https://github.com/user-attachments/assets/4a9a2cb9-b686-448f-851e-56f60d0e652f)  
+    実行する。  
+    ![Win10_WS-01-2024-10-06-20-50-53](https://github.com/user-attachments/assets/7a0e9c99-60df-4f36-a641-2ce8ce1fbfdc)  
+  
+    ProcDumpはデフォルトで`C:\Users\*\AppData\Local\Temp\`に`processname.DMP`を作る。  
+    AtomicRedTeamの場合は`C:\Windows\Temp\lsass_dump.dmp`にダンプされる。 
+      
+    Kibanaで調べてみよう。  
+    `winlog.event_id: 11 AND file.path: *lsass*.dmp`  
+    ![kali-linux-2023 4-vmware-amd64-2024-10-06-21-02-35](https://github.com/user-attachments/assets/5d988db3-5eb5-4e71-90cf-118931e304ac)   
+      
+    ダンプファイルが作られているのが確認できた。  
 
 
 
