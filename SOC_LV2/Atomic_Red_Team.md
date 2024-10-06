@@ -116,7 +116,7 @@ LSASS.exeはWindowsの認証に関するプロセスである。有名なmimikat
 - T1003.001のリスト  
 ![Win10_WS-01-2024-10-06-19-54-22](https://github.com/user-attachments/assets/4586afbf-409f-4dab-ae5f-fade84f2e2ec)  
 
-1. MImikatz
+1. MImikatz  
     Mikikatzをテストしてみよう。TestNumberは10だ。  
     ![Win10_WS-01-2024-10-06-19-56-15](https://github.com/user-attachments/assets/8992b536-c084-469b-81b7-ba2ff547a4c7)  
     実行してみる。Defenderが有効だと失敗するので注意。  
