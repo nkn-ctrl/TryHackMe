@@ -6,7 +6,7 @@ https://tryhackme.com/r/room/atomicredteam
 Atomic Red Teamとは Atomic Red Teamは、セキュリティテストと脅威のエミュレーションを実行するためのフレームワークを提供するオープンソースプロジェクトです。  
 
 今回は、永続化のテクニック　`T1053.005: Scheduled Task/Job: Scheduled Task` を調査していこう。  
-https://attack.mitre.org/techniques/T1547/001/  
+https://attack.mitre.org/techniques/T1053/005/   
 
 
 ## Invoke-AtomicRedTeam  
@@ -52,11 +52,23 @@ AtomicRedTeamはPoweshellコマンドInvoke-AtomicRedTeamで実行する。
 
 ### テクニックのリストと詳細を調べる。  
 ```
-Invoke-AtomicTest T1547.001 -ShowDetailsBrief  
+Invoke-AtomicTest  T1053.005 -ShowDetailsBrief  
 ```  
 
 ```
-Invoke-AtomicTest T1547.001 -ShowDetails  
+Invoke-AtomicTest  T1053.005 -TestNumbers 1 -ShowDetails  
 ```
 
+### 実行する。  
 ```
+Invoke-AtomicTest  T1053.005 -TestNumbers 1  
+```  
+
+### 調査しよう。  
+1. Security Onion   
+    まずはKibanaでクエリを発行し調査してみる。  
+    Windows Advanced Audit Policyが適切に設定されていれば、Event ID 4698 (Scheduled Task Creation)を使うことができる。（本環境では設定されていない。）また、スケジュールされたタスクに関連するコマンドを検索するために、以下のキーワードを使用する。：`schtasks and Register-ScheduledTask（PowerShell）`  
+    ```
+    host.name: WKSTN-* AND (winlog.event_id: 4698 OR (*schtasks* OR *Register-ScheduledTask*))
+    ```
+
