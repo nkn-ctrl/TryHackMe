@@ -22,5 +22,17 @@ d-----          9/7/2024  10:59 PM                ExternalPayloads
 d-----          9/8/2024   8:26 PM                invoke-atomicredteam
 -a----          9/8/2024   8:34 PM      167966126 atomic-red-team-master.zip
 -a----          9/8/2024   8:53 PM            995 AtomicRedTeam.txt
-
 ```  
+
+AtomicRedTeamはPoweshellコマンドInvoke-AtomicRedTeamで実行する。  
+まずは準備をしていこう。これはWindowsホストが再起動するたびに実施する。  
+`"C:\AtomicRedTeam\AtomicRedTeam.txt"`にコマンドは書いてあるので参考に。  
+1. PowerShellをAdministratorで開く。  
+
+2. `powershell -ExecutionPolicy bypass`
+    モジュールの実行中のセキュリティ警告を全て無視する。
+3. `Import-Module "C:\AtomicRedTeam\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1" -Force`  
+    `$PSDefaultParameterValues = @{"Invoke-AtomicTest:PathToAtomicsFolder"="C:\AtomicRedTeam\atomics"}`  
+    Import-Module コマンドレットを使用してモジュールをロードする。　　
+4. うまくいったかテストしよう。  
+    `help Invoke-AtomicTest`  
