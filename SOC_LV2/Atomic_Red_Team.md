@@ -70,9 +70,9 @@ AtomicRedTeamにはテクニックごとに複数のテスト要領が選択で�
     Invoke-AtomicTest  T1053.005 -TestNumbers 1 -ShowDetails  
     ```  
     ![Win10_WS-01-2024-10-06-14-50-48](https://github.com/user-attachments/assets/9d519ed9-2db0-43ad-a083-850fa4a8a11e)  
-    Descriptionには説明が書いてある。ユーザログオンあるいはシステムスタートアップ時に自動実行されるタスクが登録される。  
-    Attack CommandsにはPowershell等で実行されるコマンドが書いてある。`T1053_005_OnLogon`, `T1053_005_OnStartup`というタスクが登録されるようだ。  
-    ユーザログオン時に`calc.exe`が自動実行される。実際の攻撃ならば、calcの代わりにC2ビーコンやマルウェアが登録される。  
+    Descriptionには説明が書いてある。ユーザログオンあるいはシステムスタートアップ時に自動実行されるタスクが登録されるようだ。  
+    次にAttack Commandsには攻撃の際にPowershell等で実行されるコマンドが書いてある。`T1053_005_OnLogon`, `T1053_005_OnStartup`というタスクが登録され、ユーザログオン等時に`calc.exe`が自動実行される。実際の攻撃ならば、calcの代わりにC2ビーコンやマルウェアが登録される。  
+    最後にCleanUp Commandには復旧する際に実行されるコマンドが書いてある。  
 
 ### 実行する。  
 ```
