@@ -48,13 +48,16 @@ AtomicRedTeamはPoweshellコマンド`Invoke-AtomicRedTeam`で実行する。
     ![Win10_WS-01-2024-10-06-13-23-45](https://github.com/user-attachments/assets/c6f4528d-c4b7-48b6-8466-d99039f378fd)  
 
 4. うまくいったかテストしよう。  
+    ためしにヘルプを開いてみる。  
     ```
     help Invoke-AtomicTest
     ```  
     ![Win10_WS-01-2024-10-06-13-42-35](https://github.com/user-attachments/assets/b7a2e26f-20a0-4a48-8590-1468db973b35)  
 
 ### テクニックのリストと詳細を調べる。  
-- 一覧で表示  
+    AtomicRedTeamにはテクニックごとに複数のテスト要領が選択できる。まずは今回のテスト対象`T1053.005`にどのような選択肢があるかリスト表示してみる。     
+
+- リストで表示  
 
     ```
     Invoke-AtomicTest  T1053.005 -ShowDetailsBrief  
