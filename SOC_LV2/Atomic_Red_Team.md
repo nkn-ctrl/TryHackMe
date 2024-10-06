@@ -8,7 +8,6 @@ Atomic Red Teamとは Atomic Red Teamは、セキュリティテストと脅威�
 今回は、永続化のテクニック　`T1053.005: Scheduled Task/Job: Scheduled Task` を調査していこう。  
 https://attack.mitre.org/techniques/T1053/005/   
 
-
 ## Invoke-AtomicRedTeam  
 AtomicRedTeamのバイナリはWindowsホスト(ws-01, ws-02)に格納されている。  
 ```
@@ -98,17 +97,13 @@ Invoke-AtomicTest  T1053.005 -TestNumbers 1 -CleanUp
     ![kali-linux-2023 4-vmware-amd64-2024-10-06-16-46-17](https://github.com/user-attachments/assets/a633bec9-986a-4e21-ab7d-342be31b843e)  
 
     表示コラムを調整する。  
-    
-
-
-
-
-
-    AtomicRedTeamで実行したスケジュールドタスクが確認できる。  
+    ![kali-linux-2023 4-vmware-amd64-2024-10-06-15-47-24](https://github.com/user-attachments/assets/47c0a9d2-e0da-41bd-a3d0-597f8c47ff04)  
+    AtomicRedTeamで実行したスケジュールドタスク(`T1053_005_OnLogon`等)が確認できる。  
 2. VelociRaptor  
     VelociRaptaorのVQLでも同様の調査ができる。（別資料を参照）  
     今回はVelociraptorからPowershellで調べてみよう。  
+    ![kali-linux-2023 4-vmware-amd64-2024-10-06-15-37-50](https://github.com/user-attachments/assets/bae10004-8067-4e3b-9e4f-6afe9a3f9a72)  
+
+### 同じ要領で他のテクニックもテストしてみよう。その際メモをとってもらいたい。いいものはプレイブックに登録します。  
 
 
-
-### 
