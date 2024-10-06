@@ -55,14 +55,15 @@ AtomicRedTeamはPoweshellコマンドInvoke-AtomicRedTeamで実行する。
     ![Win10_WS-01-2024-10-06-13-42-35](https://github.com/user-attachments/assets/b7a2e26f-20a0-4a48-8590-1468db973b35)  
 
 ### テクニックのリストと詳細を調べる。  
-    - 一覧で表示   
+- 一覧で表示  
+
     ```
     Invoke-AtomicTest  T1053.005 -ShowDetailsBrief  
     ```  
     ![Win10_WS-01-2024-10-06-14-44-29](https://github.com/user-attachments/assets/801091d5-69ad-44a0-a2ed-57516e49fb8e)    
 
     リストの一番上にある `T1053.005-1 Scheduled Task StartUp Script` を実行してみよう。  
-    - 詳細を表示  
+- 詳細を表示  
     ```
     Invoke-AtomicTest  T1053.005 -TestNumbers 1 -ShowDetails  
     ```
