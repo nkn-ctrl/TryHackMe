@@ -29,10 +29,15 @@ AtomicRedTeamはPoweshellコマンドInvoke-AtomicRedTeamで実行する。
 `"C:\AtomicRedTeam\AtomicRedTeam.txt"`にコマンドは書いてあるので参考に。  
 1. PowerShellをAdministratorで開く。  
 
-2. `powershell -ExecutionPolicy bypass`
-    モジュールの実行中のセキュリティ警告を全て無視する。
-3. `Import-Module "C:\AtomicRedTeam\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1" -Force`  
+2. モジュールの実行中のセキュリティ警告を全て無視する。  
+    `powershell -ExecutionPolicy bypass`
+3. Import-Module コマンドレットを使用してモジュールをロードする。  
+    `Import-Module "C:\AtomicRedTeam\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1" -Force`  
     `$PSDefaultParameterValues = @{"Invoke-AtomicTest:PathToAtomicsFolder"="C:\AtomicRedTeam\atomics"}`  
-    Import-Module コマンドレットを使用してモジュールをロードする。　　
+
+
+
+
+
 4. うまくいったかテストしよう。  
     `help Invoke-AtomicTest`  
