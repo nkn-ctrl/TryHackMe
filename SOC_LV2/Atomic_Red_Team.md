@@ -107,6 +107,21 @@ Invoke-AtomicTest  T1053.005 -TestNumbers 1 -CleanUp
     今回はVelociraptorからPowershellで調べてみよう。  
     ![kali-linux-2023 4-vmware-amd64-2024-10-06-15-37-50](https://github.com/user-attachments/assets/bae10004-8067-4e3b-9e4f-6afe9a3f9a72)  
 
+## Credential Accessの調査  
+`ID: T1003.001 OS Credential Dumping: LSASS Memory`を調査してみよう。
+LSASS.exeはWindowsの認証に関するプロセスである。有名なmimikatzなどはLSASS.exeを悪用してクレデンシャルを盗むことができる。  
+- Windows defenderの無効化  
+![Win10_WS-01-2024-10-06-20-00-18](https://github.com/user-attachments/assets/f9d2cb88-d0fa-4529-9e93-ec7be513a645)  
+
+- T1003.001のリスト  
+![Win10_WS-01-2024-10-06-19-54-22](https://github.com/user-attachments/assets/4586afbf-409f-4dab-ae5f-fade84f2e2ec)  
+
+1. MImikatz
+    Mikikatzをテストしてみよう。TestNumberは10だ。  
+    ![Win10_WS-01-2024-10-06-19-54-22](https://github.com/user-attachments/assets/4586afbf-409f-4dab-ae5f-fade84f2e2ec)
+
+
+
 ### 同じ要領で他のテクニックもテストしてみよう。その際メモをとってもらいたい。いいものはプレイブックに登録します。  
 
 
