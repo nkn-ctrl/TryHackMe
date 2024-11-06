@@ -82,6 +82,8 @@ Seclists: https://github.com/danielmiessler/SecLists
 ```
 user@machine$ ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/common.txt -u http://10.10.249.195/FUZZ
 ```
+`-replay-proxy http://127.0.0.1:8080`  sending results to Burp proxy  
+
 - dirb
 ```
 user@machine$ dirb http://10.10.249.195/ /usr/share/wordlists/seclists/Discovery/Web-Content/common.txt
